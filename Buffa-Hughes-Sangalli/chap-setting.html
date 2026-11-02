@@ -14,7 +14,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Setting and definitions</title>
 <link rel="next" href="chap-main.html" title="The main theorems" />
-<link rel="prev" href="sect0001.html" title="Overview" />
+<link rel="prev" href="chap-mathlib.html" title="Results from Mathlib" />
 <link rel="up" href="index.html" title="Analysis of a multiscale discontinuous Galerkin methodfor convection-diffusion problems:a Lean blueprint" />
 <link rel="stylesheet" href="styles/theme-white.css" />
 <link rel="stylesheet" href="styles/amsthm.css" />
@@ -45,29 +45,32 @@
 
   </ul>
  </li>
+<li class="">
+  <a href="chap-mathlib.html"><span class="toc_ref">2</span> <span class="toc_entry">Results from Mathlib</span></a>
+ </li>
 <li class=" active current">
-  <a href="chap-setting.html"><span class="toc_ref">2</span> <span class="toc_entry">Setting and definitions</span></a>
+  <a href="chap-setting.html"><span class="toc_ref">3</span> <span class="toc_entry">Setting and definitions</span></a>
  </li>
 <li class="">
-  <a href="chap-main.html"><span class="toc_ref">3</span> <span class="toc_entry">The main theorems</span></a>
+  <a href="chap-main.html"><span class="toc_ref">4</span> <span class="toc_entry">The main theorems</span></a>
  </li>
 <li class="">
-  <a href="chap-geometry.html"><span class="toc_ref">4</span> <span class="toc_entry">Geometry of simplicial meshes</span></a>
+  <a href="chap-geometry.html"><span class="toc_ref">5</span> <span class="toc_entry">Geometry of simplicial meshes</span></a>
  </li>
 <li class="">
-  <a href="chap-analysis.html"><span class="toc_ref">5</span> <span class="toc_entry">Analysis on simplices</span></a>
+  <a href="chap-analysis.html"><span class="toc_ref">6</span> <span class="toc_entry">Analysis on simplices</span></a>
  </li>
 <li class="">
-  <a href="chap-interpolation.html"><span class="toc_ref">6</span> <span class="toc_entry">Interpolation</span></a>
+  <a href="chap-interpolation.html"><span class="toc_ref">7</span> <span class="toc_entry">Interpolation</span></a>
  </li>
 <li class="">
-  <a href="chap-stability.html"><span class="toc_ref">7</span> <span class="toc_entry">Stability of the discrete methods</span></a>
+  <a href="chap-stability.html"><span class="toc_ref">8</span> <span class="toc_entry">Stability of the discrete methods</span></a>
  </li>
 <li class="">
-  <a href="chap-errors.html"><span class="toc_ref">8</span> <span class="toc_entry">Error estimates</span></a>
+  <a href="chap-errors.html"><span class="toc_ref">9</span> <span class="toc_entry">Error estimates</span></a>
  </li>
 <li class="">
-  <a href="chap-correspondence.html"><span class="toc_ref">9</span> <span class="toc_entry">Correspondence with the paper</span></a>
+  <a href="chap-correspondence.html"><span class="toc_ref">10</span> <span class="toc_entry">Correspondence with the paper</span></a>
  </li>
 <li ><a href="dep_graph_document.html">Dependency graph</a></li>
 </ul>
@@ -78,7 +81,7 @@
 
 
 <div class="main-text">
-<h1 id="chap:setting">2 Setting and definitions</h1>
+<h1 id="chap:setting">3 Setting and definitions</h1>
 
 <p>All definitions are in <span class="ttfamily">Showcase.lean</span>, namespace <span class="ttfamily">BHSShowcase</span>. They are repeated verbatim in <span class="ttfamily">LeanCode/Definitions.lean</span>. </p>
 <div class="definition_thmwrapper theorem-style-definition" id="def:mesh">
@@ -86,7 +89,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">2.1</span>
+    <span class="definition_thmlabel">3.1</span>
     <span class="definition_thmtitle">Admissible meshes</span>
     <div class="thm_header_extras">
 
@@ -97,6 +100,28 @@
 
     <a class="icon proof" href="chap-setting.html#def:mesh">#</a>
     
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-mathlib.html#ml:simplex">Definition 2.1</a></li>
+          
+          <li><a href="chap-mathlib.html#ml:hausdorff">Definition 2.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -129,7 +154,7 @@
         </div>
   </div>
   <div class="definition_thmcontent">
-  <p>  A mesh consists of finitely many affine \(d\)-simplices \(T\), a list of faces with an owner facet and an optional neighbour facet, and outward unit normals. It is <em>admissible with shape constant \(\rho \ge 1\)</em> if: </p>
+  <p>   A mesh consists of finitely many affine \(d\)-simplices \(T\), a list of faces with an owner facet and an optional neighbour facet, and outward unit normals. It is <em>admissible with shape constant \(\rho \ge 1\)</em> if: </p>
 <ul class="itemize">
   <li><p>the domain \(\Omega \) is bounded, connected, Lipschitz, and equal to the interior of the union of the cells; </p>
 </li>
@@ -151,7 +176,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">2.2</span>
+    <span class="definition_thmlabel">3.2</span>
     <span class="definition_thmtitle">Weak jets and Sobolev traces</span>
     <div class="thm_header_extras">
 
@@ -211,7 +236,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">2.3</span>
+    <span class="definition_thmlabel">3.3</span>
     <span class="definition_thmtitle">DG and SDG forms and norms</span>
     <div class="thm_header_extras">
 
@@ -235,9 +260,9 @@
         
         <ul class="uses">
           
-          <li><a href="chap-setting.html#def:mesh">Definition 2.1</a></li>
+          <li><a href="chap-setting.html#def:mesh">Definition 3.1</a></li>
           
-          <li><a href="chap-setting.html#def:jets">Definition 2.2</a></li>
+          <li><a href="chap-setting.html#def:jets">Definition 3.2</a></li>
           
         </ul>
     
@@ -302,7 +327,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">2.4</span>
+    <span class="definition_thmlabel">3.4</span>
     <span class="definition_thmtitle">Local problems and transfer spaces</span>
     <div class="thm_header_extras">
 
@@ -326,7 +351,7 @@
         
         <ul class="uses">
           
-          <li><a href="chap-setting.html#def:forms">Definition 2.3</a></li>
+          <li><a href="chap-setting.html#def:forms">Definition 3.3</a></li>
           
         </ul>
     
@@ -380,7 +405,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">2.5</span>
+    <span class="definition_thmlabel">3.5</span>
     <span class="definition_thmtitle">Discrete problems, exact solutions, error indicator</span>
     <div class="thm_header_extras">
 
@@ -404,9 +429,9 @@
         
         <ul class="uses">
           
-          <li><a href="chap-setting.html#def:forms">Definition 2.3</a></li>
+          <li><a href="chap-setting.html#def:forms">Definition 3.3</a></li>
           
-          <li><a href="chap-setting.html#def:local">Definition 2.4</a></li>
+          <li><a href="chap-setting.html#def:local">Definition 3.4</a></li>
           
         </ul>
     
@@ -460,7 +485,7 @@
 
   <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
 
-  <a href="sect0001.html" title="Overview"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+  <a href="chap-mathlib.html" title="Results from Mathlib"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
 </a>
   <a href="index.html" title="Analysis of a multiscale discontinuous Galerkin methodfor convection-diffusion problems:a Lean blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
 </a>

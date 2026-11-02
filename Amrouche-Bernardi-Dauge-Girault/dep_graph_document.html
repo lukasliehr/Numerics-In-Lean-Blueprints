@@ -55,7 +55,11 @@
       
       <dt>Dark green background</dt><dd>the <em>proof</em> of this result and all its ancestors are formalized</dd>
       
-      <dt>Dark green border</dt><dd>this is in Mathlib</dd>
+      <dt>Grey border</dt><dd>this is in Mathlib</dd>
+      
+      <dt>Gold background</dt><dd>a <em>main result</em> of the paper, as stated in <em>Showcase.lean</em></dd>
+      
+      <dt>Grey background</dt><dd>a definition or result from <em>Mathlib</em>, on which the formalization builds</dd>
       
     </dl>
   </div>
@@ -74,7 +78,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">2.4</span><span class="definition_thmtitle">Boundary fluxes and cut fluxes</span></div>
+      <span class="definition_thmlabel">3.4</span><span class="definition_thmtitle">Boundary fluxes and cut fluxes</span></div>
     <div class="thm_thmcontent"><p>   Let \(v\in L^2(\Omega )^3\) with \(\operatorname {div}v=d\). </p>
 <ul class="itemize">
   <li><p>A <em>cutoff</em> for \(\Gamma _i\) is a smooth compactly supported \(\eta \) on \(\mathbb {R}^3\) that is \(1\) near \(\Gamma _i\) and \(0\) near the other components. <em>\(F_i(v)=0\)</em> means \(\int _\Omega v\cdot \nabla \eta +\int _\Omega d\, \eta =0\) for every cutoff \(\eta \) of \(\Gamma _i\), for all \(0\le i\le I\). </p>
@@ -130,7 +134,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">2.3</span><span class="definition_thmtitle">Admissible geometric data</span></div>
+      <span class="definition_thmlabel">3.3</span><span class="definition_thmtitle">Admissible geometric data</span></div>
     <div class="thm_thmcontent"><p>   A <em>graph patch</em> is an open box, in coordinates given by an affine isometry of \(\mathbb {R}^3\), together with a Lipschitz function of the first two coordinates; it splits the box into the regions above and below the graph. A set has <em>Lipschitz boundary</em> if every boundary point lies in a patch in which the set is the region above the graph and its boundary is the graph. Geometric data of an open set \(\Omega \subset \mathbb {R}^3\) consist of: </p>
 <ul class="itemize">
   <li><p>the facts that \(\Omega \) is bounded, connected and has Lipschitz boundary; </p>
@@ -190,7 +194,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">4.1</span><span class="definition_thmtitle">Analytic inputs</span></div>
+      <span class="definition_thmlabel">5.1</span><span class="definition_thmtitle">Analytic inputs</span></div>
     <div class="thm_thmcontent"><p>   The <em>analytic inputs</em> for geometric data \(G\) of \(\Omega \) are the following statements. </p>
 <ol class="enumerate">
   <li><p>The cuts are Lebesgue null. </p>
@@ -236,7 +240,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">2.5</span><span class="definition_thmtitle">Tangential and normal potentials</span></div>
+      <span class="definition_thmlabel">3.5</span><span class="definition_thmtitle">Tangential and normal potentials</span></div>
     <div class="thm_thmcontent"><p>   Let \(u,\psi \in L^2(\Omega )^3\). Then \(\psi \) is a <em>tangential potential</em> of \(u\) if \(\operatorname {curl}\psi =u\), \(\operatorname {div}\psi =0\), \(\psi \cdot n=0\) and \(C_j(\psi )=0\) for all \(j\), and a <em>normal potential</em> of \(u\) if \(\operatorname {curl}\psi =u\), \(\operatorname {div}\psi =0\), \(\psi \times n=0\) and \(F_i(\psi )=0\) for all \(i\). In <span class="ttfamily">Showcase.lean</span> the theorems are written with the scoped notation of the paper (namespace <span class="ttfamily">VP.Paper</span>), which abbreviates exactly these conditions; the file checks each abbreviation by <span class="ttfamily">rfl</span>. </p>
 </div>
 
@@ -275,8 +279,8 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">2.1</span><span class="definition_thmtitle">Fields, weak derivatives and Sobolev spaces</span></div>
-    <div class="thm_thmcontent"><p>  Let \(\Omega \subset \mathbb {R}^n\) be open. \(L^2(\Omega )\) and \(L^2(\Omega )^n\) are the square-integrable functions and vector fields, as classes modulo equality almost everywhere; \(C_c^\infty (\Omega )\) and \(C_c^\infty (\Omega )^3\) are the smooth compactly supported test functions and test fields. For \(v,c\in L^2(\Omega )^3\) and \(d\in L^2(\Omega )\): </p>
+      <span class="definition_thmlabel">3.1</span><span class="definition_thmtitle">Fields, weak derivatives and Sobolev spaces</span></div>
+    <div class="thm_thmcontent"><p>   Let \(\Omega \subset \mathbb {R}^n\) be open. \(L^2(\Omega )\) and \(L^2(\Omega )^n\) are the square-integrable functions and vector fields, as classes modulo equality almost everywhere; \(C_c^\infty (\Omega )\) and \(C_c^\infty (\Omega )^3\) are the smooth compactly supported test functions and test fields. For \(v,c\in L^2(\Omega )^3\) and \(d\in L^2(\Omega )\): </p>
 <ul class="itemize">
   <li><p>\(\operatorname {div}v=d\) if \(\int _\Omega v\cdot \nabla \varphi =-\int _\Omega d\, \varphi \) for all \(\varphi \in C_c^\infty (\Omega )\); \(v\) is <em>divergence free</em> if \(\operatorname {div}v=0\); </p>
 </li>
@@ -342,7 +346,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">2.2</span><span class="definition_thmtitle">Zero normal and tangential traces</span></div>
+      <span class="definition_thmlabel">3.2</span><span class="definition_thmtitle">Zero normal and tangential traces</span></div>
     <div class="thm_thmcontent"><p>   Let \(v,c\in L^2(\Omega )^3\) and \(d\in L^2(\Omega )\). </p>
 <ul class="itemize">
   <li><p>For a field with \(\operatorname {div}v=d\), <em>\(v\cdot n=0\) on \(\partial \Omega \)</em> means \(\int _\Omega v\cdot \nabla q+\int _\Omega d\, q=0\) for all \(q\in H^1(\Omega )\). </p>
@@ -388,7 +392,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">8.4</span><span class="lemma_thmtitle">The reflection estimate</span></div>
+      <span class="lemma_thmlabel">9.4</span><span class="lemma_thmtitle">The reflection estimate</span></div>
     <div class="thm_thmcontent"><p>   Let \(u\) be divergence free on \(\Omega \), \(C\) a chart with exterior part \(S\) and Lipschitz constant \(K\), \(\zeta \) a smooth cutoff equal to \(1\) on the half box and supported in the box with \(\lvert \nabla \zeta \rvert \le C_\zeta \), and \(F\) smooth with support in the half box. Then </p>
 <div class="displaymath" id="a0000000034">
   \[  \Bigl\lvert \int _\Omega u\cdot \nabla F\Bigr\rvert \le \lVert u\rVert _{L^2(\Omega )^3}\bigl(C_\zeta \lVert F\rVert _{L^2(S)}+(3+2K)\lVert \nabla F\rVert _{L^2(S)}\bigr).  \]
@@ -421,7 +425,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">8.3</span><span class="lemma_thmtitle">Boundary charts and Lipschitz calculus</span></div>
+      <span class="lemma_thmlabel">9.3</span><span class="lemma_thmtitle">Boundary charts and Lipschitz calculus</span></div>
     <div class="thm_thmcontent"><p>   Every boundary point has arbitrarily small charts: a box \(V\) in frame coordinates in which \(\Omega \) lies strictly above a globally Lipschitz graph and the exterior strictly below it. The exterior part \(S=V\setminus \overline\Omega \) is star shaped with respect to its bottom slab, and the reflection across the graph is a Lipschitz, measure-preserving involution exchanging the two sides. A Lipschitz function on \(\mathbb {R}^3\) has its almost-everywhere gradient as weak gradient, and a Lipschitz function vanishing on the zero set of a continuous function \(\Phi \) stays Lipschitz after being cut off to \(\{ \Phi {\gt}0\} \). </p>
 </div>
 
@@ -464,7 +468,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">7.2</span><span class="lemma_thmtitle">Primitives jump by constants across the cuts</span></div>
+      <span class="lemma_thmlabel">8.2</span><span class="lemma_thmtitle">Primitives jump by constants across the cuts</span></div>
     <div class="thm_thmcontent"><p>   Let \(h\) be a smooth curl-free field on \(\Omega \) and \(P\) a primitive of \(h\) on \(\Omega ^{\circ }\). Along each cut \(\Sigma _j\) the jump of \(P\) across \(\Sigma _j\) is a single constant. </p>
 </div>
 
@@ -494,7 +498,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">5.4</span><span class="lemma_thmtitle">Gradients of unit-jump functions are curl free</span></div>
+      <span class="lemma_thmlabel">6.4</span><span class="lemma_thmtitle">Gradients of unit-jump functions are curl free</span></div>
     <div class="thm_thmcontent"><p>   If \(q\in H^1(\Omega ^{\circ })\) has unit jump across a cut, its extended gradient is curl free on \(\Omega \). </p>
 </div>
 
@@ -524,7 +528,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">5.5</span><span class="lemma_thmtitle">Cut fluxes of curls</span></div>
+      <span class="lemma_thmlabel">6.5</span><span class="lemma_thmtitle">Cut fluxes of curls</span></div>
     <div class="thm_thmcontent"><p>   If \(\psi \times n=0\) for a field \(\psi \) with \(\operatorname {curl}\psi =u\), and \(u\cdot n=0\), then \(C_j(u)=0\) for all \(j\). </p>
 </div>
 
@@ -554,7 +558,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">5.1</span><span class="lemma_thmtitle">The cuts are null</span></div>
+      <span class="lemma_thmlabel">6.1</span><span class="lemma_thmtitle">The cuts are null</span></div>
     <div class="thm_thmcontent"><p>   Every graph patch is Lebesgue null. Hence the union of the cuts is null, and the measures of \(\Omega \) and \(\Omega ^{\circ }\) restricted from Lebesgue measure coincide. </p>
 </div>
 
@@ -595,7 +599,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">4.3</span><span class="lemma_thmtitle">The gauge space</span></div>
+      <span class="lemma_thmlabel">5.3</span><span class="lemma_thmtitle">The gauge space</span></div>
     <div class="thm_thmcontent"><p>   Assume the cuts are null, and let \(K\subset L^2(\Omega )^3\) be the orthogonal complement of the gradients of \(H^1(\Omega )\) functions and of the (extended) gradients of functions with unit jump across a cut. Then \(v\in K\) if and only if \(v\cdot n=0\) and \(C_j(v)=0\) for all \(j\), and \(\psi \) is a tangential potential of \(u\) if and only if \(\operatorname {curl}\psi =u\) and \(\psi \in K\). Under the analytic inputs, every element of \(K^\perp \) is curl free. </p>
 </div>
 
@@ -638,7 +642,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">5.3</span><span class="lemma_thmtitle">Gluing across the cuts</span></div>
+      <span class="lemma_thmlabel">6.3</span><span class="lemma_thmtitle">Gluing across the cuts</span></div>
     <div class="thm_thmcontent"><p>   If \(q\in H^1(\Omega ^{\circ })\) has unit jump across \(\Sigma _j\), there is \(r\in H^1(\Omega )\) with \(\nabla r=\nabla q-\nabla \ell _j\), the gradients of \(q\) and \(\ell _j\) being extended across the null cuts. </p>
 </div>
 
@@ -668,7 +672,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">4.5</span><span class="lemma_thmtitle">The canonical tangential inverse</span></div>
+      <span class="lemma_thmlabel">5.5</span><span class="lemma_thmtitle">The canonical tangential inverse</span></div>
     <div class="thm_thmcontent"><p>   The divergence-free fields with zero boundary fluxes form a closed subspace of \(L^2(\Omega )^3\). On it, the map sending \(u\) to its tangential potential is linear and continuous. </p>
 </div>
 
@@ -711,7 +715,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">5.2</span><span class="lemma_thmtitle">Unit-jump lifts</span></div>
+      <span class="lemma_thmlabel">6.2</span><span class="lemma_thmtitle">Unit-jump lifts</span></div>
     <div class="thm_thmcontent"><p>   For each cut \(\Sigma _j\) let \(\chi _j\) be a smooth cutoff equal to \(1\) near \(\overline{\Sigma _j}\) and supported in the union of its patches, and let \(M_j\) be the union of the minus sides. The lift \(\ell _j=\chi _j\mathbf1_{M_j}\) belongs to \(H^1(\Omega ^{\circ })\) and has unit jump across \(\Sigma _j\). Its gradient \(\mathbf1_{M_j}\nabla \chi _j\) is smooth on \(\Omega \), belongs to \(H^1(\Omega )^3\) and is curl free on \(\Omega \). </p>
 </div>
 
@@ -758,7 +762,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">6.2</span><span class="lemma_thmtitle">Mollification commutes with weak derivatives</span></div>
+      <span class="lemma_thmlabel">7.2</span><span class="lemma_thmtitle">Mollification commutes with weak derivatives</span></div>
     <div class="thm_thmcontent"><p>   If \(f\) has the weak gradient \(g\) on an open set \(U\) and the closed ball of radius \(t\) around \(x\) lies in \(U\), then \(\nabla (\rho _t*f)(x)=(\rho _t*g)(x)\). The same holds for weak curls. </p>
 </div>
 
@@ -801,8 +805,8 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">6.1</span><span class="lemma_thmtitle">Mollification</span></div>
-    <div class="thm_thmcontent"><p>  There is a smooth, nonnegative, radial kernel \(\rho _t\) of unit mass supported in the ball of radius \(t\). For locally integrable \(f\), \(\rho _t*f\) is smooth; for \(f\in L^2(\mathbb {R}^3)\), \(\lVert \rho _t*f\rVert _{L^2}\le \lVert f\rVert _{L^2}\) and \(\rho _t*f\to f\) in \(L^2\) as \(t\to 0\). </p>
+      <span class="lemma_thmlabel">7.1</span><span class="lemma_thmtitle">Mollification</span></div>
+    <div class="thm_thmcontent"><p>   There is a smooth, nonnegative, radial kernel \(\rho _t\) of unit mass supported in the ball of radius \(t\). For locally integrable \(f\), \(\rho _t*f\) is smooth; for \(f\in L^2(\mathbb {R}^3)\), \(\lVert \rho _t*f\rVert _{L^2}\le \lVert f\rVert _{L^2}\) and \(\rho _t*f\to f\) in \(L^2\) as \(t\to 0\). </p>
 </div>
 
     <a class="latex_link" href="chap-analysis.html#lem:mollify">LaTeX</a>
@@ -844,7 +848,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">4.2</span><span class="lemma_thmtitle">Necessary conditions</span></div>
+      <span class="lemma_thmlabel">5.2</span><span class="lemma_thmtitle">Necessary conditions</span></div>
     <div class="thm_thmcontent"><p>   A weak curl is divergence free and has zero flux through every boundary component. Gradients of \(H^1(\Omega )\) functions are curl free. A field with \(v\cdot n=0\) (for \(\operatorname {div}v=0\)) is divergence free. </p>
 </div>
 
@@ -887,7 +891,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">2.6</span><span class="lemma_thmtitle">The flux conditions are not vacuous</span></div>
+      <span class="lemma_thmlabel">3.6</span><span class="lemma_thmtitle">The flux conditions are not vacuous</span></div>
     <div class="thm_thmcontent"><p>   Every boundary component \(\Gamma _i\) has a cutoff, and every cut \(\Sigma _j\) has a function in \(H^1(\Omega ^{\circ })\) with unit jump across \(\Sigma _j\). </p>
 </div>
 
@@ -926,7 +930,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">8.1</span><span class="lemma_thmtitle">Zero tangential trace forces zero normal trace</span></div>
+      <span class="lemma_thmlabel">9.1</span><span class="lemma_thmtitle">Zero tangential trace forces zero normal trace</span></div>
     <div class="thm_thmcontent"><p>   If \(\psi \times n=0\) for a field \(\psi \) with \(\operatorname {curl}\psi =u\), then \(u\cdot n=0\). </p>
 </div>
 
@@ -969,7 +973,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">4.6</span><span class="lemma_thmtitle">Orthogonality to the curl kernel</span></div>
+      <span class="lemma_thmlabel">5.6</span><span class="lemma_thmtitle">Orthogonality to the curl kernel</span></div>
     <div class="thm_thmcontent"><p>   Assume the analytic inputs. If \(u\cdot n=0\), \(C_j(u)=0\) for all \(j\), and \(w\) is curl free, then \((u,w)_{L^2(\Omega )^3}=0\). </p>
 </div>
 
@@ -999,8 +1003,8 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">8.2</span><span class="lemma_thmtitle">Poincaré inequalities by segments</span></div>
-    <div class="thm_thmcontent"><p>  Let \(S\subset \mathbb {R}^3\) be star shaped with respect to a set \(Z\) of positive finite measure, with \(\lvert w-x\rvert \le d\) for \(x\in S\), \(w\in Z\). Then every smooth \(\varphi \) admits \(c\in \mathbb {R}\) with </p>
+      <span class="lemma_thmlabel">9.2</span><span class="lemma_thmtitle">Poincaré inequalities by segments</span></div>
+    <div class="thm_thmcontent"><p>   Let \(S\subset \mathbb {R}^3\) be star shaped with respect to a set \(Z\) of positive finite measure, with \(\lvert w-x\rvert \le d\) for \(x\in S\), \(w\in Z\). Then every smooth \(\varphi \) admits \(c\in \mathbb {R}\) with </p>
 <div class="displaymath" id="a0000000031">
   \[  \int _S\lvert \varphi -c\rvert ^2\le \frac{8d^2(\lvert S\rvert +\lvert Z\rvert )}{\lvert Z\rvert }\int _S\lvert \nabla \varphi \rvert ^2.  \]
 </div>
@@ -1046,8 +1050,8 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">8.7</span><span class="lemma_thmtitle">An explicit curl potential</span></div>
-    <div class="thm_thmcontent"><p>  Let \(v\in L^2(\mathbb {R}^3)^3\) vanish outside the ball of radius \(\rho \) and be weakly divergence free on \(\mathbb {R}^3\). If \(\rho +\rho '\le R\), then </p>
+      <span class="lemma_thmlabel">9.7</span><span class="lemma_thmtitle">An explicit curl potential</span></div>
+    <div class="thm_thmcontent"><p>   Let \(v\in L^2(\mathbb {R}^3)^3\) vanish outside the ball of radius \(\rho \) and be weakly divergence free on \(\mathbb {R}^3\). If \(\rho +\rho '\le R\), then </p>
 <div class="displaymath" id="a0000000038">
   \[  (Av)(x)=\Bigl(0,\  \int _0^Rv_3(x-te_1)\, \mathrm{d}t,\  -\int _0^Rv_2(x-te_1)\, \mathrm{d}t\Bigr)  \]
 </div>
@@ -1089,8 +1093,8 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">7.1</span><span class="lemma_thmtitle">Global primitives</span></div>
-    <div class="thm_thmcontent"><p>  A smooth curl-free field on a simply connected open set \(U\subset \mathbb {R}^3\) is the gradient of a smooth function on \(U\). </p>
+      <span class="lemma_thmlabel">8.1</span><span class="lemma_thmtitle">Global primitives</span></div>
+    <div class="thm_thmcontent"><p>   A smooth curl-free field on a simply connected open set \(U\subset \mathbb {R}^3\) is the gradient of a smooth function on \(U\). </p>
 </div>
 
     <a class="latex_link" href="chap-topology.html#lem:primitive">LaTeX</a>
@@ -1128,7 +1132,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">6.4</span><span class="lemma_thmtitle">Translations</span></div>
+      <span class="lemma_thmlabel">7.4</span><span class="lemma_thmtitle">Translations</span></div>
     <div class="thm_thmcontent"><p>   Translation is continuous in \(L^2(\mathbb {R}^3)\). If \(f\in L^2(\mathbb {R}^3)\) has a weak gradient \(g\in L^2\) and vanishes outside a compact subset of an open set \(U\), then \(\int _{\mathbb {R}^3}v\cdot g=0\) for every \(v\in L^2(\mathbb {R}^3)^3\) divergence free on \(U\). </p>
 </div>
 
@@ -1156,6 +1160,454 @@
 
 
     
+    <div class="dep-modal-container" id="ml:closedgraph_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:closedgraph" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.5</span><span class="theorem_thmtitle">Closed graph theorem</span></div>
+    <div class="thm_thmcontent"><p>  A linear map between Banach spaces whose graph is closed is continuous. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:closedgraph">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/LinearMap.continuous_of_isClosed_graph">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:convolution_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:convolution" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.12</span><span class="theorem_thmtitle">Bump functions and convolution</span></div>
+    <div class="thm_thmcontent"><p>  There are smooth bump functions with compact support, and the convolution of a locally integrable function with a smooth compactly supported kernel is smooth. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:convolution">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ContDiffBump" class="lean_decl">ContDiffBump</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/HasCompactSupport.contDiff_convolution_left" class="lean_decl">HasCompactSupport.contDiff_convolution_left</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:covering_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:covering" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.9</span><span class="theorem_thmtitle">Lifting through covering maps</span></div>
+    <div class="thm_thmcontent"><p>  A continuous map from a simply connected, locally path-connected space lifts through a covering map, uniquely once the lift of one point is chosen. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:covering">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/IsCoveringMap.existsUnique_continuousMap_lifts">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:dominated_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:dominated" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.11</span><span class="theorem_thmtitle">Dominated convergence</span></div>
+    <div class="thm_thmcontent"><p>  Dominated convergence theorem, and differentiation under the integral sign under a dominating bound. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:dominated">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MeasureTheory.tendsto_integral_of_dominated_convergence" class="lean_decl">MeasureTheory.tendsto_integral_of_dominated_convergence</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/hasFDerivAt_integral_of_dominated_of_fderiv_le" class="lean_decl">hasFDerivAt_integral_of_dominated_of_fderiv_le</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:fubini_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:fubini" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.10</span><span class="theorem_thmtitle">Fubini–Tonelli theorem</span></div>
+    <div class="thm_thmcontent"><p>  Integrals over a product of \(\sigma \)-finite measure spaces are iterated integrals, in either order. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:fubini">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MeasureTheory.integral_prod" class="lean_decl">MeasureTheory.integral_prod</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MeasureTheory.lintegral_prod" class="lean_decl">MeasureTheory.lintegral_prod</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MeasureTheory.integral_integral_swap" class="lean_decl">MeasureTheory.integral_integral_swap</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:hahnbanach_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:hahnbanach" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.6</span><span class="theorem_thmtitle">Hahn–Banach theorem</span></div>
+    <div class="thm_thmcontent"><p>  A bounded linear functional on a subspace of a normed space extends to the whole space with the same norm. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:hahnbanach">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/exists_extension_norm_eq">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:lp_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:lp" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2.1</span><span class="definition_thmtitle">The Hilbert space \(L^2\)</span></div>
+    <div class="thm_thmcontent"><p>  For a measure \(\mu \), the space \(L^2(\mu )\) of square-integrable functions, taken modulo equality almost everywhere, with its inner product; it is complete. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:lp">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MeasureTheory.Lp" class="lean_decl">MeasureTheory.Lp</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MeasureTheory.L2.innerProductSpace" class="lean_decl">MeasureTheory.L2.innerProductSpace</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MeasureTheory.Lp.instCompleteSpace" class="lean_decl">MeasureTheory.Lp.instCompleteSpace</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:partition_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:partition" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.13</span><span class="theorem_thmtitle">Smooth partitions of unity</span></div>
+    <div class="thm_thmcontent"><p>  Every open cover of a closed subset of \(\mathbb {R}^n\) has a subordinate smooth partition of unity. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:partition">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/SmoothPartitionOfUnity.exists_isSubordinate">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:poincarelemma_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:poincarelemma" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.8</span><span class="theorem_thmtitle">Poincaré lemma on convex sets</span></div>
+    <div class="thm_thmcontent"><p>  On an open convex set, a differentiable field whose derivative is symmetric is the gradient of a function. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:poincarelemma">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/Convex.exists_forall_hasFDerivAt_of_fderiv_symmetric">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:projection_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:projection" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.3</span><span class="theorem_thmtitle">Orthogonal projection</span></div>
+    <div class="thm_thmcontent"><p>  A complete subspace \(K\) of an inner product space has an orthogonal projection \(P_K\), with \(x-P_Kx\in K^\perp \); moreover \((K^\perp )^\perp =\overline K\). </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:projection">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/Submodule.starProjection" class="lean_decl">Submodule.starProjection</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/Submodule.orthogonal_orthogonal_eq_closure" class="lean_decl">Submodule.orthogonal_orthogonal_eq_closure</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:rademacher_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:rademacher" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.7</span><span class="theorem_thmtitle">Rademacher’s theorem</span></div>
+    <div class="thm_thmcontent"><p>  A Lipschitz function on \(\mathbb {R}^n\) is differentiable almost everywhere, and it can be integrated by parts against Lipschitz functions with compact support along every direction. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:rademacher">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/LipschitzWith.ae_differentiableAt" class="lean_decl">LipschitzWith.ae_differentiableAt</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/LipschitzWith.integral_lineDeriv_mul_eq" class="lean_decl">LipschitzWith.integral_lineDeriv_mul_eq</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:riesz_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:riesz" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.4</span><span class="theorem_thmtitle">Riesz representation theorem</span></div>
+    <div class="thm_thmcontent"><p>  Every bounded linear functional on a Hilbert space is of the form \(x\mapsto (y,x)\) for a unique \(y\). </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:riesz">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/InnerProductSpace.toDual">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:test_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:test" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2.2</span><span class="definition_thmtitle">Test functions</span></div>
+    <div class="thm_thmcontent"><p>  The space \(C_c^\infty (\Omega )\) of smooth functions with compact support in an open set \(\Omega \). </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:test">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/TestFunction">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
     <div class="dep-modal-container" id="thm:3-12_modal">
       <div class="dep-modal-content">
           <button class="dep-closebtn">
@@ -1167,7 +1619,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">3.1</span><span class="theorem_thmtitle">Theorem 3.12: tangential vector potentials</span></div>
+      <span class="theorem_thmlabel">4.1</span><span class="theorem_thmtitle">Theorem 3.12: tangential vector potentials</span></div>
     <div class="thm_thmcontent"><p>   Let \(\Omega \) carry admissible geometric data and let \(u\in L^2(\Omega )^3\). Then \(\operatorname {div}u=0\) and \(F_i(u)=0\) for \(0\le i\le I\) if and only if there is exactly one \(\psi \in L^2(\Omega )^3\) with </p>
 <div class="displaymath" id="a0000000007">
   \[  \operatorname {curl}\psi =u,\qquad \operatorname {div}\psi =0,\qquad \psi \cdot n=0,\qquad C_j(\psi )=0\  (1\le j\le J).  \]
@@ -1209,7 +1661,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">3.2</span><span class="theorem_thmtitle">Theorem 3.17: normal vector potentials</span></div>
+      <span class="theorem_thmlabel">4.2</span><span class="theorem_thmtitle">Theorem 3.17: normal vector potentials</span></div>
     <div class="thm_thmcontent"><p>   Let \(\Omega \) carry admissible geometric data and let \(u\in L^2(\Omega )^3\). Then \(\operatorname {div}u=0\), \(u\cdot n=0\) and \(C_j(u)=0\) for \(1\le j\le J\) if and only if there is exactly one \(\psi \in L^2(\Omega )^3\) with </p>
 <div class="displaymath" id="a0000000009">
   \[  \operatorname {curl}\psi =u,\qquad \operatorname {div}\psi =0,\qquad \psi \times n=0,\qquad F_i(\psi )=0\  (0\le i\le I).  \]
@@ -1251,7 +1703,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">4.7</span><span class="theorem_thmtitle">Assembly of Theorem 3.17</span></div>
+      <span class="theorem_thmlabel">5.7</span><span class="theorem_thmtitle">Assembly of Theorem 3.17</span></div>
     <div class="thm_thmcontent"><p>   If the analytic inputs hold, then \(\operatorname {div}u=0\), \(u\cdot n=0\) and \(C_j(u)=0\) for all \(j\) if and only if \(u\) has exactly one normal potential. </p>
 </div>
 
@@ -1281,7 +1733,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">4.4</span><span class="theorem_thmtitle">Assembly of Theorem 3.12</span></div>
+      <span class="theorem_thmlabel">5.4</span><span class="theorem_thmtitle">Assembly of Theorem 3.12</span></div>
     <div class="thm_thmcontent"><p>   If the analytic inputs hold, then \(\operatorname {div}u=0\) and \(F_i(u)=0\) for all \(i\) if and only if \(u\) has exactly one tangential potential. </p>
 </div>
 
@@ -1311,7 +1763,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">8.6</span><span class="theorem_thmtitle">Solenoidal extension</span></div>
+      <span class="theorem_thmlabel">9.6</span><span class="theorem_thmtitle">Solenoidal extension</span></div>
     <div class="thm_thmcontent"><p>   A divergence-free \(u\in L^2(\Omega )^3\) with \(F_i(u)=0\) for all \(i\) is the restriction to \(\Omega \) of a compactly supported \(U\in L^2(\mathbb {R}^3)^3\) that is weakly divergence free on \(\mathbb {R}^3\). </p>
 </div>
 
@@ -1341,7 +1793,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">7.3</span><span class="theorem_thmtitle">Orthogonality to harmonic fields</span></div>
+      <span class="theorem_thmlabel">8.3</span><span class="theorem_thmtitle">Orthogonality to harmonic fields</span></div>
     <div class="thm_thmcontent"><p>   If \(h\in L^2(\Omega )^3\) is curl free and divergence free, and \(v\in L^2(\Omega )^3\) satisfies \(v\cdot n=0\) and \(C_j(v)=0\) for all \(j\), then \((v,h)_{L^2(\Omega )^3}=0\). </p>
 </div>
 
@@ -1371,7 +1823,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">4.8</span><span class="theorem_thmtitle">The analytic inputs hold</span></div>
+      <span class="theorem_thmlabel">5.8</span><span class="theorem_thmtitle">The analytic inputs hold</span></div>
     <div class="thm_thmcontent"><p>   For every admissible geometric datum the analytic inputs hold. </p>
 </div>
 
@@ -1401,7 +1853,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">8.5</span><span class="theorem_thmtitle">The key estimate</span></div>
+      <span class="theorem_thmlabel">9.5</span><span class="theorem_thmtitle">The key estimate</span></div>
     <div class="thm_thmcontent"><p>   Let \(u\in L^2(\Omega )^3\) be divergence free with \(F_i(u)=0\) for all \(i\). There are a bounded open set \(\Theta \) disjoint from \(\Omega \) and \(K{\lt}\infty \) with \(\lvert \int _\Omega u\cdot \nabla \varphi \rvert \le K\lVert \nabla \varphi \rVert _{L^2(\Theta )}\) for all smooth compactly supported \(\varphi \) on \(\mathbb {R}^3\). </p>
 </div>
 
@@ -1440,7 +1892,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">8.9</span><span class="theorem_thmtitle">Uniqueness of the normal potential</span></div>
+      <span class="theorem_thmlabel">9.9</span><span class="theorem_thmtitle">Uniqueness of the normal potential</span></div>
     <div class="thm_thmcontent"><p>   If \(\psi \in L^2(\Omega )^3\) is divergence free, \(\psi \times n=0\) for \(\operatorname {curl}\psi =0\), and \(F_i(\psi )=0\) for all \(i\), then \(\psi =0\). </p>
 </div>
 
@@ -1479,7 +1931,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">8.8</span><span class="theorem_thmtitle">Divergence-free fields with zero fluxes are curls</span></div>
+      <span class="theorem_thmlabel">9.8</span><span class="theorem_thmtitle">Divergence-free fields with zero fluxes are curls</span></div>
     <div class="thm_thmcontent"><p>   Every divergence-free \(u\in L^2(\Omega )^3\) with \(F_i(u)=0\) for all \(i\) is a weak curl on \(\Omega \). </p>
 </div>
 
@@ -1509,7 +1961,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">6.3</span><span class="theorem_thmtitle">Weyl’s lemma for curl-free, divergence-free fields</span></div>
+      <span class="theorem_thmlabel">7.3</span><span class="theorem_thmtitle">Weyl’s lemma for curl-free, divergence-free fields</span></div>
     <div class="thm_thmcontent"><p>   Let \(U\subset \mathbb {R}^3\) be open and \(H\in L^2(\mathbb {R}^3)^3\) weakly curl free and divergence free on \(U\). Then \(H\) agrees almost everywhere on \(U\) with a smooth field that is classically curl free on \(U\). </p>
 </div>
 
@@ -1544,7 +1996,7 @@ graphContainer.graphviz({useWorker: true})
     .width(width)
     .height(height)
     .fit(true)
-    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"lem:translate"	[color=green,		fillcolor="#1CAC78",		label=translate,		shape=ellipse,		style=filled];	"lem:normal-trace"	[color=green,		fillcolor="#1CAC78",		label="normal-trace",		shape=ellipse,		style=filled];	"lem:translate" -> "lem:normal-trace"	[style=dashed];	"lem:chart-estimate"	[color=green,		fillcolor="#1CAC78",		label="chart-estimate",		shape=ellipse,		style=filled];	"lem:translate" -> "lem:chart-estimate"	[style=dashed];	"thm:inputs"	[color=green,		fillcolor="#1CAC78",		label=inputs,		shape=ellipse,		style=filled];	"lem:normal-trace" -> "thm:inputs"	[style=dashed];	"thm:key-estimate"	[color=green,		fillcolor="#1CAC78",		label="key-estimate",		shape=ellipse,		style=filled];	"lem:chart-estimate" -> "thm:key-estimate"	[style=dashed];	"thm:3-17"	[color=green,		fillcolor="#1CAC78",		label="3-17",		shape=ellipse,		style=filled];	"thm:inputs" -> "thm:3-17"	[style=dashed];	"thm:3-12"	[color=green,		fillcolor="#1CAC78",		label="3-12",		shape=ellipse,		style=filled];	"thm:inputs" -> "thm:3-12"	[style=dashed];	"thm:extension"	[color=green,		fillcolor="#1CAC78",		label=extension,		shape=ellipse,		style=filled];	"thm:key-estimate" -> "thm:extension"	[style=dashed];	"lem:primitive"	[color=green,		fillcolor="#1CAC78",		label=primitive,		shape=ellipse,		style=filled];	"lem:cut-constant"	[color=green,		fillcolor="#1CAC78",		label="cut-constant",		shape=ellipse,		style=filled];	"lem:primitive" -> "lem:cut-constant"	[style=dashed];	"thm:harm"	[color=green,		fillcolor="#1CAC78",		label=harm,		shape=ellipse,		style=filled];	"lem:cut-constant" -> "thm:harm"	[style=dashed];	"thm:harm" -> "thm:inputs"	[style=dashed];	"thm:assembly-normal"	[color=green,		fillcolor="#1CAC78",		label="assembly-normal",		shape=ellipse,		style=filled];	"thm:assembly-normal" -> "thm:3-17"	[style=dashed];	"lem:cut-curl-free"	[color=green,		fillcolor="#1CAC78",		label="cut-curl-free",		shape=ellipse,		style=filled];	"lem:cut-curl-free" -> "thm:inputs"	[style=dashed];	"def:spaces"	[color=green,		fillcolor="#B0ECA3",		label=spaces,		shape=box,		style=filled];	"def:traces"	[color=green,		fillcolor="#B0ECA3",		label=traces,		shape=box,		style=filled];	"def:spaces" -> "def:traces"	[style=dashed];	"def:geometry"	[color=green,		fillcolor="#B0ECA3",		label=geometry,		shape=box,		style=filled];	"def:spaces" -> "def:geometry"	[style=dashed];	"def:traces" -> "lem:normal-trace"	[style=dashed];	"def:fluxes"	[color=green,		fillcolor="#B0ECA3",		label=fluxes,		shape=box,		style=filled];	"def:traces" -> "def:fluxes"	[style=dashed];	"def:geometry" -> "lem:normal-trace"	[style=dashed];	"def:geometry" -> "lem:cut-constant"	[style=dashed];	"def:geometry" -> "def:fluxes"	[style=dashed];	"lem:charts"	[color=green,		fillcolor="#1CAC78",		label=charts,		shape=ellipse,		style=filled];	"def:geometry" -> "lem:charts"	[style=dashed];	"lem:cuts-null"	[color=green,		fillcolor="#1CAC78",		label="cuts-null",		shape=ellipse,		style=filled];	"def:geometry" -> "lem:cuts-null"	[style=dashed];	"def:fluxes" -> "thm:key-estimate"	[style=dashed];	"lem:necessity"	[color=green,		fillcolor="#1CAC78",		label=necessity,		shape=ellipse,		style=filled];	"def:fluxes" -> "lem:necessity"	[style=dashed];	"lem:lifts"	[color=green,		fillcolor="#1CAC78",		label=lifts,		shape=ellipse,		style=filled];	"def:fluxes" -> "lem:lifts"	[style=dashed];	"def:potentials"	[color=green,		fillcolor="#B0ECA3",		label=potentials,		shape=box,		style=filled];	"def:fluxes" -> "def:potentials"	[style=dashed];	"lem:charts" -> "lem:chart-estimate"	[style=dashed];	"lem:cuts-null" -> "lem:lifts"	[style=dashed];	"lem:necessity" -> "lem:cut-curl-free"	[style=dashed];	"lem:orth-kernel"	[color=green,		fillcolor="#1CAC78",		label="orth-kernel",		shape=ellipse,		style=filled];	"lem:necessity" -> "lem:orth-kernel"	[style=dashed];	"lem:gauge"	[color=green,		fillcolor="#1CAC78",		label=gauge,		shape=ellipse,		style=filled];	"lem:necessity" -> "lem:gauge"	[style=dashed];	"lem:orth-kernel" -> "thm:assembly-normal"	[style=dashed];	"thm:assembly-tangential"	[color=green,		fillcolor="#1CAC78",		label="assembly-tangential",		shape=ellipse,		style=filled];	"lem:gauge" -> "thm:assembly-tangential"	[style=dashed];	"thm:assembly-tangential" -> "thm:3-12"	[style=dashed];	"lem:inverse"	[color=green,		fillcolor="#1CAC78",		label=inverse,		shape=ellipse,		style=filled];	"thm:assembly-tangential" -> "lem:inverse"	[style=dashed];	"lem:inverse" -> "thm:assembly-normal"	[style=dashed];	"thm:range"	[color=green,		fillcolor="#1CAC78",		label=range,		shape=ellipse,		style=filled];	"thm:extension" -> "thm:range"	[style=dashed];	"thm:normal-unique"	[color=green,		fillcolor="#1CAC78",		label="normal-unique",		shape=ellipse,		style=filled];	"thm:extension" -> "thm:normal-unique"	[style=dashed];	"thm:range" -> "thm:inputs"	[style=dashed];	"thm:normal-unique" -> "thm:inputs"	[style=dashed];	"lem:poincare"	[color=green,		fillcolor="#1CAC78",		label=poincare,		shape=ellipse,		style=filled];	"lem:poincare" -> "lem:charts"	[style=dashed];	"lem:lifts" -> "thm:harm"	[style=dashed];	"lem:glue"	[color=green,		fillcolor="#1CAC78",		label=glue,		shape=ellipse,		style=filled];	"lem:lifts" -> "lem:glue"	[style=dashed];	"lem:nonvacuous"	[color=green,		fillcolor="#1CAC78",		label=nonvacuous,		shape=ellipse,		style=filled];	"lem:lifts" -> "lem:nonvacuous"	[style=dashed];	"lem:glue" -> "lem:cut-curl-free"	[style=dashed];	"lem:cut-flux"	[color=green,		fillcolor="#1CAC78",		label="cut-flux",		shape=ellipse,		style=filled];	"lem:glue" -> "lem:cut-flux"	[style=dashed];	"thm:weyl"	[color=green,		fillcolor="#1CAC78",		label=weyl,		shape=ellipse,		style=filled];	"thm:weyl" -> "thm:harm"	[style=dashed];	"lem:cut-flux" -> "thm:inputs"	[style=dashed];	"def:inputs"	[color=green,		fillcolor="#B0ECA3",		label=inputs,		shape=box,		style=filled];	"def:potentials" -> "def:inputs"	[style=dashed];	"def:inputs" -> "lem:orth-kernel"	[style=dashed];	"def:inputs" -> "lem:gauge"	[style=dashed];	"lem:moll-deriv"	[color=green,		fillcolor="#1CAC78",		label="moll-deriv",		shape=ellipse,		style=filled];	"lem:moll-deriv" -> "lem:translate"	[style=dashed];	"lem:moll-deriv" -> "thm:weyl"	[style=dashed];	"lem:mollify"	[color=green,		fillcolor="#1CAC78",		label=mollify,		shape=ellipse,		style=filled];	"lem:mollify" -> "lem:moll-deriv"	[style=dashed];	"lem:potential"	[color=green,		fillcolor="#1CAC78",		label=potential,		shape=ellipse,		style=filled];	"lem:potential" -> "thm:range"	[style=dashed];	"lem:potential" -> "thm:normal-unique"	[style=dashed];}`)
+    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"lem:chart-estimate"	[color=green,		fillcolor="#1CAC78",		label="chart-estimate",		shape=ellipse,		style=filled];	"thm:key-estimate"	[color=green,		fillcolor="#1CAC78",		label="key-estimate",		shape=ellipse,		style=filled];	"lem:chart-estimate" -> "thm:key-estimate"	[style=dashed];	"thm:extension"	[color=green,		fillcolor="#1CAC78",		label=extension,		shape=ellipse,		style=filled];	"thm:key-estimate" -> "thm:extension"	[style=dashed];	"thm:range"	[color=green,		fillcolor="#1CAC78",		label=range,		shape=ellipse,		style=filled];	"thm:extension" -> "thm:range"	[style=dashed];	"thm:normal-unique"	[color=green,		fillcolor="#1CAC78",		label="normal-unique",		shape=ellipse,		style=filled];	"thm:extension" -> "thm:normal-unique"	[style=dashed];	"thm:assembly-normal"	[color=green,		fillcolor="#1CAC78",		label="assembly-normal",		shape=ellipse,		style=filled];	"thm:3-17"	[color=green,		fillcolor="#F5B841",		label="3-17",		shape=ellipse,		style=filled];	"thm:assembly-normal" -> "thm:3-17"	[style=dashed];	"thm:inputs"	[color=green,		fillcolor="#1CAC78",		label=inputs,		shape=ellipse,		style=filled];	"thm:range" -> "thm:inputs"	[style=dashed];	"thm:normal-unique" -> "thm:inputs"	[style=dashed];	"lem:cuts-null"	[color=green,		fillcolor="#1CAC78",		label="cuts-null",		shape=ellipse,		style=filled];	"lem:lifts"	[color=green,		fillcolor="#1CAC78",		label=lifts,		shape=ellipse,		style=filled];	"lem:cuts-null" -> "lem:lifts"	[style=dashed];	"thm:harm"	[color=green,		fillcolor="#1CAC78",		label=harm,		shape=ellipse,		style=filled];	"lem:lifts" -> "thm:harm"	[style=dashed];	"lem:nonvacuous"	[color=green,		fillcolor="#1CAC78",		label=nonvacuous,		shape=ellipse,		style=filled];	"lem:lifts" -> "lem:nonvacuous"	[style=dashed];	"lem:glue"	[color=green,		fillcolor="#1CAC78",		label=glue,		shape=ellipse,		style=filled];	"lem:lifts" -> "lem:glue"	[style=dashed];	"thm:inputs" -> "thm:3-17"	[style=dashed];	"thm:3-12"	[color=green,		fillcolor="#F5B841",		label="3-12",		shape=ellipse,		style=filled];	"thm:inputs" -> "thm:3-12"	[style=dashed];	"thm:harm" -> "thm:inputs"	[style=dashed];	"lem:cut-flux"	[color=green,		fillcolor="#1CAC78",		label="cut-flux",		shape=ellipse,		style=filled];	"lem:glue" -> "lem:cut-flux"	[style=dashed];	"lem:cut-curl-free"	[color=green,		fillcolor="#1CAC78",		label="cut-curl-free",		shape=ellipse,		style=filled];	"lem:glue" -> "lem:cut-curl-free"	[style=dashed];	"lem:cut-flux" -> "thm:inputs"	[style=dashed];	"def:inputs"	[color=green,		fillcolor="#B0ECA3",		label=inputs,		shape=box,		style=filled];	"lem:gauge"	[color=green,		fillcolor="#1CAC78",		label=gauge,		shape=ellipse,		style=filled];	"def:inputs" -> "lem:gauge"	[style=dashed];	"lem:orth-kernel"	[color=green,		fillcolor="#1CAC78",		label="orth-kernel",		shape=ellipse,		style=filled];	"def:inputs" -> "lem:orth-kernel"	[style=dashed];	"thm:assembly-tangential"	[color=green,		fillcolor="#1CAC78",		label="assembly-tangential",		shape=ellipse,		style=filled];	"lem:gauge" -> "thm:assembly-tangential"	[style=dashed];	"lem:orth-kernel" -> "thm:assembly-normal"	[style=dashed];	"thm:assembly-tangential" -> "thm:3-12"	[style=dashed];	"lem:inverse"	[color=green,		fillcolor="#1CAC78",		label=inverse,		shape=ellipse,		style=filled];	"thm:assembly-tangential" -> "lem:inverse"	[style=dashed];	"lem:inverse" -> "thm:assembly-normal"	[style=dashed];	"lem:necessity"	[color=green,		fillcolor="#1CAC78",		label=necessity,		shape=ellipse,		style=filled];	"lem:necessity" -> "lem:gauge"	[style=dashed];	"lem:necessity" -> "lem:orth-kernel"	[style=dashed];	"lem:necessity" -> "lem:cut-curl-free"	[style=dashed];	"lem:cut-curl-free" -> "thm:inputs"	[style=dashed];	"lem:primitive"	[color=green,		fillcolor="#1CAC78",		label=primitive,		shape=ellipse,		style=filled];	"lem:cut-constant"	[color=green,		fillcolor="#1CAC78",		label="cut-constant",		shape=ellipse,		style=filled];	"lem:primitive" -> "lem:cut-constant"	[style=dashed];	"lem:cut-constant" -> "thm:harm"	[style=dashed];	"ml:poincarelemma"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=poincarelemma,		shape=ellipse,		style=filled];	"ml:poincarelemma" -> "lem:primitive"	[style=dashed];	"ml:dominated"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=dominated,		shape=ellipse,		style=filled];	"ml:dominated" -> "thm:harm"	[style=dashed];	"lem:potential"	[color=green,		fillcolor="#1CAC78",		label=potential,		shape=ellipse,		style=filled];	"ml:dominated" -> "lem:potential"	[style=dashed];	"lem:potential" -> "thm:range"	[style=dashed];	"lem:potential" -> "thm:normal-unique"	[style=dashed];	"thm:weyl"	[color=green,		fillcolor="#1CAC78",		label=weyl,		shape=ellipse,		style=filled];	"thm:weyl" -> "thm:harm"	[style=dashed];	"ml:riesz"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=riesz,		shape=ellipse,		style=filled];	"ml:riesz" -> "thm:extension"	[style=dashed];	"ml:riesz" -> "thm:assembly-normal"	[style=dashed];	"lem:charts"	[color=green,		fillcolor="#1CAC78",		label=charts,		shape=ellipse,		style=filled];	"lem:charts" -> "lem:chart-estimate"	[style=dashed];	"ml:hahnbanach"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=hahnbanach,		shape=ellipse,		style=filled];	"ml:hahnbanach" -> "thm:extension"	[style=dashed];	"def:traces"	[color=green,		fillcolor="#B0ECA3",		label=traces,		shape=box,		style=filled];	"def:fluxes"	[color=green,		fillcolor="#B0ECA3",		label=fluxes,		shape=box,		style=filled];	"def:traces" -> "def:fluxes"	[style=dashed];	"lem:normal-trace"	[color=green,		fillcolor="#1CAC78",		label="normal-trace",		shape=ellipse,		style=filled];	"def:traces" -> "lem:normal-trace"	[style=dashed];	"def:fluxes" -> "thm:key-estimate"	[style=dashed];	"def:fluxes" -> "lem:lifts"	[style=dashed];	"def:fluxes" -> "lem:necessity"	[style=dashed];	"def:potentials"	[color=green,		fillcolor="#B0ECA3",		label=potentials,		shape=box,		style=filled];	"def:fluxes" -> "def:potentials"	[style=dashed];	"lem:normal-trace" -> "thm:inputs"	[style=dashed];	"def:potentials" -> "def:inputs"	[style=dashed];	"lem:translate"	[color=green,		fillcolor="#1CAC78",		label=translate,		shape=ellipse,		style=filled];	"lem:translate" -> "lem:chart-estimate"	[style=dashed];	"lem:translate" -> "lem:normal-trace"	[style=dashed];	"ml:covering"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=covering,		shape=ellipse,		style=filled];	"ml:covering" -> "lem:primitive"	[style=dashed];	"ml:projection"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=projection,		shape=ellipse,		style=filled];	"ml:projection" -> "lem:gauge"	[style=dashed];	"ml:projection" -> "lem:orth-kernel"	[style=dashed];	"ml:fubini"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=fubini,		shape=ellipse,		style=filled];	"ml:fubini" -> "lem:potential"	[style=dashed];	"lem:poincare"	[color=green,		fillcolor="#1CAC78",		label=poincare,		shape=ellipse,		style=filled];	"ml:fubini" -> "lem:poincare"	[style=dashed];	"lem:poincare" -> "lem:charts"	[style=dashed];	"ml:convolution"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=convolution,		shape=ellipse,		style=filled];	"lem:mollify"	[color=green,		fillcolor="#1CAC78",		label=mollify,		shape=ellipse,		style=filled];	"ml:convolution" -> "lem:mollify"	[style=dashed];	"lem:moll-deriv"	[color=green,		fillcolor="#1CAC78",		label="moll-deriv",		shape=ellipse,		style=filled];	"lem:mollify" -> "lem:moll-deriv"	[style=dashed];	"lem:moll-deriv" -> "thm:weyl"	[style=dashed];	"lem:moll-deriv" -> "lem:translate"	[style=dashed];	"ml:partition"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=partition,		shape=ellipse,		style=filled];	"ml:partition" -> "thm:key-estimate"	[style=dashed];	"ml:partition" -> "lem:normal-trace"	[style=dashed];	"ml:rademacher"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=rademacher,		shape=ellipse,		style=filled];	"ml:rademacher" -> "lem:charts"	[style=dashed];	"def:geometry"	[color=green,		fillcolor="#B0ECA3",		label=geometry,		shape=box,		style=filled];	"def:geometry" -> "lem:cuts-null"	[style=dashed];	"def:geometry" -> "lem:cut-constant"	[style=dashed];	"def:geometry" -> "lem:charts"	[style=dashed];	"def:geometry" -> "def:fluxes"	[style=dashed];	"def:geometry" -> "lem:normal-trace"	[style=dashed];	"ml:test"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=test,		shape=box,		style=filled];	"def:spaces"	[color=green,		fillcolor="#B0ECA3",		label=spaces,		shape=box,		style=filled];	"ml:test" -> "def:spaces"	[style=dashed];	"def:spaces" -> "def:traces"	[style=dashed];	"def:spaces" -> "def:geometry"	[style=dashed];	"ml:lp"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=lp,		shape=box,		style=filled];	"ml:lp" -> "def:spaces"	[style=dashed];	"ml:closedgraph"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=closedgraph,		shape=ellipse,		style=filled];	"ml:closedgraph" -> "lem:inverse"	[style=dashed];}`)
     .on("end", interactive);
 
 latexLabelEscaper = function(label) {

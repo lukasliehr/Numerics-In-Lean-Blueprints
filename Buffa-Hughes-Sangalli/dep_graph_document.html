@@ -55,7 +55,11 @@
       
       <dt>Dark green background</dt><dd>the <em>proof</em> of this result and all its ancestors are formalized</dd>
       
-      <dt>Dark green border</dt><dd>this is in Mathlib</dd>
+      <dt>Grey border</dt><dd>this is in Mathlib</dd>
+      
+      <dt>Gold background</dt><dd>a <em>main result</em> of the paper, as stated in <em>Showcase.lean</em></dd>
+      
+      <dt>Grey background</dt><dd>a definition or result from <em>Mathlib</em>, on which the formalization builds</dd>
       
     </dl>
   </div>
@@ -74,7 +78,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">2.5</span><span class="definition_thmtitle">Discrete problems, exact solutions, error indicator</span></div>
+      <span class="definition_thmlabel">3.5</span><span class="definition_thmtitle">Discrete problems, exact solutions, error indicator</span></div>
     <div class="thm_thmcontent"><p>   The DG, SDG and SMDG solutions are defined by the Galerkin equations (3.2), (3.13) and (4.4). An exact solution is a weak \(H^{k+1}(\Omega )\) jet with \(L^2\) data, realized by a broken field with traces, satisfying the equation a.e. in each cell and the boundary condition a.e. on \(\partial \Omega \). The error indicator is \(\bigl(\sum _T(\lvert a\rvert  h_T^{2k+1}+\kappa h_T^{2k})\lvert \varphi \rvert ^2_{H^{k+1}(T)}\bigr)^{1/2}\). </p>
 </div>
 
@@ -119,7 +123,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">2.3</span><span class="definition_thmtitle">DG and SDG forms and norms</span></div>
+      <span class="definition_thmlabel">3.3</span><span class="definition_thmtitle">DG and SDG forms and norms</span></div>
     <div class="thm_thmcontent"><p>   For \(s\in \{ -1,0,1\} \) (symmetric, neutral, skew), the DG form is </p>
 <div class="displaymath" id="a0000000007">
   \begin{align*}  B^{\mathrm{DG}}(\nu ,\mu ) & = \sum _T\int _T(\kappa \nabla \nu \cdot \nabla \mu -\nu \, a\cdot \nabla \mu ) +\sum _{e\in \mathcal{E}_h^{o}}\int _e\bigl([\! [\mu ]\! ]\cdot (a\nu ^- - \kappa \nabla \nu ^-) + s\kappa \nabla \mu ^-\cdot [\! [\nu ]\! ]\bigr)\\ & \quad +\sum _{e\subset \partial \Omega }\int _e\bigl(s\kappa \nabla \mu \cdot n\, \nu -\kappa \nabla \nu \cdot n\, \mu + (a\cdot n)^+\mu \nu \bigr) +\varepsilon \sum _{e}\int _e\frac{\kappa }{h_{\perp }}[\! [\mu ]\! ]\cdot [\! [\nu ]\! ], \end{align*}
@@ -181,7 +185,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">2.2</span><span class="definition_thmtitle">Weak jets and Sobolev traces</span></div>
+      <span class="definition_thmlabel">3.2</span><span class="definition_thmtitle">Weak jets and Sobolev traces</span></div>
     <div class="thm_thmcontent"><p>  A <em>jet</em> assigns a function \(J_\alpha \) to each multi-index \(\alpha \). </p>
 <ul class="itemize">
   <li><p>It is a <em>weak \(H^m(\Omega )\) jet</em> if \(J_\alpha \in L^2(\Omega )\) for \(\lvert \alpha \rvert \le m\) and \(J_{\alpha +e_i}\) is the distributional derivative \(\partial _i J_\alpha \) for \(\lvert \alpha \rvert {\lt}m\). </p>
@@ -234,7 +238,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">2.4</span><span class="definition_thmtitle">Local problems and transfer spaces</span></div>
+      <span class="definition_thmlabel">3.4</span><span class="definition_thmtitle">Local problems and transfer spaces</span></div>
     <div class="thm_thmcontent"><p>   On a cell \(T\), with perturbation \(\delta \ge 0\), </p>
 <div class="displaymath" id="a0000000009">
   \begin{align*}  b_T(\nu ,\mu )& =\int _T(\kappa \nabla \nu \cdot \nabla \mu -\nu \, a\cdot \nabla \mu )\\ & \quad +\sum _{j}\int _{F_j}\Bigl(-\kappa \nabla \nu \cdot n\, \mu +s\kappa \nabla \mu \cdot n\, \nu +\bigl(\varepsilon \tfrac {\kappa }{h_{\perp }}+(1+\delta )(a\cdot n)^+\bigr)\nu \mu \Bigr). \end{align*}
@@ -285,8 +289,8 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">2.1</span><span class="definition_thmtitle">Admissible meshes</span></div>
-    <div class="thm_thmcontent"><p>  A mesh consists of finitely many affine \(d\)-simplices \(T\), a list of faces with an owner facet and an optional neighbour facet, and outward unit normals. It is <em>admissible with shape constant \(\rho \ge 1\)</em> if: </p>
+      <span class="definition_thmlabel">3.1</span><span class="definition_thmtitle">Admissible meshes</span></div>
+    <div class="thm_thmcontent"><p>   A mesh consists of finitely many affine \(d\)-simplices \(T\), a list of faces with an owner facet and an optional neighbour facet, and outward unit normals. It is <em>admissible with shape constant \(\rho \ge 1\)</em> if: </p>
 <ul class="itemize">
   <li><p>the domain \(\Omega \) is bounded, connected, Lipschitz, and equal to the interior of the union of the cells; </p>
 </li>
@@ -343,7 +347,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">4.2</span><span class="lemma_thmtitle">Normals and face combinatorics</span></div>
+      <span class="lemma_thmlabel">5.2</span><span class="lemma_thmtitle">Normals and face combinatorics</span></div>
     <div class="thm_thmcontent"><p>   The mesh normals are the outward normals of the simplices. Sums over the facets of all cells can be regrouped into sums over faces (one or two sides each). </p>
 </div>
 
@@ -382,8 +386,8 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">5.1</span><span class="lemma_thmtitle">Slicing and the cone formula</span></div>
-    <div class="thm_thmcontent"><p>  Integrals over a simplex can be computed along slices parallel to a facet, and as a cone over a facet with apex at the opposite vertex. Applied to the radial field, this gives the divergence identity for the radial vector field. </p>
+      <span class="lemma_thmlabel">6.1</span><span class="lemma_thmtitle">Slicing and the cone formula</span></div>
+    <div class="thm_thmcontent"><p>   Integrals over a simplex can be computed along slices parallel to a facet, and as a cone over a facet with apex at the opposite vertex. Applied to the radial field, this gives the divergence identity for the radial vector field. </p>
 </div>
 
     <a class="latex_link" href="chap-analysis.html#lem:cone">LaTeX</a>
@@ -423,7 +427,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">6.2</span><span class="lemma_thmtitle">Face conformity</span></div>
+      <span class="lemma_thmlabel">7.2</span><span class="lemma_thmtitle">Face conformity</span></div>
     <div class="thm_thmcontent"><p>   If two cells share a facet, the interpolants of two functions that agree on the facet coincide on it. Hence cellwise interpolants of compatible functions form a coarse field in \(\overline{V}_h\). </p>
 </div>
 
@@ -464,7 +468,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">5.7</span><span class="lemma_thmtitle">Green’s formula for Sobolev jets</span></div>
+      <span class="lemma_thmlabel">6.7</span><span class="lemma_thmtitle">Green’s formula for Sobolev jets</span></div>
     <div class="thm_thmcontent"><p>   Green’s formula holds on each cell for jets with Sobolev traces. </p>
 </div>
 
@@ -494,7 +498,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">4.3</span><span class="lemma_thmtitle">Interior points of faces</span></div>
+      <span class="lemma_thmlabel">5.3</span><span class="lemma_thmtitle">Interior points of faces</span></div>
     <div class="thm_thmcontent"><p>   Near a relative interior point of a facet, the cell contains a half ball. A point in the relative interior of an interior face is an interior point of the union of its two cells. </p>
 </div>
 
@@ -533,7 +537,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">4.1</span><span class="lemma_thmtitle">Heights and shape regularity</span></div>
+      <span class="lemma_thmlabel">5.1</span><span class="lemma_thmtitle">Heights and shape regularity</span></div>
     <div class="thm_thmcontent"><p>   If a cell contains a ball of radius \(r\) then every height \(H_j\ge 2r\); hence \(h_T\le \frac\rho 2H_j\). Moreover \(\lvert T\rvert =\frac1d H_j\lvert F_j\rvert \). </p>
 </div>
 
@@ -574,7 +578,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">5.3</span><span class="lemma_thmtitle">Polynomial inverse and trace inequalities</span></div>
+      <span class="lemma_thmlabel">6.3</span><span class="lemma_thmtitle">Polynomial inverse and trace inequalities</span></div>
     <div class="thm_thmcontent"><p>   For polynomials \(p\) of degree at most \(k\) on cells of \(\rho \)-regular meshes, </p>
 <div class="displaymath" id="a0000000020">
   \[  h_T^2\lVert \partial _ip\rVert ^2_{L^2(T)}\le C\lVert p\rVert ^2_{L^2(T)},\qquad h_T^2\lvert p\rvert ^2_{H^2(T)}\le C\lvert p\rvert ^2_{H^1(T)},\qquad h_T\lVert p\rVert ^2_{L^2(F_j)}\le C\lVert p\rVert ^2_{L^2(T)},  \]
@@ -623,8 +627,8 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">6.1</span><span class="lemma_thmtitle">Lagrange interpolation on a simplex</span></div>
-    <div class="thm_thmcontent"><p>  Let the principal lattice of degree \(k\) have nodes \(x_\lambda \), and let the Lagrange basis be </p>
+      <span class="lemma_thmlabel">7.1</span><span class="lemma_thmtitle">Lagrange interpolation on a simplex</span></div>
+    <div class="thm_thmcontent"><p>   Let the principal lattice of degree \(k\) have nodes \(x_\lambda \), and let the Lagrange basis be </p>
 <div class="displaymath" id="a0000000029">
   \[  \varphi _\lambda =\prod _i\prod _{j{\lt}\lambda _i}\frac{k b_i-j}{\lambda _i-j},  \]
 </div>
@@ -672,7 +676,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">8.1</span><span class="lemma_thmtitle">From local energies to the global norm</span></div>
+      <span class="lemma_thmlabel">9.1</span><span class="lemma_thmtitle">From local energies to the global norm</span></div>
     <div class="thm_thmcontent"><p>   For every broken \(H^2\) field \(z\), </p>
 <div class="displaymath" id="a0000000042">
   \[ |\! |\! |z|\! |\! |^2_{\mathrm{SDG}}\le (3+2\rho d+C_P)\sum _T\lVert z\rVert ^2_{\mathrm{SDG}(T)}. \]
@@ -705,7 +709,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">5.8</span><span class="lemma_thmtitle">Poincaré–Wirtinger and polynomial moments</span></div>
+      <span class="lemma_thmlabel">6.8</span><span class="lemma_thmtitle">Poincaré–Wirtinger and polynomial moments</span></div>
     <div class="thm_thmcontent"><p>   On a compact convex set \(K\) of diameter \(h\), \(\int _K\lvert u-\bar u\rvert ^2\le C h^2\int _K\lvert \nabla u\rvert ^2\), with \(C\) depending only on \(d\) and \(h^d/\lvert K\rvert \). This holds for \(C^1\) functions and for weak \(H^1\) jets. For given moments \(m_\alpha \), \(\lvert \alpha \rvert \le k\), there is a polynomial \(q\) of degree at most \(k\) with \(\int \partial ^\alpha q=m_\alpha \). </p>
 </div>
 
@@ -746,7 +750,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">5.4</span><span class="lemma_thmtitle">Trace inequality for smooth and Sobolev functions</span></div>
+      <span class="lemma_thmlabel">6.4</span><span class="lemma_thmtitle">Trace inequality for smooth and Sobolev functions</span></div>
     <div class="thm_thmcontent"><p>   \(h_T\lVert v\rVert ^2_{L^2(F_j)}\le \frac\rho 2\bigl((d+1)\lVert v\rVert ^2_{L^2(T)}+h_T^2\lVert \nabla v\rVert ^2_{L^2(T)}\bigr)\) for \(C^1\) functions, and hence for Sobolev traces. </p>
 </div>
 
@@ -774,6 +778,286 @@
 
 
     
+    <div class="dep-modal-container" id="ml:convolution_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:convolution" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.6</span><span class="theorem_thmtitle">Bump functions and convolution</span></div>
+    <div class="thm_thmcontent"><p>  There are smooth bump functions with compact support, and the convolution of a locally integrable function with a smooth compactly supported kernel is smooth. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:convolution">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ContDiffBump" class="lean_decl">ContDiffBump</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/HasCompactSupport.contDiff_convolution_left" class="lean_decl">HasCompactSupport.contDiff_convolution_left</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:findim_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:findim" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.8</span><span class="theorem_thmtitle">Linear maps of finite-dimensional spaces</span></div>
+    <div class="thm_thmcontent"><p>  A linear endomorphism of a finite-dimensional vector space is injective if and only if it is surjective. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:findim">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/LinearMap.injective_iff_surjective">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:ftc_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:ftc" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.5</span><span class="theorem_thmtitle">Fundamental theorem of calculus</span></div>
+    <div class="thm_thmcontent"><p>  \(\int _a^bf'=f(b)-f(a)\) when \(f\) has an integrable derivative on \([a,b]\). </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:ftc">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/intervalIntegral.integral_eq_sub_of_hasDerivAt">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:fubini_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:fubini" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.4</span><span class="theorem_thmtitle">Fubini–Tonelli theorem</span></div>
+    <div class="thm_thmcontent"><p>  Integrals over a product of \(\sigma \)-finite measure spaces are iterated integrals, in either order. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:fubini">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MeasureTheory.integral_prod" class="lean_decl">MeasureTheory.integral_prod</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MeasureTheory.lintegral_prod" class="lean_decl">MeasureTheory.lintegral_prod</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MeasureTheory.integral_integral_swap" class="lean_decl">MeasureTheory.integral_integral_swap</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:hausdorff_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:hausdorff" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2.2</span><span class="definition_thmtitle">Hausdorff measure</span></div>
+    <div class="thm_thmcontent"><p>  The \(k\)-dimensional Hausdorff measure on a Euclidean space, normalized to agree with Lebesgue measure on \(k\)-dimensional subspaces; it is the measure on the faces of the cells. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:hausdorff">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MeasureTheory.Measure.euclideanHausdorffMeasure">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:polynomials_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:polynomials" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2.3</span><span class="definition_thmtitle">Multivariate polynomials</span></div>
+    <div class="thm_thmcontent"><p>  Polynomials in \(d\) variables with real coefficients, and their partial derivatives. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:polynomials">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MvPolynomial" class="lean_decl">MvPolynomial</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MvPolynomial.pderiv" class="lean_decl">MvPolynomial.pderiv</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:simplex_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:simplex" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2.1</span><span class="definition_thmtitle">Affine simplices</span></div>
+    <div class="thm_thmcontent"><p>  Affine simplices in a Euclidean space, their closed interiors and their faces. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:simplex">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/Affine.Simplex" class="lean_decl">Affine.Simplex</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/Affine.Simplex.closedInterior" class="lean_decl">Affine.Simplex.closedInterior</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/Affine.Simplex.faceOpposite" class="lean_decl">Affine.Simplex.faceOpposite</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:testlemma_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:testlemma" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.7</span><span class="theorem_thmtitle">Fundamental lemma of the calculus of variations</span></div>
+    <div class="thm_thmcontent"><p>  A locally integrable function on an open set whose integrals against all smooth compactly supported functions vanish is zero almost everywhere. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:testlemma">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/IsOpen.ae_eq_zero_of_integral_contDiff_smul_eq_zero">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
     <div class="dep-modal-container" id="thm:bramblehilbert_modal">
       <div class="dep-modal-content">
           <button class="dep-closebtn">
@@ -785,7 +1069,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">5.9</span><span class="theorem_thmtitle">Bramble–Hilbert</span></div>
+      <span class="theorem_thmlabel">6.9</span><span class="theorem_thmtitle">Bramble–Hilbert</span></div>
     <div class="thm_thmcontent"><p>   There is \(C=C(d,k)\) such that for every cell of an admissible mesh and every weak \(H^{k+1}\) jet \(J\) on it, some polynomial \(q\) of degree at most \(k\) satisfies \(h_T^{2j}\lvert J-q\rvert ^2_{H^j(T)}\le C\, h_T^{2(k+1)}\lvert J\rvert ^2_{H^{k+1}(T)}\) for all \(j\le k+1\). </p>
 </div>
 
@@ -815,7 +1099,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">7.7</span><span class="theorem_thmtitle">Consistency</span></div>
+      <span class="theorem_thmlabel">8.7</span><span class="theorem_thmtitle">Consistency</span></div>
     <div class="thm_thmcontent"><p>   For every exact solution \(\varphi \) (with \(k\ge 1\)), \(B^{\mathrm{DG}}(\varphi ,\mu )=L^{\mathrm{DG}}(\mu )\) and \(B^{\mathrm{SDG}}(\varphi ,\mu )=L^{\mathrm{SDG}}(\mu )\) for all \(\mu \in V_h\). </p>
 </div>
 
@@ -845,7 +1129,7 @@
       <span class="proposition_thmcaption">
       Proposition
       </span>
-      <span class="proposition_thmlabel">7.3</span><span class="proposition_thmtitle">Continuity, Prop.&#160;3.3</span></div>
+      <span class="proposition_thmlabel">8.3</span><span class="proposition_thmtitle">Continuity, Prop.&#160;3.3</span></div>
     <div class="thm_thmcontent"><p>   For all broken \(H^2\) fields \(U\) and \(V\), \(\lvert B^{\mathrm{DG}}(U,V)\rvert \le C|\! |\! |U|\! |\! |_{\mathrm{SDG}}\lVert V\rVert _{\mathrm{SDG}}\) and \(\lvert B^{\mathrm{SDG}}(U,V)\rvert \le C|\! |\! |U|\! |\! |_{\mathrm{SDG}}\lVert V\rVert _{\mathrm{SDG}}\), with \(C\) independent of the mesh, \(\kappa \) and \(a\). </p>
 </div>
 
@@ -875,7 +1159,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">6.3</span><span class="theorem_thmtitle">Continuous representatives</span></div>
+      <span class="theorem_thmlabel">7.3</span><span class="theorem_thmtitle">Continuous representatives</span></div>
     <div class="thm_thmcontent"><p>   Let \(d\le 3\), and let \(J\) be a jet with \(H^2\) traces on a cell. The smooth approximants of \(J\) converge uniformly on the closed cell. The limit \(w\) is continuous, agrees a.e. with \(J\) and with its facet traces, and satisfies the sup bound against every smooth comparison function. For a global jet, the representatives of neighbouring cells agree everywhere on the common face. </p>
 </div>
 
@@ -916,8 +1200,8 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">5.5</span><span class="theorem_thmtitle">Density of smooth functions</span></div>
-    <div class="thm_thmcontent"><p>  On an open convex set containing a ball, every weak \(H^m\) jet is the limit of smooth functions in all derivatives of order at most \(m\). </p>
+      <span class="theorem_thmlabel">6.5</span><span class="theorem_thmtitle">Density of smooth functions</span></div>
+    <div class="thm_thmcontent"><p>   On an open convex set containing a ball, every weak \(H^m\) jet is the limit of smooth functions in all derivatives of order at most \(m\). </p>
 </div>
 
     <a class="latex_link" href="chap-analysis.html#thm:density">LaTeX</a>
@@ -946,7 +1230,7 @@
       <span class="proposition_thmcaption">
       Proposition
       </span>
-      <span class="proposition_thmlabel">7.1</span><span class="proposition_thmtitle">DG coercivity, Prop.&#160;3.2</span></div>
+      <span class="proposition_thmlabel">8.1</span><span class="proposition_thmtitle">DG coercivity, Prop.&#160;3.2</span></div>
     <div class="thm_thmcontent"><p>   There is \(\varepsilon _0\) such that for \(\varepsilon \ge \varepsilon _0\), \(B^{\mathrm{DG}}(\mu ,\mu )\ge c\lVert \mu \rVert ^2_{\mathrm{DG}}\) on \(V_h\), with \(c\) independent of the mesh, \(\kappa \), \(a\) and \(\varepsilon \). </p>
 </div>
 
@@ -976,7 +1260,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">7.4</span><span class="theorem_thmtitle">DG inf-sup in the SDG norm, Thm.&#160;3.5</span></div>
+      <span class="theorem_thmlabel">8.4</span><span class="theorem_thmtitle">DG inf-sup in the SDG norm, Thm.&#160;3.5</span></div>
     <div class="thm_thmcontent"><p>   There is \(\varepsilon _0\) such that for all \(\varepsilon \ge \varepsilon _0\) and \(\tau {\gt}0\) there is \(\beta {\gt}0\) with: for every \(\nu \in V_h\) some \(\mu \in V_h\) satisfies \(\lVert \mu \rVert _{\mathrm{SDG}}\le \lVert \nu \rVert _{\mathrm{SDG}}\) and \(B^{\mathrm{DG}}(\nu ,\mu )\ge \beta \lVert \nu \rVert ^2_{\mathrm{SDG}}\). </p>
 </div>
 
@@ -1006,7 +1290,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">5.2</span><span class="theorem_thmtitle">Divergence theorem on simplices</span></div>
+      <span class="theorem_thmlabel">6.2</span><span class="theorem_thmtitle">Divergence theorem on simplices</span></div>
     <div class="thm_thmcontent"><p>   For \(C^1\) fields \(F\) on a neighbourhood of a simplex, \(\int _T\operatorname {div}F=\sum _j\int _{F_j}F\cdot n_j\, \mathrm{d}\mathcal H^{d-1}\). In particular, Green’s formula holds for smooth functions on the cells. </p>
 </div>
 
@@ -1045,7 +1329,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">8.2</span><span class="theorem_thmtitle">Error estimates: Prop.&#160;3.4, Cor.&#160;3.7, Thms.&#160;4.3 and 4.6</span></div>
+      <span class="theorem_thmlabel">9.2</span><span class="theorem_thmtitle">Error estimates: Prop.&#160;3.4, Cor.&#160;3.7, Thms.&#160;4.3 and 4.6</span></div>
     <div class="thm_thmcontent"><p>   Assume SDG stability, the DG and local inf-sup conditions, the local Poincaré inequality, consistency, and an interpolation premise with constant \(C_I\). Then the SDG, DG and SMDG errors in \(\lVert \cdot \rVert _{\mathrm{SDG}}\), and the transfer approximation error in \(|\! |\! |\cdot |\! |\! |_{\mathrm{SDG}}\), are bounded by \(C\) times the error indicator. Here \(C\) depends only on \(d,\rho ,\varepsilon \) and the given constants. </p>
 </div>
 
@@ -1084,7 +1368,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">6.4</span><span class="theorem_thmtitle">Interpolation estimate</span></div>
+      <span class="theorem_thmlabel">7.4</span><span class="theorem_thmtitle">Interpolation estimate</span></div>
     <div class="thm_thmcontent"><p>   For \(d\le 3\) there is \(C_I\) with the following property. For every exact solution there is a coarse field \(c\in \overline{V}_h\) with \(\sum _T\lVert \varphi -c\rVert ^2_{\mathrm{SDG}(T)}\le C_I^2\sum _T(\lvert a\rvert h_T^{2k+1}+\kappa h_T^{2k})\lvert \varphi \rvert ^2_{H^{k+1}(T)}\). </p>
 </div>
 
@@ -1127,7 +1411,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">7.5</span><span class="lemma_thmtitle">Local inf-sup, Lemma&#160;4.4</span></div>
+      <span class="lemma_thmlabel">8.5</span><span class="lemma_thmtitle">Local inf-sup, Lemma&#160;4.4</span></div>
     <div class="thm_thmcontent"><p>   There is \(\varepsilon _0\) such that for \(\varepsilon \ge \varepsilon _0\), \(\tau {\gt}0\) and every bound \(\delta _{\max }\ge 0\) there is \(\beta _L{\gt}0\) such that the local forms \(b_T\) satisfy the normalized inf-sup condition in \(\lVert \cdot \rVert _{\mathrm{SDG}(T)}\) for all \(\delta \in [0,\delta _{\max }]\). </p>
 </div>
 
@@ -1157,7 +1441,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">7.6</span><span class="lemma_thmtitle">Local Poincaré inequality, Lemma&#160;4.5</span></div>
+      <span class="lemma_thmlabel">8.6</span><span class="lemma_thmtitle">Local Poincaré inequality, Lemma&#160;4.5</span></div>
     <div class="thm_thmcontent"><p>   \(\tau _T^{-1}\lVert \nu \rVert ^2_{L^2(T)}\le C\lVert \nu \rVert ^2_{\mathrm{SDG}(T)}\) (without the Hessian term) for every \(H^1\) jet \(\nu \) with traces. </p>
 </div>
 
@@ -1187,7 +1471,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">3.1</span><span class="theorem_thmtitle">Section 3 of the paper</span></div>
+      <span class="theorem_thmlabel">4.1</span><span class="theorem_thmtitle">Section 3 of the paper</span></div>
     <div class="thm_thmcontent"><p>   Propositions 3.2 (including its clause for \(s=1\)), 3.3 and 3.4, Theorem&#160;3.5 and Corollary&#160;3.7, as stated in the paper. Theorem&#160;3.5 and Corollary&#160;3.7 hold for every streamline parameter \(\tau {\gt}0\); the inf-sup condition (3.24) is written as: for every \(\nu \ne 0\) in \(V_h\) there is \(\mu \ne 0\) in \(V_h\) with \(B^{\mathrm{DG}}(\nu ,\mu )/(\lVert \nu \rVert _{\mathrm{SDG}}\lVert \mu \rVert _{\mathrm{SDG}})\ge \beta _{\mathrm{DG}}\). </p>
 </div>
 
@@ -1234,7 +1518,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">3.2</span><span class="theorem_thmtitle">Section 4 of the paper</span></div>
+      <span class="theorem_thmlabel">4.2</span><span class="theorem_thmtitle">Section 4 of the paper</span></div>
     <div class="thm_thmcontent"><p>   Theorem&#160;4.3, Lemmas 4.4 and 4.5, and Theorem&#160;4.6, as stated in the paper. Theorem&#160;4.3 holds for every \(\tau {\gt}0\); Lemma&#160;4.5 is stated on \(H^1(T)\) without the \(H^2\) term of \(\lVert \cdot \rVert _{\mathrm{SDG}(T)}\). </p>
 </div>
 
@@ -1277,7 +1561,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">3.3</span><span class="theorem_thmtitle">Consistency, well-posedness and traces</span></div>
+      <span class="theorem_thmlabel">4.3</span><span class="theorem_thmtitle">Consistency, well-posedness and traces</span></div>
     <div class="thm_thmcontent"><p>   The exact solution satisfies the DG and SDG equations; the problems (3.2), (3.13), (4.1) and (4.4) have unique solutions; every weak \(H^m\) jet on a cell has unique traces, and every weak \(H^{k+1}(\Omega )\) jet is realized by a broken \(H^2\) field. The last fact shows that the error estimates apply to every solution \(\varphi \in H^{k+1}(\Omega )\). </p>
 </div>
 
@@ -1324,7 +1608,7 @@
       <span class="proposition_thmcaption">
       Proposition
       </span>
-      <span class="proposition_thmlabel">7.2</span><span class="proposition_thmtitle">SDG coercivity, Prop.&#160;3.3</span></div>
+      <span class="proposition_thmlabel">8.2</span><span class="proposition_thmtitle">SDG coercivity, Prop.&#160;3.3</span></div>
     <div class="thm_thmcontent"><p>   There are \(\varepsilon _0,\tau _{\max }{\gt}0\) such that for \(\varepsilon \ge \varepsilon _0\) and \(0\le \tau \le \tau _{\max }\), \(B^{\mathrm{SDG}}(\mu ,\mu )\ge c\lVert \mu \rVert ^2_{\mathrm{SDG}}\) on \(V_h\). </p>
 </div>
 
@@ -1354,7 +1638,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">3.4</span><span class="theorem_thmtitle">Skew-symmetric penalty, Prop.&#160;3.2</span></div>
+      <span class="theorem_thmlabel">4.4</span><span class="theorem_thmtitle">Skew-symmetric penalty, Prop.&#160;3.2</span></div>
     <div class="thm_thmcontent"><p>   For \(s=1\) and every \(\varepsilon {\gt}0\) there is \(c{\gt}0\) with \(B^{\mathrm{DG}}(\mu ,\mu )\ge c\lVert \mu \rVert ^2_{\mathrm{DG}}\) on \(V_h\), uniformly in the admissible mesh, \(\kappa {\gt}0\) and \(a\). </p>
 </div>
 
@@ -1384,7 +1668,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">7.8</span><span class="theorem_thmtitle">Unique solvability</span></div>
+      <span class="theorem_thmlabel">8.8</span><span class="theorem_thmtitle">Unique solvability</span></div>
     <div class="thm_thmcontent"><p>   DG, SDG, SMDG and the local transfer problems have unique solutions. </p>
 </div>
 
@@ -1427,7 +1711,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">5.10</span><span class="theorem_thmtitle">Scaled sup bound, \(d\le 3\)</span></div>
+      <span class="theorem_thmlabel">6.10</span><span class="theorem_thmtitle">Scaled sup bound, \(d\le 3\)</span></div>
     <div class="thm_thmcontent"><p>   For \(d\le 3\) and smooth \(u\), at every point \(x\) of a cell, \(\lvert T\rvert \, u(x)^2\le C\bigl(\lVert u\rVert ^2_{L^2(T)}+h_T^2\lvert u\rvert ^2_{H^1(T)}+h_T^4\lvert u\rvert ^2_{H^2(T)}\bigr)\) with \(C=3(4d+1)\). </p>
 </div>
 
@@ -1466,7 +1750,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">5.6</span><span class="theorem_thmtitle">Traces exist, are unique, and agree across faces</span></div>
+      <span class="theorem_thmlabel">6.6</span><span class="theorem_thmtitle">Traces exist, are unique, and agree across faces</span></div>
     <div class="thm_thmcontent"><p>   Every weak \(H^m\) jet on a cell (\(m\ge 1\)) has traces of order \({\lt}m\) on its facets, unique almost everywhere. Every weak \(H^{k+1}(\Omega )\) jet is realized by a broken \(H^2\) field. For a global weak jet, the traces of the two cells sharing an interior face agree almost everywhere. </p>
 </div>
 
@@ -1516,7 +1800,7 @@ graphContainer.graphviz({useWorker: true})
     .width(width)
     .height(height)
     .fit(true)
-    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"lem:traceineq"	[color=green,		fillcolor="#1CAC78",		label=traceineq,		shape=ellipse,		style=filled];	"thm:traces"	[color=green,		fillcolor="#1CAC78",		label=traces,		shape=ellipse,		style=filled];	"lem:traceineq" -> "thm:traces"	[style=dashed];	"thm:continuity"	[color=green,		fillcolor="#1CAC78",		label=continuity,		shape=ellipse,		style=filled];	"lem:traceineq" -> "thm:continuity"	[style=dashed];	"thm:continuousrep"	[color=green,		fillcolor="#1CAC78",		label=continuousrep,		shape=ellipse,		style=filled];	"thm:traces" -> "thm:continuousrep"	[style=dashed];	"lem:green"	[color=green,		fillcolor="#1CAC78",		label=green,		shape=ellipse,		style=filled];	"thm:traces" -> "lem:green"	[style=dashed];	"thm:errorestimates"	[color=green,		fillcolor="#1CAC78",		label=errorestimates,		shape=ellipse,		style=filled];	"thm:continuity" -> "thm:errorestimates"	[style=dashed];	"thm:interpolation"	[color=green,		fillcolor="#1CAC78",		label=interpolation,		shape=ellipse,		style=filled];	"thm:continuousrep" -> "thm:interpolation"	[style=dashed];	"thm:localpoincare"	[color=green,		fillcolor="#1CAC78",		label=localpoincare,		shape=ellipse,		style=filled];	"lem:green" -> "thm:localpoincare"	[style=dashed];	"thm:consistency"	[color=green,		fillcolor="#1CAC78",		label=consistency,		shape=ellipse,		style=filled];	"lem:green" -> "thm:consistency"	[style=dashed];	"lem:localglobal"	[color=green,		fillcolor="#1CAC78",		label=localglobal,		shape=ellipse,		style=filled];	"thm:localpoincare" -> "lem:localglobal"	[style=dashed];	"lem:localglobal" -> "thm:errorestimates"	[style=dashed];	"thm:main4"	[color=green,		fillcolor="#1CAC78",		label=main4,		shape=ellipse,		style=filled];	"thm:errorestimates" -> "thm:main4"	[style=dashed];	"thm:main3"	[color=green,		fillcolor="#1CAC78",		label=main3,		shape=ellipse,		style=filled];	"thm:errorestimates" -> "thm:main3"	[style=dashed];	"thm:localinfsup"	[color=green,		fillcolor="#1CAC78",		label=localinfsup,		shape=ellipse,		style=filled];	"thm:solvability"	[color=green,		fillcolor="#1CAC78",		label=solvability,		shape=ellipse,		style=filled];	"thm:localinfsup" -> "thm:solvability"	[style=dashed];	"thm:solvability" -> "thm:errorestimates"	[style=dashed];	"thm:mainaux"	[color=green,		fillcolor="#1CAC78",		label=mainaux,		shape=ellipse,		style=filled];	"thm:solvability" -> "thm:mainaux"	[style=dashed];	"thm:bramblehilbert"	[color=green,		fillcolor="#1CAC78",		label=bramblehilbert,		shape=ellipse,		style=filled];	"thm:bramblehilbert" -> "thm:interpolation"	[style=dashed];	"thm:interpolation" -> "thm:main4"	[style=dashed];	"thm:interpolation" -> "thm:main3"	[style=dashed];	"thm:consistency" -> "thm:errorestimates"	[style=dashed];	"thm:consistency" -> "thm:mainaux"	[style=dashed];	"def:jets"	[color=green,		fillcolor="#B0ECA3",		label=jets,		shape=box,		style=filled];	"def:forms"	[color=green,		fillcolor="#B0ECA3",		label=forms,		shape=box,		style=filled];	"def:jets" -> "def:forms"	[style=dashed];	"def:forms" -> "thm:continuity"	[style=dashed];	"def:local"	[color=green,		fillcolor="#B0ECA3",		label=local,		shape=box,		style=filled];	"def:forms" -> "def:local"	[style=dashed];	"thm:dgcoercivity"	[color=green,		fillcolor="#1CAC78",		label=dgcoercivity,		shape=ellipse,		style=filled];	"def:forms" -> "thm:dgcoercivity"	[style=dashed];	"thm:skew"	[color=green,		fillcolor="#1CAC78",		label=skew,		shape=ellipse,		style=filled];	"def:forms" -> "thm:skew"	[style=dashed];	"def:local" -> "thm:localinfsup"	[style=dashed];	"def:exact"	[color=green,		fillcolor="#B0ECA3",		label=exact,		shape=box,		style=filled];	"def:local" -> "def:exact"	[style=dashed];	"thm:sdgcoercivity"	[color=green,		fillcolor="#1CAC78",		label=sdgcoercivity,		shape=ellipse,		style=filled];	"thm:dgcoercivity" -> "thm:sdgcoercivity"	[style=dashed];	"thm:dginfsup"	[color=green,		fillcolor="#1CAC78",		label=dginfsup,		shape=ellipse,		style=filled];	"thm:dgcoercivity" -> "thm:dginfsup"	[style=dashed];	"thm:skew" -> "thm:main3"	[style=dashed];	"lem:heights"	[color=green,		fillcolor="#1CAC78",		label=heights,		shape=ellipse,		style=filled];	"lem:heights" -> "lem:traceineq"	[style=dashed];	"lem:heights" -> "thm:bramblehilbert"	[style=dashed];	"thm:supbound"	[color=green,		fillcolor="#1CAC78",		label=supbound,		shape=ellipse,		style=filled];	"lem:heights" -> "thm:supbound"	[style=dashed];	"lem:inverse"	[color=green,		fillcolor="#1CAC78",		label=inverse,		shape=ellipse,		style=filled];	"lem:heights" -> "lem:inverse"	[style=dashed];	"thm:supbound" -> "thm:continuousrep"	[style=dashed];	"lem:inverse" -> "thm:continuity"	[style=dashed];	"lem:inverse" -> "thm:interpolation"	[style=dashed];	"lem:inverse" -> "thm:dgcoercivity"	[style=dashed];	"lem:cone"	[color=green,		fillcolor="#1CAC78",		label=cone,		shape=ellipse,		style=filled];	"lem:cone" -> "lem:traceineq"	[style=dashed];	"thm:divergence"	[color=green,		fillcolor="#1CAC78",		label=divergence,		shape=ellipse,		style=filled];	"lem:cone" -> "thm:divergence"	[style=dashed];	"thm:divergence" -> "lem:green"	[style=dashed];	"thm:divergence" -> "lem:inverse"	[style=dashed];	"lem:halfball"	[color=green,		fillcolor="#1CAC78",		label=halfball,		shape=ellipse,		style=filled];	"lem:halfball" -> "thm:traces"	[style=dashed];	"lem:conformity"	[color=green,		fillcolor="#1CAC78",		label=conformity,		shape=ellipse,		style=filled];	"lem:conformity" -> "thm:interpolation"	[style=dashed];	"def:exact" -> "thm:main3"	[style=dashed];	"thm:sdgcoercivity" -> "thm:solvability"	[style=dashed];	"thm:dginfsup" -> "thm:localinfsup"	[style=dashed];	"thm:density"	[color=green,		fillcolor="#1CAC78",		label=density,		shape=ellipse,		style=filled];	"thm:density" -> "thm:traces"	[style=dashed];	"lem:poincare"	[color=green,		fillcolor="#1CAC78",		label=poincare,		shape=ellipse,		style=filled];	"thm:density" -> "lem:poincare"	[style=dashed];	"lem:poincare" -> "thm:bramblehilbert"	[style=dashed];	"def:mesh"	[color=green,		fillcolor="#B0ECA3",		label=mesh,		shape=box,		style=filled];	"def:mesh" -> "def:forms"	[style=dashed];	"def:mesh" -> "lem:heights"	[style=dashed];	"def:mesh" -> "lem:conformity"	[style=dashed];	"lem:combinatorics"	[color=green,		fillcolor="#1CAC78",		label=combinatorics,		shape=ellipse,		style=filled];	"def:mesh" -> "lem:combinatorics"	[style=dashed];	"lem:combinatorics" -> "thm:divergence"	[style=dashed];	"lem:combinatorics" -> "lem:halfball"	[style=dashed];	"lem:lagrange"	[color=green,		fillcolor="#1CAC78",		label=lagrange,		shape=ellipse,		style=filled];	"lem:lagrange" -> "lem:conformity"	[style=dashed];}`)
+    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"thm:localinfsup"	[color=green,		fillcolor="#1CAC78",		label=localinfsup,		shape=ellipse,		style=filled];	"thm:solvability"	[color=green,		fillcolor="#1CAC78",		label=solvability,		shape=ellipse,		style=filled];	"thm:localinfsup" -> "thm:solvability"	[style=dashed];	"thm:errorestimates"	[color=green,		fillcolor="#1CAC78",		label=errorestimates,		shape=ellipse,		style=filled];	"thm:solvability" -> "thm:errorestimates"	[style=dashed];	"thm:mainaux"	[color=green,		fillcolor="#F5B841",		label=mainaux,		shape=ellipse,		style=filled];	"thm:solvability" -> "thm:mainaux"	[style=dashed];	"thm:main4"	[color=green,		fillcolor="#F5B841",		label=main4,		shape=ellipse,		style=filled];	"thm:errorestimates" -> "thm:main4"	[style=dashed];	"thm:main3"	[color=green,		fillcolor="#F5B841",		label=main3,		shape=ellipse,		style=filled];	"thm:errorestimates" -> "thm:main3"	[style=dashed];	"thm:localpoincare"	[color=green,		fillcolor="#1CAC78",		label=localpoincare,		shape=ellipse,		style=filled];	"lem:localglobal"	[color=green,		fillcolor="#1CAC78",		label=localglobal,		shape=ellipse,		style=filled];	"thm:localpoincare" -> "lem:localglobal"	[style=dashed];	"lem:localglobal" -> "thm:errorestimates"	[style=dashed];	"thm:continuity"	[color=green,		fillcolor="#1CAC78",		label=continuity,		shape=ellipse,		style=filled];	"thm:continuity" -> "thm:errorestimates"	[style=dashed];	"ml:convolution"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=convolution,		shape=ellipse,		style=filled];	"thm:density"	[color=green,		fillcolor="#1CAC78",		label=density,		shape=ellipse,		style=filled];	"ml:convolution" -> "thm:density"	[style=dashed];	"lem:poincare"	[color=green,		fillcolor="#1CAC78",		label=poincare,		shape=ellipse,		style=filled];	"thm:density" -> "lem:poincare"	[style=dashed];	"thm:traces"	[color=green,		fillcolor="#1CAC78",		label=traces,		shape=ellipse,		style=filled];	"thm:density" -> "thm:traces"	[style=dashed];	"thm:bramblehilbert"	[color=green,		fillcolor="#1CAC78",		label=bramblehilbert,		shape=ellipse,		style=filled];	"lem:poincare" -> "thm:bramblehilbert"	[style=dashed];	"lem:green"	[color=green,		fillcolor="#1CAC78",		label=green,		shape=ellipse,		style=filled];	"thm:traces" -> "lem:green"	[style=dashed];	"thm:continuousrep"	[color=green,		fillcolor="#1CAC78",		label=continuousrep,		shape=ellipse,		style=filled];	"thm:traces" -> "thm:continuousrep"	[style=dashed];	"lem:green" -> "thm:localpoincare"	[style=dashed];	"thm:consistency"	[color=green,		fillcolor="#1CAC78",		label=consistency,		shape=ellipse,		style=filled];	"lem:green" -> "thm:consistency"	[style=dashed];	"thm:consistency" -> "thm:errorestimates"	[style=dashed];	"thm:consistency" -> "thm:mainaux"	[style=dashed];	"thm:sdgcoercivity"	[color=green,		fillcolor="#1CAC78",		label=sdgcoercivity,		shape=ellipse,		style=filled];	"thm:sdgcoercivity" -> "thm:solvability"	[style=dashed];	"ml:ftc"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=ftc,		shape=ellipse,		style=filled];	"ml:ftc" -> "lem:poincare"	[style=dashed];	"thm:supbound"	[color=green,		fillcolor="#1CAC78",		label=supbound,		shape=ellipse,		style=filled];	"ml:ftc" -> "thm:supbound"	[style=dashed];	"lem:cone"	[color=green,		fillcolor="#1CAC78",		label=cone,		shape=ellipse,		style=filled];	"ml:ftc" -> "lem:cone"	[style=dashed];	"thm:supbound" -> "thm:continuousrep"	[style=dashed];	"thm:divergence"	[color=green,		fillcolor="#1CAC78",		label=divergence,		shape=ellipse,		style=filled];	"lem:cone" -> "thm:divergence"	[style=dashed];	"lem:traceineq"	[color=green,		fillcolor="#1CAC78",		label=traceineq,		shape=ellipse,		style=filled];	"lem:cone" -> "lem:traceineq"	[style=dashed];	"thm:interpolation"	[color=green,		fillcolor="#1CAC78",		label=interpolation,		shape=ellipse,		style=filled];	"thm:continuousrep" -> "thm:interpolation"	[style=dashed];	"thm:divergence" -> "lem:green"	[style=dashed];	"lem:inverse"	[color=green,		fillcolor="#1CAC78",		label=inverse,		shape=ellipse,		style=filled];	"thm:divergence" -> "lem:inverse"	[style=dashed];	"lem:traceineq" -> "thm:continuity"	[style=dashed];	"lem:traceineq" -> "thm:traces"	[style=dashed];	"thm:bramblehilbert" -> "thm:interpolation"	[style=dashed];	"thm:interpolation" -> "thm:main4"	[style=dashed];	"thm:interpolation" -> "thm:main3"	[style=dashed];	"thm:dginfsup"	[color=green,		fillcolor="#1CAC78",		label=dginfsup,		shape=ellipse,		style=filled];	"thm:dginfsup" -> "thm:localinfsup"	[style=dashed];	"ml:simplex"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=simplex,		shape=box,		style=filled];	"def:mesh"	[color=green,		fillcolor="#B0ECA3",		label=mesh,		shape=box,		style=filled];	"ml:simplex" -> "def:mesh"	[style=dashed];	"lem:heights"	[color=green,		fillcolor="#1CAC78",		label=heights,		shape=ellipse,		style=filled];	"def:mesh" -> "lem:heights"	[style=dashed];	"def:forms"	[color=green,		fillcolor="#B0ECA3",		label=forms,		shape=box,		style=filled];	"def:mesh" -> "def:forms"	[style=dashed];	"lem:conformity"	[color=green,		fillcolor="#1CAC78",		label=conformity,		shape=ellipse,		style=filled];	"def:mesh" -> "lem:conformity"	[style=dashed];	"lem:combinatorics"	[color=green,		fillcolor="#1CAC78",		label=combinatorics,		shape=ellipse,		style=filled];	"def:mesh" -> "lem:combinatorics"	[style=dashed];	"lem:heights" -> "thm:supbound"	[style=dashed];	"lem:heights" -> "lem:traceineq"	[style=dashed];	"lem:heights" -> "thm:bramblehilbert"	[style=dashed];	"lem:heights" -> "lem:inverse"	[style=dashed];	"def:forms" -> "thm:continuity"	[style=dashed];	"thm:dgcoercivity"	[color=green,		fillcolor="#1CAC78",		label=dgcoercivity,		shape=ellipse,		style=filled];	"def:forms" -> "thm:dgcoercivity"	[style=dashed];	"thm:skew"	[color=green,		fillcolor="#1CAC78",		label=skew,		shape=ellipse,		style=filled];	"def:forms" -> "thm:skew"	[style=dashed];	"def:local"	[color=green,		fillcolor="#B0ECA3",		label=local,		shape=box,		style=filled];	"def:forms" -> "def:local"	[style=dashed];	"lem:conformity" -> "thm:interpolation"	[style=dashed];	"lem:combinatorics" -> "thm:divergence"	[style=dashed];	"lem:halfball"	[color=green,		fillcolor="#1CAC78",		label=halfball,		shape=ellipse,		style=filled];	"lem:combinatorics" -> "lem:halfball"	[style=dashed];	"lem:inverse" -> "thm:continuity"	[style=dashed];	"lem:inverse" -> "thm:interpolation"	[style=dashed];	"lem:inverse" -> "thm:dgcoercivity"	[style=dashed];	"thm:dgcoercivity" -> "thm:sdgcoercivity"	[style=dashed];	"thm:dgcoercivity" -> "thm:dginfsup"	[style=dashed];	"ml:testlemma"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=testlemma,		shape=ellipse,		style=filled];	"ml:testlemma" -> "thm:traces"	[style=dashed];	"thm:skew" -> "thm:main3"	[style=dashed];	"def:local" -> "thm:localinfsup"	[style=dashed];	"def:exact"	[color=green,		fillcolor="#B0ECA3",		label=exact,		shape=box,		style=filled];	"def:local" -> "def:exact"	[style=dashed];	"def:exact" -> "thm:main3"	[style=dashed];	"ml:fubini"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=fubini,		shape=ellipse,		style=filled];	"ml:fubini" -> "lem:cone"	[style=dashed];	"lem:lagrange"	[color=green,		fillcolor="#1CAC78",		label=lagrange,		shape=ellipse,		style=filled];	"lem:lagrange" -> "lem:conformity"	[style=dashed];	"ml:hausdorff"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=hausdorff,		shape=box,		style=filled];	"ml:hausdorff" -> "def:mesh"	[style=dashed];	"ml:polynomials"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=polynomials,		shape=box,		style=filled];	"ml:polynomials" -> "lem:inverse"	[style=dashed];	"ml:polynomials" -> "lem:lagrange"	[style=dashed];	"lem:halfball" -> "thm:traces"	[style=dashed];	"def:jets"	[color=green,		fillcolor="#B0ECA3",		label=jets,		shape=box,		style=filled];	"def:jets" -> "def:forms"	[style=dashed];	"ml:findim"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=findim,		shape=ellipse,		style=filled];	"ml:findim" -> "thm:solvability"	[style=dashed];	"ml:findim" -> "lem:lagrange"	[style=dashed];}`)
     .on("end", interactive);
 
 latexLabelEscaper = function(label) {

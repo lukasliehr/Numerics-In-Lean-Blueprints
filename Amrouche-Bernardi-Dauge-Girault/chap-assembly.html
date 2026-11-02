@@ -46,28 +46,31 @@
   </ul>
  </li>
 <li class="">
-  <a href="chap-setting.html"><span class="toc_ref">2</span> <span class="toc_entry">Setting and definitions</span></a>
+  <a href="chap-mathlib.html"><span class="toc_ref">2</span> <span class="toc_entry">Results from Mathlib</span></a>
  </li>
 <li class="">
-  <a href="chap-main.html"><span class="toc_ref">3</span> <span class="toc_entry">The main theorems</span></a>
+  <a href="chap-setting.html"><span class="toc_ref">3</span> <span class="toc_entry">Setting and definitions</span></a>
+ </li>
+<li class="">
+  <a href="chap-main.html"><span class="toc_ref">4</span> <span class="toc_entry">The main theorems</span></a>
  </li>
 <li class=" active current">
-  <a href="chap-assembly.html"><span class="toc_ref">4</span> <span class="toc_entry">The abstract assembly</span></a>
+  <a href="chap-assembly.html"><span class="toc_ref">5</span> <span class="toc_entry">The abstract assembly</span></a>
  </li>
 <li class="">
-  <a href="chap-cuts.html"><span class="toc_ref">5</span> <span class="toc_entry">The cuts</span></a>
+  <a href="chap-cuts.html"><span class="toc_ref">6</span> <span class="toc_entry">The cuts</span></a>
  </li>
 <li class="">
-  <a href="chap-analysis.html"><span class="toc_ref">6</span> <span class="toc_entry">Analysis on \(\mathbb {R}^3\)</span></a>
+  <a href="chap-analysis.html"><span class="toc_ref">7</span> <span class="toc_entry">Analysis on \(\mathbb {R}^3\)</span></a>
  </li>
 <li class="">
-  <a href="chap-topology.html"><span class="toc_ref">7</span> <span class="toc_entry">Topology of the cut domain</span></a>
+  <a href="chap-topology.html"><span class="toc_ref">8</span> <span class="toc_entry">Topology of the cut domain</span></a>
  </li>
 <li class="">
-  <a href="chap-boundary.html"><span class="toc_ref">8</span> <span class="toc_entry">The boundary</span></a>
+  <a href="chap-boundary.html"><span class="toc_ref">9</span> <span class="toc_entry">The boundary</span></a>
  </li>
 <li class="">
-  <a href="chap-correspondence.html"><span class="toc_ref">9</span> <span class="toc_entry">Correspondence with the paper</span></a>
+  <a href="chap-correspondence.html"><span class="toc_ref">10</span> <span class="toc_entry">Correspondence with the paper</span></a>
  </li>
 <li ><a href="dep_graph_document.html">Dependency graph</a></li>
 </ul>
@@ -78,14 +81,14 @@
 
 
 <div class="main-text">
-<h1 id="chap:assembly">4 The abstract assembly</h1>
+<h1 id="chap:assembly">5 The abstract assembly</h1>
 
 <div class="definition_thmwrapper theorem-style-definition" id="def:inputs">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">4.1</span>
+    <span class="definition_thmlabel">5.1</span>
     <span class="definition_thmtitle">Analytic inputs</span>
     <div class="thm_header_extras">
 
@@ -109,7 +112,7 @@
         
         <ul class="uses">
           
-          <li><a href="chap-setting.html#def:potentials">Definition 2.5</a></li>
+          <li><a href="chap-setting.html#def:potentials">Definition 3.5</a></li>
           
         </ul>
     
@@ -165,7 +168,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">4.2</span>
+    <span class="lemma_thmlabel">5.2</span>
     <span class="lemma_thmtitle">Necessary conditions</span>
     <div class="thm_header_extras">
 
@@ -192,7 +195,7 @@
         
         <ul class="uses">
           
-          <li><a href="chap-setting.html#def:fluxes">Definition 2.4</a></li>
+          <li><a href="chap-setting.html#def:fluxes">Definition 3.4</a></li>
           
         </ul>
     
@@ -250,7 +253,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">4.3</span>
+    <span class="lemma_thmlabel">5.3</span>
     <span class="lemma_thmtitle">The gauge space</span>
     <div class="thm_header_extras">
 
@@ -277,9 +280,11 @@
         
         <ul class="uses">
           
-          <li><a href="chap-assembly.html#def:inputs">Definition 4.1</a></li>
+          <li><a href="chap-mathlib.html#ml:projection">Theorem 2.3</a></li>
           
-          <li><a href="chap-assembly.html#lem:necessity">Lemma 4.2</a></li>
+          <li><a href="chap-assembly.html#def:inputs">Definition 5.1</a></li>
+          
+          <li><a href="chap-assembly.html#lem:necessity">Lemma 5.2</a></li>
           
         </ul>
     
@@ -328,7 +333,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>The first two statements unfold the definitions; divergence freeness follows from Lemma&#160;<a href="chap-assembly.html#lem:necessity">4.2</a>. \(K^\perp \) is the closed span of the generating gradients, which are curl free by Lemma&#160;<a href="chap-assembly.html#lem:necessity">4.2</a> and input 6; the curl kernel is closed. </p>
+  <p>The first two statements unfold the definitions; divergence freeness follows from Lemma&#160;<a href="chap-assembly.html#lem:necessity">5.2</a>. \(K^\perp \) is the closed span of the generating gradients, which are curl free by Lemma&#160;<a href="chap-assembly.html#lem:necessity">5.2</a> and input 6; the curl kernel is closed. </p>
 
   </div>
 </div>
@@ -337,7 +342,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">4.4</span>
+    <span class="theorem_thmlabel">5.4</span>
     <span class="theorem_thmtitle">Assembly of Theorem 3.12</span>
     <div class="thm_header_extras">
 
@@ -364,11 +369,13 @@
         
         <ul class="uses">
           
-          <li><a href="chap-assembly.html#def:inputs">Definition 4.1</a></li>
+          <li><a href="chap-mathlib.html#ml:projection">Theorem 2.3</a></li>
           
-          <li><a href="chap-assembly.html#lem:gauge">Lemma 4.3</a></li>
+          <li><a href="chap-assembly.html#def:inputs">Definition 5.1</a></li>
           
-          <li><a href="chap-assembly.html#lem:necessity">Lemma 4.2</a></li>
+          <li><a href="chap-assembly.html#lem:gauge">Lemma 5.3</a></li>
+          
+          <li><a href="chap-assembly.html#lem:necessity">Lemma 5.2</a></li>
           
         </ul>
     
@@ -411,7 +418,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>By input 3 there is \(\psi _0\) with \(\operatorname {curl}\psi _0=u\). Let \(\psi \) be the orthogonal projection of \(\psi _0\) onto \(K\). Then \(\psi _0-\psi \in K^\perp \) is curl free (Lemma&#160;<a href="chap-assembly.html#lem:gauge">4.3</a>), so \(\operatorname {curl}\psi =u\) and \(\psi \) is a tangential potential. If \(\chi \) is another one, \(\chi -\psi \) is curl free and lies in \(K\); hence it is divergence free with \((\chi -\psi )\cdot n=0\) and zero cut fluxes, and input 2 with \(v=h=\chi -\psi \) gives \(\lVert \chi -\psi \rVert ^2=0\). The converse is Lemma&#160;<a href="chap-assembly.html#lem:necessity">4.2</a>. </p>
+  <p>By input 3 there is \(\psi _0\) with \(\operatorname {curl}\psi _0=u\). Let \(\psi \) be the orthogonal projection of \(\psi _0\) onto \(K\). Then \(\psi _0-\psi \in K^\perp \) is curl free (Lemma&#160;<a href="chap-assembly.html#lem:gauge">5.3</a>), so \(\operatorname {curl}\psi =u\) and \(\psi \) is a tangential potential. If \(\chi \) is another one, \(\chi -\psi \) is curl free and lies in \(K\); hence it is divergence free with \((\chi -\psi )\cdot n=0\) and zero cut fluxes, and input 2 with \(v=h=\chi -\psi \) gives \(\lVert \chi -\psi \rVert ^2=0\). The converse is Lemma&#160;<a href="chap-assembly.html#lem:necessity">5.2</a>. </p>
 
   </div>
 </div>
@@ -420,7 +427,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">4.5</span>
+    <span class="lemma_thmlabel">5.5</span>
     <span class="lemma_thmtitle">The canonical tangential inverse</span>
     <div class="thm_header_extras">
 
@@ -447,7 +454,9 @@
         
         <ul class="uses">
           
-          <li><a href="chap-assembly.html#thm:assembly-tangential">Theorem 4.4</a></li>
+          <li><a href="chap-mathlib.html#ml:closedgraph">Theorem 2.5</a></li>
+          
+          <li><a href="chap-assembly.html#thm:assembly-tangential">Theorem 5.4</a></li>
           
         </ul>
     
@@ -505,7 +514,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">4.6</span>
+    <span class="lemma_thmlabel">5.6</span>
     <span class="lemma_thmtitle">Orthogonality to the curl kernel</span>
     <div class="thm_header_extras">
 
@@ -532,9 +541,11 @@
         
         <ul class="uses">
           
-          <li><a href="chap-assembly.html#def:inputs">Definition 4.1</a></li>
+          <li><a href="chap-mathlib.html#ml:projection">Theorem 2.3</a></li>
           
-          <li><a href="chap-assembly.html#lem:necessity">Lemma 4.2</a></li>
+          <li><a href="chap-assembly.html#def:inputs">Definition 5.1</a></li>
+          
+          <li><a href="chap-assembly.html#lem:necessity">Lemma 5.2</a></li>
           
         </ul>
     
@@ -586,7 +597,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">4.7</span>
+    <span class="theorem_thmlabel">5.7</span>
     <span class="theorem_thmtitle">Assembly of Theorem 3.17</span>
     <div class="thm_header_extras">
 
@@ -613,13 +624,15 @@
         
         <ul class="uses">
           
-          <li><a href="chap-assembly.html#lem:inverse">Lemma 4.5</a></li>
+          <li><a href="chap-mathlib.html#ml:riesz">Theorem 2.4</a></li>
           
-          <li><a href="chap-assembly.html#lem:orth-kernel">Lemma 4.6</a></li>
+          <li><a href="chap-assembly.html#lem:inverse">Lemma 5.5</a></li>
           
-          <li><a href="chap-assembly.html#def:inputs">Definition 4.1</a></li>
+          <li><a href="chap-assembly.html#lem:orth-kernel">Lemma 5.6</a></li>
           
-          <li><a href="chap-assembly.html#lem:necessity">Lemma 4.2</a></li>
+          <li><a href="chap-assembly.html#def:inputs">Definition 5.1</a></li>
+          
+          <li><a href="chap-assembly.html#lem:necessity">Lemma 5.2</a></li>
           
         </ul>
     
@@ -662,7 +675,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>Let \(T\) be the canonical tangential inverse of Lemma&#160;<a href="chap-assembly.html#lem:inverse">4.5</a> and \(\psi \) the Riesz representative of the bounded functional \(f\mapsto (u,Tf)\) on the closed subspace of divergence-free fields with zero boundary fluxes; so \(\operatorname {div}\psi =0\) and \(F_i(\psi )=0\). If \(\operatorname {curl}w=c\), then \(c\) lies in that subspace and \(w-Tc\) is curl free, so \((u,w)=(u,Tc)=(\psi ,c)\) by Lemma&#160;<a href="chap-assembly.html#lem:orth-kernel">4.6</a>. Taking test fields \(w\) gives \(\operatorname {curl}\psi =u\); taking \(w\in H^1(\Omega )^3\) gives \(\psi \times n=0\). Uniqueness is input 4. Conversely, inputs 5 and 7 give \(u\cdot n=0\) and \(C_j(u)=0\). </p>
+  <p>Let \(T\) be the canonical tangential inverse of Lemma&#160;<a href="chap-assembly.html#lem:inverse">5.5</a> and \(\psi \) the Riesz representative of the bounded functional \(f\mapsto (u,Tf)\) on the closed subspace of divergence-free fields with zero boundary fluxes; so \(\operatorname {div}\psi =0\) and \(F_i(\psi )=0\). If \(\operatorname {curl}w=c\), then \(c\) lies in that subspace and \(w-Tc\) is curl free, so \((u,w)=(u,Tc)=(\psi ,c)\) by Lemma&#160;<a href="chap-assembly.html#lem:orth-kernel">5.6</a>. Taking test fields \(w\) gives \(\operatorname {curl}\psi =u\); taking \(w\in H^1(\Omega )^3\) gives \(\psi \times n=0\). Uniqueness is input 4. Conversely, inputs 5 and 7 give \(u\cdot n=0\) and \(C_j(u)=0\). </p>
 
   </div>
 </div>
@@ -671,7 +684,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">4.8</span>
+    <span class="theorem_thmlabel">5.8</span>
     <span class="theorem_thmtitle">The analytic inputs hold</span>
     <div class="thm_header_extras">
 
@@ -698,19 +711,19 @@
         
         <ul class="uses">
           
-          <li><a href="chap-cuts.html#lem:cuts-null">Lemma 5.1</a></li>
+          <li><a href="chap-cuts.html#lem:cuts-null">Lemma 6.1</a></li>
           
-          <li><a href="chap-topology.html#thm:harm">Theorem 7.3</a></li>
+          <li><a href="chap-topology.html#thm:harm">Theorem 8.3</a></li>
           
-          <li><a href="chap-boundary.html#thm:range">Theorem 8.8</a></li>
+          <li><a href="chap-boundary.html#thm:range">Theorem 9.8</a></li>
           
-          <li><a href="chap-boundary.html#thm:normal-unique">Theorem 8.9</a></li>
+          <li><a href="chap-boundary.html#thm:normal-unique">Theorem 9.9</a></li>
           
-          <li><a href="chap-boundary.html#lem:normal-trace">Lemma 8.1</a></li>
+          <li><a href="chap-boundary.html#lem:normal-trace">Lemma 9.1</a></li>
           
-          <li><a href="chap-cuts.html#lem:cut-curl-free">Lemma 5.4</a></li>
+          <li><a href="chap-cuts.html#lem:cut-curl-free">Lemma 6.4</a></li>
           
-          <li><a href="chap-cuts.html#lem:cut-flux">Lemma 5.5</a></li>
+          <li><a href="chap-cuts.html#lem:cut-flux">Lemma 6.5</a></li>
           
         </ul>
     
@@ -753,7 +766,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>Inputs 1–7 are Lemma&#160;<a href="chap-cuts.html#lem:cuts-null">5.1</a>, Theorem&#160;<a href="chap-topology.html#thm:harm">7.3</a>, Theorem&#160;<a href="chap-boundary.html#thm:range">8.8</a>, Theorem&#160;<a href="chap-boundary.html#thm:normal-unique">8.9</a>, Lemma&#160;<a href="chap-boundary.html#lem:normal-trace">8.1</a>, Lemma&#160;<a href="chap-cuts.html#lem:cut-curl-free">5.4</a> and Lemma&#160;<a href="chap-cuts.html#lem:cut-flux">5.5</a>. </p>
+  <p>Inputs 1–7 are Lemma&#160;<a href="chap-cuts.html#lem:cuts-null">6.1</a>, Theorem&#160;<a href="chap-topology.html#thm:harm">8.3</a>, Theorem&#160;<a href="chap-boundary.html#thm:range">9.8</a>, Theorem&#160;<a href="chap-boundary.html#thm:normal-unique">9.9</a>, Lemma&#160;<a href="chap-boundary.html#lem:normal-trace">9.1</a>, Lemma&#160;<a href="chap-cuts.html#lem:cut-curl-free">6.4</a> and Lemma&#160;<a href="chap-cuts.html#lem:cut-flux">6.5</a>. </p>
 
   </div>
 </div>

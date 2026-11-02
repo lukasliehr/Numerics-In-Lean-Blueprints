@@ -46,28 +46,31 @@
   </ul>
  </li>
 <li class="">
-  <a href="chap-setting.html"><span class="toc_ref">2</span> <span class="toc_entry">Setting and definitions</span></a>
+  <a href="chap-mathlib.html"><span class="toc_ref">2</span> <span class="toc_entry">Results from Mathlib</span></a>
  </li>
 <li class="">
-  <a href="chap-main.html"><span class="toc_ref">3</span> <span class="toc_entry">The main theorems</span></a>
+  <a href="chap-setting.html"><span class="toc_ref">3</span> <span class="toc_entry">Setting and definitions</span></a>
  </li>
 <li class="">
-  <a href="chap-geometry.html"><span class="toc_ref">4</span> <span class="toc_entry">Geometry of simplicial meshes</span></a>
+  <a href="chap-main.html"><span class="toc_ref">4</span> <span class="toc_entry">The main theorems</span></a>
+ </li>
+<li class="">
+  <a href="chap-geometry.html"><span class="toc_ref">5</span> <span class="toc_entry">Geometry of simplicial meshes</span></a>
  </li>
 <li class=" active current">
-  <a href="chap-analysis.html"><span class="toc_ref">5</span> <span class="toc_entry">Analysis on simplices</span></a>
+  <a href="chap-analysis.html"><span class="toc_ref">6</span> <span class="toc_entry">Analysis on simplices</span></a>
  </li>
 <li class="">
-  <a href="chap-interpolation.html"><span class="toc_ref">6</span> <span class="toc_entry">Interpolation</span></a>
+  <a href="chap-interpolation.html"><span class="toc_ref">7</span> <span class="toc_entry">Interpolation</span></a>
  </li>
 <li class="">
-  <a href="chap-stability.html"><span class="toc_ref">7</span> <span class="toc_entry">Stability of the discrete methods</span></a>
+  <a href="chap-stability.html"><span class="toc_ref">8</span> <span class="toc_entry">Stability of the discrete methods</span></a>
  </li>
 <li class="">
-  <a href="chap-errors.html"><span class="toc_ref">8</span> <span class="toc_entry">Error estimates</span></a>
+  <a href="chap-errors.html"><span class="toc_ref">9</span> <span class="toc_entry">Error estimates</span></a>
  </li>
 <li class="">
-  <a href="chap-correspondence.html"><span class="toc_ref">9</span> <span class="toc_entry">Correspondence with the paper</span></a>
+  <a href="chap-correspondence.html"><span class="toc_ref">10</span> <span class="toc_entry">Correspondence with the paper</span></a>
  </li>
 <li ><a href="dep_graph_document.html">Dependency graph</a></li>
 </ul>
@@ -78,14 +81,14 @@
 
 
 <div class="main-text">
-<h1 id="chap:analysis">5 Analysis on simplices</h1>
+<h1 id="chap:analysis">6 Analysis on simplices</h1>
 
 <div class="lemma_thmwrapper theorem-style-plain" id="lem:cone">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">5.1</span>
+    <span class="lemma_thmlabel">6.1</span>
     <span class="lemma_thmtitle">Slicing and the cone formula</span>
     <div class="thm_header_extras">
 
@@ -99,6 +102,28 @@
     <a class="icon proof" href="chap-analysis.html#a0000000017"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-mathlib.html#ml:fubini">Theorem 2.4</a></li>
+          
+          <li><a href="chap-mathlib.html#ml:ftc">Theorem 2.5</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -127,7 +152,7 @@
         </div>
   </div>
   <div class="lemma_thmcontent">
-  <p>  Integrals over a simplex can be computed along slices parallel to a facet, and as a cone over a facet with apex at the opposite vertex. Applied to the radial field, this gives the divergence identity for the radial vector field. </p>
+  <p>   Integrals over a simplex can be computed along slices parallel to a facet, and as a cone over a facet with apex at the opposite vertex. Applied to the radial field, this gives the divergence identity for the radial vector field. </p>
 
   </div>
 </div>
@@ -148,7 +173,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">5.2</span>
+    <span class="theorem_thmlabel">6.2</span>
     <span class="theorem_thmtitle">Divergence theorem on simplices</span>
     <div class="thm_header_extras">
 
@@ -175,9 +200,13 @@
         
         <ul class="uses">
           
-          <li><a href="chap-analysis.html#lem:cone">Lemma 5.1</a></li>
+          <li><a href="chap-mathlib.html#ml:simplex">Definition 2.1</a></li>
           
-          <li><a href="chap-geometry.html#lem:combinatorics">Lemma 4.2</a></li>
+          <li><a href="chap-mathlib.html#ml:hausdorff">Definition 2.2</a></li>
+          
+          <li><a href="chap-analysis.html#lem:cone">Lemma 6.1</a></li>
+          
+          <li><a href="chap-geometry.html#lem:combinatorics">Lemma 5.2</a></li>
           
         </ul>
     
@@ -231,7 +260,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">5.3</span>
+    <span class="lemma_thmlabel">6.3</span>
     <span class="lemma_thmtitle">Polynomial inverse and trace inequalities</span>
     <div class="thm_header_extras">
 
@@ -258,9 +287,11 @@
         
         <ul class="uses">
           
-          <li><a href="chap-geometry.html#lem:heights">Lemma 4.1</a></li>
+          <li><a href="chap-mathlib.html#ml:polynomials">Definition 2.3</a></li>
           
-          <li><a href="chap-analysis.html#thm:divergence">Theorem 5.2</a></li>
+          <li><a href="chap-geometry.html#lem:heights">Lemma 5.1</a></li>
+          
+          <li><a href="chap-analysis.html#thm:divergence">Theorem 6.2</a></li>
           
         </ul>
     
@@ -324,7 +355,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">5.4</span>
+    <span class="lemma_thmlabel">6.4</span>
     <span class="lemma_thmtitle">Trace inequality for smooth and Sobolev functions</span>
     <div class="thm_header_extras">
 
@@ -351,9 +382,9 @@
         
         <ul class="uses">
           
-          <li><a href="chap-analysis.html#lem:cone">Lemma 5.1</a></li>
+          <li><a href="chap-analysis.html#lem:cone">Lemma 6.1</a></li>
           
-          <li><a href="chap-geometry.html#lem:heights">Lemma 4.1</a></li>
+          <li><a href="chap-geometry.html#lem:heights">Lemma 5.1</a></li>
           
         </ul>
     
@@ -407,7 +438,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">5.5</span>
+    <span class="theorem_thmlabel">6.5</span>
     <span class="theorem_thmtitle">Density of smooth functions</span>
     <div class="thm_header_extras">
 
@@ -421,6 +452,26 @@
     <a class="icon proof" href="chap-analysis.html#a0000000022"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-mathlib.html#ml:convolution">Theorem 2.6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -445,7 +496,7 @@
         </div>
   </div>
   <div class="theorem_thmcontent">
-  <p>  On an open convex set containing a ball, every weak \(H^m\) jet is the limit of smooth functions in all derivatives of order at most \(m\). </p>
+  <p>   On an open convex set containing a ball, every weak \(H^m\) jet is the limit of smooth functions in all derivatives of order at most \(m\). </p>
 
   </div>
 </div>
@@ -466,7 +517,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">5.6</span>
+    <span class="theorem_thmlabel">6.6</span>
     <span class="theorem_thmtitle">Traces exist, are unique, and agree across faces</span>
     <div class="thm_header_extras">
 
@@ -493,11 +544,13 @@
         
         <ul class="uses">
           
-          <li><a href="chap-analysis.html#thm:density">Theorem 5.5</a></li>
+          <li><a href="chap-mathlib.html#ml:testlemma">Theorem 2.7</a></li>
           
-          <li><a href="chap-analysis.html#lem:traceineq">Lemma 5.4</a></li>
+          <li><a href="chap-analysis.html#thm:density">Theorem 6.5</a></li>
           
-          <li><a href="chap-geometry.html#lem:halfball">Lemma 4.3</a></li>
+          <li><a href="chap-analysis.html#lem:traceineq">Lemma 6.4</a></li>
+          
+          <li><a href="chap-geometry.html#lem:halfball">Lemma 5.3</a></li>
           
         </ul>
     
@@ -557,7 +610,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">5.7</span>
+    <span class="lemma_thmlabel">6.7</span>
     <span class="lemma_thmtitle">Green’s formula for Sobolev jets</span>
     <div class="thm_header_extras">
 
@@ -584,9 +637,9 @@
         
         <ul class="uses">
           
-          <li><a href="chap-analysis.html#thm:divergence">Theorem 5.2</a></li>
+          <li><a href="chap-analysis.html#thm:divergence">Theorem 6.2</a></li>
           
-          <li><a href="chap-analysis.html#thm:traces">Theorem 5.6</a></li>
+          <li><a href="chap-analysis.html#thm:traces">Theorem 6.6</a></li>
           
         </ul>
     
@@ -638,7 +691,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">5.8</span>
+    <span class="lemma_thmlabel">6.8</span>
     <span class="lemma_thmtitle">Poincaré–Wirtinger and polynomial moments</span>
     <div class="thm_header_extras">
 
@@ -665,7 +718,9 @@
         
         <ul class="uses">
           
-          <li><a href="chap-analysis.html#thm:density">Theorem 5.5</a></li>
+          <li><a href="chap-mathlib.html#ml:ftc">Theorem 2.5</a></li>
+          
+          <li><a href="chap-analysis.html#thm:density">Theorem 6.5</a></li>
           
         </ul>
     
@@ -721,7 +776,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">5.9</span>
+    <span class="theorem_thmlabel">6.9</span>
     <span class="theorem_thmtitle">Bramble–Hilbert</span>
     <div class="thm_header_extras">
 
@@ -748,9 +803,9 @@
         
         <ul class="uses">
           
-          <li><a href="chap-analysis.html#lem:poincare">Lemma 5.8</a></li>
+          <li><a href="chap-analysis.html#lem:poincare">Lemma 6.8</a></li>
           
-          <li><a href="chap-geometry.html#lem:heights">Lemma 4.1</a></li>
+          <li><a href="chap-geometry.html#lem:heights">Lemma 5.1</a></li>
           
         </ul>
     
@@ -802,7 +857,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">5.10</span>
+    <span class="theorem_thmlabel">6.10</span>
     <span class="theorem_thmtitle">Scaled sup bound, \(d\le 3\)</span>
     <div class="thm_header_extras">
 
@@ -829,7 +884,9 @@
         
         <ul class="uses">
           
-          <li><a href="chap-geometry.html#lem:heights">Lemma 4.1</a></li>
+          <li><a href="chap-mathlib.html#ml:ftc">Theorem 2.5</a></li>
+          
+          <li><a href="chap-geometry.html#lem:heights">Lemma 5.1</a></li>
           
         </ul>
     

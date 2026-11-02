@@ -55,7 +55,11 @@
       
       <dt>Dark green background</dt><dd>the <em>proof</em> of this result and all its ancestors are formalized</dd>
       
-      <dt>Dark green border</dt><dd>this is in Mathlib</dd>
+      <dt>Grey border</dt><dd>this is in Mathlib</dd>
+      
+      <dt>Gold background</dt><dd>a <em>main result</em> of the paper, as stated in <em>Showcase.lean</em></dd>
+      
+      <dt>Grey background</dt><dd>a definition or result from <em>Mathlib</em>, on which the formalization builds</dd>
       
     </dl>
   </div>
@@ -74,7 +78,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">2.10</span><span class="definition_thmtitle">Discrete gradient, projection and the Bassi–Rebay kernel</span></div>
+      <span class="definition_thmlabel">3.10</span><span class="definition_thmtitle">Discrete gradient, projection and the Bassi–Rebay kernel</span></div>
     <div class="thm_thmcontent"><p>   \(P_k\) is the elementwise \(L^2\) projection onto polynomials of degree at most \(k\); \(\mathcal{D}_hv_h=\nabla _hv_h+R(v_h)\in \Sigma _h\) is the discrete gradient; \(Z_h=\{ v_h\in V_h:\mathcal{D}_hv_h=0\} \) is the Bassi–Rebay kernel. </p>
 </div>
 
@@ -119,7 +123,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">2.4</span><span class="definition_thmtitle">Broken fields, traces and the discrete spaces</span></div>
+      <span class="definition_thmlabel">3.4</span><span class="definition_thmtitle">Broken fields, traces and the discrete spaces</span></div>
     <div class="thm_thmcontent"><p>   A <em>broken field</em> has a jet on every triangle and a trace jet on every side. The traces of a jet on a triangle are <em>Sobolev traces</em> if they are \(L^2\) limits of the restrictions of smooth functions whose derivatives converge in \(L^2\) of the triangle; a broken field is <em>broken \(H^2\)</em> if every cell jet is an \(H^2\) jet with such traces. A broken field <em>realizes</em> a global jet \(u\) if its cell jets are those of \(u\). \(V_h\) consists of the piecewise polynomials of degree at most \(p\), and \(W_h=V_h+H^2(\Omega )\cap H^1_0(\Omega )\) of the broken fields that are sums of a discrete field and a field realizing an \(H^2\cap H^1_0\) jet. </p>
 </div>
 
@@ -174,7 +178,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">2.2</span><span class="definition_thmtitle">The domain and the Dirichlet problem</span></div>
+      <span class="definition_thmlabel">3.2</span><span class="definition_thmtitle">The domain and the Dirichlet problem</span></div>
     <div class="thm_thmcontent"><p>   A <em>convex polygon</em> is a nonempty bounded finite intersection of open half-planes. A jet is in \(H^1_0(\Omega )\) if it is a weak jet of order one and an \(H^1\)-limit of smooth functions with compact support in \(\Omega \). A <em>weak solution</em> of \(-\Delta u=f\), \(u=0\) on \(\partial \Omega \), is a jet \(u\in H^1_0(\Omega )\) with \((\nabla u,\nabla v)_\Omega =(f,v)_\Omega \) for all smooth compactly supported \(v\). </p>
 </div>
 
@@ -227,7 +231,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">2.9</span><span class="definition_thmtitle">Discrete problems</span></div>
+      <span class="definition_thmlabel">3.9</span><span class="definition_thmtitle">Discrete problems</span></div>
     <div class="thm_thmcontent"><p>   \(u_h\) <em>solves the discrete problem</em> for a form \(B\) and a load \(f\) if \(u_h\in V_h\) and \(B(u_h,v_h)=(f,v_h)_\Omega \) for all \(v_h\in V_h\). </p>
 </div>
 
@@ -268,7 +272,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">2.11</span><span class="definition_thmtitle">Numerical fluxes and the flux formulation</span></div>
+      <span class="definition_thmlabel">3.11</span><span class="definition_thmtitle">Numerical fluxes and the flux formulation</span></div>
     <div class="thm_thmcontent"><p>   For each of the nine methods and the three superpenalized methods, the numerical fluxes \(\hat u\), \(\hat\sigma \) of Table&#160;3.1 of the paper. A pair \((u_h,\sigma _h)\in V_h\times \Sigma _h\) solves the <em>flux formulation</em> if on every triangle \(K\) </p>
 <div class="displaymath" id="a0000000006">
   \[  (\sigma _h,\tau )_K=-(u_h,\operatorname {div}\tau )_K+\langle \hat u,\tau \cdot n_K\rangle _{\partial K},\qquad (\sigma _h,\nabla v)_K=(f,v)_K+\langle \hat\sigma \cdot n_K,v\rangle _{\partial K}  \]
@@ -321,7 +325,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">2.7</span><span class="definition_thmtitle">The bilinear forms</span></div>
+      <span class="definition_thmlabel">3.7</span><span class="definition_thmtitle">The bilinear forms</span></div>
     <div class="thm_thmcontent"><p>   With \(g(w,v)=(\nabla _hw,\nabla _hv)_\Omega \), \(C(w,v)=\sum _e\langle \{ \nabla _hw\} ,[\! [v]\! ]\rangle _e\), \(C^T(w,v)=C(v,w)\), \(D_\beta (w,v)=\sum _{e\text{ interior}}\langle [\! [\nabla _hw]\! ], \beta _e\cdot [\! [v]\! ]\rangle _e\), \(A_j(w,v)=\sum _e\eta _eh_e^{-1}\langle [\! [w]\! ],[\! [v]\! ]\rangle _e\), \(A_r(w,v)=\sum _e\eta _e(r_e([\! [w]\! ]),r_e([\! [v]\! ]))_\Omega \) and the superpenalties \(A_j^{\sup }\), \(A_r^{\sup }\) (weights \(h_e^{-(2p+1)}\) and \(h_e^{-2p}\)): </p>
 <div class="displaymath" id="a0000000005">
   \begin{align*}  B_{IP}& =g-C-C^T+A_j,\qquad B_{Bassi}=g-C-C^T+A_r,\\ B_{Brezzi}& =g-C-C^T+(R(\cdot ),R(\cdot ))+A_r,\\ B_{LDG}& =g-C-C^T-D_\beta -D_\beta ^T+(A_\beta (\cdot ),A_\beta (\cdot ))+A_j,\\ B_{NIPG}& =g-C+C^T+A_j,\qquad B_{BO}=g-C+C^T,\qquad B_{BR}=g-C-C^T+(R(\cdot ),R(\cdot )), \end{align*}
@@ -404,7 +408,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">2.1</span><span class="definition_thmtitle">Functions, jets and Sobolev norms</span></div>
+      <span class="definition_thmlabel">3.1</span><span class="definition_thmtitle">Functions, jets and Sobolev norms</span></div>
     <div class="thm_thmcontent"><p>  A <em>jet</em> on \(\mathbb {R}^d\) assigns a function \(J_\alpha \) to every multi-index \(\alpha \); the jet of a smooth function \(u\) is \(\alpha \mapsto \partial ^\alpha u\). A jet is a <em>weak jet of order \(m\)</em> on an open set \(U\) if \(J_\alpha \in L^2(U)\) for \(\lvert \alpha \rvert \le m\) and \(J_{\alpha +e_i}\) is the weak derivative \(\partial _iJ_\alpha \) for \(\lvert \alpha \rvert {\lt}m\). The seminorm \(\lvert J\rvert _{H^m}\) sums the squared \(L^2\) norms over all ordered derivative words of length \(m\) (for \(m=2\) the Frobenius norm of the Hessian), and \(\lVert J\rVert _{H^m}^2=\sum _{j\le m}\lvert J\rvert _{H^j}^2\). </p>
 </div>
 
@@ -463,7 +467,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">2.5</span><span class="definition_thmtitle">Averages, jumps and discrete vector fields</span></div>
+      <span class="definition_thmlabel">3.5</span><span class="definition_thmtitle">Averages, jumps and discrete vector fields</span></div>
     <div class="thm_thmcontent"><p>   On an interior edge, \([\! [v]\! ]=v^+n^++v^-n^-\), \(\{ v\} =(v^++v^-)/2\), \(\{ \nabla v\} =(\nabla v^++\nabla v^-)/2\) and \([\! [\nabla v]\! ]=\nabla v^+\cdot n^++\nabla v^-\cdot n^-\); on a boundary edge \([\! [v]\! ]=vn\) and \(\{ \nabla v\} =\nabla v\). \(\Sigma _h=V_h^2\) is the space of piecewise polynomial vector fields, with the \(L^2(\Omega )^2\) inner product and the edge average and jump of vector fields. </p>
 </div>
 
@@ -516,8 +520,8 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">2.6</span><span class="definition_thmtitle">Liftings</span></div>
-    <div class="thm_thmcontent"><p>   For an edge \(e\) and \(\varphi \in L^2(e)^2\), \(r_e(\varphi )\in \Sigma _h\) is defined by \((r_e(\varphi ),\tau )_\Omega =-\int _e\varphi \cdot \{ \tau \} \) for all \(\tau \in \Sigma _h\); for an interior edge and \(q\in L^2(e)\), \(l_e(q)\in \Sigma _h\) is defined by \((l_e(q),\tau )_\Omega =-\int _eq[\! [\tau ]\! ]\). Then \(R(v)=\sum _er_e([\! [v]\! ])\), \(L_\beta (v)=\sum _{e\text{ interior}}l_e(\beta _e\cdot [\! [v]\! ])\) and \(A_\beta =R+L_\beta \). In Lean the liftings are defined by choice from their defining properties; existence and uniqueness are proved in Lemma&#160;<a href="chap-stable.html#lem:liftings">7.1</a>. </p>
+      <span class="definition_thmlabel">3.6</span><span class="definition_thmtitle">Liftings</span></div>
+    <div class="thm_thmcontent"><p>   For an edge \(e\) and \(\varphi \in L^2(e)^2\), \(r_e(\varphi )\in \Sigma _h\) is defined by \((r_e(\varphi ),\tau )_\Omega =-\int _e\varphi \cdot \{ \tau \} \) for all \(\tau \in \Sigma _h\); for an interior edge and \(q\in L^2(e)\), \(l_e(q)\in \Sigma _h\) is defined by \((l_e(q),\tau )_\Omega =-\int _eq[\! [\tau ]\! ]\). Then \(R(v)=\sum _er_e([\! [v]\! ])\), \(L_\beta (v)=\sum _{e\text{ interior}}l_e(\beta _e\cdot [\! [v]\! ])\) and \(A_\beta =R+L_\beta \). In Lean the liftings are defined by choice from their defining properties; existence and uniqueness are proved in Lemma&#160;<a href="chap-stable.html#lem:liftings">8.1</a>. </p>
 </div>
 
     <a class="latex_link" href="chap-setting.html#def:liftings">LaTeX</a>
@@ -565,7 +569,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">2.3</span><span class="definition_thmtitle">Triangulations</span></div>
+      <span class="definition_thmlabel">3.3</span><span class="definition_thmtitle">Triangulations</span></div>
     <div class="thm_thmcontent"><p>   A mesh consists of finitely many affine triangles \(K\), a list of edges \(e\) with an owner side and an optional neighbour side, and outward unit normals. It is <em>admissible</em> for \(\Omega \) with shape bound \(\kappa \) if the closed triangles cover \(\overline\Omega \), have disjoint interiors and meet in common sub-simplices, \(h_K\le \kappa \rho _K\) for an inscribed ball of radius \(\rho _K\), and the edge list matches the triangle sides, exactly the edges without neighbour lying on \(\partial \Omega \). \(h=\max _Kh_K\) and \(h_e\) is the length of \(e\). </p>
 </div>
 
@@ -620,7 +624,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">2.8</span><span class="definition_thmtitle">Norms</span></div>
+      <span class="definition_thmlabel">3.8</span><span class="definition_thmtitle">Norms</span></div>
     <div class="thm_thmcontent"><p>   \(N_h(v)^2=G_h(v)^2+H_h(v)^2+J_h(v)^2\) with \(G_h(v)^2=\sum _K\lVert \nabla v\rVert _K^2\), \(H_h(v)^2=\sum _Kh_K^2\lvert v\rvert _{H^2(K)}^2\) and \(J_h(v)^2=\sum _eh_e^{-1}\lVert [\! [v]\! ]\rVert _e^2\). The superpenalty norms replace \(J_h^2\) by \(A_j^{\sup }(v,v)\) or \(A_r^{\sup }(v,v)\). </p>
 </div>
 
@@ -669,7 +673,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">10.2</span><span class="lemma_thmtitle">Failure for \(p=1\)</span></div>
+      <span class="lemma_thmlabel">11.2</span><span class="lemma_thmtitle">Failure for \(p=1\)</span></div>
     <div class="thm_thmcontent"><p>   The mesh consisting of the triangle with vertices \((0,0)\), \((1,0)\), \((0,1)\) is admissible, and for \(p=1\) the load \(f=1\) has no Baumann–Oden solution on it. </p>
 </div>
 
@@ -708,7 +712,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">10.1</span><span class="lemma_thmtitle">Stability and solvability for \(p\ge 2\)</span></div>
+      <span class="lemma_thmlabel">11.1</span><span class="lemma_thmtitle">Stability and solvability for \(p\ge 2\)</span></div>
     <div class="thm_thmcontent"><p>   \(B_{BO}(v,v)=G_h(v)^2\): the skew edge terms cancel. On \(V_h\), \(N_h(v_h-P_0v_h)^2\le CG_h(v_h)^2\), where \(P_0\) is the elementwise mean. For \(p\ge 2\) the Baumann–Oden problem is uniquely solvable. </p>
 </div>
 
@@ -749,7 +753,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">11.5</span><span class="lemma_thmtitle">The conservative interpolant of the flux</span></div>
+      <span class="lemma_thmlabel">12.5</span><span class="lemma_thmtitle">The conservative interpolant of the flux</span></div>
     <div class="thm_thmcontent"><p>   Let \(u\in H^2(\Omega )\) solve \(-\Delta u=f\) with \(f\) elementwise polynomial of degree at most \(p-1\). For every \(w\in V_h\) there is \(\sigma \in \Sigma _h\) with \((\mathcal{D}_hv_h,\sigma )=(f,v_h)\) for all \(v_h\in V_h\) and \(\lVert \nabla u-\sigma \rVert ^2\le C\bigl(G_h(u-w)^2+H_h(u-w)^2\bigr)\). </p>
 </div>
 
@@ -779,7 +783,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">11.6</span><span class="lemma_thmtitle">Error estimates</span></div>
+      <span class="lemma_thmlabel">12.6</span><span class="lemma_thmtitle">Error estimates</span></div>
     <div class="thm_thmcontent"><p>   For elementwise \(\mathbb P_{p-1}\) loads and \(u\in H^{p+1}(\Omega )\), every discrete solution satisfies \(\lVert \nabla u-\mathcal{D}_hu_h\rVert ^2\le Ch^{2p}\lvert u\rvert _{H^{p+1}}^2\) and \(\lVert P_{p-1}(u-u_h)\rVert ^2\le Ch^{2(p+1)}\lvert u\rvert _{H^{p+1}}^2\). </p>
 </div>
 
@@ -818,7 +822,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">11.7</span><span class="lemma_thmtitle">The full \(L^2\) error is not controlled</span></div>
+      <span class="lemma_thmlabel">12.7</span><span class="lemma_thmtitle">The full \(L^2\) error is not controlled</span></div>
     <div class="thm_thmcontent"><p>   For every \(p\ge 1\), on the one-triangle mesh, \(z=x_0^p-P_{p-1}(x_0^p)\) is a nonzero element of \(Z_h\); every \(tz\) solves the problem with \(f=0\), and \((z,z)\ne 0\), so \(f=z\) has no solution. </p>
 </div>
 
@@ -848,7 +852,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">11.3</span><span class="lemma_thmtitle">The kernel</span></div>
+      <span class="lemma_thmlabel">12.3</span><span class="lemma_thmtitle">The kernel</span></div>
     <div class="thm_thmcontent"><p>   For \(v_h\in V_h\): \(\mathcal{D}_hv_h=0\) if and only if \(P_{p-1}v_h=0\) on every triangle and \(\{ v_h\} =0\) on every interior edge. </p>
 </div>
 
@@ -878,7 +882,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">11.4</span><span class="lemma_thmtitle">Solvability</span></div>
+      <span class="lemma_thmlabel">12.4</span><span class="lemma_thmtitle">Solvability</span></div>
     <div class="thm_thmcontent"><p>   The problem is solvable if and only if \(f\perp Z_h\); the solutions form one coset of \(Z_h\), and \(\mathcal{D}_hu_h\) and \(P_{p-1}u_h\) do not depend on the solution. </p>
 </div>
 
@@ -919,7 +923,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">11.1</span><span class="lemma_thmtitle">The Bassi–Rebay form is a square</span></div>
+      <span class="lemma_thmlabel">12.1</span><span class="lemma_thmtitle">The Bassi–Rebay form is a square</span></div>
     <div class="thm_thmcontent"><p>   On \(V_h\times V_h\), \(B_{BR}(w,v)=(\mathcal{D}_hw,\mathcal{D}_hv)_\Omega \). For \(v\in V_h\) and \(\tau \in \Sigma _h\): \((\mathcal{D}_hv,\tau )=-(v,\operatorname {div}_h\tau )+\sum _{e\text{ interior}}\langle \{ v\} ,[\! [\tau ]\! ]\rangle _e\). </p>
 </div>
 
@@ -958,7 +962,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">4.9</span><span class="lemma_thmtitle">Bramble–Hilbert</span></div>
+      <span class="lemma_thmlabel">5.9</span><span class="lemma_thmtitle">Bramble–Hilbert</span></div>
     <div class="thm_thmcontent"><p>   For a weak jet \(J\) of order \(k+1\) on a cell \(T\) of an admissible mesh there is a polynomial \(q\) of degree at most \(k\) with \(h_T^{2j}\lvert J-q\rvert _{H^j(T)}^2\le Ch_T^{2(k+1)}\lvert J\rvert _{H^{k+1}(T)}^2\) for all \(j\le k+1\), with \(C=C(d,k,\rho )\). </p>
 </div>
 
@@ -997,7 +1001,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">9.2</span><span class="lemma_thmtitle">Broken Poincaré inequality</span></div>
+      <span class="lemma_thmlabel">10.2</span><span class="lemma_thmtitle">Broken Poincaré inequality</span></div>
     <div class="thm_thmcontent"><p>   On a convex polygon there is \(C_P\) with \(\lVert v\rVert _{L^2(\Omega )}\le C_PN_h(v)\) for all \(v\in W_h\), uniformly over admissible meshes. </p>
 </div>
 
@@ -1027,7 +1031,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">6.3</span><span class="lemma_thmtitle">Interpolation estimate on one cell</span></div>
+      <span class="lemma_thmlabel">7.3</span><span class="lemma_thmtitle">Interpolation estimate on one cell</span></div>
     <div class="thm_thmcontent"><p>   With a Bramble–Hilbert polynomial and a continuous representative \(w\), the Lagrange interpolant \(I_Tw\) satisfies \(h_T^{2i}\lvert J-I_Tw\rvert _{H^i(T)}^2\le Ch_T^{2(k+1)}\lvert J\rvert _{H^{k+1}(T)}^2\) for \(i\le 2\), and the corresponding pointwise bound. </p>
 </div>
 
@@ -1057,7 +1061,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">5.6</span><span class="lemma_thmtitle">Local geometry of convex polygons</span></div>
+      <span class="lemma_thmlabel">6.6</span><span class="lemma_thmtitle">Local geometry of convex polygons</span></div>
     <div class="thm_thmcontent"><p>   A nonempty finite intersection of open half-planes through \(0\) is the plane, a half-plane or a convex sector. Hence around every point of \(\overline\Omega \) there are a model domain \(V\supseteq \Omega \) and \(\delta {\gt}0\) with \(V\cap B(x,\delta )\subseteq \Omega \), and every model domain satisfies the local \(H^2\) estimate. </p>
 </div>
 
@@ -1100,7 +1104,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">6.2</span><span class="lemma_thmtitle">Continuous representatives</span></div>
+      <span class="lemma_thmlabel">7.2</span><span class="lemma_thmtitle">Continuous representatives</span></div>
     <div class="thm_thmcontent"><p>   Under the scaled sup bound, a jet with \(H^2\) traces on a cell has a continuous representative \(w\) on the closed cell, equal to the traces on the facets, with \(\lvert T\rvert (w-q)(x)^2\le C\, E_{H^2}(J-q)\) for smooth \(q\). Representatives on neighbouring cells agree on common edges. </p>
 </div>
 
@@ -1139,7 +1143,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">4.3</span><span class="lemma_thmtitle">Density of smooth functions</span></div>
+      <span class="lemma_thmlabel">5.3</span><span class="lemma_thmtitle">Density of smooth functions</span></div>
     <div class="thm_thmcontent"><p>   On an open convex set containing a ball, every weak jet of order \(m\) is the \(H^m\) limit of the jets of smooth functions. </p>
 </div>
 
@@ -1169,8 +1173,8 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">4.2</span><span class="lemma_thmtitle">Divergence theorem and cone formula on a simplex</span></div>
-    <div class="thm_thmcontent"><p>  For a full-dimensional simplex \(s\) with facets \(F_j\) and unit outward normals \(\nu _j\), every \(C^1\) function \(g\) and every direction \(w\): \(\int _s\nabla g\cdot w=\sum _j(w\cdot \nu _j)\int _{F_j}g\). Integrals over \(s\) can be computed as cone integrals over a facet. </p>
+      <span class="lemma_thmlabel">5.2</span><span class="lemma_thmtitle">Divergence theorem and cone formula on a simplex</span></div>
+    <div class="thm_thmcontent"><p>   For a full-dimensional simplex \(s\) with facets \(F_j\) and unit outward normals \(\nu _j\), every \(C^1\) function \(g\) and every direction \(w\): \(\int _s\nabla g\cdot w=\sum _j(w\cdot \nu _j)\int _{F_j}g\). Integrals over \(s\) can be computed as cone integrals over a facet. </p>
 </div>
 
     <a class="latex_link" href="chap-analysis.html#lem:divergence">LaTeX</a>
@@ -1208,7 +1212,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">7.9</span><span class="lemma_thmtitle">The duality argument</span></div>
+      <span class="lemma_thmlabel">8.9</span><span class="lemma_thmtitle">The duality argument</span></div>
     <div class="thm_thmcontent"><p>   Let \(B\) be bilinear, bounded on broken \(H^2\) fields, consistent at \(U\) and adjoint consistent on \(W_h\); assume \(H^2\) regularity with constant \(C_{reg}\) and an \(O(h)\) interpolant for \(H^2\) jets. Then \(\lVert U-u_h\rVert _{L^2}\le C_bC_IC_{reg}\, h\, N_h(U-u_h)\). </p>
 </div>
 
@@ -1238,7 +1242,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">7.8</span><span class="lemma_thmtitle">The abstract energy estimate</span></div>
+      <span class="lemma_thmlabel">8.8</span><span class="lemma_thmtitle">The abstract energy estimate</span></div>
     <div class="thm_thmcontent"><p>   If \(B\) is linear in its first argument, bounded by \(C_bN_hN_h\), coercive with constant \(C_s\) on \(V_h\) and consistent at \(U\), then every discrete solution satisfies \(N_h(U-u_h)\le 2(1+C_b/C_s)N_h(U-v_h)\) for every \(v_h\in V_h\). </p>
 </div>
 
@@ -1268,7 +1272,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">8.1</span><span class="lemma_thmtitle">Elimination of the auxiliary variable</span></div>
+      <span class="lemma_thmlabel">9.1</span><span class="lemma_thmtitle">Elimination of the auxiliary variable</span></div>
     <div class="thm_thmcontent"><p>   For each method and each triangle, \(-(u_h,\operatorname {div}\tau )_K+\langle \hat u,\tau \cdot n_K\rangle _{\partial K}=(\sigma _h^*,\tau )_K\), where \(\sigma _h^*\in \Sigma _h\) is the eliminated auxiliary field; and \((\sigma _h^*,\nabla w)-\sum _K\langle \hat\sigma \cdot n_K,w\rangle _{\partial K}=B_h(u_h,w)\) for all \(w\in V_h\). </p>
 </div>
 
@@ -1309,7 +1313,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">7.2</span><span class="lemma_thmtitle">Bounds for the pieces of the forms</span></div>
+      <span class="lemma_thmlabel">8.2</span><span class="lemma_thmtitle">Bounds for the pieces of the forms</span></div>
     <div class="thm_thmcontent"><p>   For broken \(H^2\) fields, uniformly over admissible meshes, \(\sum _eh_e\lVert \{ \nabla w\} \rVert _e^2\) and \(\sum _eh_e\lVert [\! [\nabla w]\! ]\rVert _e^2\) are bounded by \(C(G_h(w)^2+H_h(w)^2)\), and \(\sum _eh_e^{-1}\lVert [\! [w]\! ]\rVert _e^2\le C\sum _K(h_K^{-2}\lVert w\rVert _K^2+ \lvert w\rvert _{H^1(K)}^2)\). Consequently \(\lvert C(w,v)\rvert \le CN_h(w)N_h(v)\), and similarly for \(g\), \(A_j\) and \(D_\beta \). </p>
 </div>
 
@@ -1352,7 +1356,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">7.6</span><span class="lemma_thmtitle">Green’s formula for broken fields</span></div>
+      <span class="lemma_thmlabel">8.6</span><span class="lemma_thmtitle">Green’s formula for broken fields</span></div>
     <div class="thm_thmcontent"><p>   For an exact solution \(u\) with \(-\Delta u=f\) on every cell and every \(v_h\in V_h\): \(g(u,v_h)-C(u,v_h)=(f,v_h)_\Omega \). </p>
 </div>
 
@@ -1382,7 +1386,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">4.5</span><span class="lemma_thmtitle">Green’s formula for jets with traces</span></div>
+      <span class="lemma_thmlabel">5.5</span><span class="lemma_thmtitle">Green’s formula for jets with traces</span></div>
     <div class="thm_thmcontent"><p>   If \(J\) has Sobolev traces \(t\) of order \(m\) on a cell \(T\) and \(\lvert \alpha \rvert {\lt}m\), then for every \(C^1\) function \(v\) and every direction \(a\): \(\int _T(a\cdot \nabla J_\alpha )v+\int _TJ_\alpha \, a\cdot \nabla v=\sum _j(a\cdot n_j)\int _{F_j} t_j^\alpha v\). </p>
 </div>
 
@@ -1412,7 +1416,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">6.4</span><span class="lemma_thmtitle">Interpolation in the DG norm</span></div>
+      <span class="lemma_thmlabel">7.4</span><span class="lemma_thmtitle">Interpolation in the DG norm</span></div>
     <div class="thm_thmcontent"><p>   For \(J\in H^1_0(\Omega )\cap H^{p+1}(\Omega )\) realized by \(U\) there is \(v_h\in V_h\), continuous across edges and zero on \(\partial \Omega \), with \(N_h(U-v_h)\le Ch^p\lvert J\rvert _{H^{p+1}(\Omega )}\) and \(\lVert U-v_h\rVert _{L^2}\le Ch^{p+1}\lvert J\rvert _{H^{p+1}(\Omega )}\). </p>
 </div>
 
@@ -1451,7 +1455,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">6.1</span><span class="lemma_thmtitle">Lagrange interpolation</span></div>
+      <span class="lemma_thmlabel">7.1</span><span class="lemma_thmtitle">Lagrange interpolation</span></div>
     <div class="thm_thmcontent"><p>   On a simplex with barycentric coordinates \(b_i\) and degree \(k\ge 1\), the explicit Lagrange basis on the principal lattice interpolates at the lattice nodes; the interpolant on a facet depends only on the values on that facet, so cellwise interpolants of a continuous function agree on common edges. </p>
 </div>
 
@@ -1492,7 +1496,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">7.1</span><span class="lemma_thmtitle">Liftings</span></div>
+      <span class="lemma_thmlabel">8.1</span><span class="lemma_thmtitle">Liftings</span></div>
     <div class="thm_thmcontent"><p>   The liftings \(r_e(\varphi )\) and \(l_e(q)\) exist and are unique. Uniformly over admissible meshes: \(h_e\lVert r_e(\varphi )\rVert _\Omega ^2\le C\lVert \varphi \rVert _e^2\), \(h_e\lVert l_e(q)\rVert _\Omega ^2\le C\lVert q\rVert _e^2\), and \(c\lVert [\! [v_h]\! ]\rVert _e^2\le h_e\lVert r_e([\! [v_h]\! ])\rVert _\Omega ^2\) for \(v_h\in V_h\). </p>
 </div>
 
@@ -1537,7 +1541,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">5.7</span><span class="lemma_thmtitle">Localization</span></div>
+      <span class="lemma_thmlabel">6.7</span><span class="lemma_thmtitle">Localization</span></div>
     <div class="thm_thmcontent"><p>   If \(U\subseteq V\), \(V\cap B(x_0,\delta )\subseteq U\), \(V\) satisfies the model estimate at \(x_0\) and the cutoff \(c\) is supported in \(B(x_0,\delta )\), then \(cv\) has an \(L^2\) Hessian for every solution \(v\), bounded by \(C(\lVert F\rVert +\lVert v\rVert )\). </p>
 </div>
 
@@ -1567,7 +1571,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">4.1</span><span class="lemma_thmtitle">Geometry of admissible meshes</span></div>
+      <span class="lemma_thmlabel">5.1</span><span class="lemma_thmtitle">Geometry of admissible meshes</span></div>
     <div class="thm_thmcontent"><p>   An admissible mesh is a conforming shape-regular simplicial mesh; its stored normals are the unit outward normals of the triangles, every side of a triangle belongs to a unique edge, and every height \(H_j\) of a triangle satisfies \(2\rho _K\le H_j\le h_K\). </p>
 </div>
 
@@ -1612,7 +1616,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">9.1</span><span class="lemma_thmtitle">Stability of the penalty methods</span></div>
+      <span class="lemma_thmlabel">10.1</span><span class="lemma_thmtitle">Stability of the penalty methods</span></div>
     <div class="thm_thmcontent"><p>   NIPG and the pure penalty forms are bounded on \(W_h\) and coercive on \(V_h\) in \(N_h\), for every \(\eta _{\min }{\gt}0\); the superpenalized forms are coercive in their superpenalty norms. </p>
 </div>
 
@@ -1653,8 +1657,8 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">4.8</span><span class="lemma_thmtitle">Poincaré–Wirtinger on convex sets</span></div>
-    <div class="thm_thmcontent"><p>  For a compact convex set \(K\) of diameter at most \(h\) and \(u\in C^1\): \(\lvert K\rvert \int _Ku^2-(\int _Ku)^2\le 2^{d+1}h^2\lvert K\rvert \int _K\lvert \nabla u\rvert ^2\). </p>
+      <span class="lemma_thmlabel">5.8</span><span class="lemma_thmtitle">Poincaré–Wirtinger on convex sets</span></div>
+    <div class="thm_thmcontent"><p>   For a compact convex set \(K\) of diameter at most \(h\) and \(u\in C^1\): \(\lvert K\rvert \int _Ku^2-(\int _Ku)^2\le 2^{d+1}h^2\lvert K\rvert \int _K\lvert \nabla u\rvert ^2\). </p>
 </div>
 
     <a class="latex_link" href="chap-analysis.html#lem:poincare-cell">LaTeX</a>
@@ -1683,7 +1687,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">4.7</span><span class="lemma_thmtitle">Inverse and discrete trace inequalities</span></div>
+      <span class="lemma_thmlabel">5.7</span><span class="lemma_thmtitle">Inverse and discrete trace inequalities</span></div>
     <div class="thm_thmcontent"><p>   For polynomials \(q\) of degree at most \(k\) on the cells of admissible meshes with shape bound \(\rho \): \(h_K^2\lVert \partial _iq\rVert _K^2\le C\lVert q\rVert _K^2\) (and the analogous \(H^2\)–\(H^1\) bound), and \(h_K\lVert q\rVert _{F_j}^2\le C\lVert q\rVert _K^2\), with \(C=C(d,k,\rho )\). </p>
 </div>
 
@@ -1724,7 +1728,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">11.2</span><span class="lemma_thmtitle">Local Raviart–Thomas constructions</span></div>
+      <span class="lemma_thmlabel">12.2</span><span class="lemma_thmtitle">Local Raviart–Thomas constructions</span></div>
     <div class="thm_thmcontent"><p>   On every triangle there are polynomial vector fields of degree at most \(p\) with prescribed compatible normal traces on the edges and prescribed divergence of degree at most \(p-1\), with bounds uniform under shape regularity. </p>
 </div>
 
@@ -1763,7 +1767,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">5.5</span><span class="lemma_thmtitle">Regularity at a convex corner</span></div>
+      <span class="lemma_thmlabel">6.5</span><span class="lemma_thmtitle">Regularity at a convex corner</span></div>
     <div class="thm_thmcontent"><p>   On a sector of opening \(0{\lt}\omega {\lt}\pi \), a solution \(v\in H^1_0\) of \((\nabla v,\nabla \varphi )=(F,\varphi )\) with \(F\) vanishing outside a ball around the apex has weak second derivatives with \(\lVert \partial _{ij}v\rVert \le C(\omega )\lVert F\rVert \). </p>
 </div>
 
@@ -1793,7 +1797,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">7.5</span><span class="lemma_thmtitle">Unique solvability</span></div>
+      <span class="lemma_thmlabel">8.5</span><span class="lemma_thmtitle">Unique solvability</span></div>
     <div class="thm_thmcontent"><p>   A bilinear form on a finite-dimensional space whose trial map is injective is uniquely solvable. \(N_h\) is a norm on \(V_h\); hence a form that is bilinear and coercive in \(N_h\) on \(V_h\) has exactly one discrete solution for every \(f\in L^2(\Omega )\). </p>
 </div>
 
@@ -1834,7 +1838,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">7.3</span><span class="lemma_thmtitle">Boundedness</span></div>
+      <span class="lemma_thmlabel">8.3</span><span class="lemma_thmtitle">Boundedness</span></div>
     <div class="thm_thmcontent"><p>   There is \(C_b\), depending only on \(p\), \(\kappa \), \(\eta _{\max }\) and \(b\), with \(\lvert B(w,v)\rvert \le C_bN_h(w)N_h(v)\) for the four stable forms and all broken \(H^2\) fields. </p>
 </div>
 
@@ -1864,7 +1868,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">7.4</span><span class="lemma_thmtitle">Coercivity</span></div>
+      <span class="lemma_thmlabel">8.4</span><span class="lemma_thmtitle">Coercivity</span></div>
     <div class="thm_thmcontent"><p>   There is \(\eta _*(p,\kappa ){\gt}0\) such that each of the four methods, under its threshold (IP: \(\eta _{\min }{\gt}\eta _*\); Bassi et al.: \(\eta _{\min }{\gt}3\); Brezzi et al. and LDG: \(\eta _{\min }{\gt}0\)), satisfies \(C_sN_h(v_h)^2\le B(v_h,v_h)\) on \(V_h\) with \(C_s{\gt}0\) uniform over admissible meshes and coefficients. </p>
 </div>
 
@@ -1905,7 +1909,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">7.7</span><span class="lemma_thmtitle">Consistency of the four stable methods</span></div>
+      <span class="lemma_thmlabel">8.7</span><span class="lemma_thmtitle">Consistency of the four stable methods</span></div>
     <div class="thm_thmcontent"><p>   If \(u\in H^2(\Omega )\cap H^1_0(\Omega )\) with \(-\Delta u=f\) is realized by \(U\), then \(B(U,v)=B(v,U)=(f,v)_\Omega \) for all \(v\in W_h\) and each of the four stable methods. </p>
 </div>
 
@@ -1935,7 +1939,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">5.4</span><span class="lemma_thmtitle">The shifted strip problem</span></div>
+      <span class="lemma_thmlabel">6.4</span><span class="lemma_thmtitle">The shifted strip problem</span></div>
     <div class="thm_thmcontent"><p>   If \(W\in H^1_0(Q)\) solves \((\nabla W,\nabla w)=(e^tf,w)\) and \(z=e^{-t}W\in H^1_0(Q)\), then \(z\) solves a coercive, translation-invariant shifted problem; hence \(\partial _tz\in H^1_0(Q)\) and \(\partial _\theta ^2z\in L^2(Q)\), with bounds by \(\lVert f\rVert \). </p>
 </div>
 
@@ -1974,7 +1978,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">4.10</span><span class="lemma_thmtitle">Scaled Sobolev sup bound</span></div>
+      <span class="lemma_thmlabel">5.10</span><span class="lemma_thmtitle">Scaled Sobolev sup bound</span></div>
     <div class="thm_thmcontent"><p>   For \(d\le 3\), smooth \(u\) and every point \(x\) of a cell \(T\): \(\lvert T\rvert u(x)^2\le C\bigl(\lVert u\rVert _T^2+h_T^2\lvert u\rvert _{H^1(T)}^2+h_T^4\lvert u\rvert _{H^2(T)}^2\bigr)\), with \(C=C(d)\). </p>
 </div>
 
@@ -2004,7 +2008,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">9.4</span><span class="lemma_thmtitle">Error estimates with consistency defects</span></div>
+      <span class="lemma_thmlabel">10.4</span><span class="lemma_thmtitle">Error estimates with consistency defects</span></div>
     <div class="thm_thmcontent"><p>   For a coercive bounded form whose primal defect is \((1-\varepsilon )C(u,\cdot )\), bounded by \(\Gamma \) in the method’s norm, every discrete solution satisfies \(N(U-u_h)\le 2\bigl((1+C_b/C_s)N(U-v_h)+\lvert 1-\varepsilon \rvert \Gamma /C_s\bigr)\); a duality version gives the \(L^2\) estimate when the adjoint defect is \((1+\varepsilon )C(\psi ,\cdot )\). For the three superpenalized methods these give the \(h^p\) and \(h^{p+1}\) estimates. </p>
 </div>
 
@@ -2045,7 +2049,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">9.3</span><span class="lemma_thmtitle">Jump control by the superpenalty</span></div>
+      <span class="lemma_thmlabel">10.3</span><span class="lemma_thmtitle">Jump control by the superpenalty</span></div>
     <div class="thm_thmcontent"><p>   \(J_h(v)^2\le h^{2p}\eta _{\min }^{-1}A_j^{\sup }(v,v)\), and the analogous bound with \(A_r^{\sup }\). </p>
 </div>
 
@@ -2084,7 +2088,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">5.2</span><span class="lemma_thmtitle">Regularity on translation-invariant domains</span></div>
+      <span class="lemma_thmlabel">6.2</span><span class="lemma_thmtitle">Regularity on translation-invariant domains</span></div>
     <div class="thm_thmcontent"><p>   For a coercive constant-coefficient problem on a domain invariant under translations along \(a\), the solution has weak derivatives along \(a\) in \(H^1_0\), bounded by the load. In particular, on the plane and on half-planes, \(v\in H^1_0\) with \((\nabla v,\nabla \varphi )=(F,\varphi )\) has weak second derivatives with \(\lVert \partial _{ij}v\rVert \le 11\lVert F\rVert +10\lVert v\rVert _{H^1}\). </p>
 </div>
 
@@ -2123,7 +2127,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">4.6</span><span class="lemma_thmtitle">Traces across interior edges</span></div>
+      <span class="lemma_thmlabel">5.6</span><span class="lemma_thmtitle">Traces across interior edges</span></div>
     <div class="thm_thmcontent"><p>   If \(J\) is a weak jet of order \(m\) on the domain with Sobolev traces on every cell, then for \(\lvert \alpha \rvert {\lt}m\) the traces from the two sides of an interior edge agree almost everywhere. In particular \(H^2\cap H^1_0\) fields have zero jumps on all edges, and traces of \(H^1_0\) jets vanish on boundary edges. </p>
 </div>
 
@@ -2164,7 +2168,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">4.4</span><span class="lemma_thmtitle">Sobolev traces</span></div>
+      <span class="lemma_thmlabel">5.4</span><span class="lemma_thmtitle">Sobolev traces</span></div>
     <div class="thm_thmcontent"><p>   For \(C^1\) functions on a shape-regular cell, \(h_K\lVert w\rVert _{L^2(F_j)}^2\le \frac\rho 2\bigl((d+1)\lVert w\rVert _{L^2(K)}^2+h_K^2\lVert \nabla w\rVert _{L^2(K)}^2\bigr)\). Every weak jet of order \(m\) on a cell has Sobolev traces, and every jet of order \(k\ge 1\) on the domain has a broken realization with Sobolev traces on every admissible mesh. </p>
 </div>
 
@@ -2207,7 +2211,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">5.1</span><span class="lemma_thmtitle">Weak solutions</span></div>
+      <span class="lemma_thmlabel">6.1</span><span class="lemma_thmtitle">Weak solutions</span></div>
     <div class="thm_thmcontent"><p>   A coercive bounded bilinear form on a Hilbert space has a unique solution for every bounded functional. If \(U\) lies in a slab of width \(L\), then \(\lVert v\rVert \le L\lVert \partial _{i_0}v\rVert \) on \(H^1_0(U)\). Consequently, on a bounded set, \(-\Delta u=f\) has a weak solution in \(H^1_0\), unique up to its derivatives of order at most one. </p>
 </div>
 
@@ -2248,7 +2252,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">5.3</span><span class="lemma_thmtitle">Sharp Wirtinger inequality</span></div>
+      <span class="lemma_thmlabel">6.3</span><span class="lemma_thmtitle">Sharp Wirtinger inequality</span></div>
     <div class="thm_thmcontent"><p>   On the strip \(Q=\{ 0{\lt}\theta {\lt}\omega \} \), every \(v\in H^1_0(Q)\) satisfies \((\pi /\omega )\lVert v\rVert \le \lVert \partial _\theta v\rVert \). </p>
 </div>
 
@@ -2256,6 +2260,396 @@
     
     
   <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.wirtinger_H01">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:changevar_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:changevar" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.11</span><span class="theorem_thmtitle">Change of variables</span></div>
+    <div class="thm_thmcontent"><p>  \(\int _{\Phi (S)}f=\int _S\lvert \det D\Phi \rvert \, (f\circ \Phi )\) for injective maps \(\Phi \) that are differentiable on \(S\). </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:changevar">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MeasureTheory.integral_image_eq_integral_abs_det_fderiv_smul">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:convolution_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:convolution" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.8</span><span class="theorem_thmtitle">Bump functions and convolution</span></div>
+    <div class="thm_thmcontent"><p>  There are smooth bump functions with compact support, and the convolution of a locally integrable function with a smooth compactly supported kernel is smooth. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:convolution">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ContDiffBump" class="lean_decl">ContDiffBump</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/HasCompactSupport.contDiff_convolution_left" class="lean_decl">HasCompactSupport.contDiff_convolution_left</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:findim_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:findim" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.10</span><span class="theorem_thmtitle">Linear maps of finite-dimensional spaces</span></div>
+    <div class="thm_thmcontent"><p>  A linear endomorphism of a finite-dimensional vector space is injective if and only if it is surjective. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:findim">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/LinearMap.injective_iff_surjective">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:ftc_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:ftc" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.7</span><span class="theorem_thmtitle">Fundamental theorem of calculus</span></div>
+    <div class="thm_thmcontent"><p>  \(\int _a^bf'=f(b)-f(a)\) when \(f\) has an integrable derivative on \([a,b]\). </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:ftc">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/intervalIntegral.integral_eq_sub_of_hasDerivAt">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:fubini_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:fubini" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.6</span><span class="theorem_thmtitle">Fubini–Tonelli theorem</span></div>
+    <div class="thm_thmcontent"><p>  Integrals over a product of \(\sigma \)-finite measure spaces are iterated integrals, in either order. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:fubini">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MeasureTheory.integral_prod" class="lean_decl">MeasureTheory.integral_prod</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MeasureTheory.lintegral_prod" class="lean_decl">MeasureTheory.lintegral_prod</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MeasureTheory.integral_integral_swap" class="lean_decl">MeasureTheory.integral_integral_swap</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:hausdorff_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:hausdorff" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2.4</span><span class="definition_thmtitle">Hausdorff measure</span></div>
+    <div class="thm_thmcontent"><p>  The \(k\)-dimensional Hausdorff measure on a Euclidean space, normalized to agree with Lebesgue measure on \(k\)-dimensional subspaces; it is the measure on the faces of the cells. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:hausdorff">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MeasureTheory.Measure.euclideanHausdorffMeasure">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:laxmilgram_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:laxmilgram" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.2</span><span class="theorem_thmtitle">Riesz representation and Lax–Milgram theorems</span></div>
+    <div class="thm_thmcontent"><p>  Every bounded linear functional on a Hilbert space is of the form \(x\mapsto (y,x)\), and a bounded coercive bilinear form \(B\) induces an isomorphism: for every bounded functional \(\ell \) there is a unique \(u\) with \(B(u,v)=\ell (v)\) for all \(v\). </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:laxmilgram">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/InnerProductSpace.toDual" class="lean_decl">InnerProductSpace.toDual</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/IsCoercive.continuousLinearEquivOfBilin" class="lean_decl">IsCoercive.continuousLinearEquivOfBilin</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:lp_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:lp" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2.1</span><span class="definition_thmtitle">The Hilbert space \(L^2\)</span></div>
+    <div class="thm_thmcontent"><p>  For a measure \(\mu \), the space \(L^2(\mu )\) of square-integrable functions, taken modulo equality almost everywhere, with its inner product; it is complete. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:lp">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MeasureTheory.Lp" class="lean_decl">MeasureTheory.Lp</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MeasureTheory.L2.innerProductSpace" class="lean_decl">MeasureTheory.L2.innerProductSpace</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MeasureTheory.Lp.instCompleteSpace" class="lean_decl">MeasureTheory.Lp.instCompleteSpace</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:polynomials_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:polynomials" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2.5</span><span class="definition_thmtitle">Multivariate polynomials</span></div>
+    <div class="thm_thmcontent"><p>  Polynomials in \(d\) variables with real coefficients, and their partial derivatives. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:polynomials">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MvPolynomial" class="lean_decl">MvPolynomial</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/MvPolynomial.pderiv" class="lean_decl">MvPolynomial.pderiv</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:simplex_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:simplex" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">2.3</span><span class="definition_thmtitle">Affine simplices</span></div>
+    <div class="thm_thmcontent"><p>  Affine simplices in a Euclidean space, their closed interiors and their faces. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:simplex">LaTeX</a>
+    
+    
+  <div class="tooltip">
+      <span class="lean_link">Lean</span>
+      <ul class="tooltip_list">
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/Affine.Simplex" class="lean_decl">Affine.Simplex</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/Affine.Simplex.closedInterior" class="lean_decl">Affine.Simplex.closedInterior</a></li>
+        
+           <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/Affine.Simplex.faceOpposite" class="lean_decl">Affine.Simplex.faceOpposite</a></li>
+        
+      </ul>
+  </div>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="ml:testlemma_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="ml:testlemma" style="display: none">
+    <div class="thm_thmheading">
+      <span class="theorem_thmcaption">
+      Theorem
+      </span>
+      <span class="theorem_thmlabel">2.9</span><span class="theorem_thmtitle">Fundamental lemma of the calculus of variations</span></div>
+    <div class="thm_thmcontent"><p>  A locally integrable function on an open set whose integrals against all smooth compactly supported functions vanish is zero almost everywhere. </p>
+</div>
+
+    <a class="latex_link" href="chap-mathlib.html#ml:testlemma">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/IsOpen.ae_eq_zero_of_integral_contDiff_smul_eq_zero">Lean</a>
     
     
   
@@ -2278,7 +2672,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">3.7</span><span class="theorem_thmtitle">Section 5.3.1: the Baumann–Oden method</span></div>
+      <span class="theorem_thmlabel">4.7</span><span class="theorem_thmtitle">Section 5.3.1: the Baumann–Oden method</span></div>
     <div class="thm_thmcontent"><p>   For \(p\ge 2\), every admissible mesh and every \(f\in L^2(\Omega )\) the Baumann–Oden problem has exactly one solution, and if \(u\in H^{p+1}(\Omega )\), then \(N_h(u-u_h)\le C_Eh^p\lvert u\rvert _{H^{p+1}}\) and \(\lVert u-u_h\rVert _{L^2}\le C_Lh^p\lvert u\rvert _{H^{p+1}}\), with uniform constants. For \(p=1\) there is a one-triangle mesh on which \(B_{BO}(w,v)=(\nabla w,\nabla v)_\Omega \) for affine \(w,v\), and on which the load \(f=1\) has no discrete solution. </p>
 </div>
 
@@ -2327,7 +2721,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">3.8</span><span class="theorem_thmtitle">Section 5.3.2: the original Bassi–Rebay method</span></div>
+      <span class="theorem_thmlabel">4.8</span><span class="theorem_thmtitle">Section 5.3.2: the original Bassi–Rebay method</span></div>
     <div class="thm_thmcontent"><p>   For \(p\ge 1\): </p>
 <ul class="itemize">
   <li><p>\(Z_h=\{ v_h\in V_h:P_{p-1}v_h=0\text{ on every triangle},\  \{ v_h\} =0\text{ on every interior edge}\} \); </p>
@@ -2386,7 +2780,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">3.3</span><span class="theorem_thmtitle">Section 3.3: consistency, adjoint consistency, Galerkin orthogonality</span></div>
+      <span class="theorem_thmlabel">4.3</span><span class="theorem_thmtitle">Section 3.3: consistency, adjoint consistency, Galerkin orthogonality</span></div>
     <div class="thm_thmcontent"><p>    For each of the four stable methods, with arbitrary \(\eta _e\) and \(\beta _e\): if \(u\in H^2(\Omega )\cap H^1_0(\Omega )\) and \(-\Delta u=f\), then \(B_h(u,v)=B_h(v,u)=(f,v)_\Omega \) for all \(v\in W_h\), and every discrete solution satisfies \(B_h(u-u_h,v_h)=0\) for all \(v_h\in V_h\). </p>
 </div>
 
@@ -2435,7 +2829,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">3.1</span><span class="theorem_thmtitle">The Dirichlet problem on a convex polygon</span></div>
+      <span class="theorem_thmlabel">4.1</span><span class="theorem_thmtitle">The Dirichlet problem on a convex polygon</span></div>
     <div class="thm_thmcontent"><p>   Let \(\Omega \) be a bounded open convex polygon. There is \(C_{reg}{\gt}0\) such that for every \(f\in L^2(\Omega )\) the problem \(-\Delta u=f\), \(u=0\) on \(\partial \Omega \) has a weak solution \(u\in H^1_0(\Omega )\), unique up to its derivatives of order at most one, and \(u\in H^2(\Omega )\) with \(-\Delta u=f\) and \(\lVert u\rVert _{H^2(\Omega )}\le C_{reg}\lVert f\rVert _{L^2(\Omega )}\). Every \(H^2(\Omega )\) jet has Sobolev traces on the edges of every admissible mesh. </p>
 </div>
 
@@ -2480,7 +2874,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">3.4</span><span class="theorem_thmtitle">Section 3.2: flux and primal formulations</span></div>
+      <span class="theorem_thmlabel">4.4</span><span class="theorem_thmtitle">Section 3.2: flux and primal formulations</span></div>
     <div class="thm_thmcontent"><p>   For each of the twelve methods and arbitrary \(\eta _e\), \(\beta _e\), a pair \((u_h,\sigma _h)\) solves the flux formulation if and only if \(\sigma _h\) is the eliminated auxiliary field of \(u_h\) and \(u_h\) solves the primal problem \(B_h(u_h,v_h)=(f,v_h)_\Omega \). Every flux solution satisfies the balance \(\int _Sf+\int _{\partial S}\hat\sigma \cdot n_S=0\) for every set \(S\) of triangles. </p>
 </div>
 
@@ -2525,7 +2919,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">3.2</span><span class="theorem_thmtitle">Section 5.1: the four stable methods</span></div>
+      <span class="theorem_thmlabel">4.2</span><span class="theorem_thmtitle">Section 5.1: the four stable methods</span></div>
     <div class="thm_thmcontent"><p>   Fix \(p\ge 1\) and \(\kappa {\gt}0\). There is \(\eta _*=\eta _*(p,\kappa ){\gt}0\) such that for every convex polygon \(\Omega \), all \(0{\lt}\eta _{\min }\le \eta _{\max }\), \(b\ge 0\) and every method among IP, Bassi et al., Brezzi et al. and LDG satisfying its threshold, there are \(C_b,C_s,C_E,C_0{\gt}0\) with the following properties for every admissible mesh, all \(\eta _e\in [\eta _{\min },\eta _{\max }]\) and all \(\lvert \beta _e\rvert \le b\): </p>
 <ol class="enumerate">
   <li><p>\(B_h\) is symmetric and bilinear on \(W_h\), \(\lvert B_h(w,v)\rvert \le C_bN_h(w)N_h(v)\), and \(B_h(v_h,v_h)\ge C_sN_h(v_h)^2\) on \(V_h\); </p>
@@ -2578,7 +2972,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">3.5</span><span class="theorem_thmtitle">Section 5: NIPG, pure penalties and superpenalties</span></div>
+      <span class="theorem_thmlabel">4.5</span><span class="theorem_thmtitle">Section 5: NIPG, pure penalties and superpenalties</span></div>
     <div class="thm_thmcontent"><p>   Fix \(p\ge 1\), \(\kappa \), \(\Omega \) and \(0{\lt}\eta _{\min }\le \eta _{\max }\). With constants uniform over admissible meshes and \(\eta _e\in [\eta _{\min },\eta _{\max }]\): </p>
 <ul class="itemize">
   <li><p>NIPG is bounded on \(W_h\), coercive on \(V_h\) and uniquely solvable, and for \(u\in H^{p+1}(\Omega )\): \(N_h(u-u_h)\le C_Eh^p\lvert u\rvert _{H^{p+1}}\) and \(\lVert u-u_h\rVert _{L^2}\le C_Lh^p\lvert u\rvert _{H^{p+1}}\); </p>
@@ -2631,7 +3025,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">3.6</span><span class="theorem_thmtitle">Table 6.1: consistency defects</span></div>
+      <span class="theorem_thmlabel">4.6</span><span class="theorem_thmtitle">Table 6.1: consistency defects</span></div>
     <div class="thm_thmcontent"><p>   Let \(u\in H^2(\Omega )\cap H^1_0(\Omega )\) with \(-\Delta u=f\). For all \(v\in W_h\) and arbitrary \(\eta _e\): NIPG and superpenalized NIPG satisfy \(B(u,v)=(f,v)_\Omega \) and \(B(v,u)=(f,v)_\Omega +2C(u,v)\); the pure penalties and the pure superpenalties satisfy \(B(u,v)=B(v,u)=(f,v)_\Omega +C(u,v)\). </p>
 </div>
 
@@ -2676,7 +3070,7 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">5.8</span><span class="theorem_thmtitle">\(H^2\) regularity on convex polygons</span></div>
+      <span class="theorem_thmlabel">6.8</span><span class="theorem_thmtitle">\(H^2\) regularity on convex polygons</span></div>
     <div class="thm_thmcontent"><p>   On a convex polygon there is \(C\) such that every solution \(v\in H^1_0(\Omega )\) of \((\nabla v,\nabla \varphi )=(F,\varphi )\) has weak second derivatives bounded by \(C(\lVert F\rVert +\lVert v\rVert )\). </p>
 </div>
 
@@ -2711,7 +3105,7 @@ graphContainer.graphviz({useWorker: true})
     .width(width)
     .height(height)
     .fit(true)
-    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"def:liftings"	[color=green,		fillcolor="#B0ECA3",		label=liftings,		shape=box,		style=filled];	"lem:liftings"	[color=green,		fillcolor="#1CAC78",		label=liftings,		shape=ellipse,		style=filled];	"def:liftings" -> "lem:liftings"	[style=dashed];	"def:forms"	[color=green,		fillcolor="#B0ECA3",		label=forms,		shape=box,		style=filled];	"def:liftings" -> "def:forms"	[style=dashed];	"lem:super-jumps"	[color=green,		fillcolor="#1CAC78",		label="super-jumps",		shape=ellipse,		style=filled];	"lem:liftings" -> "lem:super-jumps"	[style=dashed];	"lem:std-bound"	[color=green,		fillcolor="#1CAC78",		label="std-bound",		shape=ellipse,		style=filled];	"lem:liftings" -> "lem:std-bound"	[style=dashed];	"lem:penalty-stability"	[color=green,		fillcolor="#1CAC78",		label="penalty-stability",		shape=ellipse,		style=filled];	"lem:liftings" -> "lem:penalty-stability"	[style=dashed];	"lem:br-square"	[color=green,		fillcolor="#1CAC78",		label="br-square",		shape=ellipse,		style=filled];	"lem:liftings" -> "lem:br-square"	[style=dashed];	"lem:std-consistency"	[color=green,		fillcolor="#1CAC78",		label="std-consistency",		shape=ellipse,		style=filled];	"lem:liftings" -> "lem:std-consistency"	[style=dashed];	"lem:std-coercive"	[color=green,		fillcolor="#1CAC78",		label="std-coercive",		shape=ellipse,		style=filled];	"lem:liftings" -> "lem:std-coercive"	[style=dashed];	"lem:flux-identities"	[color=green,		fillcolor="#1CAC78",		label="flux-identities",		shape=ellipse,		style=filled];	"lem:liftings" -> "lem:flux-identities"	[style=dashed];	"def:fluxes"	[color=green,		fillcolor="#B0ECA3",		label=fluxes,		shape=box,		style=filled];	"def:forms" -> "def:fluxes"	[style=dashed];	"thm:penalty-defects"	[color=green,		fillcolor="#1CAC78",		label="penalty-defects",		shape=ellipse,		style=filled];	"def:forms" -> "thm:penalty-defects"	[style=dashed];	"def:norms"	[color=green,		fillcolor="#B0ECA3",		label=norms,		shape=box,		style=filled];	"def:forms" -> "def:norms"	[style=dashed];	"def:discrete"	[color=green,		fillcolor="#B0ECA3",		label=discrete,		shape=box,		style=filled];	"def:forms" -> "def:discrete"	[style=dashed];	"lem:super-abstract"	[color=green,		fillcolor="#1CAC78",		label="super-abstract",		shape=ellipse,		style=filled];	"lem:super-jumps" -> "lem:super-abstract"	[style=dashed];	"thm:four"	[color=green,		fillcolor="#1CAC78",		label=four,		shape=ellipse,		style=filled];	"lem:std-bound" -> "thm:four"	[style=dashed];	"thm:penalty"	[color=green,		fillcolor="#1CAC78",		label=penalty,		shape=ellipse,		style=filled];	"lem:penalty-stability" -> "thm:penalty"	[style=dashed];	"lem:br-cons-interp"	[color=green,		fillcolor="#1CAC78",		label="br-cons-interp",		shape=ellipse,		style=filled];	"lem:br-square" -> "lem:br-cons-interp"	[style=dashed];	"lem:br-kernel"	[color=green,		fillcolor="#1CAC78",		label="br-kernel",		shape=ellipse,		style=filled];	"lem:br-square" -> "lem:br-kernel"	[style=dashed];	"lem:br-solvable"	[color=green,		fillcolor="#1CAC78",		label="br-solvable",		shape=ellipse,		style=filled];	"lem:br-square" -> "lem:br-solvable"	[style=dashed];	"lem:std-consistency" -> "thm:four"	[style=dashed];	"thm:consistency"	[color=green,		fillcolor="#1CAC78",		label=consistency,		shape=ellipse,		style=filled];	"lem:std-consistency" -> "thm:consistency"	[style=dashed];	"lem:std-coercive" -> "thm:four"	[style=dashed];	"thm:flux"	[color=green,		fillcolor="#1CAC78",		label=flux,		shape=ellipse,		style=filled];	"lem:flux-identities" -> "thm:flux"	[style=dashed];	"def:fluxes" -> "lem:flux-identities"	[style=dashed];	"thm:penalty-defects" -> "thm:penalty"	[style=dashed];	"def:norms" -> "lem:super-jumps"	[style=dashed];	"lem:form-bounds"	[color=green,		fillcolor="#1CAC78",		label="form-bounds",		shape=ellipse,		style=filled];	"def:norms" -> "lem:form-bounds"	[style=dashed];	"lem:solvability"	[color=green,		fillcolor="#1CAC78",		label=solvability,		shape=ellipse,		style=filled];	"def:norms" -> "lem:solvability"	[style=dashed];	"lem:energy"	[color=green,		fillcolor="#1CAC78",		label=energy,		shape=ellipse,		style=filled];	"def:norms" -> "lem:energy"	[style=dashed];	"lem:interp-dg"	[color=green,		fillcolor="#1CAC78",		label="interp-dg",		shape=ellipse,		style=filled];	"def:norms" -> "lem:interp-dg"	[style=dashed];	"def:br"	[color=green,		fillcolor="#B0ECA3",		label=br,		shape=box,		style=filled];	"def:discrete" -> "def:br"	[style=dashed];	"def:discrete" -> "thm:consistency"	[style=dashed];	"def:discrete" -> "lem:solvability"	[style=dashed];	"def:discrete" -> "lem:energy"	[style=dashed];	"lem:bo-counterexample"	[color=green,		fillcolor="#1CAC78",		label="bo-counterexample",		shape=ellipse,		style=filled];	"def:discrete" -> "lem:bo-counterexample"	[style=dashed];	"def:br" -> "lem:br-square"	[style=dashed];	"lem:mesh-geometry"	[color=green,		fillcolor="#1CAC78",		label="mesh-geometry",		shape=ellipse,		style=filled];	"lem:sup-bound"	[color=green,		fillcolor="#1CAC78",		label="sup-bound",		shape=ellipse,		style=filled];	"lem:mesh-geometry" -> "lem:sup-bound"	[style=dashed];	"lem:trace-existence"	[color=green,		fillcolor="#1CAC78",		label="trace-existence",		shape=ellipse,		style=filled];	"lem:mesh-geometry" -> "lem:trace-existence"	[style=dashed];	"lem:lagrange"	[color=green,		fillcolor="#1CAC78",		label=lagrange,		shape=ellipse,		style=filled];	"lem:mesh-geometry" -> "lem:lagrange"	[style=dashed];	"lem:poly-ineq"	[color=green,		fillcolor="#1CAC78",		label="poly-ineq",		shape=ellipse,		style=filled];	"lem:mesh-geometry" -> "lem:poly-ineq"	[style=dashed];	"lem:continuous-rep"	[color=green,		fillcolor="#1CAC78",		label="continuous-rep",		shape=ellipse,		style=filled];	"lem:sup-bound" -> "lem:continuous-rep"	[style=dashed];	"thm:dirichlet"	[color=green,		fillcolor="#1CAC78",		label=dirichlet,		shape=ellipse,		style=filled];	"lem:trace-existence" -> "thm:dirichlet"	[style=dashed];	"lem:trace-existence" -> "lem:form-bounds"	[style=dashed];	"lem:trace-existence" -> "lem:br-cons-interp"	[style=dashed];	"lem:green-traces"	[color=green,		fillcolor="#1CAC78",		label="green-traces",		shape=ellipse,		style=filled];	"lem:trace-existence" -> "lem:green-traces"	[style=dashed];	"lem:cell-interp"	[color=green,		fillcolor="#1CAC78",		label="cell-interp",		shape=ellipse,		style=filled];	"lem:lagrange" -> "lem:cell-interp"	[style=dashed];	"lem:poly-ineq" -> "lem:liftings"	[style=dashed];	"lem:poly-ineq" -> "lem:form-bounds"	[style=dashed];	"lem:rt-local"	[color=green,		fillcolor="#1CAC78",		label="rt-local",		shape=ellipse,		style=filled];	"lem:poly-ineq" -> "lem:rt-local"	[style=dashed];	"lem:bo-stability"	[color=green,		fillcolor="#1CAC78",		label="bo-stability",		shape=ellipse,		style=filled];	"lem:poly-ineq" -> "lem:bo-stability"	[style=dashed];	"lem:continuous-rep" -> "lem:cell-interp"	[style=dashed];	"thm:dirichlet" -> "thm:four"	[style=dashed];	"lem:broken-poincare"	[color=green,		fillcolor="#1CAC78",		label="broken-poincare",		shape=ellipse,		style=filled];	"thm:dirichlet" -> "lem:broken-poincare"	[style=dashed];	"lem:br-errors"	[color=green,		fillcolor="#1CAC78",		label="br-errors",		shape=ellipse,		style=filled];	"thm:dirichlet" -> "lem:br-errors"	[style=dashed];	"lem:form-bounds" -> "lem:std-bound"	[style=dashed];	"lem:form-bounds" -> "lem:penalty-stability"	[style=dashed];	"lem:form-bounds" -> "lem:std-coercive"	[style=dashed];	"lem:form-bounds" -> "lem:broken-poincare"	[style=dashed];	"lem:br-cons-interp" -> "lem:br-errors"	[style=dashed];	"lem:trace-agreement"	[color=green,		fillcolor="#1CAC78",		label="trace-agreement",		shape=ellipse,		style=filled];	"lem:green-traces" -> "lem:trace-agreement"	[style=dashed];	"lem:rt-local" -> "lem:br-cons-interp"	[style=dashed];	"lem:rt-local" -> "lem:br-kernel"	[style=dashed];	"lem:br-example"	[color=green,		fillcolor="#1CAC78",		label="br-example",		shape=ellipse,		style=filled];	"lem:br-kernel" -> "lem:br-example"	[style=dashed];	"lem:cell-interp" -> "lem:interp-dg"	[style=dashed];	"thm:bo"	[color=green,		fillcolor="#1CAC78",		label=bo,		shape=ellipse,		style=filled];	"lem:bo-stability" -> "thm:bo"	[style=dashed];	"lem:wirtinger"	[color=green,		fillcolor="#1CAC78",		label=wirtinger,		shape=ellipse,		style=filled];	"lem:strip"	[color=green,		fillcolor="#1CAC78",		label=strip,		shape=ellipse,		style=filled];	"lem:wirtinger" -> "lem:strip"	[style=dashed];	"lem:sector"	[color=green,		fillcolor="#1CAC78",		label=sector,		shape=ellipse,		style=filled];	"lem:strip" -> "lem:sector"	[style=dashed];	"lem:cones"	[color=green,		fillcolor="#1CAC78",		label=cones,		shape=ellipse,		style=filled];	"lem:sector" -> "lem:cones"	[style=dashed];	"lem:localize"	[color=green,		fillcolor="#1CAC78",		label=localize,		shape=ellipse,		style=filled];	"lem:cones" -> "lem:localize"	[style=dashed];	"lem:super-abstract" -> "thm:penalty"	[style=dashed];	"lem:br-solvable" -> "lem:br-errors"	[style=dashed];	"lem:green-broken"	[color=green,		fillcolor="#1CAC78",		label="green-broken",		shape=ellipse,		style=filled];	"lem:green-broken" -> "lem:std-consistency"	[style=dashed];	"lem:green-broken" -> "thm:penalty-defects"	[style=dashed];	"lem:green-broken" -> "thm:bo"	[style=dashed];	"lem:green-broken" -> "lem:broken-poincare"	[style=dashed];	"lem:broken-poincare" -> "thm:penalty"	[style=dashed];	"thm:br"	[color=green,		fillcolor="#1CAC78",		label=br,		shape=ellipse,		style=filled];	"lem:br-errors" -> "thm:br"	[style=dashed];	"def:jets"	[color=green,		fillcolor="#B0ECA3",		label=jets,		shape=box,		style=filled];	"def:dirichlet"	[color=green,		fillcolor="#B0ECA3",		label=dirichlet,		shape=box,		style=filled];	"def:jets" -> "def:dirichlet"	[style=dashed];	"def:mesh"	[color=green,		fillcolor="#B0ECA3",		label=mesh,		shape=box,		style=filled];	"def:jets" -> "def:mesh"	[style=dashed];	"lem:density"	[color=green,		fillcolor="#1CAC78",		label=density,		shape=ellipse,		style=filled];	"def:jets" -> "lem:density"	[style=dashed];	"def:broken"	[color=green,		fillcolor="#B0ECA3",		label=broken,		shape=box,		style=filled];	"def:dirichlet" -> "def:broken"	[style=dashed];	"lem:weak-solution"	[color=green,		fillcolor="#1CAC78",		label="weak-solution",		shape=ellipse,		style=filled];	"def:dirichlet" -> "lem:weak-solution"	[style=dashed];	"def:mesh" -> "lem:mesh-geometry"	[style=dashed];	"def:mesh" -> "def:broken"	[style=dashed];	"lem:density" -> "lem:trace-existence"	[style=dashed];	"lem:bramble-hilbert"	[color=green,		fillcolor="#1CAC78",		label="bramble-hilbert",		shape=ellipse,		style=filled];	"lem:density" -> "lem:bramble-hilbert"	[style=dashed];	"def:broken" -> "lem:trace-existence"	[style=dashed];	"def:jumps"	[color=green,		fillcolor="#B0ECA3",		label=jumps,		shape=box,		style=filled];	"def:broken" -> "def:jumps"	[style=dashed];	"lem:weak-solution" -> "lem:wirtinger"	[style=dashed];	"lem:tangential-reg"	[color=green,		fillcolor="#1CAC78",		label="tangential-reg",		shape=ellipse,		style=filled];	"lem:weak-solution" -> "lem:tangential-reg"	[style=dashed];	"lem:bramble-hilbert" -> "lem:cell-interp"	[style=dashed];	"def:jumps" -> "def:liftings"	[style=dashed];	"lem:solvability" -> "lem:bo-stability"	[style=dashed];	"lem:solvability" -> "thm:four"	[style=dashed];	"lem:solvability" -> "thm:penalty"	[style=dashed];	"lem:energy" -> "thm:bo"	[style=dashed];	"lem:duality"	[color=green,		fillcolor="#1CAC78",		label=duality,		shape=ellipse,		style=filled];	"lem:energy" -> "lem:duality"	[style=dashed];	"lem:interp-dg" -> "thm:bo"	[style=dashed];	"lem:interp-dg" -> "thm:four"	[style=dashed];	"lem:interp-dg" -> "thm:penalty"	[style=dashed];	"lem:interp-dg" -> "lem:br-errors"	[style=dashed];	"lem:tangential-reg" -> "lem:strip"	[style=dashed];	"lem:bo-counterexample" -> "thm:bo"	[style=dashed];	"lem:bo-counterexample" -> "lem:br-example"	[style=dashed];	"lem:duality" -> "lem:super-abstract"	[style=dashed];	"lem:duality" -> "thm:four"	[style=dashed];	"lem:br-example" -> "thm:br"	[style=dashed];	"thm:polygon-reg"	[color=green,		fillcolor="#1CAC78",		label="polygon-reg",		shape=ellipse,		style=filled];	"lem:localize" -> "thm:polygon-reg"	[style=dashed];	"thm:polygon-reg" -> "thm:dirichlet"	[style=dashed];	"lem:trace-agreement" -> "lem:continuous-rep"	[style=dashed];	"lem:trace-agreement" -> "lem:green-broken"	[style=dashed];	"lem:divergence"	[color=green,		fillcolor="#1CAC78",		label=divergence,		shape=ellipse,		style=filled];	"lem:divergence" -> "lem:trace-existence"	[style=dashed];	"lem:divergence" -> "lem:poly-ineq"	[style=dashed];	"lem:poincare-cell"	[color=green,		fillcolor="#1CAC78",		label="poincare-cell",		shape=ellipse,		style=filled];	"lem:poincare-cell" -> "lem:bramble-hilbert"	[style=dashed];}`)
+    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	"ml:polynomials"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=polynomials,		shape=box,		style=filled];	"def:broken"	[color=green,		fillcolor="#B0ECA3",		label=broken,		shape=box,		style=filled];	"ml:polynomials" -> "def:broken"	[style=dashed];	"lem:bramble-hilbert"	[color=green,		fillcolor="#1CAC78",		label="bramble-hilbert",		shape=ellipse,		style=filled];	"ml:polynomials" -> "lem:bramble-hilbert"	[style=dashed];	"lem:poly-ineq"	[color=green,		fillcolor="#1CAC78",		label="poly-ineq",		shape=ellipse,		style=filled];	"ml:polynomials" -> "lem:poly-ineq"	[style=dashed];	"lem:lagrange"	[color=green,		fillcolor="#1CAC78",		label=lagrange,		shape=ellipse,		style=filled];	"ml:polynomials" -> "lem:lagrange"	[style=dashed];	"lem:trace-existence"	[color=green,		fillcolor="#1CAC78",		label="trace-existence",		shape=ellipse,		style=filled];	"def:broken" -> "lem:trace-existence"	[style=dashed];	"def:jumps"	[color=green,		fillcolor="#B0ECA3",		label=jumps,		shape=box,		style=filled];	"def:broken" -> "def:jumps"	[style=dashed];	"lem:cell-interp"	[color=green,		fillcolor="#1CAC78",		label="cell-interp",		shape=ellipse,		style=filled];	"lem:bramble-hilbert" -> "lem:cell-interp"	[style=dashed];	"lem:rt-local"	[color=green,		fillcolor="#1CAC78",		label="rt-local",		shape=ellipse,		style=filled];	"lem:poly-ineq" -> "lem:rt-local"	[style=dashed];	"lem:bo-stability"	[color=green,		fillcolor="#1CAC78",		label="bo-stability",		shape=ellipse,		style=filled];	"lem:poly-ineq" -> "lem:bo-stability"	[style=dashed];	"lem:form-bounds"	[color=green,		fillcolor="#1CAC78",		label="form-bounds",		shape=ellipse,		style=filled];	"lem:poly-ineq" -> "lem:form-bounds"	[style=dashed];	"lem:liftings"	[color=green,		fillcolor="#1CAC78",		label=liftings,		shape=ellipse,		style=filled];	"lem:poly-ineq" -> "lem:liftings"	[style=dashed];	"lem:lagrange" -> "lem:cell-interp"	[style=dashed];	"lem:trace-existence" -> "lem:form-bounds"	[style=dashed];	"thm:dirichlet"	[color=green,		fillcolor="#F5B841",		label=dirichlet,		shape=ellipse,		style=filled];	"lem:trace-existence" -> "thm:dirichlet"	[style=dashed];	"lem:green-traces"	[color=green,		fillcolor="#1CAC78",		label="green-traces",		shape=ellipse,		style=filled];	"lem:trace-existence" -> "lem:green-traces"	[style=dashed];	"lem:br-cons-interp"	[color=green,		fillcolor="#1CAC78",		label="br-cons-interp",		shape=ellipse,		style=filled];	"lem:trace-existence" -> "lem:br-cons-interp"	[style=dashed];	"def:liftings"	[color=green,		fillcolor="#B0ECA3",		label=liftings,		shape=box,		style=filled];	"def:jumps" -> "def:liftings"	[style=dashed];	"lem:interp-dg"	[color=green,		fillcolor="#1CAC78",		label="interp-dg",		shape=ellipse,		style=filled];	"lem:cell-interp" -> "lem:interp-dg"	[style=dashed];	"lem:rt-local" -> "lem:br-cons-interp"	[style=dashed];	"lem:br-kernel"	[color=green,		fillcolor="#1CAC78",		label="br-kernel",		shape=ellipse,		style=filled];	"lem:rt-local" -> "lem:br-kernel"	[style=dashed];	"thm:bo"	[color=green,		fillcolor="#F5B841",		label=bo,		shape=ellipse,		style=filled];	"lem:bo-stability" -> "thm:bo"	[style=dashed];	"lem:broken-poincare"	[color=green,		fillcolor="#1CAC78",		label="broken-poincare",		shape=ellipse,		style=filled];	"lem:form-bounds" -> "lem:broken-poincare"	[style=dashed];	"lem:std-coercive"	[color=green,		fillcolor="#1CAC78",		label="std-coercive",		shape=ellipse,		style=filled];	"lem:form-bounds" -> "lem:std-coercive"	[style=dashed];	"lem:std-bound"	[color=green,		fillcolor="#1CAC78",		label="std-bound",		shape=ellipse,		style=filled];	"lem:form-bounds" -> "lem:std-bound"	[style=dashed];	"lem:penalty-stability"	[color=green,		fillcolor="#1CAC78",		label="penalty-stability",		shape=ellipse,		style=filled];	"lem:form-bounds" -> "lem:penalty-stability"	[style=dashed];	"lem:super-jumps"	[color=green,		fillcolor="#1CAC78",		label="super-jumps",		shape=ellipse,		style=filled];	"lem:liftings" -> "lem:super-jumps"	[style=dashed];	"lem:flux-identities"	[color=green,		fillcolor="#1CAC78",		label="flux-identities",		shape=ellipse,		style=filled];	"lem:liftings" -> "lem:flux-identities"	[style=dashed];	"lem:liftings" -> "lem:std-coercive"	[style=dashed];	"lem:br-square"	[color=green,		fillcolor="#1CAC78",		label="br-square",		shape=ellipse,		style=filled];	"lem:liftings" -> "lem:br-square"	[style=dashed];	"lem:liftings" -> "lem:std-bound"	[style=dashed];	"lem:liftings" -> "lem:penalty-stability"	[style=dashed];	"lem:std-consistency"	[color=green,		fillcolor="#1CAC78",		label="std-consistency",		shape=ellipse,		style=filled];	"lem:liftings" -> "lem:std-consistency"	[style=dashed];	"thm:four"	[color=green,		fillcolor="#F5B841",		label=four,		shape=ellipse,		style=filled];	"thm:dirichlet" -> "thm:four"	[style=dashed];	"lem:br-errors"	[color=green,		fillcolor="#1CAC78",		label="br-errors",		shape=ellipse,		style=filled];	"thm:dirichlet" -> "lem:br-errors"	[style=dashed];	"thm:dirichlet" -> "lem:broken-poincare"	[style=dashed];	"lem:trace-agreement"	[color=green,		fillcolor="#1CAC78",		label="trace-agreement",		shape=ellipse,		style=filled];	"lem:green-traces" -> "lem:trace-agreement"	[style=dashed];	"lem:br-cons-interp" -> "lem:br-errors"	[style=dashed];	"def:liftings" -> "lem:liftings"	[style=dashed];	"def:forms"	[color=green,		fillcolor="#B0ECA3",		label=forms,		shape=box,		style=filled];	"def:liftings" -> "def:forms"	[style=dashed];	"def:norms"	[color=green,		fillcolor="#B0ECA3",		label=norms,		shape=box,		style=filled];	"def:norms" -> "lem:form-bounds"	[style=dashed];	"def:norms" -> "lem:interp-dg"	[style=dashed];	"lem:solvability"	[color=green,		fillcolor="#1CAC78",		label=solvability,		shape=ellipse,		style=filled];	"def:norms" -> "lem:solvability"	[style=dashed];	"lem:energy"	[color=green,		fillcolor="#1CAC78",		label=energy,		shape=ellipse,		style=filled];	"def:norms" -> "lem:energy"	[style=dashed];	"def:norms" -> "lem:super-jumps"	[style=dashed];	"lem:interp-dg" -> "thm:four"	[style=dashed];	"lem:interp-dg" -> "lem:br-errors"	[style=dashed];	"thm:penalty"	[color=green,		fillcolor="#F5B841",		label=penalty,		shape=ellipse,		style=filled];	"lem:interp-dg" -> "thm:penalty"	[style=dashed];	"lem:interp-dg" -> "thm:bo"	[style=dashed];	"lem:solvability" -> "lem:bo-stability"	[style=dashed];	"lem:solvability" -> "thm:four"	[style=dashed];	"lem:solvability" -> "thm:penalty"	[style=dashed];	"lem:energy" -> "thm:bo"	[style=dashed];	"lem:duality"	[color=green,		fillcolor="#1CAC78",		label=duality,		shape=ellipse,		style=filled];	"lem:energy" -> "lem:duality"	[style=dashed];	"lem:super-abstract"	[color=green,		fillcolor="#1CAC78",		label="super-abstract",		shape=ellipse,		style=filled];	"lem:super-jumps" -> "lem:super-abstract"	[style=dashed];	"thm:br"	[color=green,		fillcolor="#F5B841",		label=br,		shape=ellipse,		style=filled];	"lem:br-errors" -> "thm:br"	[style=dashed];	"lem:broken-poincare" -> "thm:penalty"	[style=dashed];	"def:forms" -> "def:norms"	[style=dashed];	"thm:penalty-defects"	[color=green,		fillcolor="#F5B841",		label="penalty-defects",		shape=ellipse,		style=filled];	"def:forms" -> "thm:penalty-defects"	[style=dashed];	"def:discrete"	[color=green,		fillcolor="#B0ECA3",		label=discrete,		shape=box,		style=filled];	"def:forms" -> "def:discrete"	[style=dashed];	"def:fluxes"	[color=green,		fillcolor="#B0ECA3",		label=fluxes,		shape=box,		style=filled];	"def:forms" -> "def:fluxes"	[style=dashed];	"thm:penalty-defects" -> "thm:penalty"	[style=dashed];	"def:discrete" -> "lem:solvability"	[style=dashed];	"def:discrete" -> "lem:energy"	[style=dashed];	"def:br"	[color=green,		fillcolor="#B0ECA3",		label=br,		shape=box,		style=filled];	"def:discrete" -> "def:br"	[style=dashed];	"lem:bo-counterexample"	[color=green,		fillcolor="#1CAC78",		label="bo-counterexample",		shape=ellipse,		style=filled];	"def:discrete" -> "lem:bo-counterexample"	[style=dashed];	"thm:consistency"	[color=green,		fillcolor="#F5B841",		label=consistency,		shape=ellipse,		style=filled];	"def:discrete" -> "thm:consistency"	[style=dashed];	"def:fluxes" -> "lem:flux-identities"	[style=dashed];	"def:br" -> "lem:br-square"	[style=dashed];	"lem:bo-counterexample" -> "thm:bo"	[style=dashed];	"lem:br-example"	[color=green,		fillcolor="#1CAC78",		label="br-example",		shape=ellipse,		style=filled];	"lem:bo-counterexample" -> "lem:br-example"	[style=dashed];	"thm:flux"	[color=green,		fillcolor="#F5B841",		label=flux,		shape=ellipse,		style=filled];	"lem:flux-identities" -> "thm:flux"	[style=dashed];	"lem:mesh-geometry"	[color=green,		fillcolor="#1CAC78",		label="mesh-geometry",		shape=ellipse,		style=filled];	"lem:mesh-geometry" -> "lem:poly-ineq"	[style=dashed];	"lem:mesh-geometry" -> "lem:lagrange"	[style=dashed];	"lem:mesh-geometry" -> "lem:trace-existence"	[style=dashed];	"lem:sup-bound"	[color=green,		fillcolor="#1CAC78",		label="sup-bound",		shape=ellipse,		style=filled];	"lem:mesh-geometry" -> "lem:sup-bound"	[style=dashed];	"lem:continuous-rep"	[color=green,		fillcolor="#1CAC78",		label="continuous-rep",		shape=ellipse,		style=filled];	"lem:sup-bound" -> "lem:continuous-rep"	[style=dashed];	"lem:br-kernel" -> "lem:br-example"	[style=dashed];	"lem:continuous-rep" -> "lem:cell-interp"	[style=dashed];	"lem:cones"	[color=green,		fillcolor="#1CAC78",		label=cones,		shape=ellipse,		style=filled];	"lem:localize"	[color=green,		fillcolor="#1CAC78",		label=localize,		shape=ellipse,		style=filled];	"lem:cones" -> "lem:localize"	[style=dashed];	"thm:polygon-reg"	[color=green,		fillcolor="#1CAC78",		label="polygon-reg",		shape=ellipse,		style=filled];	"lem:localize" -> "thm:polygon-reg"	[style=dashed];	"thm:polygon-reg" -> "thm:dirichlet"	[style=dashed];	"lem:std-coercive" -> "thm:four"	[style=dashed];	"ml:hausdorff"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=hausdorff,		shape=box,		style=filled];	"lem:divergence"	[color=green,		fillcolor="#1CAC78",		label=divergence,		shape=ellipse,		style=filled];	"ml:hausdorff" -> "lem:divergence"	[style=dashed];	"def:mesh"	[color=green,		fillcolor="#B0ECA3",		label=mesh,		shape=box,		style=filled];	"ml:hausdorff" -> "def:mesh"	[style=dashed];	"lem:divergence" -> "lem:poly-ineq"	[style=dashed];	"lem:divergence" -> "lem:trace-existence"	[style=dashed];	"def:mesh" -> "def:broken"	[style=dashed];	"def:mesh" -> "lem:mesh-geometry"	[style=dashed];	"def:dirichlet"	[color=green,		fillcolor="#B0ECA3",		label=dirichlet,		shape=box,		style=filled];	"def:dirichlet" -> "def:broken"	[style=dashed];	"lem:weak-solution"	[color=green,		fillcolor="#1CAC78",		label="weak-solution",		shape=ellipse,		style=filled];	"def:dirichlet" -> "lem:weak-solution"	[style=dashed];	"lem:tangential-reg"	[color=green,		fillcolor="#1CAC78",		label="tangential-reg",		shape=ellipse,		style=filled];	"lem:weak-solution" -> "lem:tangential-reg"	[style=dashed];	"lem:wirtinger"	[color=green,		fillcolor="#1CAC78",		label=wirtinger,		shape=ellipse,		style=filled];	"lem:weak-solution" -> "lem:wirtinger"	[style=dashed];	"lem:strip"	[color=green,		fillcolor="#1CAC78",		label=strip,		shape=ellipse,		style=filled];	"lem:tangential-reg" -> "lem:strip"	[style=dashed];	"lem:wirtinger" -> "lem:strip"	[style=dashed];	"lem:br-square" -> "lem:br-cons-interp"	[style=dashed];	"lem:br-square" -> "lem:br-kernel"	[style=dashed];	"lem:br-solvable"	[color=green,		fillcolor="#1CAC78",		label="br-solvable",		shape=ellipse,		style=filled];	"lem:br-square" -> "lem:br-solvable"	[style=dashed];	"lem:br-solvable" -> "lem:br-errors"	[style=dashed];	"lem:trace-agreement" -> "lem:continuous-rep"	[style=dashed];	"lem:green-broken"	[color=green,		fillcolor="#1CAC78",		label="green-broken",		shape=ellipse,		style=filled];	"lem:trace-agreement" -> "lem:green-broken"	[style=dashed];	"lem:sector"	[color=green,		fillcolor="#1CAC78",		label=sector,		shape=ellipse,		style=filled];	"lem:strip" -> "lem:sector"	[style=dashed];	"lem:std-bound" -> "thm:four"	[style=dashed];	"lem:penalty-stability" -> "thm:penalty"	[style=dashed];	"lem:br-example" -> "thm:br"	[style=dashed];	"lem:std-consistency" -> "thm:four"	[style=dashed];	"lem:std-consistency" -> "thm:consistency"	[style=dashed];	"lem:sector" -> "lem:cones"	[style=dashed];	"lem:density"	[color=green,		fillcolor="#1CAC78",		label=density,		shape=ellipse,		style=filled];	"lem:density" -> "lem:bramble-hilbert"	[style=dashed];	"lem:density" -> "lem:trace-existence"	[style=dashed];	"lem:duality" -> "thm:four"	[style=dashed];	"lem:duality" -> "lem:super-abstract"	[style=dashed];	"lem:super-abstract" -> "thm:penalty"	[style=dashed];	"ml:laxmilgram"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=laxmilgram,		shape=ellipse,		style=filled];	"ml:laxmilgram" -> "lem:weak-solution"	[style=dashed];	"ml:ftc"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=ftc,		shape=ellipse,		style=filled];	"ml:ftc" -> "lem:sup-bound"	[style=dashed];	"ml:ftc" -> "lem:divergence"	[style=dashed];	"lem:poincare-cell"	[color=green,		fillcolor="#1CAC78",		label="poincare-cell",		shape=ellipse,		style=filled];	"ml:ftc" -> "lem:poincare-cell"	[style=dashed];	"lem:poincare-cell" -> "lem:bramble-hilbert"	[style=dashed];	"def:jets"	[color=green,		fillcolor="#B0ECA3",		label=jets,		shape=box,		style=filled];	"def:jets" -> "def:mesh"	[style=dashed];	"def:jets" -> "def:dirichlet"	[style=dashed];	"def:jets" -> "lem:density"	[style=dashed];	"ml:simplex"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=simplex,		shape=box,		style=filled];	"ml:simplex" -> "lem:divergence"	[style=dashed];	"ml:simplex" -> "def:mesh"	[style=dashed];	"lem:green-broken" -> "lem:broken-poincare"	[style=dashed];	"lem:green-broken" -> "thm:penalty-defects"	[style=dashed];	"lem:green-broken" -> "thm:bo"	[style=dashed];	"lem:green-broken" -> "lem:std-consistency"	[style=dashed];	"ml:fubini"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=fubini,		shape=ellipse,		style=filled];	"ml:fubini" -> "lem:divergence"	[style=dashed];	"ml:lp"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=lp,		shape=box,		style=filled];	"ml:lp" -> "lem:weak-solution"	[style=dashed];	"ml:convolution"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=convolution,		shape=ellipse,		style=filled];	"ml:convolution" -> "thm:polygon-reg"	[style=dashed];	"ml:convolution" -> "lem:density"	[style=dashed];	"ml:testlemma"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=testlemma,		shape=ellipse,		style=filled];	"ml:testlemma" -> "lem:cones"	[style=dashed];	"ml:testlemma" -> "lem:trace-agreement"	[style=dashed];	"ml:findim"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=findim,		shape=ellipse,		style=filled];	"ml:findim" -> "lem:lagrange"	[style=dashed];	"ml:findim" -> "lem:solvability"	[style=dashed];	"ml:changevar"	[color="#8A8A8A",		fillcolor="#E2E2E2",		label=changevar,		shape=ellipse,		style=filled];	"ml:changevar" -> "lem:rt-local"	[style=dashed];	"ml:changevar" -> "lem:sector"	[style=dashed];}`)
     .on("end", interactive);
 
 latexLabelEscaper = function(label) {

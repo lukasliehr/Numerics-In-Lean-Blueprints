@@ -46,28 +46,31 @@
   </ul>
  </li>
 <li class="">
-  <a href="chap-setting.html"><span class="toc_ref">2</span> <span class="toc_entry">Setting and definitions</span></a>
+  <a href="chap-mathlib.html"><span class="toc_ref">2</span> <span class="toc_entry">Results from Mathlib</span></a>
+ </li>
+<li class="">
+  <a href="chap-setting.html"><span class="toc_ref">3</span> <span class="toc_entry">Setting and definitions</span></a>
  </li>
 <li class=" active current">
-  <a href="chap-main.html"><span class="toc_ref">3</span> <span class="toc_entry">The main theorems</span></a>
+  <a href="chap-main.html"><span class="toc_ref">4</span> <span class="toc_entry">The main theorems</span></a>
  </li>
 <li class="">
-  <a href="chap-geometry.html"><span class="toc_ref">4</span> <span class="toc_entry">Geometry of simplicial meshes</span></a>
+  <a href="chap-geometry.html"><span class="toc_ref">5</span> <span class="toc_entry">Geometry of simplicial meshes</span></a>
  </li>
 <li class="">
-  <a href="chap-analysis.html"><span class="toc_ref">5</span> <span class="toc_entry">Analysis on simplices</span></a>
+  <a href="chap-analysis.html"><span class="toc_ref">6</span> <span class="toc_entry">Analysis on simplices</span></a>
  </li>
 <li class="">
-  <a href="chap-interpolation.html"><span class="toc_ref">6</span> <span class="toc_entry">Interpolation</span></a>
+  <a href="chap-interpolation.html"><span class="toc_ref">7</span> <span class="toc_entry">Interpolation</span></a>
  </li>
 <li class="">
-  <a href="chap-stability.html"><span class="toc_ref">7</span> <span class="toc_entry">Stability of the discrete methods</span></a>
+  <a href="chap-stability.html"><span class="toc_ref">8</span> <span class="toc_entry">Stability of the discrete methods</span></a>
  </li>
 <li class="">
-  <a href="chap-errors.html"><span class="toc_ref">8</span> <span class="toc_entry">Error estimates</span></a>
+  <a href="chap-errors.html"><span class="toc_ref">9</span> <span class="toc_entry">Error estimates</span></a>
  </li>
 <li class="">
-  <a href="chap-correspondence.html"><span class="toc_ref">9</span> <span class="toc_entry">Correspondence with the paper</span></a>
+  <a href="chap-correspondence.html"><span class="toc_ref">10</span> <span class="toc_entry">Correspondence with the paper</span></a>
  </li>
 <li ><a href="dep_graph_document.html">Dependency graph</a></li>
 </ul>
@@ -78,7 +81,7 @@
 
 
 <div class="main-text">
-<h1 id="chap:main">3 The main theorems</h1>
+<h1 id="chap:main">4 The main theorems</h1>
 
 <p>Section&#160;8 of <span class="ttfamily">Showcase.lean</span> states each numbered result of the paper as a definition named after it (<span class="ttfamily">Proposition_3_2</span>, …), with the paper’s quantifiers in the paper’s order and in the paper’s notation; Section&#160;9 asserts them for \(d\in \{ 2,3\} \), \(k\ge 1\) and \(\rho \ge 1\). Constants are chosen before the mesh and the coefficients, which expresses that they are independent of \(h\), \(\kappa \) and \(a\). </p>
 <div class="theorem_thmwrapper theorem-style-plain" id="thm:main3">
@@ -86,7 +89,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">3.1</span>
+    <span class="theorem_thmlabel">4.1</span>
     <span class="theorem_thmtitle">Section 3 of the paper</span>
     <div class="thm_header_extras">
 
@@ -113,21 +116,21 @@
         
         <ul class="uses">
           
-          <li><a href="chap-setting.html#def:exact">Definition 2.5</a></li>
+          <li><a href="chap-setting.html#def:exact">Definition 3.5</a></li>
           
-          <li><a href="chap-stability.html#thm:dgcoercivity">Proposition 7.1</a></li>
+          <li><a href="chap-stability.html#thm:dgcoercivity">Proposition 8.1</a></li>
           
-          <li><a href="chap-main.html#thm:skew">Theorem 3.4</a></li>
+          <li><a href="chap-main.html#thm:skew">Theorem 4.4</a></li>
           
-          <li><a href="chap-stability.html#thm:sdgcoercivity">Proposition 7.2</a></li>
+          <li><a href="chap-stability.html#thm:sdgcoercivity">Proposition 8.2</a></li>
           
-          <li><a href="chap-stability.html#thm:continuity">Proposition 7.3</a></li>
+          <li><a href="chap-stability.html#thm:continuity">Proposition 8.3</a></li>
           
-          <li><a href="chap-stability.html#thm:dginfsup">Theorem 7.4</a></li>
+          <li><a href="chap-stability.html#thm:dginfsup">Theorem 8.4</a></li>
           
-          <li><a href="chap-errors.html#thm:errorestimates">Theorem 8.2</a></li>
+          <li><a href="chap-errors.html#thm:errorestimates">Theorem 9.2</a></li>
           
-          <li><a href="chap-interpolation.html#thm:interpolation">Theorem 6.4</a></li>
+          <li><a href="chap-interpolation.html#thm:interpolation">Theorem 7.4</a></li>
           
         </ul>
     
@@ -189,7 +192,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">3.2</span>
+    <span class="theorem_thmlabel">4.2</span>
     <span class="theorem_thmtitle">Section 4 of the paper</span>
     <div class="thm_header_extras">
 
@@ -216,15 +219,15 @@
         
         <ul class="uses">
           
-          <li><a href="chap-setting.html#def:local">Definition 2.4</a></li>
+          <li><a href="chap-setting.html#def:local">Definition 3.4</a></li>
           
-          <li><a href="chap-stability.html#thm:localinfsup">Lemma 7.5</a></li>
+          <li><a href="chap-stability.html#thm:localinfsup">Lemma 8.5</a></li>
           
-          <li><a href="chap-stability.html#thm:localpoincare">Lemma 7.6</a></li>
+          <li><a href="chap-stability.html#thm:localpoincare">Lemma 8.6</a></li>
           
-          <li><a href="chap-errors.html#thm:errorestimates">Theorem 8.2</a></li>
+          <li><a href="chap-errors.html#thm:errorestimates">Theorem 9.2</a></li>
           
-          <li><a href="chap-interpolation.html#thm:interpolation">Theorem 6.4</a></li>
+          <li><a href="chap-interpolation.html#thm:interpolation">Theorem 7.4</a></li>
           
         </ul>
     
@@ -282,7 +285,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">3.3</span>
+    <span class="theorem_thmlabel">4.3</span>
     <span class="theorem_thmtitle">Consistency, well-posedness and traces</span>
     <div class="thm_header_extras">
 
@@ -309,11 +312,11 @@
         
         <ul class="uses">
           
-          <li><a href="chap-stability.html#thm:consistency">Theorem 7.7</a></li>
+          <li><a href="chap-stability.html#thm:consistency">Theorem 8.7</a></li>
           
-          <li><a href="chap-stability.html#thm:solvability">Theorem 7.8</a></li>
+          <li><a href="chap-stability.html#thm:solvability">Theorem 8.8</a></li>
           
-          <li><a href="chap-analysis.html#thm:traces">Theorem 5.6</a></li>
+          <li><a href="chap-analysis.html#thm:traces">Theorem 6.6</a></li>
           
         </ul>
     
@@ -375,7 +378,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">3.4</span>
+    <span class="theorem_thmlabel">4.4</span>
     <span class="theorem_thmtitle">Skew-symmetric penalty, Prop.&#160;3.2</span>
     <div class="thm_header_extras">
 
@@ -402,7 +405,7 @@
         
         <ul class="uses">
           
-          <li><a href="chap-setting.html#def:forms">Definition 2.3</a></li>
+          <li><a href="chap-setting.html#def:forms">Definition 3.3</a></li>
           
         </ul>
     

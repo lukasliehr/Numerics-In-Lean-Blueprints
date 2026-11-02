@@ -45,28 +45,31 @@
   </ul>
  </li>
 <li class="">
-  <a href="chap-setting.html"><span class="toc_ref">2</span> <span class="toc_entry">Setting and definitions</span></a>
+  <a href="chap-mathlib.html"><span class="toc_ref">2</span> <span class="toc_entry">Results from Mathlib</span></a>
  </li>
 <li class="">
-  <a href="chap-main.html"><span class="toc_ref">3</span> <span class="toc_entry">The main theorems</span></a>
+  <a href="chap-setting.html"><span class="toc_ref">3</span> <span class="toc_entry">Setting and definitions</span></a>
  </li>
 <li class="">
-  <a href="chap-assembly.html"><span class="toc_ref">4</span> <span class="toc_entry">The abstract assembly</span></a>
+  <a href="chap-main.html"><span class="toc_ref">4</span> <span class="toc_entry">The main theorems</span></a>
  </li>
 <li class="">
-  <a href="chap-cuts.html"><span class="toc_ref">5</span> <span class="toc_entry">The cuts</span></a>
+  <a href="chap-assembly.html"><span class="toc_ref">5</span> <span class="toc_entry">The abstract assembly</span></a>
  </li>
 <li class="">
-  <a href="chap-analysis.html"><span class="toc_ref">6</span> <span class="toc_entry">Analysis on \(\mathbb {R}^3\)</span></a>
+  <a href="chap-cuts.html"><span class="toc_ref">6</span> <span class="toc_entry">The cuts</span></a>
  </li>
 <li class="">
-  <a href="chap-topology.html"><span class="toc_ref">7</span> <span class="toc_entry">Topology of the cut domain</span></a>
+  <a href="chap-analysis.html"><span class="toc_ref">7</span> <span class="toc_entry">Analysis on \(\mathbb {R}^3\)</span></a>
  </li>
 <li class="">
-  <a href="chap-boundary.html"><span class="toc_ref">8</span> <span class="toc_entry">The boundary</span></a>
+  <a href="chap-topology.html"><span class="toc_ref">8</span> <span class="toc_entry">Topology of the cut domain</span></a>
+ </li>
+<li class="">
+  <a href="chap-boundary.html"><span class="toc_ref">9</span> <span class="toc_entry">The boundary</span></a>
  </li>
 <li class=" active current">
-  <a href="chap-correspondence.html"><span class="toc_ref">9</span> <span class="toc_entry">Correspondence with the paper</span></a>
+  <a href="chap-correspondence.html"><span class="toc_ref">10</span> <span class="toc_entry">Correspondence with the paper</span></a>
  </li>
 <li ><a href="dep_graph_document.html">Dependency graph</a></li>
 </ul>
@@ -77,16 +80,16 @@
 
 
 <div class="main-text">
-<h1 id="chap:correspondence">9 Correspondence with the paper</h1>
+<h1 id="chap:correspondence">10 Correspondence with the paper</h1>
 
 <ul class="itemize">
-  <li><p><b class="bfseries">Formalized:</b> Theorem&#160;3.12 (tangential vector potentials) and Theorem&#160;3.17 (normal vector potentials), with the paper’s hypotheses on \(\Omega \) and on the cuts (Definition&#160;<a href="chap-setting.html#def:geometry">2.3</a>). Lean numbers the cuts \(0,\dots ,J-1\). </p>
+  <li><p><b class="bfseries">Formalized:</b> Theorem&#160;3.12 (tangential vector potentials) and Theorem&#160;3.17 (normal vector potentials), with the paper’s hypotheses on \(\Omega \) and on the cuts (Definition&#160;<a href="chap-setting.html#def:geometry">3.3</a>). Lean numbers the cuts \(0,\dots ,J-1\). </p>
 </li>
   <li><p><b class="bfseries">Function spaces.</b> Fields are classes in \(L^2(\Omega )^3\), so uniqueness is uniqueness in \(L^2(\Omega )^3\). In the paper \(\psi \) ranges over \(X(\Omega )=H(\operatorname {curl},\Omega )\cap H(\operatorname {div},\Omega )\); this is the same, since \(\operatorname {curl}\psi =u\in L^2(\Omega )^3\) and \(\operatorname {div}\psi =0\) already say that \(\psi \in X(\Omega )\). </p>
 </li>
-  <li><p><b class="bfseries">Boundary conditions and fluxes</b> are the paper’s weak definitions by Green’s formulas (Definitions&#160;<a href="chap-setting.html#def:traces">2.2</a> and&#160;<a href="chap-setting.html#def:fluxes">2.4</a>). The flux conditions are imposed for every admissible cutoff and lift, which are shown to exist (Lemma&#160;<a href="chap-setting.html#lem:nonvacuous">2.6</a>); the paper shows that the fluxes do not depend on these choices. </p>
+  <li><p><b class="bfseries">Boundary conditions and fluxes</b> are the paper’s weak definitions by Green’s formulas (Definitions&#160;<a href="chap-setting.html#def:traces">3.2</a> and&#160;<a href="chap-setting.html#def:fluxes">3.4</a>). The flux conditions are imposed for every admissible cutoff and lift, which are shown to exist (Lemma&#160;<a href="chap-setting.html#lem:nonvacuous">3.6</a>); the paper shows that the fluxes do not depend on these choices. </p>
 </li>
-  <li><p><b class="bfseries">Not part of the statements:</b> the additional sentences of Theorems 3.12 and 3.17 (linear dependence of \(\psi \) on \(u\) and the bound \(\lVert \psi \rVert _X\le C_\Omega \lVert u\rVert \)). For the tangential potential, linearity and continuity in \(L^2(\Omega )^3\) are proved in the library (Lemma&#160;<a href="chap-assembly.html#lem:inverse">4.5</a>). </p>
+  <li><p><b class="bfseries">Not part of the statements:</b> the additional sentences of Theorems 3.12 and 3.17 (linear dependence of \(\psi \) on \(u\) and the bound \(\lVert \psi \rVert _X\le C_\Omega \lVert u\rVert \)). For the tangential potential, linearity and continuity in \(L^2(\Omega )^3\) are proved in the library (Lemma&#160;<a href="chap-assembly.html#lem:inverse">5.5</a>). </p>
 </li>
   <li><p><b class="bfseries">Not formalized:</b> the other results of the paper (regularity and compactness of Section&#160;2, the harmonic kernels, Helmholtz decompositions and the full Dirichlet potential of Section&#160;3, and the finite-element and Stokes results of Section&#160;4). Their mathematical proofs are in <span class="ttfamily">blueprint/DetailedProofs.pdf</span>. </p>
 </li>

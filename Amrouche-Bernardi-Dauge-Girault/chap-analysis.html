@@ -46,28 +46,31 @@
   </ul>
  </li>
 <li class="">
-  <a href="chap-setting.html"><span class="toc_ref">2</span> <span class="toc_entry">Setting and definitions</span></a>
+  <a href="chap-mathlib.html"><span class="toc_ref">2</span> <span class="toc_entry">Results from Mathlib</span></a>
  </li>
 <li class="">
-  <a href="chap-main.html"><span class="toc_ref">3</span> <span class="toc_entry">The main theorems</span></a>
+  <a href="chap-setting.html"><span class="toc_ref">3</span> <span class="toc_entry">Setting and definitions</span></a>
  </li>
 <li class="">
-  <a href="chap-assembly.html"><span class="toc_ref">4</span> <span class="toc_entry">The abstract assembly</span></a>
+  <a href="chap-main.html"><span class="toc_ref">4</span> <span class="toc_entry">The main theorems</span></a>
  </li>
 <li class="">
-  <a href="chap-cuts.html"><span class="toc_ref">5</span> <span class="toc_entry">The cuts</span></a>
+  <a href="chap-assembly.html"><span class="toc_ref">5</span> <span class="toc_entry">The abstract assembly</span></a>
+ </li>
+<li class="">
+  <a href="chap-cuts.html"><span class="toc_ref">6</span> <span class="toc_entry">The cuts</span></a>
  </li>
 <li class=" active current">
-  <a href="chap-analysis.html"><span class="toc_ref">6</span> <span class="toc_entry">Analysis on \(\mathbb {R}^3\)</span></a>
+  <a href="chap-analysis.html"><span class="toc_ref">7</span> <span class="toc_entry">Analysis on \(\mathbb {R}^3\)</span></a>
  </li>
 <li class="">
-  <a href="chap-topology.html"><span class="toc_ref">7</span> <span class="toc_entry">Topology of the cut domain</span></a>
+  <a href="chap-topology.html"><span class="toc_ref">8</span> <span class="toc_entry">Topology of the cut domain</span></a>
  </li>
 <li class="">
-  <a href="chap-boundary.html"><span class="toc_ref">8</span> <span class="toc_entry">The boundary</span></a>
+  <a href="chap-boundary.html"><span class="toc_ref">9</span> <span class="toc_entry">The boundary</span></a>
  </li>
 <li class="">
-  <a href="chap-correspondence.html"><span class="toc_ref">9</span> <span class="toc_entry">Correspondence with the paper</span></a>
+  <a href="chap-correspondence.html"><span class="toc_ref">10</span> <span class="toc_entry">Correspondence with the paper</span></a>
  </li>
 <li ><a href="dep_graph_document.html">Dependency graph</a></li>
 </ul>
@@ -78,14 +81,14 @@
 
 
 <div class="main-text">
-<h1 id="chap:analysis">6 Analysis on \(\mathbb {R}^3\)</h1>
+<h1 id="chap:analysis">7 Analysis on \(\mathbb {R}^3\)</h1>
 
 <div class="lemma_thmwrapper theorem-style-plain" id="lem:mollify">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">6.1</span>
+    <span class="lemma_thmlabel">7.1</span>
     <span class="lemma_thmtitle">Mollification</span>
     <div class="thm_header_extras">
 
@@ -99,6 +102,26 @@
     <a class="icon proof" href="chap-analysis.html#a0000000022"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-mathlib.html#ml:convolution">Theorem 2.12</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -129,7 +152,7 @@
         </div>
   </div>
   <div class="lemma_thmcontent">
-  <p>  There is a smooth, nonnegative, radial kernel \(\rho _t\) of unit mass supported in the ball of radius \(t\). For locally integrable \(f\), \(\rho _t*f\) is smooth; for \(f\in L^2(\mathbb {R}^3)\), \(\lVert \rho _t*f\rVert _{L^2}\le \lVert f\rVert _{L^2}\) and \(\rho _t*f\to f\) in \(L^2\) as \(t\to 0\). </p>
+  <p>   There is a smooth, nonnegative, radial kernel \(\rho _t\) of unit mass supported in the ball of radius \(t\). For locally integrable \(f\), \(\rho _t*f\) is smooth; for \(f\in L^2(\mathbb {R}^3)\), \(\lVert \rho _t*f\rVert _{L^2}\le \lVert f\rVert _{L^2}\) and \(\rho _t*f\to f\) in \(L^2\) as \(t\to 0\). </p>
 
   </div>
 </div>
@@ -150,7 +173,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">6.2</span>
+    <span class="lemma_thmlabel">7.2</span>
     <span class="lemma_thmtitle">Mollification commutes with weak derivatives</span>
     <div class="thm_header_extras">
 
@@ -177,7 +200,7 @@
         
         <ul class="uses">
           
-          <li><a href="chap-analysis.html#lem:mollify">Lemma 6.1</a></li>
+          <li><a href="chap-analysis.html#lem:mollify">Lemma 7.1</a></li>
           
         </ul>
     
@@ -235,7 +258,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">6.3</span>
+    <span class="theorem_thmlabel">7.3</span>
     <span class="theorem_thmtitle">Weyl’s lemma for curl-free, divergence-free fields</span>
     <div class="thm_header_extras">
 
@@ -262,7 +285,7 @@
         
         <ul class="uses">
           
-          <li><a href="chap-analysis.html#lem:moll-deriv">Lemma 6.2</a></li>
+          <li><a href="chap-analysis.html#lem:moll-deriv">Lemma 7.2</a></li>
           
         </ul>
     
@@ -305,7 +328,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>At points whose \(\tau \)-ball lies in \(U\), the mollification \(\rho _\tau *H\) does not depend on \(\tau \): the derivative of the radial kernel in \(\tau \) is a divergence, whose pairing with \(H\) vanishes because \(H\) is curl free and divergence free. Letting \(\tau \to 0\) identifies \(H\) with the smooth field \(\rho _\tau *H\) locally, and Lemma&#160;<a href="chap-analysis.html#lem:moll-deriv">6.2</a> shows that this field is curl free. </p>
+  <p>At points whose \(\tau \)-ball lies in \(U\), the mollification \(\rho _\tau *H\) does not depend on \(\tau \): the derivative of the radial kernel in \(\tau \) is a divergence, whose pairing with \(H\) vanishes because \(H\) is curl free and divergence free. Letting \(\tau \to 0\) identifies \(H\) with the smooth field \(\rho _\tau *H\) locally, and Lemma&#160;<a href="chap-analysis.html#lem:moll-deriv">7.2</a> shows that this field is curl free. </p>
 
   </div>
 </div>
@@ -314,7 +337,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">6.4</span>
+    <span class="lemma_thmlabel">7.4</span>
     <span class="lemma_thmtitle">Translations</span>
     <div class="thm_header_extras">
 
@@ -341,9 +364,9 @@
         
         <ul class="uses">
           
-          <li><a href="chap-analysis.html#lem:mollify">Lemma 6.1</a></li>
+          <li><a href="chap-analysis.html#lem:mollify">Lemma 7.1</a></li>
           
-          <li><a href="chap-analysis.html#lem:moll-deriv">Lemma 6.2</a></li>
+          <li><a href="chap-analysis.html#lem:moll-deriv">Lemma 7.2</a></li>
           
         </ul>
     

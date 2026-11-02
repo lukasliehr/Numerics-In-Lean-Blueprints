@@ -46,28 +46,31 @@
   </ul>
  </li>
 <li class="">
-  <a href="chap-setting.html"><span class="toc_ref">2</span> <span class="toc_entry">Setting and definitions</span></a>
+  <a href="chap-mathlib.html"><span class="toc_ref">2</span> <span class="toc_entry">Results from Mathlib</span></a>
  </li>
 <li class="">
-  <a href="chap-main.html"><span class="toc_ref">3</span> <span class="toc_entry">The main theorems</span></a>
+  <a href="chap-setting.html"><span class="toc_ref">3</span> <span class="toc_entry">Setting and definitions</span></a>
  </li>
 <li class="">
-  <a href="chap-geometry.html"><span class="toc_ref">4</span> <span class="toc_entry">Geometry of simplicial meshes</span></a>
+  <a href="chap-main.html"><span class="toc_ref">4</span> <span class="toc_entry">The main theorems</span></a>
  </li>
 <li class="">
-  <a href="chap-analysis.html"><span class="toc_ref">5</span> <span class="toc_entry">Analysis on simplices</span></a>
+  <a href="chap-geometry.html"><span class="toc_ref">5</span> <span class="toc_entry">Geometry of simplicial meshes</span></a>
+ </li>
+<li class="">
+  <a href="chap-analysis.html"><span class="toc_ref">6</span> <span class="toc_entry">Analysis on simplices</span></a>
  </li>
 <li class=" active current">
-  <a href="chap-interpolation.html"><span class="toc_ref">6</span> <span class="toc_entry">Interpolation</span></a>
+  <a href="chap-interpolation.html"><span class="toc_ref">7</span> <span class="toc_entry">Interpolation</span></a>
  </li>
 <li class="">
-  <a href="chap-stability.html"><span class="toc_ref">7</span> <span class="toc_entry">Stability of the discrete methods</span></a>
+  <a href="chap-stability.html"><span class="toc_ref">8</span> <span class="toc_entry">Stability of the discrete methods</span></a>
  </li>
 <li class="">
-  <a href="chap-errors.html"><span class="toc_ref">8</span> <span class="toc_entry">Error estimates</span></a>
+  <a href="chap-errors.html"><span class="toc_ref">9</span> <span class="toc_entry">Error estimates</span></a>
  </li>
 <li class="">
-  <a href="chap-correspondence.html"><span class="toc_ref">9</span> <span class="toc_entry">Correspondence with the paper</span></a>
+  <a href="chap-correspondence.html"><span class="toc_ref">10</span> <span class="toc_entry">Correspondence with the paper</span></a>
  </li>
 <li ><a href="dep_graph_document.html">Dependency graph</a></li>
 </ul>
@@ -78,14 +81,14 @@
 
 
 <div class="main-text">
-<h1 id="chap:interpolation">6 Interpolation</h1>
+<h1 id="chap:interpolation">7 Interpolation</h1>
 
 <div class="lemma_thmwrapper theorem-style-plain" id="lem:lagrange">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">6.1</span>
+    <span class="lemma_thmlabel">7.1</span>
     <span class="lemma_thmtitle">Lagrange interpolation on a simplex</span>
     <div class="thm_header_extras">
 
@@ -99,6 +102,28 @@
     <a class="icon proof" href="chap-interpolation.html#a0000000028"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-mathlib.html#ml:polynomials">Definition 2.3</a></li>
+          
+          <li><a href="chap-mathlib.html#ml:findim">Theorem 2.8</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -131,7 +156,7 @@
         </div>
   </div>
   <div class="lemma_thmcontent">
-  <p>  Let the principal lattice of degree \(k\) have nodes \(x_\lambda \), and let the Lagrange basis be </p>
+  <p>   Let the principal lattice of degree \(k\) have nodes \(x_\lambda \), and let the Lagrange basis be </p>
 <div class="displaymath" id="a0000000029">
   \[  \varphi _\lambda =\prod _i\prod _{j{\lt}\lambda _i}\frac{k b_i-j}{\lambda _i-j},  \]
 </div>
@@ -156,7 +181,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">6.2</span>
+    <span class="lemma_thmlabel">7.2</span>
     <span class="lemma_thmtitle">Face conformity</span>
     <div class="thm_header_extras">
 
@@ -183,9 +208,9 @@
         
         <ul class="uses">
           
-          <li><a href="chap-interpolation.html#lem:lagrange">Lemma 6.1</a></li>
+          <li><a href="chap-interpolation.html#lem:lagrange">Lemma 7.1</a></li>
           
-          <li><a href="chap-setting.html#def:mesh">Definition 2.1</a></li>
+          <li><a href="chap-setting.html#def:mesh">Definition 3.1</a></li>
           
         </ul>
     
@@ -241,7 +266,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">6.3</span>
+    <span class="theorem_thmlabel">7.3</span>
     <span class="theorem_thmtitle">Continuous representatives</span>
     <div class="thm_header_extras">
 
@@ -268,9 +293,9 @@
         
         <ul class="uses">
           
-          <li><a href="chap-analysis.html#thm:supbound">Theorem 5.10</a></li>
+          <li><a href="chap-analysis.html#thm:supbound">Theorem 6.10</a></li>
           
-          <li><a href="chap-analysis.html#thm:traces">Theorem 5.6</a></li>
+          <li><a href="chap-analysis.html#thm:traces">Theorem 6.6</a></li>
           
         </ul>
     
@@ -326,7 +351,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">6.4</span>
+    <span class="theorem_thmlabel">7.4</span>
     <span class="theorem_thmtitle">Interpolation estimate</span>
     <div class="thm_header_extras">
 
@@ -353,13 +378,13 @@
         
         <ul class="uses">
           
-          <li><a href="chap-analysis.html#thm:bramblehilbert">Theorem 5.9</a></li>
+          <li><a href="chap-analysis.html#thm:bramblehilbert">Theorem 6.9</a></li>
           
-          <li><a href="chap-interpolation.html#thm:continuousrep">Theorem 6.3</a></li>
+          <li><a href="chap-interpolation.html#thm:continuousrep">Theorem 7.3</a></li>
           
-          <li><a href="chap-interpolation.html#lem:conformity">Lemma 6.2</a></li>
+          <li><a href="chap-interpolation.html#lem:conformity">Lemma 7.2</a></li>
           
-          <li><a href="chap-analysis.html#lem:inverse">Lemma 5.3</a></li>
+          <li><a href="chap-analysis.html#lem:inverse">Lemma 6.3</a></li>
           
         </ul>
     

@@ -46,28 +46,31 @@
   </ul>
  </li>
 <li class="">
-  <a href="chap-setting.html"><span class="toc_ref">2</span> <span class="toc_entry">Setting and definitions</span></a>
+  <a href="chap-mathlib.html"><span class="toc_ref">2</span> <span class="toc_entry">Results from Mathlib</span></a>
  </li>
 <li class="">
-  <a href="chap-main.html"><span class="toc_ref">3</span> <span class="toc_entry">The main theorems</span></a>
+  <a href="chap-setting.html"><span class="toc_ref">3</span> <span class="toc_entry">Setting and definitions</span></a>
  </li>
 <li class="">
-  <a href="chap-assembly.html"><span class="toc_ref">4</span> <span class="toc_entry">The abstract assembly</span></a>
+  <a href="chap-main.html"><span class="toc_ref">4</span> <span class="toc_entry">The main theorems</span></a>
  </li>
 <li class="">
-  <a href="chap-cuts.html"><span class="toc_ref">5</span> <span class="toc_entry">The cuts</span></a>
+  <a href="chap-assembly.html"><span class="toc_ref">5</span> <span class="toc_entry">The abstract assembly</span></a>
  </li>
 <li class="">
-  <a href="chap-analysis.html"><span class="toc_ref">6</span> <span class="toc_entry">Analysis on \(\mathbb {R}^3\)</span></a>
+  <a href="chap-cuts.html"><span class="toc_ref">6</span> <span class="toc_entry">The cuts</span></a>
  </li>
 <li class="">
-  <a href="chap-topology.html"><span class="toc_ref">7</span> <span class="toc_entry">Topology of the cut domain</span></a>
+  <a href="chap-analysis.html"><span class="toc_ref">7</span> <span class="toc_entry">Analysis on \(\mathbb {R}^3\)</span></a>
+ </li>
+<li class="">
+  <a href="chap-topology.html"><span class="toc_ref">8</span> <span class="toc_entry">Topology of the cut domain</span></a>
  </li>
 <li class=" active current">
-  <a href="chap-boundary.html"><span class="toc_ref">8</span> <span class="toc_entry">The boundary</span></a>
+  <a href="chap-boundary.html"><span class="toc_ref">9</span> <span class="toc_entry">The boundary</span></a>
  </li>
 <li class="">
-  <a href="chap-correspondence.html"><span class="toc_ref">9</span> <span class="toc_entry">Correspondence with the paper</span></a>
+  <a href="chap-correspondence.html"><span class="toc_ref">10</span> <span class="toc_entry">Correspondence with the paper</span></a>
  </li>
 <li ><a href="dep_graph_document.html">Dependency graph</a></li>
 </ul>
@@ -78,14 +81,14 @@
 
 
 <div class="main-text">
-<h1 id="chap:boundary">8 The boundary</h1>
+<h1 id="chap:boundary">9 The boundary</h1>
 
 <div class="lemma_thmwrapper theorem-style-plain" id="lem:normal-trace">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">8.1</span>
+    <span class="lemma_thmlabel">9.1</span>
     <span class="lemma_thmtitle">Zero tangential trace forces zero normal trace</span>
     <div class="thm_header_extras">
 
@@ -112,11 +115,13 @@
         
         <ul class="uses">
           
-          <li><a href="chap-analysis.html#lem:translate">Lemma 6.4</a></li>
+          <li><a href="chap-mathlib.html#ml:partition">Theorem 2.13</a></li>
           
-          <li><a href="chap-setting.html#def:geometry">Definition 2.3</a></li>
+          <li><a href="chap-analysis.html#lem:translate">Lemma 7.4</a></li>
           
-          <li><a href="chap-setting.html#def:traces">Definition 2.2</a></li>
+          <li><a href="chap-setting.html#def:geometry">Definition 3.3</a></li>
+          
+          <li><a href="chap-setting.html#def:traces">Definition 3.2</a></li>
           
         </ul>
     
@@ -165,7 +170,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>Testing \(\psi \times n=0\) with gradients of smooth compactly supported functions on \(\mathbb {R}^3\) shows that the extension \(\bar u\) of \(u\) by zero is divergence free on \(\mathbb {R}^3\). For \(q\in H^1(\Omega )\), a smooth partition of unity subordinate to \(\Omega \) and to boundary graph patches localizes \(q\). In a patch, \(\bar u\) translated along the frame vanishes near the boundary graph, so it only meets a compactly supported cut-off of the localized function (Lemma&#160;<a href="chap-analysis.html#lem:translate">6.4</a>); continuity of translation gives \(\int _\Omega u\cdot \nabla q=0\). </p>
+  <p>Testing \(\psi \times n=0\) with gradients of smooth compactly supported functions on \(\mathbb {R}^3\) shows that the extension \(\bar u\) of \(u\) by zero is divergence free on \(\mathbb {R}^3\). For \(q\in H^1(\Omega )\), a smooth partition of unity subordinate to \(\Omega \) and to boundary graph patches localizes \(q\). In a patch, \(\bar u\) translated along the frame vanishes near the boundary graph, so it only meets a compactly supported cut-off of the localized function (Lemma&#160;<a href="chap-analysis.html#lem:translate">7.4</a>); continuity of translation gives \(\int _\Omega u\cdot \nabla q=0\). </p>
 
   </div>
 </div>
@@ -174,7 +179,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">8.2</span>
+    <span class="lemma_thmlabel">9.2</span>
     <span class="lemma_thmtitle">Poincaré inequalities by segments</span>
     <div class="thm_header_extras">
 
@@ -188,6 +193,26 @@
     <a class="icon proof" href="chap-boundary.html#a0000000030"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-mathlib.html#ml:fubini">Theorem 2.10</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -218,7 +243,7 @@
         </div>
   </div>
   <div class="lemma_thmcontent">
-  <p>  Let \(S\subset \mathbb {R}^3\) be star shaped with respect to a set \(Z\) of positive finite measure, with \(\lvert w-x\rvert \le d\) for \(x\in S\), \(w\in Z\). Then every smooth \(\varphi \) admits \(c\in \mathbb {R}\) with </p>
+  <p>   Let \(S\subset \mathbb {R}^3\) be star shaped with respect to a set \(Z\) of positive finite measure, with \(\lvert w-x\rvert \le d\) for \(x\in S\), \(w\in Z\). Then every smooth \(\varphi \) admits \(c\in \mathbb {R}\) with </p>
 <div class="displaymath" id="a0000000031">
   \[  \int _S\lvert \varphi -c\rvert ^2\le \frac{8d^2(\lvert S\rvert +\lvert Z\rvert )}{\lvert Z\rvert }\int _S\lvert \nabla \varphi \rvert ^2.  \]
 </div>
@@ -243,7 +268,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">8.3</span>
+    <span class="lemma_thmlabel">9.3</span>
     <span class="lemma_thmtitle">Boundary charts and Lipschitz calculus</span>
     <div class="thm_header_extras">
 
@@ -270,9 +295,11 @@
         
         <ul class="uses">
           
-          <li><a href="chap-setting.html#def:geometry">Definition 2.3</a></li>
+          <li><a href="chap-mathlib.html#ml:rademacher">Theorem 2.7</a></li>
           
-          <li><a href="chap-boundary.html#lem:poincare">Lemma 8.2</a></li>
+          <li><a href="chap-setting.html#def:geometry">Definition 3.3</a></li>
+          
+          <li><a href="chap-boundary.html#lem:poincare">Lemma 9.2</a></li>
           
         </ul>
     
@@ -330,7 +357,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">8.4</span>
+    <span class="lemma_thmlabel">9.4</span>
     <span class="lemma_thmtitle">The reflection estimate</span>
     <div class="thm_header_extras">
 
@@ -357,9 +384,11 @@
         
         <ul class="uses">
           
-          <li><a href="chap-boundary.html#lem:charts">Lemma 8.3</a></li>
+          <li><a href="chap-mathlib.html#ml:rademacher">Theorem 2.7</a></li>
           
-          <li><a href="chap-analysis.html#lem:translate">Lemma 6.4</a></li>
+          <li><a href="chap-boundary.html#lem:charts">Lemma 9.3</a></li>
+          
+          <li><a href="chap-analysis.html#lem:translate">Lemma 7.4</a></li>
           
         </ul>
     
@@ -414,7 +443,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">8.5</span>
+    <span class="theorem_thmlabel">9.5</span>
     <span class="theorem_thmtitle">The key estimate</span>
     <div class="thm_header_extras">
 
@@ -441,11 +470,13 @@
         
         <ul class="uses">
           
-          <li><a href="chap-boundary.html#lem:chart-estimate">Lemma 8.4</a></li>
+          <li><a href="chap-mathlib.html#ml:partition">Theorem 2.13</a></li>
           
-          <li><a href="chap-boundary.html#lem:poincare">Lemma 8.2</a></li>
+          <li><a href="chap-boundary.html#lem:chart-estimate">Lemma 9.4</a></li>
           
-          <li><a href="chap-setting.html#def:fluxes">Definition 2.4</a></li>
+          <li><a href="chap-boundary.html#lem:poincare">Lemma 9.2</a></li>
+          
+          <li><a href="chap-setting.html#def:fluxes">Definition 3.4</a></li>
           
         </ul>
     
@@ -490,7 +521,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>Choose charts small enough to meet a single boundary component, and a partition of unity subordinate to \(\Omega \) and finitely many charts. The interior piece of \(\int _\Omega u\cdot \nabla \varphi \) vanishes; each chart piece is controlled by Lemma&#160;<a href="chap-boundary.html#lem:chart-estimate">8.4</a>; on each boundary component a constant can be subtracted from \(\varphi \) because the fluxes vanish. The Poincaré inequalities of the exterior chart pieces chain along the connected boundary components (Lemma&#160;<a href="chap-boundary.html#lem:poincare">8.2</a>). </p>
+  <p>Choose charts small enough to meet a single boundary component, and a partition of unity subordinate to \(\Omega \) and finitely many charts. The interior piece of \(\int _\Omega u\cdot \nabla \varphi \) vanishes; each chart piece is controlled by Lemma&#160;<a href="chap-boundary.html#lem:chart-estimate">9.4</a>; on each boundary component a constant can be subtracted from \(\varphi \) because the fluxes vanish. The Poincaré inequalities of the exterior chart pieces chain along the connected boundary components (Lemma&#160;<a href="chap-boundary.html#lem:poincare">9.2</a>). </p>
 
   </div>
 </div>
@@ -499,7 +530,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">8.6</span>
+    <span class="theorem_thmlabel">9.6</span>
     <span class="theorem_thmtitle">Solenoidal extension</span>
     <div class="thm_header_extras">
 
@@ -526,7 +557,11 @@
         
         <ul class="uses">
           
-          <li><a href="chap-boundary.html#thm:key-estimate">Theorem 8.5</a></li>
+          <li><a href="chap-mathlib.html#ml:riesz">Theorem 2.4</a></li>
+          
+          <li><a href="chap-mathlib.html#ml:hahnbanach">Theorem 2.6</a></li>
+          
+          <li><a href="chap-boundary.html#thm:key-estimate">Theorem 9.5</a></li>
           
         </ul>
     
@@ -569,7 +604,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>By Theorem&#160;<a href="chap-boundary.html#thm:key-estimate">8.5</a>, \(\nabla \varphi |_\Theta \mapsto \int _\Omega u\cdot \nabla \varphi \) is a bounded functional on gradients in \(L^2(\Theta )^3\). Extend it by Hahn–Banach and let \(w\) be its Riesz representative; then \(U=u\) on \(\Omega \), \(U=-w\) on \(\Theta \) and \(U=0\) elsewhere is divergence free on \(\mathbb {R}^3\). </p>
+  <p>By Theorem&#160;<a href="chap-boundary.html#thm:key-estimate">9.5</a>, \(\nabla \varphi |_\Theta \mapsto \int _\Omega u\cdot \nabla \varphi \) is a bounded functional on gradients in \(L^2(\Theta )^3\). Extend it by Hahn–Banach and let \(w\) be its Riesz representative; then \(U=u\) on \(\Omega \), \(U=-w\) on \(\Theta \) and \(U=0\) elsewhere is divergence free on \(\mathbb {R}^3\). </p>
 
   </div>
 </div>
@@ -578,7 +613,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">8.7</span>
+    <span class="lemma_thmlabel">9.7</span>
     <span class="lemma_thmtitle">An explicit curl potential</span>
     <div class="thm_header_extras">
 
@@ -592,6 +627,28 @@
     <a class="icon proof" href="chap-boundary.html#a0000000037"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-mathlib.html#ml:fubini">Theorem 2.10</a></li>
+          
+          <li><a href="chap-mathlib.html#ml:dominated">Theorem 2.11</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
     
     
     <button class="modal lean">L∃∀N</button>
@@ -618,7 +675,7 @@
         </div>
   </div>
   <div class="lemma_thmcontent">
-  <p>  Let \(v\in L^2(\mathbb {R}^3)^3\) vanish outside the ball of radius \(\rho \) and be weakly divergence free on \(\mathbb {R}^3\). If \(\rho +\rho '\le R\), then </p>
+  <p>   Let \(v\in L^2(\mathbb {R}^3)^3\) vanish outside the ball of radius \(\rho \) and be weakly divergence free on \(\mathbb {R}^3\). If \(\rho +\rho '\le R\), then </p>
 <div class="displaymath" id="a0000000038">
   \[  (Av)(x)=\Bigl(0,\  \int _0^Rv_3(x-te_1)\, \mathrm{d}t,\  -\int _0^Rv_2(x-te_1)\, \mathrm{d}t\Bigr)  \]
 </div>
@@ -643,7 +700,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">8.8</span>
+    <span class="theorem_thmlabel">9.8</span>
     <span class="theorem_thmtitle">Divergence-free fields with zero fluxes are curls</span>
     <div class="thm_header_extras">
 
@@ -670,9 +727,9 @@
         
         <ul class="uses">
           
-          <li><a href="chap-boundary.html#thm:extension">Theorem 8.6</a></li>
+          <li><a href="chap-boundary.html#thm:extension">Theorem 9.6</a></li>
           
-          <li><a href="chap-boundary.html#lem:potential">Lemma 8.7</a></li>
+          <li><a href="chap-boundary.html#lem:potential">Lemma 9.7</a></li>
           
         </ul>
     
@@ -715,7 +772,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>Extend \(u\) by Theorem&#160;<a href="chap-boundary.html#thm:extension">8.6</a> and apply Lemma&#160;<a href="chap-boundary.html#lem:potential">8.7</a> on a ball containing \(\Omega \). </p>
+  <p>Extend \(u\) by Theorem&#160;<a href="chap-boundary.html#thm:extension">9.6</a> and apply Lemma&#160;<a href="chap-boundary.html#lem:potential">9.7</a> on a ball containing \(\Omega \). </p>
 
   </div>
 </div>
@@ -724,7 +781,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">8.9</span>
+    <span class="theorem_thmlabel">9.9</span>
     <span class="theorem_thmtitle">Uniqueness of the normal potential</span>
     <div class="thm_header_extras">
 
@@ -751,13 +808,13 @@
         
         <ul class="uses">
           
-          <li><a href="chap-boundary.html#thm:extension">Theorem 8.6</a></li>
+          <li><a href="chap-boundary.html#thm:extension">Theorem 9.6</a></li>
           
-          <li><a href="chap-boundary.html#lem:potential">Lemma 8.7</a></li>
+          <li><a href="chap-boundary.html#lem:potential">Lemma 9.7</a></li>
           
-          <li><a href="chap-analysis.html#lem:mollify">Lemma 6.1</a></li>
+          <li><a href="chap-analysis.html#lem:mollify">Lemma 7.1</a></li>
           
-          <li><a href="chap-analysis.html#lem:moll-deriv">Lemma 6.2</a></li>
+          <li><a href="chap-analysis.html#lem:moll-deriv">Lemma 7.2</a></li>
           
         </ul>
     
@@ -802,7 +859,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>Let \(U\) be the solenoidal extension of \(\psi \) (Theorem&#160;<a href="chap-boundary.html#thm:extension">8.6</a>) and \(A=AU\) its potential (Lemma&#160;<a href="chap-boundary.html#lem:potential">8.7</a>). The extension \(\bar\psi \) of \(\psi \) by zero is curl free on \(\mathbb {R}^3\) because \(\psi \times n=0\). Hence \(\lVert \psi \rVert ^2=\int U\cdot \bar\psi =\lim _{t\to 0}\int U\cdot (\rho _t*\bar\psi ) =\lim _{t\to 0}\int A\cdot \operatorname {curl}(\rho _t*\bar\psi )=0\). </p>
+  <p>Let \(U\) be the solenoidal extension of \(\psi \) (Theorem&#160;<a href="chap-boundary.html#thm:extension">9.6</a>) and \(A=AU\) its potential (Lemma&#160;<a href="chap-boundary.html#lem:potential">9.7</a>). The extension \(\bar\psi \) of \(\psi \) by zero is curl free on \(\mathbb {R}^3\) because \(\psi \times n=0\). Hence \(\lVert \psi \rVert ^2=\int U\cdot \bar\psi =\lim _{t\to 0}\int U\cdot (\rho _t*\bar\psi ) =\lim _{t\to 0}\int A\cdot \operatorname {curl}(\rho _t*\bar\psi )=0\). </p>
 
   </div>
 </div>

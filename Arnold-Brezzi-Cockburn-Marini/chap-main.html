@@ -46,37 +46,40 @@
   </ul>
  </li>
 <li class="">
-  <a href="chap-setting.html"><span class="toc_ref">2</span> <span class="toc_entry">Setting and definitions</span></a>
+  <a href="chap-mathlib.html"><span class="toc_ref">2</span> <span class="toc_entry">Results from Mathlib</span></a>
+ </li>
+<li class="">
+  <a href="chap-setting.html"><span class="toc_ref">3</span> <span class="toc_entry">Setting and definitions</span></a>
  </li>
 <li class=" active current">
-  <a href="chap-main.html"><span class="toc_ref">3</span> <span class="toc_entry">The main theorems</span></a>
+  <a href="chap-main.html"><span class="toc_ref">4</span> <span class="toc_entry">The main theorems</span></a>
  </li>
 <li class="">
-  <a href="chap-analysis.html"><span class="toc_ref">4</span> <span class="toc_entry">Analysis on triangles</span></a>
+  <a href="chap-analysis.html"><span class="toc_ref">5</span> <span class="toc_entry">Analysis on triangles</span></a>
  </li>
 <li class="">
-  <a href="chap-dirichlet.html"><span class="toc_ref">5</span> <span class="toc_entry">The Dirichlet problem on a convex polygon</span></a>
+  <a href="chap-dirichlet.html"><span class="toc_ref">6</span> <span class="toc_entry">The Dirichlet problem on a convex polygon</span></a>
  </li>
 <li class="">
-  <a href="chap-interpolation.html"><span class="toc_ref">6</span> <span class="toc_entry">Interpolation</span></a>
+  <a href="chap-interpolation.html"><span class="toc_ref">7</span> <span class="toc_entry">Interpolation</span></a>
  </li>
 <li class="">
-  <a href="chap-stable.html"><span class="toc_ref">7</span> <span class="toc_entry">The four stable methods</span></a>
+  <a href="chap-stable.html"><span class="toc_ref">8</span> <span class="toc_entry">The four stable methods</span></a>
  </li>
 <li class="">
-  <a href="chap-fluxes.html"><span class="toc_ref">8</span> <span class="toc_entry">Flux formulations</span></a>
+  <a href="chap-fluxes.html"><span class="toc_ref">9</span> <span class="toc_entry">Flux formulations</span></a>
  </li>
 <li class="">
-  <a href="chap-penalty.html"><span class="toc_ref">9</span> <span class="toc_entry">NIPG, pure penalties and superpenalties</span></a>
+  <a href="chap-penalty.html"><span class="toc_ref">10</span> <span class="toc_entry">NIPG, pure penalties and superpenalties</span></a>
  </li>
 <li class="">
-  <a href="chap-bo.html"><span class="toc_ref">10</span> <span class="toc_entry">The Baumann–Oden method</span></a>
+  <a href="chap-bo.html"><span class="toc_ref">11</span> <span class="toc_entry">The Baumann–Oden method</span></a>
  </li>
 <li class="">
-  <a href="chap-br.html"><span class="toc_ref">11</span> <span class="toc_entry">The original Bassi–Rebay method</span></a>
+  <a href="chap-br.html"><span class="toc_ref">12</span> <span class="toc_entry">The original Bassi–Rebay method</span></a>
  </li>
 <li class="">
-  <a href="chap-correspondence.html"><span class="toc_ref">12</span> <span class="toc_entry">Correspondence with the paper</span></a>
+  <a href="chap-correspondence.html"><span class="toc_ref">13</span> <span class="toc_entry">Correspondence with the paper</span></a>
  </li>
 <li ><a href="dep_graph_document.html">Dependency graph</a></li>
 </ul>
@@ -87,7 +90,7 @@
 
 
 <div class="main-text">
-<h1 id="chap:main">3 The main theorems</h1>
+<h1 id="chap:main">4 The main theorems</h1>
 
 <p>Each theorem is stated in <span class="ttfamily">Showcase.lean</span>, as a proposition in <span class="ttfamily">LeanCode/Statements.lean</span>, proved in <span class="ttfamily">LeanCode/Main/Proofs.lean</span> from a bundled result of <span class="ttfamily">LeanCode/Main/Bundled.lean</span>, and restated in <span class="ttfamily">Showcase_WithProofs.lean</span>. </p>
 <div class="theorem_thmwrapper theorem-style-plain" id="thm:dirichlet">
@@ -95,7 +98,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">3.1</span>
+    <span class="theorem_thmlabel">4.1</span>
     <span class="theorem_thmtitle">The Dirichlet problem on a convex polygon</span>
     <div class="thm_header_extras">
 
@@ -122,15 +125,15 @@
         
         <ul class="uses">
           
-          <li><a href="chap-setting.html#def:dirichlet">Definition 2.2</a></li>
+          <li><a href="chap-setting.html#def:dirichlet">Definition 3.2</a></li>
           
-          <li><a href="chap-setting.html#def:broken">Definition 2.4</a></li>
+          <li><a href="chap-setting.html#def:broken">Definition 3.4</a></li>
           
-          <li><a href="chap-dirichlet.html#lem:weak-solution">Lemma 5.1</a></li>
+          <li><a href="chap-dirichlet.html#lem:weak-solution">Lemma 6.1</a></li>
           
-          <li><a href="chap-dirichlet.html#thm:polygon-reg">Theorem 5.8</a></li>
+          <li><a href="chap-dirichlet.html#thm:polygon-reg">Theorem 6.8</a></li>
           
-          <li><a href="chap-analysis.html#lem:trace-existence">Lemma 4.4</a></li>
+          <li><a href="chap-analysis.html#lem:trace-existence">Lemma 5.4</a></li>
           
         </ul>
     
@@ -181,7 +184,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>Existence and uniqueness by Lax–Milgram (Lemma&#160;<a href="chap-dirichlet.html#lem:weak-solution">5.1</a>); the Hessian and its bound by Theorem&#160;<a href="chap-dirichlet.html#thm:polygon-reg">5.8</a> and the energy estimate; the traces by Lemma&#160;<a href="chap-analysis.html#lem:trace-existence">4.4</a>. </p>
+  <p>Existence and uniqueness by Lax–Milgram (Lemma&#160;<a href="chap-dirichlet.html#lem:weak-solution">6.1</a>); the Hessian and its bound by Theorem&#160;<a href="chap-dirichlet.html#thm:polygon-reg">6.8</a> and the energy estimate; the traces by Lemma&#160;<a href="chap-analysis.html#lem:trace-existence">5.4</a>. </p>
 
   </div>
 </div>
@@ -190,7 +193,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">3.2</span>
+    <span class="theorem_thmlabel">4.2</span>
     <span class="theorem_thmtitle">Section 5.1: the four stable methods</span>
     <div class="thm_header_extras">
 
@@ -217,25 +220,25 @@
         
         <ul class="uses">
           
-          <li><a href="chap-setting.html#def:norms">Definition 2.8</a></li>
+          <li><a href="chap-setting.html#def:norms">Definition 3.8</a></li>
           
-          <li><a href="chap-setting.html#def:discrete">Definition 2.9</a></li>
+          <li><a href="chap-setting.html#def:discrete">Definition 3.9</a></li>
           
-          <li><a href="chap-stable.html#lem:std-bound">Lemma 7.3</a></li>
+          <li><a href="chap-stable.html#lem:std-bound">Lemma 8.3</a></li>
           
-          <li><a href="chap-stable.html#lem:std-coercive">Lemma 7.4</a></li>
+          <li><a href="chap-stable.html#lem:std-coercive">Lemma 8.4</a></li>
           
-          <li><a href="chap-stable.html#lem:solvability">Lemma 7.5</a></li>
+          <li><a href="chap-stable.html#lem:solvability">Lemma 8.5</a></li>
           
-          <li><a href="chap-stable.html#lem:std-consistency">Lemma 7.7</a></li>
+          <li><a href="chap-stable.html#lem:std-consistency">Lemma 8.7</a></li>
           
-          <li><a href="chap-stable.html#lem:energy">Lemma 7.8</a></li>
+          <li><a href="chap-stable.html#lem:energy">Lemma 8.8</a></li>
           
-          <li><a href="chap-stable.html#lem:duality">Lemma 7.9</a></li>
+          <li><a href="chap-stable.html#lem:duality">Lemma 8.9</a></li>
           
-          <li><a href="chap-interpolation.html#lem:interp-dg">Lemma 6.4</a></li>
+          <li><a href="chap-interpolation.html#lem:interp-dg">Lemma 7.4</a></li>
           
-          <li><a href="chap-main.html#thm:dirichlet">Theorem 3.1</a></li>
+          <li><a href="chap-main.html#thm:dirichlet">Theorem 4.1</a></li>
           
         </ul>
     
@@ -294,7 +297,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>Boundedness and coercivity are Lemmas&#160;<a href="chap-stable.html#lem:std-bound">7.3</a> and&#160;<a href="chap-stable.html#lem:std-coercive">7.4</a>; solvability follows by Lemma&#160;<a href="chap-stable.html#lem:solvability">7.5</a>. With consistency (Lemma&#160;<a href="chap-stable.html#lem:std-consistency">7.7</a>), the abstract energy estimate (Lemma&#160;<a href="chap-stable.html#lem:energy">7.8</a>) and the interpolant of Lemma&#160;<a href="chap-interpolation.html#lem:interp-dg">6.4</a> give the energy bound. The \(L^2\) bound follows by duality (Lemma&#160;<a href="chap-stable.html#lem:duality">7.9</a>), using adjoint consistency and the \(H^2\) regularity of Theorem&#160;<a href="chap-main.html#thm:dirichlet">3.1</a>. </p>
+  <p>Boundedness and coercivity are Lemmas&#160;<a href="chap-stable.html#lem:std-bound">8.3</a> and&#160;<a href="chap-stable.html#lem:std-coercive">8.4</a>; solvability follows by Lemma&#160;<a href="chap-stable.html#lem:solvability">8.5</a>. With consistency (Lemma&#160;<a href="chap-stable.html#lem:std-consistency">8.7</a>), the abstract energy estimate (Lemma&#160;<a href="chap-stable.html#lem:energy">8.8</a>) and the interpolant of Lemma&#160;<a href="chap-interpolation.html#lem:interp-dg">7.4</a> give the energy bound. The \(L^2\) bound follows by duality (Lemma&#160;<a href="chap-stable.html#lem:duality">8.9</a>), using adjoint consistency and the \(H^2\) regularity of Theorem&#160;<a href="chap-main.html#thm:dirichlet">4.1</a>. </p>
 
   </div>
 </div>
@@ -303,7 +306,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">3.3</span>
+    <span class="theorem_thmlabel">4.3</span>
     <span class="theorem_thmtitle">Section 3.3: consistency, adjoint consistency, Galerkin orthogonality</span>
     <div class="thm_header_extras">
 
@@ -330,9 +333,9 @@
         
         <ul class="uses">
           
-          <li><a href="chap-setting.html#def:discrete">Definition 2.9</a></li>
+          <li><a href="chap-setting.html#def:discrete">Definition 3.9</a></li>
           
-          <li><a href="chap-stable.html#lem:std-consistency">Lemma 7.7</a></li>
+          <li><a href="chap-stable.html#lem:std-consistency">Lemma 8.7</a></li>
           
         </ul>
     
@@ -387,7 +390,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>Lemma&#160;<a href="chap-stable.html#lem:std-consistency">7.7</a>; Galerkin orthogonality follows by linearity. </p>
+  <p>Lemma&#160;<a href="chap-stable.html#lem:std-consistency">8.7</a>; Galerkin orthogonality follows by linearity. </p>
 
   </div>
 </div>
@@ -396,7 +399,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">3.4</span>
+    <span class="theorem_thmlabel">4.4</span>
     <span class="theorem_thmtitle">Section 3.2: flux and primal formulations</span>
     <div class="thm_header_extras">
 
@@ -423,9 +426,9 @@
         
         <ul class="uses">
           
-          <li><a href="chap-setting.html#def:fluxes">Definition 2.11</a></li>
+          <li><a href="chap-setting.html#def:fluxes">Definition 3.11</a></li>
           
-          <li><a href="chap-fluxes.html#lem:flux-identities">Lemma 8.1</a></li>
+          <li><a href="chap-fluxes.html#lem:flux-identities">Lemma 9.1</a></li>
           
         </ul>
     
@@ -476,7 +479,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>The first equation of the flux formulation determines \(\sigma _h\) (Lemma&#160;<a href="chap-fluxes.html#lem:flux-identities">8.1</a>); substituting it into the second gives the primal form. For the balance, sum the second equation with \(v=1\) over \(S\); the contributions of interior faces cancel. </p>
+  <p>The first equation of the flux formulation determines \(\sigma _h\) (Lemma&#160;<a href="chap-fluxes.html#lem:flux-identities">9.1</a>); substituting it into the second gives the primal form. For the balance, sum the second equation with \(v=1\) over \(S\); the contributions of interior faces cancel. </p>
 
   </div>
 </div>
@@ -485,7 +488,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">3.5</span>
+    <span class="theorem_thmlabel">4.5</span>
     <span class="theorem_thmtitle">Section 5: NIPG, pure penalties and superpenalties</span>
     <div class="thm_header_extras">
 
@@ -512,21 +515,21 @@
         
         <ul class="uses">
           
-          <li><a href="chap-penalty.html#lem:penalty-stability">Lemma 9.1</a></li>
+          <li><a href="chap-penalty.html#lem:penalty-stability">Lemma 10.1</a></li>
           
-          <li><a href="chap-stable.html#lem:solvability">Lemma 7.5</a></li>
+          <li><a href="chap-stable.html#lem:solvability">Lemma 8.5</a></li>
           
-          <li><a href="chap-main.html#thm:penalty-defects">Theorem 3.6</a></li>
+          <li><a href="chap-main.html#thm:penalty-defects">Theorem 4.6</a></li>
           
-          <li><a href="chap-stable.html#lem:energy">Lemma 7.8</a></li>
+          <li><a href="chap-stable.html#lem:energy">Lemma 8.8</a></li>
           
-          <li><a href="chap-penalty.html#lem:broken-poincare">Lemma 9.2</a></li>
+          <li><a href="chap-penalty.html#lem:broken-poincare">Lemma 10.2</a></li>
           
-          <li><a href="chap-penalty.html#lem:super-jumps">Lemma 9.3</a></li>
+          <li><a href="chap-penalty.html#lem:super-jumps">Lemma 10.3</a></li>
           
-          <li><a href="chap-penalty.html#lem:super-abstract">Lemma 9.4</a></li>
+          <li><a href="chap-penalty.html#lem:super-abstract">Lemma 10.4</a></li>
           
-          <li><a href="chap-interpolation.html#lem:interp-dg">Lemma 6.4</a></li>
+          <li><a href="chap-interpolation.html#lem:interp-dg">Lemma 7.4</a></li>
           
         </ul>
     
@@ -585,7 +588,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>Stability is Lemma&#160;<a href="chap-penalty.html#lem:penalty-stability">9.1</a>, solvability Lemma&#160;<a href="chap-stable.html#lem:solvability">7.5</a>. For NIPG the energy estimate follows from consistency (Theorem&#160;<a href="chap-main.html#thm:penalty-defects">3.6</a>) and Lemma&#160;<a href="chap-stable.html#lem:energy">7.8</a>; the \(L^2\) bound from the broken Poincaré inequality (Lemma&#160;<a href="chap-penalty.html#lem:broken-poincare">9.2</a>). For the superpenalties the consistency defect \(C(u,\cdot )\) is of order \(h^p\) in the superpenalty norm by the jump control of Lemma&#160;<a href="chap-penalty.html#lem:super-jumps">9.3</a>, and Lemma&#160;<a href="chap-penalty.html#lem:super-abstract">9.4</a> gives both estimates. </p>
+  <p>Stability is Lemma&#160;<a href="chap-penalty.html#lem:penalty-stability">10.1</a>, solvability Lemma&#160;<a href="chap-stable.html#lem:solvability">8.5</a>. For NIPG the energy estimate follows from consistency (Theorem&#160;<a href="chap-main.html#thm:penalty-defects">4.6</a>) and Lemma&#160;<a href="chap-stable.html#lem:energy">8.8</a>; the \(L^2\) bound from the broken Poincaré inequality (Lemma&#160;<a href="chap-penalty.html#lem:broken-poincare">10.2</a>). For the superpenalties the consistency defect \(C(u,\cdot )\) is of order \(h^p\) in the superpenalty norm by the jump control of Lemma&#160;<a href="chap-penalty.html#lem:super-jumps">10.3</a>, and Lemma&#160;<a href="chap-penalty.html#lem:super-abstract">10.4</a> gives both estimates. </p>
 
   </div>
 </div>
@@ -594,7 +597,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">3.6</span>
+    <span class="theorem_thmlabel">4.6</span>
     <span class="theorem_thmtitle">Table 6.1: consistency defects</span>
     <div class="thm_header_extras">
 
@@ -621,9 +624,9 @@
         
         <ul class="uses">
           
-          <li><a href="chap-setting.html#def:forms">Definition 2.7</a></li>
+          <li><a href="chap-setting.html#def:forms">Definition 3.7</a></li>
           
-          <li><a href="chap-stable.html#lem:green-broken">Lemma 7.6</a></li>
+          <li><a href="chap-stable.html#lem:green-broken">Lemma 8.6</a></li>
           
         </ul>
     
@@ -674,7 +677,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>The identity \(g(u,v)-C(u,v)=(f,v)_\Omega \) (Lemma&#160;<a href="chap-stable.html#lem:green-broken">7.6</a>) and the vanishing of the jumps of \(u\), which removes all penalty terms and \(C(v,u)\). </p>
+  <p>The identity \(g(u,v)-C(u,v)=(f,v)_\Omega \) (Lemma&#160;<a href="chap-stable.html#lem:green-broken">8.6</a>) and the vanishing of the jumps of \(u\), which removes all penalty terms and \(C(v,u)\). </p>
 
   </div>
 </div>
@@ -683,7 +686,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">3.7</span>
+    <span class="theorem_thmlabel">4.7</span>
     <span class="theorem_thmtitle">Section 5.3.1: the Baumann–Oden method</span>
     <div class="thm_header_extras">
 
@@ -710,15 +713,15 @@
         
         <ul class="uses">
           
-          <li><a href="chap-bo.html#lem:bo-stability">Lemma 10.1</a></li>
+          <li><a href="chap-bo.html#lem:bo-stability">Lemma 11.1</a></li>
           
-          <li><a href="chap-bo.html#lem:bo-counterexample">Lemma 10.2</a></li>
+          <li><a href="chap-bo.html#lem:bo-counterexample">Lemma 11.2</a></li>
           
-          <li><a href="chap-stable.html#lem:energy">Lemma 7.8</a></li>
+          <li><a href="chap-stable.html#lem:energy">Lemma 8.8</a></li>
           
-          <li><a href="chap-interpolation.html#lem:interp-dg">Lemma 6.4</a></li>
+          <li><a href="chap-interpolation.html#lem:interp-dg">Lemma 7.4</a></li>
           
-          <li><a href="chap-stable.html#lem:green-broken">Lemma 7.6</a></li>
+          <li><a href="chap-stable.html#lem:green-broken">Lemma 8.6</a></li>
           
         </ul>
     
@@ -773,7 +776,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>Stability and solvability are Lemma&#160;<a href="chap-bo.html#lem:bo-stability">10.1</a>; the energy estimate uses the consistency of \(B_{BO}\) and a test with piecewise quadratics that control the jumps of piecewise constants. The counterexample is Lemma&#160;<a href="chap-bo.html#lem:bo-counterexample">10.2</a>. </p>
+  <p>Stability and solvability are Lemma&#160;<a href="chap-bo.html#lem:bo-stability">11.1</a>; the energy estimate uses the consistency of \(B_{BO}\) and a test with piecewise quadratics that control the jumps of piecewise constants. The counterexample is Lemma&#160;<a href="chap-bo.html#lem:bo-counterexample">11.2</a>. </p>
 
   </div>
 </div>
@@ -782,7 +785,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">3.8</span>
+    <span class="theorem_thmlabel">4.8</span>
     <span class="theorem_thmtitle">Section 5.3.2: the original Bassi–Rebay method</span>
     <div class="thm_header_extras">
 
@@ -809,15 +812,15 @@
         
         <ul class="uses">
           
-          <li><a href="chap-setting.html#def:br">Definition 2.10</a></li>
+          <li><a href="chap-setting.html#def:br">Definition 3.10</a></li>
           
-          <li><a href="chap-br.html#lem:br-kernel">Lemma 11.3</a></li>
+          <li><a href="chap-br.html#lem:br-kernel">Lemma 12.3</a></li>
           
-          <li><a href="chap-br.html#lem:br-solvable">Lemma 11.4</a></li>
+          <li><a href="chap-br.html#lem:br-solvable">Lemma 12.4</a></li>
           
-          <li><a href="chap-br.html#lem:br-errors">Lemma 11.6</a></li>
+          <li><a href="chap-br.html#lem:br-errors">Lemma 12.6</a></li>
           
-          <li><a href="chap-br.html#lem:br-example">Lemma 11.7</a></li>
+          <li><a href="chap-br.html#lem:br-example">Lemma 12.7</a></li>
           
         </ul>
     
@@ -882,7 +885,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>Lemmas&#160;<a href="chap-br.html#lem:br-kernel">11.3</a>, <a href="chap-br.html#lem:br-solvable">11.4</a>, <a href="chap-br.html#lem:br-errors">11.6</a> and&#160;<a href="chap-br.html#lem:br-example">11.7</a>. </p>
+  <p>Lemmas&#160;<a href="chap-br.html#lem:br-kernel">12.3</a>, <a href="chap-br.html#lem:br-solvable">12.4</a>, <a href="chap-br.html#lem:br-errors">12.6</a> and&#160;<a href="chap-br.html#lem:br-example">12.7</a>. </p>
 
   </div>
 </div>
