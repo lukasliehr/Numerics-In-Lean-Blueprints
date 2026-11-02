@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Analysis on simplices</title>
+<link rel="next" href="chap-interpolation.html" title="Interpolation" />
+<link rel="prev" href="chap-geometry.html" title="Geometry of simplicial meshes" />
+<link rel="up" href="index.html" title="Analysis of a multiscale discontinuous Galerkin methodfor convection-diffusion problems:a Lean blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Analysis of a multiscale discontinuous Galerkin method<br />for convection-diffusion problems:<br />a Lean blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Overview</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0001.html#a0000000005"><span class="toc_ref"></span> <span class="toc_entry">The Lean files.</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000006"><span class="toc_ref"></span> <span class="toc_entry">Scope.</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="chap-setting.html"><span class="toc_ref">2</span> <span class="toc_entry">Setting and definitions</span></a>
+ </li>
+<li class="">
+  <a href="chap-main.html"><span class="toc_ref">3</span> <span class="toc_entry">The main theorems</span></a>
+ </li>
+<li class="">
+  <a href="chap-geometry.html"><span class="toc_ref">4</span> <span class="toc_entry">Geometry of simplicial meshes</span></a>
+ </li>
+<li class=" active current">
+  <a href="chap-analysis.html"><span class="toc_ref">5</span> <span class="toc_entry">Analysis on simplices</span></a>
+ </li>
+<li class="">
+  <a href="chap-interpolation.html"><span class="toc_ref">6</span> <span class="toc_entry">Interpolation</span></a>
+ </li>
+<li class="">
+  <a href="chap-stability.html"><span class="toc_ref">7</span> <span class="toc_entry">Stability of the discrete methods</span></a>
+ </li>
+<li class="">
+  <a href="chap-errors.html"><span class="toc_ref">8</span> <span class="toc_entry">Error estimates</span></a>
+ </li>
+<li class="">
+  <a href="chap-correspondence.html"><span class="toc_ref">9</span> <span class="toc_entry">Correspondence with the paper</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="chap:analysis">5 Analysis on simplices</h1>
+
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:cone">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">5.1</span>
+    <span class="lemma_thmtitle">Slicing and the cone formula</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-analysis.html#lem:cone">#</a>
+    
+    <a class="icon proof" href="chap-analysis.html#a0000000017"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.integral_eq_mul_integral_slices" class="lean_decl">BHS.integral_eq_mul_integral_slices</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.integral_closedInterior_cone" class="lean_decl">BHS.integral_closedInterior_cone</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.integral_radial_divergence" class="lean_decl">BHS.integral_radial_divergence</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Integrals over a simplex can be computed along slices parallel to a facet, and as a cone over a facet with apex at the opposite vertex. Applied to the radial field, this gives the divergence identity for the radial vector field. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000017">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Fubini along a direction, and the change of variables of a dilation.</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:divergence">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">5.2</span>
+    <span class="theorem_thmtitle">Divergence theorem on simplices</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-analysis.html#thm:divergence">#</a>
+    
+    <a class="icon proof" href="chap-analysis.html#a0000000018"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-analysis.html#lem:cone">Lemma 5.1</a></li>
+          
+          <li><a href="chap-geometry.html#lem:combinatorics">Lemma 4.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.integral_fderiv_eq_sum_facets" class="lean_decl">BHS.integral_fderiv_eq_sum_facets</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.integral_inner_gradient_cell" class="lean_decl">BHS.integral_inner_gradient_cell</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   For \(C^1\) fields \(F\) on a neighbourhood of a simplex, \(\int _T\operatorname {div}F=\sum _j\int _{F_j}F\cdot n_j\, \mathrm{d}\mathcal H^{d-1}\). In particular, Green’s formula holds for smooth functions on the cells. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000018">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Reduce to a single coordinate direction and integrate along slices; the facet integrals are identified with the \((d-1)\)-dimensional Hausdorff measure.</p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:inverse">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">5.3</span>
+    <span class="lemma_thmtitle">Polynomial inverse and trace inequalities</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-analysis.html#lem:inverse">#</a>
+    
+    <a class="icon proof" href="chap-analysis.html#a0000000019"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-geometry.html#lem:heights">Lemma 4.1</a></li>
+          
+          <li><a href="chap-analysis.html#thm:divergence">Theorem 5.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.exists_inverse_ball_sandwich" class="lean_decl">BHS.exists_inverse_ball_sandwich</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.exists_cell_inverse" class="lean_decl">BHS.exists_cell_inverse</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.exists_cell_inverse_H2" class="lean_decl">BHS.exists_cell_inverse_H2</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.exists_cell_trace" class="lean_decl">BHS.exists_cell_trace</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.exists_cell_gradient_trace" class="lean_decl">BHS.exists_cell_gradient_trace</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   For polynomials \(p\) of degree at most \(k\) on cells of \(\rho \)-regular meshes, </p>
+<div class="displaymath" id="a0000000020">
+  \[  h_T^2\lVert \partial _ip\rVert ^2_{L^2(T)}\le C\lVert p\rVert ^2_{L^2(T)},\qquad h_T^2\lvert p\rvert ^2_{H^2(T)}\le C\lvert p\rvert ^2_{H^1(T)},\qquad h_T\lVert p\rVert ^2_{L^2(F_j)}\le C\lVert p\rVert ^2_{L^2(T)},  \]
+</div>
+<p> with \(C=C(d,k,\rho )\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000019">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Equivalence of norms on the finite-dimensional space of polynomials on the unit ball. Then scale between the inscribed and the circumscribed ball.</p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:traceineq">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">5.4</span>
+    <span class="lemma_thmtitle">Trace inequality for smooth and Sobolev functions</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-analysis.html#lem:traceineq">#</a>
+    
+    <a class="icon proof" href="chap-analysis.html#a0000000021"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-analysis.html#lem:cone">Lemma 5.1</a></li>
+          
+          <li><a href="chap-geometry.html#lem:heights">Lemma 4.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.smooth_trace_ineq" class="lean_decl">BHS.smooth_trace_ineq</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.hasSobolevTrace_trace_ineq" class="lean_decl">BHS.hasSobolevTrace_trace_ineq</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   \(h_T\lVert v\rVert ^2_{L^2(F_j)}\le \frac\rho 2\bigl((d+1)\lVert v\rVert ^2_{L^2(T)}+h_T^2\lVert \nabla v\rVert ^2_{L^2(T)}\bigr)\) for \(C^1\) functions, and hence for Sobolev traces. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000021">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Apply the divergence theorem to the radial field \(v^2(x-P_j)\).</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:density">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">5.5</span>
+    <span class="theorem_thmtitle">Density of smooth functions</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-analysis.html#thm:density">#</a>
+    
+    <a class="icon proof" href="chap-analysis.html#a0000000022"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.exists_smooth_approx" class="lean_decl">BHS.exists_smooth_approx</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>  On an open convex set containing a ball, every weak \(H^m\) jet is the limit of smooth functions in all derivatives of order at most \(m\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000022">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Dilate towards the centre of the ball, so that the dilated function is defined on a neighbourhood of the closure. Then mollify; weak derivatives commute with both operations.</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:traces">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">5.6</span>
+    <span class="theorem_thmtitle">Traces exist, are unique, and agree across faces</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-analysis.html#thm:traces">#</a>
+    
+    <a class="icon proof" href="chap-analysis.html#a0000000023"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-analysis.html#thm:density">Theorem 5.5</a></li>
+          
+          <li><a href="chap-analysis.html#lem:traceineq">Lemma 5.4</a></li>
+          
+          <li><a href="chap-geometry.html#lem:halfball">Lemma 4.3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.exists_hasSobolevTrace" class="lean_decl">BHS.exists_hasSobolevTrace</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.hasSobolevTrace_unique" class="lean_decl">BHS.hasSobolevTrace_unique</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.localTraceTheory" class="lean_decl">BHS.localTraceTheory</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.traceRealizationExists" class="lean_decl">BHS.traceRealizationExists</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.traceAgreement" class="lean_decl">BHS.traceAgreement</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   Every weak \(H^m\) jet on a cell (\(m\ge 1\)) has traces of order \({\lt}m\) on its facets, unique almost everywhere. Every weak \(H^{k+1}(\Omega )\) jet is realized by a broken \(H^2\) field. For a global weak jet, the traces of the two cells sharing an interior face agree almost everywhere. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000023">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Existence and uniqueness: the trace inequality makes the facet restrictions of the smooth approximants Cauchy in \(L^2\). Agreement: Green’s formula on both cells and the weak derivative on \(\Omega \) give \(\int _e(t_T-t_S)\psi =0\) for smooth \(\psi \) supported in \(\operatorname {int}(T\cup S)\) away from the other facets. The fundamental lemma for the face measure gives \(t_T=t_S\) a.e. there, and the rest of \(e\) is \(\mathcal H^{d-1}\)-null.</p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:green">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">5.7</span>
+    <span class="lemma_thmtitle">Green’s formula for Sobolev jets</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-analysis.html#lem:green">#</a>
+    
+    <a class="icon proof" href="chap-analysis.html#a0000000024"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-analysis.html#thm:divergence">Theorem 5.2</a></li>
+          
+          <li><a href="chap-analysis.html#thm:traces">Theorem 5.6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.hasSobolevTrace_green" class="lean_decl">BHS.hasSobolevTrace_green</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   Green’s formula holds on each cell for jets with Sobolev traces. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000024">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Pass to the limit in the smooth formula.</p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:poincare">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">5.8</span>
+    <span class="lemma_thmtitle">Poincaré–Wirtinger and polynomial moments</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-analysis.html#lem:poincare">#</a>
+    
+    <a class="icon proof" href="chap-analysis.html#a0000000025"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-analysis.html#thm:density">Theorem 5.5</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.poincare_convex" class="lean_decl">BHS.poincare_convex</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.poincare_weakJet" class="lean_decl">BHS.poincare_weakJet</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.exists_poly_moments" class="lean_decl">BHS.exists_poly_moments</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   On a compact convex set \(K\) of diameter \(h\), \(\int _K\lvert u-\bar u\rvert ^2\le C h^2\int _K\lvert \nabla u\rvert ^2\), with \(C\) depending only on \(d\) and \(h^d/\lvert K\rvert \). This holds for \(C^1\) functions and for weak \(H^1\) jets. For given moments \(m_\alpha \), \(\lvert \alpha \rvert \le k\), there is a polynomial \(q\) of degree at most \(k\) with \(\int \partial ^\alpha q=m_\alpha \). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000025">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Write \(u(x)-u(y)\) as an integral along the segment and change variables; moments are fixed from the highest order downwards.</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:bramblehilbert">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">5.9</span>
+    <span class="theorem_thmtitle">Bramble–Hilbert</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-analysis.html#thm:bramblehilbert">#</a>
+    
+    <a class="icon proof" href="chap-analysis.html#a0000000026"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-analysis.html#lem:poincare">Lemma 5.8</a></li>
+          
+          <li><a href="chap-geometry.html#lem:heights">Lemma 4.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.exists_brambleHilbert" class="lean_decl">BHS.exists_brambleHilbert</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   There is \(C=C(d,k)\) such that for every cell of an admissible mesh and every weak \(H^{k+1}\) jet \(J\) on it, some polynomial \(q\) of degree at most \(k\) satisfies \(h_T^{2j}\lvert J-q\rvert ^2_{H^j(T)}\le C\, h_T^{2(k+1)}\lvert J\rvert ^2_{H^{k+1}(T)}\) for all \(j\le k+1\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000026">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Choose \(q\) so that all cell averages of \(\partial ^\alpha (J-q)\), \(\lvert \alpha \rvert \le k\), vanish. Then iterate the weak Poincaré inequality.</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:supbound">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">5.10</span>
+    <span class="theorem_thmtitle">Scaled sup bound, \(d\le 3\)</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-analysis.html#thm:supbound">#</a>
+    
+    <a class="icon proof" href="chap-analysis.html#a0000000027"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-geometry.html#lem:heights">Lemma 4.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.exists_sobolev_sup" class="lean_decl">BHS.exists_sobolev_sup</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.sup_bound_convex" class="lean_decl">BHS.sup_bound_convex</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   For \(d\le 3\) and smooth \(u\), at every point \(x\) of a cell, \(\lvert T\rvert \, u(x)^2\le C\bigl(\lVert u\rVert ^2_{L^2(T)}+h_T^2\lvert u\rvert ^2_{H^1(T)}+h_T^4\lvert u\rvert ^2_{H^2(T)}\bigr)\) with \(C=3(4d+1)\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000027">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Average Taylor’s formula with integral remainder over the cell. The remainder is controlled after the substitution \(s=\sigma ^2\), which needs \(d\le 3\).</p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="chap-geometry.html" title="Geometry of simplicial meshes"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Analysis of a multiscale discontinuous Galerkin methodfor convection-diffusion problems:a Lean blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="chap-interpolation.html" title="Interpolation"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

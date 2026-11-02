@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The original Bassi–Rebay method</title>
+<link rel="next" href="chap-correspondence.html" title="Correspondence with the paper" />
+<link rel="prev" href="chap-bo.html" title="The Baumann–Oden method" />
+<link rel="up" href="index.html" title="Unified analysis of discontinuous Galerkinmethods for elliptic problems:a Lean blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Unified analysis of discontinuous Galerkin<br />methods for elliptic problems:<br />a Lean blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Overview</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0001.html#a0000000003"><span class="toc_ref"></span> <span class="toc_entry">The Lean files.</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000004"><span class="toc_ref"></span> <span class="toc_entry">Scope.</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="chap-setting.html"><span class="toc_ref">2</span> <span class="toc_entry">Setting and definitions</span></a>
+ </li>
+<li class="">
+  <a href="chap-main.html"><span class="toc_ref">3</span> <span class="toc_entry">The main theorems</span></a>
+ </li>
+<li class="">
+  <a href="chap-analysis.html"><span class="toc_ref">4</span> <span class="toc_entry">Analysis on triangles</span></a>
+ </li>
+<li class="">
+  <a href="chap-dirichlet.html"><span class="toc_ref">5</span> <span class="toc_entry">The Dirichlet problem on a convex polygon</span></a>
+ </li>
+<li class="">
+  <a href="chap-interpolation.html"><span class="toc_ref">6</span> <span class="toc_entry">Interpolation</span></a>
+ </li>
+<li class="">
+  <a href="chap-stable.html"><span class="toc_ref">7</span> <span class="toc_entry">The four stable methods</span></a>
+ </li>
+<li class="">
+  <a href="chap-fluxes.html"><span class="toc_ref">8</span> <span class="toc_entry">Flux formulations</span></a>
+ </li>
+<li class="">
+  <a href="chap-penalty.html"><span class="toc_ref">9</span> <span class="toc_entry">NIPG, pure penalties and superpenalties</span></a>
+ </li>
+<li class="">
+  <a href="chap-bo.html"><span class="toc_ref">10</span> <span class="toc_entry">The Baumann–Oden method</span></a>
+ </li>
+<li class=" active current">
+  <a href="chap-br.html"><span class="toc_ref">11</span> <span class="toc_entry">The original Bassi–Rebay method</span></a>
+ </li>
+<li class="">
+  <a href="chap-correspondence.html"><span class="toc_ref">12</span> <span class="toc_entry">Correspondence with the paper</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="chap:br">11 The original Bassi–Rebay method</h1>
+
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:br-square">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">11.1</span>
+    <span class="lemma_thmtitle">The Bassi–Rebay form is a square</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-br.html#lem:br-square">#</a>
+    
+    <a class="icon proof" href="chap-br.html#a0000000053"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:br">Definition 2.10</a></li>
+          
+          <li><a href="chap-stable.html#lem:liftings">Lemma 7.1</a></li>
+          
+          <li><a href="chap-analysis.html#lem:divergence">Lemma 4.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.BR.formBR_poly" class="lean_decl">ABCM.BR.formBR_poly</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.BR.discreteGrad_green" class="lean_decl">ABCM.BR.discreteGrad_green</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   On \(V_h\times V_h\), \(B_{BR}(w,v)=(\mathcal{D}_hw,\mathcal{D}_hv)_\Omega \). For \(v\in V_h\) and \(\tau \in \Sigma _h\): \((\mathcal{D}_hv,\tau )=-(v,\operatorname {div}_h\tau )+\sum _{e\text{ interior}}\langle \{ v\} ,[\! [\tau ]\! ]\rangle _e\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000053">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Expand \((\nabla _hw+R(w),\nabla _hv+R(v))\) with the defining identity of the liftings; the Green identity follows from integration by parts on each triangle. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:rt-local">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">11.2</span>
+    <span class="lemma_thmtitle">Local Raviart–Thomas constructions</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-br.html#lem:rt-local">#</a>
+    
+    <a class="icon proof" href="chap-br.html#a0000000054"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-analysis.html#lem:mesh-geometry">Lemma 4.1</a></li>
+          
+          <li><a href="chap-analysis.html#lem:poly-ineq">Lemma 4.7</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.BR.exists_ref_bubble" class="lean_decl">ABCM.BR.exists_ref_bubble</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.BR.exists_local_lift" class="lean_decl">ABCM.BR.exists_local_lift</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   On every triangle there are polynomial vector fields of degree at most \(p\) with prescribed compatible normal traces on the edges and prescribed divergence of degree at most \(p-1\), with bounds uniform under shape regularity. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000054">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Lowest-order Raviart–Thomas fields for the normal traces, edge bubbles \(\lambda _a\lambda _b\sigma (P_b-P_a)\) for the divergence, transported from a reference triangle. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:br-kernel">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">11.3</span>
+    <span class="lemma_thmtitle">The kernel</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-br.html#lem:br-kernel">#</a>
+    
+    <a class="icon proof" href="chap-br.html#a0000000055"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-br.html#lem:br-square">Lemma 11.1</a></li>
+          
+          <li><a href="chap-br.html#lem:rt-local">Lemma 11.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.BR.brKernel_iff" class="lean_decl">ABCM.BR.brKernel_iff</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   For \(v_h\in V_h\): \(\mathcal{D}_hv_h=0\) if and only if \(P_{p-1}v_h=0\) on every triangle and \(\{ v_h\} =0\) on every interior edge. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000055">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Test \((\mathcal{D}_hv_h,\tau )=0\) (Lemma&#160;<a href="chap-br.html#lem:br-square">11.1</a>) with fields supported on one triangle: edge bubbles force \(P_{p-1}v_h=0\), and fields with prescribed normal traces force \(\{ v_h\} =0\). </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:br-solvable">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">11.4</span>
+    <span class="lemma_thmtitle">Solvability</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-br.html#lem:br-solvable">#</a>
+    
+    <a class="icon proof" href="chap-br.html#a0000000056"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-br.html#lem:br-square">Lemma 11.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.BR.brSolvable_iff" class="lean_decl">ABCM.BR.brSolvable_iff</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.BR.isDiscreteSolution_iff_kernel" class="lean_decl">ABCM.BR.isDiscreteSolution_iff_kernel</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.BR.discreteGrad_unique" class="lean_decl">ABCM.BR.discreteGrad_unique</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   The problem is solvable if and only if \(f\perp Z_h\); the solutions form one coset of \(Z_h\), and \(\mathcal{D}_hu_h\) and \(P_{p-1}u_h\) do not depend on the solution. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000056">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>A finite-dimensional Fredholm alternative for the symmetric form \((\mathcal{D}_h\cdot ,\mathcal{D}_h\cdot )\), whose kernel is \(Z_h\); \(P_{p-1}\) vanishes on \(Z_h\) by Lemma&#160;<a href="chap-br.html#lem:br-kernel">11.3</a>. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:br-cons-interp">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">11.5</span>
+    <span class="lemma_thmtitle">The conservative interpolant of the flux</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-br.html#lem:br-cons-interp">#</a>
+    
+    <a class="icon proof" href="chap-br.html#a0000000057"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-br.html#lem:rt-local">Lemma 11.2</a></li>
+          
+          <li><a href="chap-br.html#lem:br-square">Lemma 11.1</a></li>
+          
+          <li><a href="chap-analysis.html#lem:trace-existence">Lemma 4.4</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.BR.exists_consInterp" class="lean_decl">ABCM.BR.exists_consInterp</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   Let \(u\in H^2(\Omega )\) solve \(-\Delta u=f\) with \(f\) elementwise polynomial of degree at most \(p-1\). For every \(w\in V_h\) there is \(\sigma \in \Sigma _h\) with \((\mathcal{D}_hv_h,\sigma )=(f,v_h)\) for all \(v_h\in V_h\) and \(\lVert \nabla u-\sigma \rVert ^2\le C\bigl(G_h(u-w)^2+H_h(u-w)^2\bigr)\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000057">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Build \(\sigma \) triangle by triangle from \(\nabla w\) with Lemma&#160;<a href="chap-br.html#lem:rt-local">11.2</a>, with single-valued normal traces and \(\operatorname {div}\sigma =-f\). </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:br-errors">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">11.6</span>
+    <span class="lemma_thmtitle">Error estimates</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-br.html#lem:br-errors">#</a>
+    
+    <a class="icon proof" href="chap-br.html#a0000000058"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-br.html#lem:br-cons-interp">Lemma 11.5</a></li>
+          
+          <li><a href="chap-br.html#lem:br-solvable">Lemma 11.4</a></li>
+          
+          <li><a href="chap-interpolation.html#lem:interp-dg">Lemma 6.4</a></li>
+          
+          <li><a href="chap-main.html#thm:dirichlet">Theorem 3.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.BR.exists_flux_error" class="lean_decl">ABCM.BR.exists_flux_error</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.BR.exists_proj_error" class="lean_decl">ABCM.BR.exists_proj_error</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   For elementwise \(\mathbb P_{p-1}\) loads and \(u\in H^{p+1}(\Omega )\), every discrete solution satisfies \(\lVert \nabla u-\mathcal{D}_hu_h\rVert ^2\le Ch^{2p}\lvert u\rvert _{H^{p+1}}^2\) and \(\lVert P_{p-1}(u-u_h)\rVert ^2\le Ch^{2(p+1)}\lvert u\rvert _{H^{p+1}}^2\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000058">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Compare with the conservative interpolant of Lemma&#160;<a href="chap-br.html#lem:br-cons-interp">11.5</a> and the interpolant of Lemma&#160;<a href="chap-interpolation.html#lem:interp-dg">6.4</a>; the projected estimate by duality with the \(H^2\) regularity of Theorem&#160;<a href="chap-main.html#thm:dirichlet">3.1</a>. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:br-example">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">11.7</span>
+    <span class="lemma_thmtitle">The full \(L^2\) error is not controlled</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-br.html#lem:br-example">#</a>
+    
+    <a class="icon proof" href="chap-br.html#a0000000059"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-br.html#lem:br-kernel">Lemma 11.3</a></li>
+          
+          <li><a href="chap-bo.html#lem:bo-counterexample">Lemma 10.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.BR.oneTri_br_example" class="lean_decl">ABCM.BR.oneTri_br_example</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   For every \(p\ge 1\), on the one-triangle mesh, \(z=x_0^p-P_{p-1}(x_0^p)\) is a nonzero element of \(Z_h\); every \(tz\) solves the problem with \(f=0\), and \((z,z)\ne 0\), so \(f=z\) has no solution. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000059">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>There are no interior edges, so by Lemma&#160;<a href="chap-br.html#lem:br-kernel">11.3</a> the kernel consists of the polynomials of degree at most \(p\) orthogonal to \(\mathbb P_{p-1}\). </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="chap-bo.html" title="The Baumann–Oden method"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Unified analysis of discontinuous Galerkinmethods for elliptic problems:a Lean blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="chap-correspondence.html" title="Correspondence with the paper"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Overview</title>
+<link rel="next" href="chap-setting.html" title="Setting and definitions" />
+<link rel="prev" href="index.html" title="Analysis of a multiscale discontinuous Galerkin methodfor convection-diffusion problems:a Lean blueprint" />
+<link rel="up" href="index.html" title="Analysis of a multiscale discontinuous Galerkin methodfor convection-diffusion problems:a Lean blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Analysis of a multiscale discontinuous Galerkin method<br />for convection-diffusion problems:<br />a Lean blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class=" active current">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Overview</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="sect0001.html#a0000000005"><span class="toc_ref"></span> <span class="toc_entry">The Lean files.</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000006"><span class="toc_ref"></span> <span class="toc_entry">Scope.</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="chap-setting.html"><span class="toc_ref">2</span> <span class="toc_entry">Setting and definitions</span></a>
+ </li>
+<li class="">
+  <a href="chap-main.html"><span class="toc_ref">3</span> <span class="toc_entry">The main theorems</span></a>
+ </li>
+<li class="">
+  <a href="chap-geometry.html"><span class="toc_ref">4</span> <span class="toc_entry">Geometry of simplicial meshes</span></a>
+ </li>
+<li class="">
+  <a href="chap-analysis.html"><span class="toc_ref">5</span> <span class="toc_entry">Analysis on simplices</span></a>
+ </li>
+<li class="">
+  <a href="chap-interpolation.html"><span class="toc_ref">6</span> <span class="toc_entry">Interpolation</span></a>
+ </li>
+<li class="">
+  <a href="chap-stability.html"><span class="toc_ref">7</span> <span class="toc_entry">Stability of the discrete methods</span></a>
+ </li>
+<li class="">
+  <a href="chap-errors.html"><span class="toc_ref">8</span> <span class="toc_entry">Error estimates</span></a>
+ </li>
+<li class="">
+  <a href="chap-correspondence.html"><span class="toc_ref">9</span> <span class="toc_entry">Correspondence with the paper</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000002">1 Overview</h1>
+<p>This blueprint describes a complete Lean&#160;4 formalization of the main results of </p>
+<blockquote class="quote"> A.&#160;Buffa, T.&#160;J.&#160;R.&#160;Hughes, G.&#160;Sangalli, <em>Analysis of a multiscale discontinuous Galerkin method for convection-diffusion problems</em>, SIAM J. Numer. Anal. <b class="bfseries">44</b> (2006), no.&#160;4, 1420–1440. </blockquote>
+<p> The paper studies the convection-diffusion problem </p>
+<div class="displaymath" id="a0000000003">
+  \[  -\kappa \Delta \varphi + a\cdot \nabla \varphi = f \text{ in } \Omega ,\qquad \varphi = g \text{ on } \partial \Omega ,  \]
+</div>
+<p> discretized by an interior-penalty discontinuous Galerkin (DG) method with upwind fluxes, its streamline-diffusion stabilization (SDG), and the multiscale variant (MDG/SMDG). In the multiscale variant, the discontinuous trial and test functions are obtained from a continuous coarse field by solving local DG problems on the elements. The main results are coercivity and continuity of the DG and SDG forms (Propositions 3.2, 3.3), an inf-sup condition for the DG form in the stronger SDG norm (Theorem&#160;3.5), and stability of the local problems (Lemmas 4.4, 4.5). They also include optimal a-priori error estimates </p>
+<div class="displaymath" id="a0000000004">
+  \[  \lVert \varphi -\varphi _h\rVert _{\mathrm{SDG}} \lesssim \Bigl(\sum _{T\in \mathcal{T}_h}\bigl(\lvert a\rvert \, h_T^{2k+1}+\kappa \, h_T^{2k}\bigr) \lvert \varphi \rvert _{H^{k+1}(T)}^2\Bigr)^{1/2}  \]
+</div>
+<p> for DG, SDG and SMDG, and the corresponding approximation property of the multiscale trial spaces (Proposition&#160;3.4, Corollary&#160;3.7, Theorems 4.3 and 4.6). All constants are independent of the mesh, the domain, \(\kappa \) and \(a\). </p>
+<h4 id="a0000000005">The Lean files.</h4>
+<ul class="itemize">
+  <li><p><span class="ttfamily">Showcase.lean</span> imports only Mathlib. It defines the setting and states each numbered result of the paper as its own theorem, in the paper’s notation and with the paper’s quantifiers, with <span class="ttfamily">sorry</span>. </p>
+</li>
+  <li><p><span class="ttfamily">Showcase_WithProofs.lean</span> proves the same theorems from the library <span class="ttfamily">LeanCode</span>. </p>
+</li>
+  <li><p><span class="ttfamily">comparator.json</span> configures <span class="ttfamily">lake comparator</span>. It checks that the proofs establish exactly the statements of <span class="ttfamily">Showcase.lean</span> and use only the axioms <span class="ttfamily">propext</span>, <span class="ttfamily">Classical.choice</span> and <span class="ttfamily">Quot.sound</span>. </p>
+</li>
+  <li><p>The library <span class="ttfamily">LeanCode</span> contains about 18 000 lines of proofs, organized as in the chapters below. Chapter&#160;<a href="chap-correspondence.html">9</a> and the file <span class="ttfamily">Audit/paper_correspondence.md</span> compare the formal statements with the paper. </p>
+</li>
+</ul>
+<h4 id="a0000000006">Scope.</h4>
+<p> The setting is the paper’s, specialized to: dimension \(d\in \{ 2,3\} \); every polynomial degree \(k\ge 1\); conforming shape-regular affine simplicial meshes of a bounded connected Lipschitz domain; and constant coefficients \(\kappa {\gt}0\), \(a\in \mathbb {R}^d\) (including \(a=0\)), with no positive lower bound on \(\kappa \). </p>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="index.html" title="Analysis of a multiscale discontinuous Galerkin methodfor convection-diffusion problems:a Lean blueprint"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Analysis of a multiscale discontinuous Galerkin methodfor convection-diffusion problems:a Lean blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="chap-setting.html" title="Setting and definitions"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

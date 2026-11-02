@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Analysis on \(\mathbb {R}^3\)</title>
+<link rel="next" href="chap-topology.html" title="Topology of the cut domain" />
+<link rel="prev" href="chap-cuts.html" title="The cuts" />
+<link rel="up" href="index.html" title="Vector potentials in three-dimensionalnon-smooth domains:a Lean blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Vector potentials in three-dimensional<br />non-smooth domains:<br />a Lean blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Overview</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0001.html#a0000000003"><span class="toc_ref"></span> <span class="toc_entry">The Lean files.</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000004"><span class="toc_ref"></span> <span class="toc_entry">The route.</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="chap-setting.html"><span class="toc_ref">2</span> <span class="toc_entry">Setting and definitions</span></a>
+ </li>
+<li class="">
+  <a href="chap-main.html"><span class="toc_ref">3</span> <span class="toc_entry">The main theorems</span></a>
+ </li>
+<li class="">
+  <a href="chap-assembly.html"><span class="toc_ref">4</span> <span class="toc_entry">The abstract assembly</span></a>
+ </li>
+<li class="">
+  <a href="chap-cuts.html"><span class="toc_ref">5</span> <span class="toc_entry">The cuts</span></a>
+ </li>
+<li class=" active current">
+  <a href="chap-analysis.html"><span class="toc_ref">6</span> <span class="toc_entry">Analysis on \(\mathbb {R}^3\)</span></a>
+ </li>
+<li class="">
+  <a href="chap-topology.html"><span class="toc_ref">7</span> <span class="toc_entry">Topology of the cut domain</span></a>
+ </li>
+<li class="">
+  <a href="chap-boundary.html"><span class="toc_ref">8</span> <span class="toc_entry">The boundary</span></a>
+ </li>
+<li class="">
+  <a href="chap-correspondence.html"><span class="toc_ref">9</span> <span class="toc_entry">Correspondence with the paper</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="chap:analysis">6 Analysis on \(\mathbb {R}^3\)</h1>
+
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:mollify">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">6.1</span>
+    <span class="lemma_thmtitle">Mollification</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-analysis.html#lem:mollify">#</a>
+    
+    <a class="icon proof" href="chap-analysis.html#a0000000022"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.moll" class="lean_decl">VP.moll</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.moll_contDiff" class="lean_decl">VP.moll_contDiff</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.eLpNorm_moll_le" class="lean_decl">VP.eLpNorm_moll_le</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.tendsto_moll" class="lean_decl">VP.tendsto_moll</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  There is a smooth, nonnegative, radial kernel \(\rho _t\) of unit mass supported in the ball of radius \(t\). For locally integrable \(f\), \(\rho _t*f\) is smooth; for \(f\in L^2(\mathbb {R}^3)\), \(\lVert \rho _t*f\rVert _{L^2}\le \lVert f\rVert _{L^2}\) and \(\rho _t*f\to f\) in \(L^2\) as \(t\to 0\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000022">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>The kernel is built from a smooth profile of \(\lvert y\rvert ^2\). Young’s inequality gives the bound, and density of continuous compactly supported functions gives the convergence. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:moll-deriv">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">6.2</span>
+    <span class="lemma_thmtitle">Mollification commutes with weak derivatives</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-analysis.html#lem:moll-deriv">#</a>
+    
+    <a class="icon proof" href="chap-analysis.html#a0000000023"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-analysis.html#lem:mollify">Lemma 6.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.WeakCurl" class="lean_decl">VP.WeakCurl</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.WeakDiv" class="lean_decl">VP.WeakDiv</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.gradTest_moll" class="lean_decl">VP.gradTest_moll</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.curlTest_moll" class="lean_decl">VP.curlTest_moll</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   If \(f\) has the weak gradient \(g\) on an open set \(U\) and the closed ball of radius \(t\) around \(x\) lies in \(U\), then \(\nabla (\rho _t*f)(x)=(\rho _t*g)(x)\). The same holds for weak curls. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000023">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Derivatives of \(\rho _t*f\) are convolutions with derivatives of the kernel; at \(x\) the translated kernel is a test function on \(U\), and the weak identity applies. </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:weyl">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">6.3</span>
+    <span class="theorem_thmtitle">Weyl’s lemma for curl-free, divergence-free fields</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-analysis.html#thm:weyl">#</a>
+    
+    <a class="icon proof" href="chap-analysis.html#a0000000024"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-analysis.html#lem:moll-deriv">Lemma 6.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.weyl" class="lean_decl">VP.weyl</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   Let \(U\subset \mathbb {R}^3\) be open and \(H\in L^2(\mathbb {R}^3)^3\) weakly curl free and divergence free on \(U\). Then \(H\) agrees almost everywhere on \(U\) with a smooth field that is classically curl free on \(U\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000024">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>At points whose \(\tau \)-ball lies in \(U\), the mollification \(\rho _\tau *H\) does not depend on \(\tau \): the derivative of the radial kernel in \(\tau \) is a divergence, whose pairing with \(H\) vanishes because \(H\) is curl free and divergence free. Letting \(\tau \to 0\) identifies \(H\) with the smooth field \(\rho _\tau *H\) locally, and Lemma&#160;<a href="chap-analysis.html#lem:moll-deriv">6.2</a> shows that this field is curl free. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:translate">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">6.4</span>
+    <span class="lemma_thmtitle">Translations</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-analysis.html#lem:translate">#</a>
+    
+    <a class="icon proof" href="chap-analysis.html#a0000000025"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-analysis.html#lem:mollify">Lemma 6.1</a></li>
+          
+          <li><a href="chap-analysis.html#lem:moll-deriv">Lemma 6.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.tendsto_translate" class="lean_decl">VP.tendsto_translate</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.integral_inner_grad_eq_zero" class="lean_decl">VP.integral_inner_grad_eq_zero</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   Translation is continuous in \(L^2(\mathbb {R}^3)\). If \(f\in L^2(\mathbb {R}^3)\) has a weak gradient \(g\in L^2\) and vanishes outside a compact subset of an open set \(U\), then \(\int _{\mathbb {R}^3}v\cdot g=0\) for every \(v\in L^2(\mathbb {R}^3)^3\) divergence free on \(U\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000025">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Continuity of translation follows by density of continuous compactly supported functions. For the second statement, \(\rho _t*f\) is a test function on \(U\) for small \(t\), with gradient \(\rho _t*g\), so \(\int v\cdot (\rho _t*g)=0\); let \(t\to 0\). </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="chap-cuts.html" title="The cuts"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Vector potentials in three-dimensionalnon-smooth domains:a Lean blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="chap-topology.html" title="Topology of the cut domain"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

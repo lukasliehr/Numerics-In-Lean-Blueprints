@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Correspondence with the paper</title>
+<link rel="prev" href="chap-errors.html" title="Error estimates" />
+<link rel="up" href="index.html" title="Analysis of a multiscale discontinuous Galerkin methodfor convection-diffusion problems:a Lean blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Analysis of a multiscale discontinuous Galerkin method<br />for convection-diffusion problems:<br />a Lean blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Overview</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0001.html#a0000000005"><span class="toc_ref"></span> <span class="toc_entry">The Lean files.</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000006"><span class="toc_ref"></span> <span class="toc_entry">Scope.</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="chap-setting.html"><span class="toc_ref">2</span> <span class="toc_entry">Setting and definitions</span></a>
+ </li>
+<li class="">
+  <a href="chap-main.html"><span class="toc_ref">3</span> <span class="toc_entry">The main theorems</span></a>
+ </li>
+<li class="">
+  <a href="chap-geometry.html"><span class="toc_ref">4</span> <span class="toc_entry">Geometry of simplicial meshes</span></a>
+ </li>
+<li class="">
+  <a href="chap-analysis.html"><span class="toc_ref">5</span> <span class="toc_entry">Analysis on simplices</span></a>
+ </li>
+<li class="">
+  <a href="chap-interpolation.html"><span class="toc_ref">6</span> <span class="toc_entry">Interpolation</span></a>
+ </li>
+<li class="">
+  <a href="chap-stability.html"><span class="toc_ref">7</span> <span class="toc_entry">Stability of the discrete methods</span></a>
+ </li>
+<li class="">
+  <a href="chap-errors.html"><span class="toc_ref">8</span> <span class="toc_entry">Error estimates</span></a>
+ </li>
+<li class=" active current">
+  <a href="chap-correspondence.html"><span class="toc_ref">9</span> <span class="toc_entry">Correspondence with the paper</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="chap:correspondence">9 Correspondence with the paper</h1>
+
+<p>The detailed comparison is in <span class="ttfamily">Audit/paper_correspondence.md</span>. In summary: </p>
+<ul class="itemize">
+  <li><p>All numbered results of Sections 3 and 4 are stated: Propositions 3.2–3.4, Theorem 3.5, Corollary 3.7, Theorem 4.3, Lemmas 4.4 and 4.5, and Theorem 4.6. They have the paper’s uniformity: constants independent of the mesh, the domain, \(\kappa \) and \(a\). The quantifier order is the paper’s. </p>
+</li>
+  <li><p>Scope: simplicial meshes, constant coefficients, and \(\kappa {\gt}0\). </p>
+</li>
+  <li><p>Repairs of printed formulas: the \(\kappa \)-weight of the jump term in (3.7) is linear; the sign of the \(s\)-term follows (3.2); continuity (3.17) holds on broken \(H^2\); \(h_{\perp }\) in (4.2) is the global face thickness; Lemma&#160;4.5 is stated on \(H^1\) without the Hessian term. </p>
+</li>
+  <li><p>Not formalized: Section 5 (numerics), Remark 3.6, and the open problem of Remark 4.7. </p>
+</li>
+</ul>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="chap-errors.html" title="Error estimates"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Analysis of a multiscale discontinuous Galerkin methodfor convection-diffusion problems:a Lean blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

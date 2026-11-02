@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Interpolation</title>
+<link rel="next" href="chap-stability.html" title="Stability of the discrete methods" />
+<link rel="prev" href="chap-analysis.html" title="Analysis on simplices" />
+<link rel="up" href="index.html" title="Analysis of a multiscale discontinuous Galerkin methodfor convection-diffusion problems:a Lean blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Analysis of a multiscale discontinuous Galerkin method<br />for convection-diffusion problems:<br />a Lean blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Overview</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0001.html#a0000000005"><span class="toc_ref"></span> <span class="toc_entry">The Lean files.</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000006"><span class="toc_ref"></span> <span class="toc_entry">Scope.</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="chap-setting.html"><span class="toc_ref">2</span> <span class="toc_entry">Setting and definitions</span></a>
+ </li>
+<li class="">
+  <a href="chap-main.html"><span class="toc_ref">3</span> <span class="toc_entry">The main theorems</span></a>
+ </li>
+<li class="">
+  <a href="chap-geometry.html"><span class="toc_ref">4</span> <span class="toc_entry">Geometry of simplicial meshes</span></a>
+ </li>
+<li class="">
+  <a href="chap-analysis.html"><span class="toc_ref">5</span> <span class="toc_entry">Analysis on simplices</span></a>
+ </li>
+<li class=" active current">
+  <a href="chap-interpolation.html"><span class="toc_ref">6</span> <span class="toc_entry">Interpolation</span></a>
+ </li>
+<li class="">
+  <a href="chap-stability.html"><span class="toc_ref">7</span> <span class="toc_entry">Stability of the discrete methods</span></a>
+ </li>
+<li class="">
+  <a href="chap-errors.html"><span class="toc_ref">8</span> <span class="toc_entry">Error estimates</span></a>
+ </li>
+<li class="">
+  <a href="chap-correspondence.html"><span class="toc_ref">9</span> <span class="toc_entry">Correspondence with the paper</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="chap:interpolation">6 Interpolation</h1>
+
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:lagrange">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">6.1</span>
+    <span class="lemma_thmtitle">Lagrange interpolation on a simplex</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-interpolation.html#lem:lagrange">#</a>
+    
+    <a class="icon proof" href="chap-interpolation.html#a0000000028"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.lagInterp" class="lean_decl">BHS.lagInterp</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.evalPoly_lagPoly_latNode" class="lean_decl">BHS.evalPoly_lagPoly_latNode</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.eq_zero_of_latNode" class="lean_decl">BHS.eq_zero_of_latNode</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.lagInterp_evalPoly" class="lean_decl">BHS.lagInterp_evalPoly</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.abs_evalPoly_lagPoly_le" class="lean_decl">BHS.abs_evalPoly_lagPoly_le</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Let the principal lattice of degree \(k\) have nodes \(x_\lambda \), and let the Lagrange basis be </p>
+<div class="displaymath" id="a0000000029">
+  \[  \varphi _\lambda =\prod _i\prod _{j{\lt}\lambda _i}\frac{k b_i-j}{\lambda _i-j},  \]
+</div>
+<p> where \(b_i\) are the barycentric coordinates. Then \(\varphi _\lambda (x_\mu )=\delta _{\lambda \mu }\) and the interpolant reproduces polynomials of degree at most \(k\). Moreover \(\lvert \varphi _\lambda \rvert \le k^k\) on the cell. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000028">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>The nodal evaluation map is onto. Both spaces have dimension \(\binom {d+k}{k}\), so it is also one-to-one.</p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:conformity">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">6.2</span>
+    <span class="lemma_thmtitle">Face conformity</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-interpolation.html#lem:conformity">#</a>
+    
+    <a class="icon proof" href="chap-interpolation.html#a0000000030"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-interpolation.html#lem:lagrange">Lemma 6.1</a></li>
+          
+          <li><a href="chap-setting.html#def:mesh">Definition 2.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.exists_facetPerm" class="lean_decl">BHS.exists_facetPerm</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.evalPoly_lagInterp_facet_eq" class="lean_decl">BHS.evalPoly_lagInterp_facet_eq</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.coarseField_lagInterp" class="lean_decl">BHS.coarseField_lagInterp</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   If two cells share a facet, the interpolants of two functions that agree on the facet coincide on it. Hence cellwise interpolants of compatible functions form a coarse field in \(\overline{V}_h\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000030">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>The vertices of a shared facet are extreme points of both convex hulls, so the facet determines a permutation of the vertex indices. Under this permutation the barycentric coordinates agree on the facet. Basis functions with \(\lambda _j\ge 1\) vanish on facet \(j\); the remaining lattice nodes lie on the facet.</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:continuousrep">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">6.3</span>
+    <span class="theorem_thmtitle">Continuous representatives</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-interpolation.html#thm:continuousrep">#</a>
+    
+    <a class="icon proof" href="chap-interpolation.html#a0000000031"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-analysis.html#thm:supbound">Theorem 5.10</a></li>
+          
+          <li><a href="chap-analysis.html#thm:traces">Theorem 5.6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.exists_continuousRep" class="lean_decl">BHS.exists_continuousRep</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.facetMeasure_ball_pos" class="lean_decl">BHS.facetMeasure_ball_pos</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.continuousRep_glue" class="lean_decl">BHS.continuousRep_glue</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   Let \(d\le 3\), and let \(J\) be a jet with \(H^2\) traces on a cell. The smooth approximants of \(J\) converge uniformly on the closed cell. The limit \(w\) is continuous, agrees a.e. with \(J\) and with its facet traces, and satisfies the sup bound against every smooth comparison function. For a global jet, the representatives of neighbouring cells agree everywhere on the common face. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000031">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>The sup bound makes the approximants uniformly Cauchy. On a face, the two representatives agree a.e. by trace agreement. The face measure charges every relatively open subset of the face (homothety argument), so a.e. equality of continuous functions is equality. </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:interpolation">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">6.4</span>
+    <span class="theorem_thmtitle">Interpolation estimate</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-interpolation.html#thm:interpolation">#</a>
+    
+    <a class="icon proof" href="chap-interpolation.html#a0000000032"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-analysis.html#thm:bramblehilbert">Theorem 5.9</a></li>
+          
+          <li><a href="chap-interpolation.html#thm:continuousrep">Theorem 6.3</a></li>
+          
+          <li><a href="chap-interpolation.html#lem:conformity">Lemma 6.2</a></li>
+          
+          <li><a href="chap-analysis.html#lem:inverse">Lemma 5.3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.cell_interp_estimate" class="lean_decl">BHS.cell_interp_estimate</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.cell_localEnergy_le" class="lean_decl">BHS.cell_localEnergy_le</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.exists_interpolationPremise" class="lean_decl">BHS.exists_interpolationPremise</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.exists_interpolation" class="lean_decl">BHS.exists_interpolation</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   For \(d\le 3\) there is \(C_I\) with the following property. For every exact solution there is a coarse field \(c\in \overline{V}_h\) with \(\sum _T\lVert \varphi -c\rVert ^2_{\mathrm{SDG}(T)}\le C_I^2\sum _T(\lvert a\rvert h_T^{2k+1}+\kappa h_T^{2k})\lvert \varphi \rvert ^2_{H^{k+1}(T)}\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000032">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Take \(c|_T=I_Tw_T\), the Lagrange interpolant of the continuous representative. With a Bramble–Hilbert polynomial \(q\) we have \(I_Tw-q=I_T(w-q)\). Its nodal values are bounded by the sup bound, so the inverse inequalities give the cell terms. The facet terms follow from the sup bound and \(\lvert F_j\rvert /\lvert T\rvert \le d\rho /(2h_T)\).</p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="chap-analysis.html" title="Analysis on simplices"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Analysis of a multiscale discontinuous Galerkin methodfor convection-diffusion problems:a Lean blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="chap-stability.html" title="Stability of the discrete methods"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

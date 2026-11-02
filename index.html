@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Numerics in Lean</title>
+<style>
+  :root {
+    --bg: #fbfbf9;
+    --fg: #1d1f21;
+    --muted: #5d636a;
+    --card: #ffffff;
+    --border: #e3e3de;
+    --accent: #1f6f5c;
+    --accent-bg: #e8f3ef;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #15171a;
+      --fg: #e6e6e3;
+      --muted: #a2a8ae;
+      --card: #1d2024;
+      --border: #30343a;
+      --accent: #6fcdb2;
+      --accent-bg: #1f3a33;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  main { max-width: 860px; margin: 0 auto; padding: 48px 16px 64px; }
+  h1 { font-size: 2rem; margin: 0 0 8px; letter-spacing: -0.01em; }
+  .lead { color: var(--muted); margin: 0 0 36px; max-width: 680px; }
+  .paper {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin-bottom: 18px;
+  }
+  .paper h2 { font-size: 1.15rem; margin: 0 0 4px; }
+  .cite { color: var(--muted); font-size: 0.93rem; margin: 0 0 10px; }
+  .cite a { color: inherit; }
+  .paper p { margin: 0 0 14px; }
+  .links { display: flex; flex-wrap: wrap; gap: 8px; }
+  .links a {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: var(--accent-bg);
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.92rem;
+  }
+  .links a:hover { text-decoration: underline; }
+  footer { color: var(--muted); font-size: 0.9rem; margin-top: 32px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Numerics in Lean</h1>
+  <p class="lead">Lean&nbsp;4 and Mathlib formalizations of three research papers in numerical
+  analysis and the analysis of partial differential equations. Each blueprint has one node per
+  definition and result, linked to the Lean declarations that prove it, and an interactive
+  dependency graph.</p>
+
+  <section class="paper">
+    <h2>Analysis of a multiscale discontinuous Galerkin method for convection-diffusion problems</h2>
+    <p class="cite">A. Buffa, T. J. R. Hughes, G. Sangalli. SIAM J. Numer. Anal. 44 (2006),
+    1420&ndash;1440. <a href="https://doi.org/10.1137/050640382">doi:10.1137/050640382</a></p>
+    <p>DG, SDG and multiscale DG methods: coercivity, inf-sup conditions, local stability and
+    error estimates, all numbered results of Sections 3 and 4.</p>
+    <div class="links">
+      <a href="Buffa-Hughes-Sangalli/index.html">Blueprint</a>
+      <a href="Buffa-Hughes-Sangalli/dep_graph_document.html">Dependency graph</a>
+      <a href="Buffa-Hughes-Sangalli/Blueprint.pdf">Blueprint (PDF)</a>
+    </div>
+  </section>
+
+  <section class="paper">
+    <h2>Unified analysis of discontinuous Galerkin methods for elliptic problems</h2>
+    <p class="cite">D. N. Arnold, F. Brezzi, B. Cockburn, L. D. Marini. SIAM J. Numer. Anal. 39
+    (2002), 1749&ndash;1779.
+    <a href="https://doi.org/10.1137/S0036142901384162">doi:10.1137/S0036142901384162</a></p>
+    <p>Flux and primal formulations, consistency, stability and error estimates for all nine
+    methods of the paper, and the H&sup2; regularity of the Dirichlet problem on convex
+    polygons.</p>
+    <div class="links">
+      <a href="Arnold-Brezzi-Cockburn-Marini/index.html">Blueprint</a>
+      <a href="Arnold-Brezzi-Cockburn-Marini/dep_graph_document.html">Dependency graph</a>
+      <a href="Arnold-Brezzi-Cockburn-Marini/Blueprint.pdf">Blueprint (PDF)</a>
+      <a href="Arnold-Brezzi-Cockburn-Marini/DetailedProofs.pdf">Detailed proofs (PDF)</a>
+    </div>
+  </section>
+
+  <section class="paper">
+    <h2>Vector potentials in three-dimensional non-smooth domains</h2>
+    <p class="cite">C. Amrouche, C. Bernardi, M. Dauge, V. Girault. Math. Methods Appl. Sci. 21
+    (1998), 823&ndash;864.
+    <a href="https://doi.org/10.1002/(SICI)1099-1476(199806)21:9%3C823::AID-MMA976%3E3.0.CO;2-B">doi:10.1002/(SICI)1099-1476(199806)21:9&lt;823::AID-MMA976&gt;3.0.CO;2-B</a></p>
+    <p>Existence and uniqueness of tangential and normal vector potentials on bounded Lipschitz
+    domains with cuts (Theorems 3.12 and 3.17).</p>
+    <div class="links">
+      <a href="Amrouche-Bernardi-Dauge-Girault/index.html">Blueprint</a>
+      <a href="Amrouche-Bernardi-Dauge-Girault/dep_graph_document.html">Dependency graph</a>
+      <a href="Amrouche-Bernardi-Dauge-Girault/Blueprint.pdf">Blueprint (PDF)</a>
+      <a href="Amrouche-Bernardi-Dauge-Girault/DetailedProofs.pdf">Detailed proofs (PDF)</a>
+    </div>
+  </section>
+
+  <footer>All results shown are proved in Lean; the proofs are checked against the stated
+  theorems with <code>lake comparator</code>.</footer>
+</main>
+</body>
+</html>

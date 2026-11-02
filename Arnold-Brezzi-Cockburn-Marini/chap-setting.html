@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Setting and definitions</title>
+<link rel="next" href="chap-main.html" title="The main theorems" />
+<link rel="prev" href="sect0001.html" title="Overview" />
+<link rel="up" href="index.html" title="Unified analysis of discontinuous Galerkinmethods for elliptic problems:a Lean blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Unified analysis of discontinuous Galerkin<br />methods for elliptic problems:<br />a Lean blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Overview</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0001.html#a0000000003"><span class="toc_ref"></span> <span class="toc_entry">The Lean files.</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000004"><span class="toc_ref"></span> <span class="toc_entry">Scope.</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class=" active current">
+  <a href="chap-setting.html"><span class="toc_ref">2</span> <span class="toc_entry">Setting and definitions</span></a>
+ </li>
+<li class="">
+  <a href="chap-main.html"><span class="toc_ref">3</span> <span class="toc_entry">The main theorems</span></a>
+ </li>
+<li class="">
+  <a href="chap-analysis.html"><span class="toc_ref">4</span> <span class="toc_entry">Analysis on triangles</span></a>
+ </li>
+<li class="">
+  <a href="chap-dirichlet.html"><span class="toc_ref">5</span> <span class="toc_entry">The Dirichlet problem on a convex polygon</span></a>
+ </li>
+<li class="">
+  <a href="chap-interpolation.html"><span class="toc_ref">6</span> <span class="toc_entry">Interpolation</span></a>
+ </li>
+<li class="">
+  <a href="chap-stable.html"><span class="toc_ref">7</span> <span class="toc_entry">The four stable methods</span></a>
+ </li>
+<li class="">
+  <a href="chap-fluxes.html"><span class="toc_ref">8</span> <span class="toc_entry">Flux formulations</span></a>
+ </li>
+<li class="">
+  <a href="chap-penalty.html"><span class="toc_ref">9</span> <span class="toc_entry">NIPG, pure penalties and superpenalties</span></a>
+ </li>
+<li class="">
+  <a href="chap-bo.html"><span class="toc_ref">10</span> <span class="toc_entry">The Baumann–Oden method</span></a>
+ </li>
+<li class="">
+  <a href="chap-br.html"><span class="toc_ref">11</span> <span class="toc_entry">The original Bassi–Rebay method</span></a>
+ </li>
+<li class="">
+  <a href="chap-correspondence.html"><span class="toc_ref">12</span> <span class="toc_entry">Correspondence with the paper</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="chap:setting">2 Setting and definitions</h1>
+
+<p>All definitions are in <span class="ttfamily">Showcase.lean</span>, namespace <span class="ttfamily">ABCMShowcase</span>. They are repeated verbatim in <span class="ttfamily">LeanCode/Definitions.lean</span>. </p>
+<div class="definition_thmwrapper theorem-style-definition" id="def:jets">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.1</span>
+    <span class="definition_thmtitle">Functions, jets and Sobolev norms</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-setting.html#def:jets">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.Space" class="lean_decl">ABCMShowcase.Space</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.Index" class="lean_decl">ABCMShowcase.Index</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.Jet" class="lean_decl">ABCMShowcase.Jet</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.order" class="lean_decl">ABCMShowcase.order</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.smoothJet" class="lean_decl">ABCMShowcase.smoothJet</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.Smooth" class="lean_decl">ABCMShowcase.Smooth</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.WeakJet" class="lean_decl">ABCMShowcase.WeakJet</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.squareL2" class="lean_decl">ABCMShowcase.squareL2</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.seminormSq" class="lean_decl">ABCMShowcase.seminormSq</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.sobolevNormSq" class="lean_decl">ABCMShowcase.sobolevNormSq</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.gradient" class="lean_decl">ABCMShowcase.gradient</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.laplacian" class="lean_decl">ABCMShowcase.laplacian</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  A <em>jet</em> on \(\mathbb {R}^d\) assigns a function \(J_\alpha \) to every multi-index \(\alpha \); the jet of a smooth function \(u\) is \(\alpha \mapsto \partial ^\alpha u\). A jet is a <em>weak jet of order \(m\)</em> on an open set \(U\) if \(J_\alpha \in L^2(U)\) for \(\lvert \alpha \rvert \le m\) and \(J_{\alpha +e_i}\) is the weak derivative \(\partial _iJ_\alpha \) for \(\lvert \alpha \rvert {\lt}m\). The seminorm \(\lvert J\rvert _{H^m}\) sums the squared \(L^2\) norms over all ordered derivative words of length \(m\) (for \(m=2\) the Frobenius norm of the Hessian), and \(\lVert J\rVert _{H^m}^2=\sum _{j\le m}\lvert J\rvert _{H^j}^2\). </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:dirichlet">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.2</span>
+    <span class="definition_thmtitle">The domain and the Dirichlet problem</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-setting.html#def:dirichlet">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:jets">Definition 2.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.ConvexPolygon" class="lean_decl">ABCMShowcase.ConvexPolygon</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.InH01" class="lean_decl">ABCMShowcase.InH01</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.InH2H01" class="lean_decl">ABCMShowcase.InH2H01</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.IsWeakSolution" class="lean_decl">ABCMShowcase.IsWeakSolution</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.IsL2" class="lean_decl">ABCMShowcase.IsL2</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.InH" class="lean_decl">ABCMShowcase.InH</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.normL2" class="lean_decl">ABCMShowcase.normL2</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.seminormH" class="lean_decl">ABCMShowcase.seminormH</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.normH" class="lean_decl">ABCMShowcase.normH</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   A <em>convex polygon</em> is a nonempty bounded finite intersection of open half-planes. A jet is in \(H^1_0(\Omega )\) if it is a weak jet of order one and an \(H^1\)-limit of smooth functions with compact support in \(\Omega \). A <em>weak solution</em> of \(-\Delta u=f\), \(u=0\) on \(\partial \Omega \), is a jet \(u\in H^1_0(\Omega )\) with \((\nabla u,\nabla v)_\Omega =(f,v)_\Omega \) for all smooth compactly supported \(v\). </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:mesh">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.3</span>
+    <span class="definition_thmtitle">Triangulations</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-setting.html#def:mesh">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:jets">Definition 2.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.MeshData" class="lean_decl">ABCMShowcase.MeshData</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.Cells" class="lean_decl">ABCMShowcase.Cells</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.Faces" class="lean_decl">ABCMShowcase.Faces</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.cellSet" class="lean_decl">ABCMShowcase.cellSet</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.facet" class="lean_decl">ABCMShowcase.facet</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.faceSet" class="lean_decl">ABCMShowcase.faceSet</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.cellSize" class="lean_decl">ABCMShowcase.cellSize</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.AdmissibleMesh" class="lean_decl">ABCMShowcase.AdmissibleMesh</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.meshSize" class="lean_decl">ABCMShowcase.meshSize</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.faceLength" class="lean_decl">ABCMShowcase.faceLength</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   A mesh consists of finitely many affine triangles \(K\), a list of edges \(e\) with an owner side and an optional neighbour side, and outward unit normals. It is <em>admissible</em> for \(\Omega \) with shape bound \(\kappa \) if the closed triangles cover \(\overline\Omega \), have disjoint interiors and meet in common sub-simplices, \(h_K\le \kappa \rho _K\) for an inscribed ball of radius \(\rho _K\), and the edge list matches the triangle sides, exactly the edges without neighbour lying on \(\partial \Omega \). \(h=\max _Kh_K\) and \(h_e\) is the length of \(e\). </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:broken">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.4</span>
+    <span class="definition_thmtitle">Broken fields, traces and the discrete spaces</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-setting.html#def:broken">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:mesh">Definition 2.3</a></li>
+          
+          <li><a href="chap-setting.html#def:dirichlet">Definition 2.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.BrokenField" class="lean_decl">ABCMShowcase.BrokenField</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.HasSobolevTrace" class="lean_decl">ABCMShowcase.HasSobolevTrace</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.BrokenH2" class="lean_decl">ABCMShowcase.BrokenH2</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.RealizesGlobalJet" class="lean_decl">ABCMShowcase.RealizesGlobalJet</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.TraceRealization" class="lean_decl">ABCMShowcase.TraceRealization</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.PolyField" class="lean_decl">ABCMShowcase.PolyField</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.polynomialField" class="lean_decl">ABCMShowcase.polynomialField</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.DegreeBound" class="lean_decl">ABCMShowcase.DegreeBound</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.InWh" class="lean_decl">ABCMShowcase.InWh</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.subField" class="lean_decl">ABCMShowcase.subField</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   A <em>broken field</em> has a jet on every triangle and a trace jet on every side. The traces of a jet on a triangle are <em>Sobolev traces</em> if they are \(L^2\) limits of the restrictions of smooth functions whose derivatives converge in \(L^2\) of the triangle; a broken field is <em>broken \(H^2\)</em> if every cell jet is an \(H^2\) jet with such traces. A broken field <em>realizes</em> a global jet \(u\) if its cell jets are those of \(u\). \(V_h\) consists of the piecewise polynomials of degree at most \(p\), and \(W_h=V_h+H^2(\Omega )\cap H^1_0(\Omega )\) of the broken fields that are sums of a discrete field and a field realizing an \(H^2\cap H^1_0\) jet. </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:jumps">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.5</span>
+    <span class="definition_thmtitle">Averages, jumps and discrete vector fields</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-setting.html#def:jumps">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:broken">Definition 2.4</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.jump" class="lean_decl">ABCMShowcase.jump</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.avg" class="lean_decl">ABCMShowcase.avg</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.avgGrad" class="lean_decl">ABCMShowcase.avgGrad</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.jumpGrad" class="lean_decl">ABCMShowcase.jumpGrad</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.VecPolyField" class="lean_decl">ABCMShowcase.VecPolyField</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.VecDegreeBound" class="lean_decl">ABCMShowcase.VecDegreeBound</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.vecInner" class="lean_decl">ABCMShowcase.vecInner</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.vecAvg" class="lean_decl">ABCMShowcase.vecAvg</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.vecJump" class="lean_decl">ABCMShowcase.vecJump</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   On an interior edge, \([\! [v]\! ]=v^+n^++v^-n^-\), \(\{ v\} =(v^++v^-)/2\), \(\{ \nabla v\} =(\nabla v^++\nabla v^-)/2\) and \([\! [\nabla v]\! ]=\nabla v^+\cdot n^++\nabla v^-\cdot n^-\); on a boundary edge \([\! [v]\! ]=vn\) and \(\{ \nabla v\} =\nabla v\). \(\Sigma _h=V_h^2\) is the space of piecewise polynomial vector fields, with the \(L^2(\Omega )^2\) inner product and the edge average and jump of vector fields. </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:liftings">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.6</span>
+    <span class="definition_thmtitle">Liftings</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-setting.html#def:liftings">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:jumps">Definition 2.5</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.IsLiftR" class="lean_decl">ABCMShowcase.IsLiftR</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.IsLiftL" class="lean_decl">ABCMShowcase.IsLiftL</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.liftR" class="lean_decl">ABCMShowcase.liftR</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.liftL" class="lean_decl">ABCMShowcase.liftL</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.liftRSum" class="lean_decl">ABCMShowcase.liftRSum</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.liftLSum" class="lean_decl">ABCMShowcase.liftLSum</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.liftA" class="lean_decl">ABCMShowcase.liftA</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   For an edge \(e\) and \(\varphi \in L^2(e)^2\), \(r_e(\varphi )\in \Sigma _h\) is defined by \((r_e(\varphi ),\tau )_\Omega =-\int _e\varphi \cdot \{ \tau \} \) for all \(\tau \in \Sigma _h\); for an interior edge and \(q\in L^2(e)\), \(l_e(q)\in \Sigma _h\) is defined by \((l_e(q),\tau )_\Omega =-\int _eq[\! [\tau ]\! ]\). Then \(R(v)=\sum _er_e([\! [v]\! ])\), \(L_\beta (v)=\sum _{e\text{ interior}}l_e(\beta _e\cdot [\! [v]\! ])\) and \(A_\beta =R+L_\beta \). In Lean the liftings are defined by choice from their defining properties; existence and uniqueness are proved in Lemma&#160;<a href="chap-stable.html#lem:liftings">7.1</a>. </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:forms">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.7</span>
+    <span class="definition_thmtitle">The bilinear forms</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-setting.html#def:forms">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:liftings">Definition 2.6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.cellGrad" class="lean_decl">ABCMShowcase.cellGrad</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.fluxC" class="lean_decl">ABCMShowcase.fluxC</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.fluxD" class="lean_decl">ABCMShowcase.fluxD</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.penaltyJ" class="lean_decl">ABCMShowcase.penaltyJ</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.penaltyR" class="lean_decl">ABCMShowcase.penaltyR</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.superJ" class="lean_decl">ABCMShowcase.superJ</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.superR" class="lean_decl">ABCMShowcase.superR</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.formIP" class="lean_decl">ABCMShowcase.formIP</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.formBassi" class="lean_decl">ABCMShowcase.formBassi</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.formBrezzi" class="lean_decl">ABCMShowcase.formBrezzi</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.formLDG" class="lean_decl">ABCMShowcase.formLDG</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.formNIPG" class="lean_decl">ABCMShowcase.formNIPG</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.formPenaltyJ" class="lean_decl">ABCMShowcase.formPenaltyJ</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.formPenaltyR" class="lean_decl">ABCMShowcase.formPenaltyR</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.formBO" class="lean_decl">ABCMShowcase.formBO</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.formBR" class="lean_decl">ABCMShowcase.formBR</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.formSuperJ" class="lean_decl">ABCMShowcase.formSuperJ</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.formSuperR" class="lean_decl">ABCMShowcase.formSuperR</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.formSuperNIPG" class="lean_decl">ABCMShowcase.formSuperNIPG</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.StdMethod" class="lean_decl">ABCMShowcase.StdMethod</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.StdMethod.form" class="lean_decl">ABCMShowcase.StdMethod.form</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.StdMethod.Threshold" class="lean_decl">ABCMShowcase.StdMethod.Threshold</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   With \(g(w,v)=(\nabla _hw,\nabla _hv)_\Omega \), \(C(w,v)=\sum _e\langle \{ \nabla _hw\} ,[\! [v]\! ]\rangle _e\), \(C^T(w,v)=C(v,w)\), \(D_\beta (w,v)=\sum _{e\text{ interior}}\langle [\! [\nabla _hw]\! ], \beta _e\cdot [\! [v]\! ]\rangle _e\), \(A_j(w,v)=\sum _e\eta _eh_e^{-1}\langle [\! [w]\! ],[\! [v]\! ]\rangle _e\), \(A_r(w,v)=\sum _e\eta _e(r_e([\! [w]\! ]),r_e([\! [v]\! ]))_\Omega \) and the superpenalties \(A_j^{\sup }\), \(A_r^{\sup }\) (weights \(h_e^{-(2p+1)}\) and \(h_e^{-2p}\)): </p>
+<div class="displaymath" id="a0000000005">
+  \begin{align*}  B_{IP}& =g-C-C^T+A_j,\qquad B_{Bassi}=g-C-C^T+A_r,\\ B_{Brezzi}& =g-C-C^T+(R(\cdot ),R(\cdot ))+A_r,\\ B_{LDG}& =g-C-C^T-D_\beta -D_\beta ^T+(A_\beta (\cdot ),A_\beta (\cdot ))+A_j,\\ B_{NIPG}& =g-C+C^T+A_j,\qquad B_{BO}=g-C+C^T,\qquad B_{BR}=g-C-C^T+(R(\cdot ),R(\cdot )), \end{align*}
+</div>
+<p> the pure penalties \(g+A_j\) and \(g+A_r\), and the superpenalized \(g+A_j^{\sup }\), \(g+A_r^{\sup }\), \(g-C+C^T+A_j^{\sup }\). The penalty threshold of the four standard methods is \(\eta _{\min }{\gt}\eta _*\) for IP, \(\eta _{\min }{\gt}3\) for Bassi et al., and none for Brezzi et al. and LDG. </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:norms">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.8</span>
+    <span class="definition_thmtitle">Norms</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-setting.html#def:norms">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:broken">Definition 2.4</a></li>
+          
+          <li><a href="chap-setting.html#def:jumps">Definition 2.5</a></li>
+          
+          <li><a href="chap-setting.html#def:forms">Definition 2.7</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.gradSq" class="lean_decl">ABCMShowcase.gradSq</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.hessSq" class="lean_decl">ABCMShowcase.hessSq</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.jumpSq" class="lean_decl">ABCMShowcase.jumpSq</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.normN" class="lean_decl">ABCMShowcase.normN</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.superNormJ" class="lean_decl">ABCMShowcase.superNormJ</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.superNormR" class="lean_decl">ABCMShowcase.superNormR</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.l2Norm" class="lean_decl">ABCMShowcase.l2Norm</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   \(N_h(v)^2=G_h(v)^2+H_h(v)^2+J_h(v)^2\) with \(G_h(v)^2=\sum _K\lVert \nabla v\rVert _K^2\), \(H_h(v)^2=\sum _Kh_K^2\lvert v\rvert _{H^2(K)}^2\) and \(J_h(v)^2=\sum _eh_e^{-1}\lVert [\! [v]\! ]\rVert _e^2\). The superpenalty norms replace \(J_h^2\) by \(A_j^{\sup }(v,v)\) or \(A_r^{\sup }(v,v)\). </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:discrete">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.9</span>
+    <span class="definition_thmtitle">Discrete problems</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-setting.html#def:discrete">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:forms">Definition 2.7</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.loadPair" class="lean_decl">ABCMShowcase.loadPair</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.fieldPair" class="lean_decl">ABCMShowcase.fieldPair</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.IsDiscreteSolution" class="lean_decl">ABCMShowcase.IsDiscreteSolution</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   \(u_h\) <em>solves the discrete problem</em> for a form \(B\) and a load \(f\) if \(u_h\in V_h\) and \(B(u_h,v_h)=(f,v_h)_\Omega \) for all \(v_h\in V_h\). </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:br">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.10</span>
+    <span class="definition_thmtitle">Discrete gradient, projection and the Bassi–Rebay kernel</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-setting.html#def:br">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:liftings">Definition 2.6</a></li>
+          
+          <li><a href="chap-setting.html#def:discrete">Definition 2.9</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.IsCellProj" class="lean_decl">ABCMShowcase.IsCellProj</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.cellProj" class="lean_decl">ABCMShowcase.cellProj</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.discreteGrad" class="lean_decl">ABCMShowcase.discreteGrad</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.InBRKernel" class="lean_decl">ABCMShowcase.InBRKernel</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.PiecewisePoly" class="lean_decl">ABCMShowcase.PiecewisePoly</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   \(P_k\) is the elementwise \(L^2\) projection onto polynomials of degree at most \(k\); \(\mathcal{D}_hv_h=\nabla _hv_h+R(v_h)\in \Sigma _h\) is the discrete gradient; \(Z_h=\{ v_h\in V_h:\mathcal{D}_hv_h=0\} \) is the Bassi–Rebay kernel. </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:fluxes">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.11</span>
+    <span class="definition_thmtitle">Numerical fluxes and the flux formulation</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-setting.html#def:fluxes">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:forms">Definition 2.7</a></li>
+          
+          <li><a href="chap-setting.html#def:liftings">Definition 2.6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.Method" class="lean_decl">ABCMShowcase.Method</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.Method.form" class="lean_decl">ABCMShowcase.Method.form</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.FluxTable" class="lean_decl">ABCMShowcase.FluxTable</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.Method.fluxes" class="lean_decl">ABCMShowcase.Method.fluxes</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.Method.auxField" class="lean_decl">ABCMShowcase.Method.auxField</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.IsFluxSolution" class="lean_decl">ABCMShowcase.IsFluxSolution</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCMShowcase.outFlux" class="lean_decl">ABCMShowcase.outFlux</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   For each of the nine methods and the three superpenalized methods, the numerical fluxes \(\hat u\), \(\hat\sigma \) of Table&#160;3.1 of the paper. A pair \((u_h,\sigma _h)\in V_h\times \Sigma _h\) solves the <em>flux formulation</em> if on every triangle \(K\) </p>
+<div class="displaymath" id="a0000000006">
+  \[  (\sigma _h,\tau )_K=-(u_h,\operatorname {div}\tau )_K+\langle \hat u,\tau \cdot n_K\rangle _{\partial K},\qquad (\sigma _h,\nabla v)_K=(f,v)_K+\langle \hat\sigma \cdot n_K,v\rangle _{\partial K}  \]
+</div>
+<p> for all polynomial \(\tau \), \(v\) of degree at most \(p\). The eliminated auxiliary field is \(\nabla _hu_h+R(u_h)\), \(\nabla _hu_h+A_\beta (u_h)\), \(\nabla _hu_h-R(u_h)\) or \(\nabla _hu_h\), depending on the method. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="sect0001.html" title="Overview"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Unified analysis of discontinuous Galerkinmethods for elliptic problems:a Lean blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="chap-main.html" title="The main theorems"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

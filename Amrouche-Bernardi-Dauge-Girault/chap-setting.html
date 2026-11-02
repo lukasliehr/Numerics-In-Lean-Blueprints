@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Setting and definitions</title>
+<link rel="next" href="chap-main.html" title="The main theorems" />
+<link rel="prev" href="sect0001.html" title="Overview" />
+<link rel="up" href="index.html" title="Vector potentials in three-dimensionalnon-smooth domains:a Lean blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Vector potentials in three-dimensional<br />non-smooth domains:<br />a Lean blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Overview</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0001.html#a0000000003"><span class="toc_ref"></span> <span class="toc_entry">The Lean files.</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000004"><span class="toc_ref"></span> <span class="toc_entry">The route.</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class=" active current">
+  <a href="chap-setting.html"><span class="toc_ref">2</span> <span class="toc_entry">Setting and definitions</span></a>
+ </li>
+<li class="">
+  <a href="chap-main.html"><span class="toc_ref">3</span> <span class="toc_entry">The main theorems</span></a>
+ </li>
+<li class="">
+  <a href="chap-assembly.html"><span class="toc_ref">4</span> <span class="toc_entry">The abstract assembly</span></a>
+ </li>
+<li class="">
+  <a href="chap-cuts.html"><span class="toc_ref">5</span> <span class="toc_entry">The cuts</span></a>
+ </li>
+<li class="">
+  <a href="chap-analysis.html"><span class="toc_ref">6</span> <span class="toc_entry">Analysis on \(\mathbb {R}^3\)</span></a>
+ </li>
+<li class="">
+  <a href="chap-topology.html"><span class="toc_ref">7</span> <span class="toc_entry">Topology of the cut domain</span></a>
+ </li>
+<li class="">
+  <a href="chap-boundary.html"><span class="toc_ref">8</span> <span class="toc_entry">The boundary</span></a>
+ </li>
+<li class="">
+  <a href="chap-correspondence.html"><span class="toc_ref">9</span> <span class="toc_entry">Correspondence with the paper</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="chap:setting">2 Setting and definitions</h1>
+
+<p>All definitions are in <span class="ttfamily">Showcase.lean</span>, namespace <span class="ttfamily">VP</span>. They are repeated verbatim in <span class="ttfamily">LeanCode/Definitions.lean</span>. </p>
+<div class="definition_thmwrapper theorem-style-definition" id="def:spaces">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.1</span>
+    <span class="definition_thmtitle">Fields, weak derivatives and Sobolev spaces</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-setting.html#def:spaces">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.Domain" class="lean_decl">VP.Domain</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.Scalar" class="lean_decl">VP.Scalar</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.Field" class="lean_decl">VP.Field</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.ScalarTest" class="lean_decl">VP.ScalarTest</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.VectorTest" class="lean_decl">VP.VectorTest</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.HasWeakGradient" class="lean_decl">VP.HasWeakGradient</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.HasWeakDivergence" class="lean_decl">VP.HasWeakDivergence</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.HasWeakCurl" class="lean_decl">VP.HasWeakCurl</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.HasWeakJacobian" class="lean_decl">VP.HasWeakJacobian</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.H1Scalar" class="lean_decl">VP.H1Scalar</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.H1Vector" class="lean_decl">VP.H1Vector</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.DivFree" class="lean_decl">VP.DivFree</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  Let \(\Omega \subset \mathbb {R}^n\) be open. \(L^2(\Omega )\) and \(L^2(\Omega )^n\) are the square-integrable functions and vector fields, as classes modulo equality almost everywhere; \(C_c^\infty (\Omega )\) and \(C_c^\infty (\Omega )^3\) are the smooth compactly supported test functions and test fields. For \(v,c\in L^2(\Omega )^3\) and \(d\in L^2(\Omega )\): </p>
+<ul class="itemize">
+  <li><p>\(\operatorname {div}v=d\) if \(\int _\Omega v\cdot \nabla \varphi =-\int _\Omega d\, \varphi \) for all \(\varphi \in C_c^\infty (\Omega )\); \(v\) is <em>divergence free</em> if \(\operatorname {div}v=0\); </p>
+</li>
+  <li><p>\(\operatorname {curl}v=c\) if \(\int _\Omega v\cdot \operatorname {curl}\varphi =\int _\Omega c\cdot \varphi \) for all \(\varphi \in C_c^\infty (\Omega )^3\); </p>
+</li>
+  <li><p>an element of \(H^1(\Omega )\) is a pair of \(q\in L^2(\Omega )\) and its weak gradient \(\nabla q\in L^2(\Omega )^n\); an element of \(H^1(\Omega )^3\) is a pair of a field and its weak Jacobian in \(L^2\). </p>
+</li>
+</ul>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:traces">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.2</span>
+    <span class="definition_thmtitle">Zero normal and tangential traces</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-setting.html#def:traces">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:spaces">Definition 2.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.ZeroNormalTrace" class="lean_decl">VP.ZeroNormalTrace</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.ZeroTangentialTrace" class="lean_decl">VP.ZeroTangentialTrace</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   Let \(v,c\in L^2(\Omega )^3\) and \(d\in L^2(\Omega )\). </p>
+<ul class="itemize">
+  <li><p>For a field with \(\operatorname {div}v=d\), <em>\(v\cdot n=0\) on \(\partial \Omega \)</em> means \(\int _\Omega v\cdot \nabla q+\int _\Omega d\, q=0\) for all \(q\in H^1(\Omega )\). </p>
+</li>
+  <li><p>For a field with \(\operatorname {curl}v=c\), <em>\(v\times n=0\) on \(\partial \Omega \)</em> means \(\int _\Omega v\cdot \operatorname {curl}w-\int _\Omega c\cdot w=0\) for all \(w\in H^1(\Omega )^3\). </p>
+</li>
+</ul>
+<p> These are the paper’s weak definitions by Green’s formulas; no trace operator is needed. </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:geometry">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.3</span>
+    <span class="definition_thmtitle">Admissible geometric data</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-setting.html#def:geometry">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:spaces">Definition 2.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.GraphPatch" class="lean_decl">VP.GraphPatch</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.LipschitzBoundary" class="lean_decl">VP.LipschitzBoundary</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.BoundaryComponents" class="lean_decl">VP.BoundaryComponents</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.CutSidePatch" class="lean_decl">VP.CutSidePatch</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.CutSystem" class="lean_decl">VP.CutSystem</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.LipschitzData" class="lean_decl">VP.LipschitzData</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.GeometricData" class="lean_decl">VP.GeometricData</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.cutDomain" class="lean_decl">VP.cutDomain</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   A <em>graph patch</em> is an open box, in coordinates given by an affine isometry of \(\mathbb {R}^3\), together with a Lipschitz function of the first two coordinates; it splits the box into the regions above and below the graph. A set has <em>Lipschitz boundary</em> if every boundary point lies in a patch in which the set is the region above the graph and its boundary is the graph. Geometric data of an open set \(\Omega \subset \mathbb {R}^3\) consist of: </p>
+<ul class="itemize">
+  <li><p>the facts that \(\Omega \) is bounded, connected and has Lipschitz boundary; </p>
+</li>
+  <li><p>the boundary components \(\Gamma _0,\dots ,\Gamma _I\): the connected components of \(\partial \Omega \), pairwise disjoint and covering \(\partial \Omega \), where \(\Gamma _0\) borders the unbounded component of \(\mathbb {R}^3\setminus \overline\Omega \); </p>
+</li>
+  <li><p>a cutting system \(\Sigma _1,\dots ,\Sigma _J\) (numbered from \(0\) in Lean): connected subsets of \(\Omega \) with rims on \(\partial \Omega \) and pairwise disjoint closures. Each cut is covered by finitely many balls in which \(\Omega \setminus \Sigma _j\) splits into a connected Lipschitz <em>minus</em> side and a connected Lipschitz <em>plus</em> side, the cut being a smooth graph between them with coherent orientation. The cut domain \(\Omega ^{\circ }=\Omega \setminus \bigcup _j\Sigma _j\) is open, simply connected and pseudo-Lipschitz (near each boundary point it consists of one or two Lipschitz pieces). </p>
+</li>
+</ul>
+<p> No extension, Poincaré, trace, closed-range or potential theorem is part of these data. </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:fluxes">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.4</span>
+    <span class="definition_thmtitle">Boundary fluxes and cut fluxes</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-setting.html#def:fluxes">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:traces">Definition 2.2</a></li>
+          
+          <li><a href="chap-setting.html#def:geometry">Definition 2.3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.IsBoundaryCutoff" class="lean_decl">VP.IsBoundaryCutoff</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.ZeroBoundaryFluxOn" class="lean_decl">VP.ZeroBoundaryFluxOn</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.ZeroBoundaryFlux" class="lean_decl">VP.ZeroBoundaryFlux</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.HasConstantJump" class="lean_decl">VP.HasConstantJump</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.HasUnitCutJump" class="lean_decl">VP.HasUnitCutJump</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.ZeroCutFlux" class="lean_decl">VP.ZeroCutFlux</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   Let \(v\in L^2(\Omega )^3\) with \(\operatorname {div}v=d\). </p>
+<ul class="itemize">
+  <li><p>A <em>cutoff</em> for \(\Gamma _i\) is a smooth compactly supported \(\eta \) on \(\mathbb {R}^3\) that is \(1\) near \(\Gamma _i\) and \(0\) near the other components. <em>\(F_i(v)=0\)</em> means \(\int _\Omega v\cdot \nabla \eta +\int _\Omega d\, \eta =0\) for every cutoff \(\eta \) of \(\Gamma _i\), for all \(0\le i\le I\). </p>
+</li>
+  <li><p>\(q\in H^1(\Omega ^{\circ })\) <em>jumps by \(c\) across \(\Sigma _j\)</em> if, in each ball of the patches of \(\Sigma _j\), the function equal to \(q-c\) on the minus side and to \(q\) on the plus side is the restriction of an \(H^1\) function. It has <em>unit jump across \(\Sigma _j\)</em> if it jumps by \(1\) across \(\Sigma _j\) and by \(0\) across the other cuts (the paper’s lifts \(r_j\)). </p>
+</li>
+  <li><p><em>\(C_j(v)=0\)</em> means \(\int _{\Omega ^{\circ }}v\cdot \nabla r+\int _{\Omega ^{\circ }}d\, r=0\) for every \(r\) with unit jump across \(\Sigma _j\), for all \(j\). </p>
+</li>
+</ul>
+<p> The conditions are imposed for every admissible cutoff and lift, so no choice is involved. </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:potentials">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.5</span>
+    <span class="definition_thmtitle">Tangential and normal potentials</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-setting.html#def:potentials">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:traces">Definition 2.2</a></li>
+          
+          <li><a href="chap-setting.html#def:fluxes">Definition 2.4</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.IsTangentialPotential" class="lean_decl">VP.IsTangentialPotential</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.IsNormalPotential" class="lean_decl">VP.IsNormalPotential</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   Let \(u,\psi \in L^2(\Omega )^3\). Then \(\psi \) is a <em>tangential potential</em> of \(u\) if \(\operatorname {curl}\psi =u\), \(\operatorname {div}\psi =0\), \(\psi \cdot n=0\) and \(C_j(\psi )=0\) for all \(j\), and a <em>normal potential</em> of \(u\) if \(\operatorname {curl}\psi =u\), \(\operatorname {div}\psi =0\), \(\psi \times n=0\) and \(F_i(\psi )=0\) for all \(i\). In <span class="ttfamily">Showcase.lean</span> the theorems are written with the scoped notation of the paper (namespace <span class="ttfamily">VP.Paper</span>), which abbreviates exactly these conditions; the file checks each abbreviation by <span class="ttfamily">rfl</span>. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:nonvacuous">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">2.6</span>
+    <span class="lemma_thmtitle">The flux conditions are not vacuous</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-setting.html#lem:nonvacuous">#</a>
+    
+    <a class="icon proof" href="chap-setting.html#a0000000005"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:fluxes">Definition 2.4</a></li>
+          
+          <li><a href="chap-cuts.html#lem:lifts">Lemma 5.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.exists_boundaryCutoff" class="lean_decl">VP.exists_boundaryCutoff</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.liftH1_unitJump" class="lean_decl">VP.liftH1_unitJump</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   Every boundary component \(\Gamma _i\) has a cutoff, and every cut \(\Sigma _j\) has a function in \(H^1(\Omega ^{\circ })\) with unit jump across \(\Sigma _j\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000005">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>The components are compact and pairwise disjoint, so a smooth cutoff equal to \(1\) near \(\Gamma _i\) and supported away from the other components exists. The lifts are those of Lemma&#160;<a href="chap-cuts.html#lem:lifts">5.2</a>. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="sect0001.html" title="Overview"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Vector potentials in three-dimensionalnon-smooth domains:a Lean blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="chap-main.html" title="The main theorems"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

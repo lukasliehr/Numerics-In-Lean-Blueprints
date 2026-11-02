@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Setting and definitions</title>
+<link rel="next" href="chap-main.html" title="The main theorems" />
+<link rel="prev" href="sect0001.html" title="Overview" />
+<link rel="up" href="index.html" title="Analysis of a multiscale discontinuous Galerkin methodfor convection-diffusion problems:a Lean blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Analysis of a multiscale discontinuous Galerkin method<br />for convection-diffusion problems:<br />a Lean blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Overview</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0001.html#a0000000005"><span class="toc_ref"></span> <span class="toc_entry">The Lean files.</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000006"><span class="toc_ref"></span> <span class="toc_entry">Scope.</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class=" active current">
+  <a href="chap-setting.html"><span class="toc_ref">2</span> <span class="toc_entry">Setting and definitions</span></a>
+ </li>
+<li class="">
+  <a href="chap-main.html"><span class="toc_ref">3</span> <span class="toc_entry">The main theorems</span></a>
+ </li>
+<li class="">
+  <a href="chap-geometry.html"><span class="toc_ref">4</span> <span class="toc_entry">Geometry of simplicial meshes</span></a>
+ </li>
+<li class="">
+  <a href="chap-analysis.html"><span class="toc_ref">5</span> <span class="toc_entry">Analysis on simplices</span></a>
+ </li>
+<li class="">
+  <a href="chap-interpolation.html"><span class="toc_ref">6</span> <span class="toc_entry">Interpolation</span></a>
+ </li>
+<li class="">
+  <a href="chap-stability.html"><span class="toc_ref">7</span> <span class="toc_entry">Stability of the discrete methods</span></a>
+ </li>
+<li class="">
+  <a href="chap-errors.html"><span class="toc_ref">8</span> <span class="toc_entry">Error estimates</span></a>
+ </li>
+<li class="">
+  <a href="chap-correspondence.html"><span class="toc_ref">9</span> <span class="toc_entry">Correspondence with the paper</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="chap:setting">2 Setting and definitions</h1>
+
+<p>All definitions are in <span class="ttfamily">Showcase.lean</span>, namespace <span class="ttfamily">BHSShowcase</span>. They are repeated verbatim in <span class="ttfamily">LeanCode/Definitions.lean</span>. </p>
+<div class="definition_thmwrapper theorem-style-definition" id="def:mesh">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.1</span>
+    <span class="definition_thmtitle">Admissible meshes</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-setting.html#def:mesh">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.MeshData" class="lean_decl">BHSShowcase.MeshData</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.AdmissibleMesh" class="lean_decl">BHSShowcase.AdmissibleMesh</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.cellSet" class="lean_decl">BHSShowcase.cellSet</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.facet" class="lean_decl">BHSShowcase.facet</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.faceThickness" class="lean_decl">BHSShowcase.faceThickness</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  A mesh consists of finitely many affine \(d\)-simplices \(T\), a list of faces with an owner facet and an optional neighbour facet, and outward unit normals. It is <em>admissible with shape constant \(\rho \ge 1\)</em> if: </p>
+<ul class="itemize">
+  <li><p>the domain \(\Omega \) is bounded, connected, Lipschitz, and equal to the interior of the union of the cells; </p>
+</li>
+  <li><p>the cells have disjoint interiors and meet in common subsimplices (conformity); </p>
+</li>
+  <li><p>each cell contains a ball of radius \(r\) with \(\operatorname {diam}T\le \rho r\); </p>
+</li>
+  <li><p>each facet belongs to exactly one face; </p>
+</li>
+  <li><p>exactly the faces without a neighbour lie on \(\partial \Omega \). </p>
+</li>
+</ul>
+<p> The face thickness is \(h_{\perp }=(\lvert T^+\rvert +\lvert T^-\rvert )/(2\lvert e\rvert )\) on interior faces and \(\lvert T\rvert /\lvert e\rvert \) on boundary faces. </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:jets">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.2</span>
+    <span class="definition_thmtitle">Weak jets and Sobolev traces</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-setting.html#def:jets">#</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.WeakJet" class="lean_decl">BHSShowcase.WeakJet</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.HasSobolevTrace" class="lean_decl">BHSShowcase.HasSobolevTrace</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.BrokenField" class="lean_decl">BHSShowcase.BrokenField</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.BrokenH2" class="lean_decl">BHSShowcase.BrokenH2</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.RealizesGlobalJet" class="lean_decl">BHSShowcase.RealizesGlobalJet</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>  A <em>jet</em> assigns a function \(J_\alpha \) to each multi-index \(\alpha \). </p>
+<ul class="itemize">
+  <li><p>It is a <em>weak \(H^m(\Omega )\) jet</em> if \(J_\alpha \in L^2(\Omega )\) for \(\lvert \alpha \rvert \le m\) and \(J_{\alpha +e_i}\) is the distributional derivative \(\partial _i J_\alpha \) for \(\lvert \alpha \rvert {\lt}m\). </p>
+</li>
+  <li><p>Traces on the facets of a cell are \(L^2\) limits of the facet restrictions of smooth functions whose derivatives converge in \(L^2\) of the cell (<span class="ttfamily">HasSobolevTrace</span>). </p>
+</li>
+  <li><p>A <em>broken field</em> has one jet per cell and one trace jet per facet. It is <em>broken \(H^2\)</em> if every cell jet is \(H^2\) with these traces. </p>
+</li>
+</ul>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:forms">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.3</span>
+    <span class="definition_thmtitle">DG and SDG forms and norms</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-setting.html#def:forms">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:mesh">Definition 2.1</a></li>
+          
+          <li><a href="chap-setting.html#def:jets">Definition 2.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.dgForm" class="lean_decl">BHSShowcase.dgForm</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.dgLoad" class="lean_decl">BHSShowcase.dgLoad</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.sdgForm" class="lean_decl">BHSShowcase.sdgForm</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.sdgLoad" class="lean_decl">BHSShowcase.sdgLoad</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.dgNorm" class="lean_decl">BHSShowcase.dgNorm</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.sdgNorm" class="lean_decl">BHSShowcase.sdgNorm</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.augmentedNorm" class="lean_decl">BHSShowcase.augmentedNorm</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.tau" class="lean_decl">BHSShowcase.tau</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.jump" class="lean_decl">BHSShowcase.jump</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.upwind" class="lean_decl">BHSShowcase.upwind</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   For \(s\in \{ -1,0,1\} \) (symmetric, neutral, skew), the DG form is </p>
+<div class="displaymath" id="a0000000007">
+  \begin{align*}  B^{\mathrm{DG}}(\nu ,\mu ) & = \sum _T\int _T(\kappa \nabla \nu \cdot \nabla \mu -\nu \, a\cdot \nabla \mu ) +\sum _{e\in \mathcal{E}_h^{o}}\int _e\bigl([\! [\mu ]\! ]\cdot (a\nu ^- - \kappa \nabla \nu ^-) + s\kappa \nabla \mu ^-\cdot [\! [\nu ]\! ]\bigr)\\ & \quad +\sum _{e\subset \partial \Omega }\int _e\bigl(s\kappa \nabla \mu \cdot n\, \nu -\kappa \nabla \nu \cdot n\, \mu + (a\cdot n)^+\mu \nu \bigr) +\varepsilon \sum _{e}\int _e\frac{\kappa }{h_{\perp }}[\! [\mu ]\! ]\cdot [\! [\nu ]\! ], \end{align*}
+</div>
+<p> with upwind values \(\nu ^-\) and the matching load \(L^{\mathrm{DG}}\). The SDG form adds \(\sum _T\tau _T\int _T(-\kappa \Delta \nu +a\cdot \nabla \nu )(a\cdot \nabla \mu )\), with \(\tau _T=\tau \min (h_T/\lvert a\rvert , h_T^2/\kappa )\). The norms are </p>
+<div class="displaymath" id="a0000000008">
+  \begin{align*}  \lVert \nu \rVert _{\mathrm{DG}}^2& =\sum _T\kappa \bigl(\lvert \nu \rvert _{H^1(T)}^2+h_T^2\lvert \nu \rvert _{H^2(T)}^2\bigr) +\varepsilon \sum _e\frac{\kappa }{h_{\perp }}\lVert [\! [\nu ]\! ]\rVert _{L^2(e)}^2 +\sum _e\lVert \lvert a\cdot n\rvert ^{1/2}[\! [\nu ]\! ]\rVert _{L^2(e)}^2,\\ \lVert \nu \rVert _{\mathrm{SDG}}^2& =\lVert \nu \rVert _{\mathrm{DG}}^2+\sum _T\tau _T\lVert a\cdot \nabla \nu \rVert _{L^2(T)}^2,\\ |\! |\! |\nu |\! |\! |_{\mathrm{SDG}}^2& =\lVert \nu \rVert _{\mathrm{SDG}}^2+\sum _{e\in \mathcal{E}_h^{o}}\lVert \lvert a\cdot n\rvert ^{1/2}\nu ^-\rVert ^2_{L^2(e)} +\sum _T\tau _T^{-1}\lVert \nu \rVert ^2_{L^2(T)}. \end{align*}
+</div>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:local">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.4</span>
+    <span class="definition_thmtitle">Local problems and transfer spaces</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-setting.html#def:local">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:forms">Definition 2.3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.localForm" class="lean_decl">BHSShowcase.localForm</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.localLoad" class="lean_decl">BHSShowcase.localLoad</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.localEnergySq" class="lean_decl">BHSShowcase.localEnergySq</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.CoarseField" class="lean_decl">BHSShowcase.CoarseField</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.localRHS" class="lean_decl">BHSShowcase.localRHS</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.transferSpace" class="lean_decl">BHSShowcase.transferSpace</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   On a cell \(T\), with perturbation \(\delta \ge 0\), </p>
+<div class="displaymath" id="a0000000009">
+  \begin{align*}  b_T(\nu ,\mu )& =\int _T(\kappa \nabla \nu \cdot \nabla \mu -\nu \, a\cdot \nabla \mu )\\ & \quad +\sum _{j}\int _{F_j}\Bigl(-\kappa \nabla \nu \cdot n\, \mu +s\kappa \nabla \mu \cdot n\, \nu +\bigl(\varepsilon \tfrac {\kappa }{h_{\perp }}+(1+\delta )(a\cdot n)^+\bigr)\nu \mu \Bigr). \end{align*}
+</div>
+<p> Let \(\ell _T(\bar\nu ,f;\mu )\) be the load with boundary data \(\bar\nu \). The local energy \(\lVert \nu \rVert ^2_{\mathrm{SDG}(T)}\) is defined as in (4.7) of the paper. For a continuous piecewise-polynomial coarse field \(\bar\nu \in \overline{V}_h\), the transfer \(\mathfrak {T}_h(\bar\nu ,f)\) is the solution of \(b_T(\nu ,\mu )=\ell _T(\bar\nu ,f;\mu )\) on all cells. The trial space is \(\mathfrak {T}_h(\overline{V}_h,f)\). </p>
+
+  </div>
+</div>
+<div class="definition_thmwrapper theorem-style-definition" id="def:exact">
+  <div class="definition_thmheading">
+    <span class="definition_thmcaption">
+    Definition
+    </span>
+    <span class="definition_thmlabel">2.5</span>
+    <span class="definition_thmtitle">Discrete problems, exact solutions, error indicator</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-setting.html#def:exact">#</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:forms">Definition 2.3</a></li>
+          
+          <li><a href="chap-setting.html#def:local">Definition 2.4</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.Vh" class="lean_decl">BHSShowcase.Vh</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.Vhbar" class="lean_decl">BHSShowcase.Vhbar</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.VhT" class="lean_decl">BHSShowcase.VhT</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.ExactSolution" class="lean_decl">BHSShowcase.ExactSolution</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHSShowcase.IsExactSolution" class="lean_decl">BHSShowcase.IsExactSolution</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="definition_thmcontent">
+  <p>   The DG, SDG and SMDG solutions are defined by the Galerkin equations (3.2), (3.13) and (4.4). An exact solution is a weak \(H^{k+1}(\Omega )\) jet with \(L^2\) data, realized by a broken field with traces, satisfying the equation a.e. in each cell and the boundary condition a.e. on \(\partial \Omega \). The error indicator is \(\bigl(\sum _T(\lvert a\rvert  h_T^{2k+1}+\kappa h_T^{2k})\lvert \varphi \rvert ^2_{H^{k+1}(T)}\bigr)^{1/2}\). </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="sect0001.html" title="Overview"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Analysis of a multiscale discontinuous Galerkin methodfor convection-diffusion problems:a Lean blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="chap-main.html" title="The main theorems"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

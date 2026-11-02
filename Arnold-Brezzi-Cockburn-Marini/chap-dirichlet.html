@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Dirichlet problem on a convex polygon</title>
+<link rel="next" href="chap-interpolation.html" title="Interpolation" />
+<link rel="prev" href="chap-analysis.html" title="Analysis on triangles" />
+<link rel="up" href="index.html" title="Unified analysis of discontinuous Galerkinmethods for elliptic problems:a Lean blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Unified analysis of discontinuous Galerkin<br />methods for elliptic problems:<br />a Lean blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Overview</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0001.html#a0000000003"><span class="toc_ref"></span> <span class="toc_entry">The Lean files.</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000004"><span class="toc_ref"></span> <span class="toc_entry">Scope.</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="chap-setting.html"><span class="toc_ref">2</span> <span class="toc_entry">Setting and definitions</span></a>
+ </li>
+<li class="">
+  <a href="chap-main.html"><span class="toc_ref">3</span> <span class="toc_entry">The main theorems</span></a>
+ </li>
+<li class="">
+  <a href="chap-analysis.html"><span class="toc_ref">4</span> <span class="toc_entry">Analysis on triangles</span></a>
+ </li>
+<li class=" active current">
+  <a href="chap-dirichlet.html"><span class="toc_ref">5</span> <span class="toc_entry">The Dirichlet problem on a convex polygon</span></a>
+ </li>
+<li class="">
+  <a href="chap-interpolation.html"><span class="toc_ref">6</span> <span class="toc_entry">Interpolation</span></a>
+ </li>
+<li class="">
+  <a href="chap-stable.html"><span class="toc_ref">7</span> <span class="toc_entry">The four stable methods</span></a>
+ </li>
+<li class="">
+  <a href="chap-fluxes.html"><span class="toc_ref">8</span> <span class="toc_entry">Flux formulations</span></a>
+ </li>
+<li class="">
+  <a href="chap-penalty.html"><span class="toc_ref">9</span> <span class="toc_entry">NIPG, pure penalties and superpenalties</span></a>
+ </li>
+<li class="">
+  <a href="chap-bo.html"><span class="toc_ref">10</span> <span class="toc_entry">The Baumann–Oden method</span></a>
+ </li>
+<li class="">
+  <a href="chap-br.html"><span class="toc_ref">11</span> <span class="toc_entry">The original Bassi–Rebay method</span></a>
+ </li>
+<li class="">
+  <a href="chap-correspondence.html"><span class="toc_ref">12</span> <span class="toc_entry">Correspondence with the paper</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="chap:dirichlet">5 The Dirichlet problem on a convex polygon</h1>
+
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:weak-solution">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">5.1</span>
+    <span class="lemma_thmtitle">Weak solutions</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-dirichlet.html#lem:weak-solution">#</a>
+    
+    <a class="icon proof" href="chap-dirichlet.html#a0000000025"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:dirichlet">Definition 2.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.laxMilgram_existsUnique" class="lean_decl">ABCM.laxMilgram_existsUnique</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.poincare_H01" class="lean_decl">ABCM.poincare_H01</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.existsUnique_weakSolution" class="lean_decl">ABCM.existsUnique_weakSolution</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   A coercive bounded bilinear form on a Hilbert space has a unique solution for every bounded functional. If \(U\) lies in a slab of width \(L\), then \(\lVert v\rVert \le L\lVert \partial _{i_0}v\rVert \) on \(H^1_0(U)\). Consequently, on a bounded set, \(-\Delta u=f\) has a weak solution in \(H^1_0\), unique up to its derivatives of order at most one. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000025">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>\(H^1_0(U)\) is the closure of the graphs of test functions in \(L^2(U)^{1+d}\), hence complete; the Poincaré inequality gives coercivity of \((\nabla u,\nabla v)\). </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:tangential-reg">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">5.2</span>
+    <span class="lemma_thmtitle">Regularity on translation-invariant domains</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-dirichlet.html#lem:tangential-reg">#</a>
+    
+    <a class="icon proof" href="chap-dirichlet.html#a0000000026"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-dirichlet.html#lem:weak-solution">Lemma 5.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.exists_dir_deriv" class="lean_decl">ABCM.exists_dir_deriv</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.exists_hessian_transInv" class="lean_decl">ABCM.exists_hessian_transInv</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   For a coercive constant-coefficient problem on a domain invariant under translations along \(a\), the solution has weak derivatives along \(a\) in \(H^1_0\), bounded by the load. In particular, on the plane and on half-planes, \(v\in H^1_0\) with \((\nabla v,\nabla \varphi )=(F,\varphi )\) has weak second derivatives with \(\lVert \partial _{ij}v\rVert \le 11\lVert F\rVert +10\lVert v\rVert _{H^1}\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000026">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Difference quotients along \(a\) preserve \(H^1_0\) and solve the same problem with a differenced load; they are bounded and converge. The normal second derivative is recovered from the equation. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:wirtinger">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">5.3</span>
+    <span class="lemma_thmtitle">Sharp Wirtinger inequality</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-dirichlet.html#lem:wirtinger">#</a>
+    
+    <a class="icon proof" href="chap-dirichlet.html#a0000000027"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-dirichlet.html#lem:weak-solution">Lemma 5.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.wirtinger_H01" class="lean_decl">ABCM.wirtinger_H01</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   On the strip \(Q=\{ 0{\lt}\theta {\lt}\omega \} \), every \(v\in H^1_0(Q)\) satisfies \((\pi /\omega )\lVert v\rVert \le \lVert \partial _\theta v\rVert \). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000027">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>For test functions, \((\partial _\theta \varphi )^2-\nu ^2\varphi ^2=\partial _\theta (\nu \cot (\nu \theta ) \varphi ^2)+(\partial _\theta \varphi -\nu \cot (\nu \theta )\varphi )^2\) with \(\nu =\pi /\omega \); integrate and pass to the closure. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:strip">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">5.4</span>
+    <span class="lemma_thmtitle">The shifted strip problem</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-dirichlet.html#lem:strip">#</a>
+    
+    <a class="icon proof" href="chap-dirichlet.html#a0000000028"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-dirichlet.html#lem:tangential-reg">Lemma 5.2</a></li>
+          
+          <li><a href="chap-dirichlet.html#lem:wirtinger">Lemma 5.3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.shifted_equation" class="lean_decl">ABCM.shifted_equation</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.exists_strip_hessian" class="lean_decl">ABCM.exists_strip_hessian</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   If \(W\in H^1_0(Q)\) solves \((\nabla W,\nabla w)=(e^tf,w)\) and \(z=e^{-t}W\in H^1_0(Q)\), then \(z\) solves a coercive, translation-invariant shifted problem; hence \(\partial _tz\in H^1_0(Q)\) and \(\partial _\theta ^2z\in L^2(Q)\), with bounds by \(\lVert f\rVert \). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000028">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Coercivity uses the sharp Wirtinger inequality (\(\pi /\omega {\gt}1\)); then Lemma&#160;<a href="chap-dirichlet.html#lem:tangential-reg">5.2</a> in the direction \(t\), and the equation for the remaining derivative. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:sector">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">5.5</span>
+    <span class="lemma_thmtitle">Regularity at a convex corner</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-dirichlet.html#lem:sector">#</a>
+    
+    <a class="icon proof" href="chap-dirichlet.html#a0000000029"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-dirichlet.html#lem:strip">Lemma 5.4</a></li>
+          
+          <li><a href="chap-dirichlet.html#lem:wirtinger">Lemma 5.3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.Frame.sector_hessian" class="lean_decl">ABCM.Frame.sector_hessian</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   On a sector of opening \(0{\lt}\omega {\lt}\pi \), a solution \(v\in H^1_0\) of \((\nabla v,\nabla \varphi )=(F,\varphi )\) with \(F\) vanishing outside a ball around the apex has weak second derivatives with \(\lVert \partial _{ij}v\rVert \le C(\omega )\lVert F\rVert \). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000029">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Polar coordinates \(t=\log r\) map the sector conformally onto the strip \(Q\). The transported function \(W\) lies in \(H^1_0(Q)\) (conformal invariance of the Dirichlet energy and the Wirtinger inequality), and \(z=e^{-t}W\in H^1_0(Q)\) by an energy estimate with truncated exponential weights. Lemma&#160;<a href="chap-dirichlet.html#lem:strip">5.4</a> gives \(H^2\) regularity of \(z\), which transfers back to the sector by the chain rule for test functions. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:cones">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">5.6</span>
+    <span class="lemma_thmtitle">Local geometry of convex polygons</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-dirichlet.html#lem:cones">#</a>
+    
+    <a class="icon proof" href="chap-dirichlet.html#a0000000030"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-dirichlet.html#lem:tangential-reg">Lemma 5.2</a></li>
+          
+          <li><a href="chap-dirichlet.html#lem:sector">Lemma 5.5</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.cone_classify" class="lean_decl">ABCM.cone_classify</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.cone_eq_sector" class="lean_decl">ABCM.cone_eq_sector</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.ModelReg" class="lean_decl">ABCM.ModelReg</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.polygon_local" class="lean_decl">ABCM.polygon_local</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   A nonempty finite intersection of open half-planes through \(0\) is the plane, a half-plane or a convex sector. Hence around every point of \(\overline\Omega \) there are a model domain \(V\supseteq \Omega \) and \(\delta {\gt}0\) with \(V\cap B(x,\delta )\subseteq \Omega \), and every model domain satisfies the local \(H^2\) estimate. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000030">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Classification of tangent cones; the plane and half-planes satisfy the model estimate by Lemma&#160;<a href="chap-dirichlet.html#lem:tangential-reg">5.2</a>, and convex sectors by Lemma&#160;<a href="chap-dirichlet.html#lem:sector">5.5</a>. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:localize">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">5.7</span>
+    <span class="lemma_thmtitle">Localization</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-dirichlet.html#lem:localize">#</a>
+    
+    <a class="icon proof" href="chap-dirichlet.html#a0000000031"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-dirichlet.html#lem:cones">Lemma 5.6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.local_hessian" class="lean_decl">ABCM.local_hessian</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   If \(U\subseteq V\), \(V\cap B(x_0,\delta )\subseteq U\), \(V\) satisfies the model estimate at \(x_0\) and the cutoff \(c\) is supported in \(B(x_0,\delta )\), then \(cv\) has an \(L^2\) Hessian for every solution \(v\), bounded by \(C(\lVert F\rVert +\lVert v\rVert )\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000031">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>\(cv\) solves the same equation with load \(cF-\sum _i(2\partial _ic\, \partial _iv+\partial _i^2c\, v)\). </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:polygon-reg">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">5.8</span>
+    <span class="theorem_thmtitle">\(H^2\) regularity on convex polygons</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-dirichlet.html#thm:polygon-reg">#</a>
+    
+    <a class="icon proof" href="chap-dirichlet.html#a0000000032"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-dirichlet.html#lem:localize">Lemma 5.7</a></li>
+          
+          <li><a href="chap-dirichlet.html#lem:cones">Lemma 5.6</a></li>
+          
+          <li><a href="chap-dirichlet.html#lem:weak-solution">Lemma 5.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/ABCM.polygon_hessian" class="lean_decl">ABCM.polygon_hessian</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   On a convex polygon there is \(C\) such that every solution \(v\in H^1_0(\Omega )\) of \((\nabla v,\nabla \varphi )=(F,\varphi )\) has weak second derivatives bounded by \(C(\lVert F\rVert +\lVert v\rVert )\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000032">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>A smooth partition of unity near \(\overline\Omega \) subordinate to the neighbourhoods of Lemma&#160;<a href="chap-dirichlet.html#lem:cones">5.6</a> reduces the estimate to Lemma&#160;<a href="chap-dirichlet.html#lem:localize">5.7</a>. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="chap-analysis.html" title="Analysis on triangles"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Unified analysis of discontinuous Galerkinmethods for elliptic problems:a Lean blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="chap-interpolation.html" title="Interpolation"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

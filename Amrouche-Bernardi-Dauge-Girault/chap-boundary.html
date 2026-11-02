@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The boundary</title>
+<link rel="next" href="chap-correspondence.html" title="Correspondence with the paper" />
+<link rel="prev" href="chap-topology.html" title="Topology of the cut domain" />
+<link rel="up" href="index.html" title="Vector potentials in three-dimensionalnon-smooth domains:a Lean blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Vector potentials in three-dimensional<br />non-smooth domains:<br />a Lean blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Overview</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0001.html#a0000000003"><span class="toc_ref"></span> <span class="toc_entry">The Lean files.</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000004"><span class="toc_ref"></span> <span class="toc_entry">The route.</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="chap-setting.html"><span class="toc_ref">2</span> <span class="toc_entry">Setting and definitions</span></a>
+ </li>
+<li class="">
+  <a href="chap-main.html"><span class="toc_ref">3</span> <span class="toc_entry">The main theorems</span></a>
+ </li>
+<li class="">
+  <a href="chap-assembly.html"><span class="toc_ref">4</span> <span class="toc_entry">The abstract assembly</span></a>
+ </li>
+<li class="">
+  <a href="chap-cuts.html"><span class="toc_ref">5</span> <span class="toc_entry">The cuts</span></a>
+ </li>
+<li class="">
+  <a href="chap-analysis.html"><span class="toc_ref">6</span> <span class="toc_entry">Analysis on \(\mathbb {R}^3\)</span></a>
+ </li>
+<li class="">
+  <a href="chap-topology.html"><span class="toc_ref">7</span> <span class="toc_entry">Topology of the cut domain</span></a>
+ </li>
+<li class=" active current">
+  <a href="chap-boundary.html"><span class="toc_ref">8</span> <span class="toc_entry">The boundary</span></a>
+ </li>
+<li class="">
+  <a href="chap-correspondence.html"><span class="toc_ref">9</span> <span class="toc_entry">Correspondence with the paper</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="chap:boundary">8 The boundary</h1>
+
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:normal-trace">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">8.1</span>
+    <span class="lemma_thmtitle">Zero tangential trace forces zero normal trace</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-boundary.html#lem:normal-trace">#</a>
+    
+    <a class="icon proof" href="chap-boundary.html#a0000000029"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-analysis.html#lem:translate">Lemma 6.4</a></li>
+          
+          <li><a href="chap-setting.html#def:geometry">Definition 2.3</a></li>
+          
+          <li><a href="chap-setting.html#def:traces">Definition 2.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.ext0" class="lean_decl">VP.ext0</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.weakDiv_ext0_of_tangential" class="lean_decl">VP.weakDiv_ext0_of_tangential</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.orth_H1_of_weakDiv" class="lean_decl">VP.orth_H1_of_weakDiv</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.normalTrace_input" class="lean_decl">VP.normalTrace_input</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   If \(\psi \times n=0\) for a field \(\psi \) with \(\operatorname {curl}\psi =u\), then \(u\cdot n=0\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000029">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Testing \(\psi \times n=0\) with gradients of smooth compactly supported functions on \(\mathbb {R}^3\) shows that the extension \(\bar u\) of \(u\) by zero is divergence free on \(\mathbb {R}^3\). For \(q\in H^1(\Omega )\), a smooth partition of unity subordinate to \(\Omega \) and to boundary graph patches localizes \(q\). In a patch, \(\bar u\) translated along the frame vanishes near the boundary graph, so it only meets a compactly supported cut-off of the localized function (Lemma&#160;<a href="chap-analysis.html#lem:translate">6.4</a>); continuity of translation gives \(\int _\Omega u\cdot \nabla q=0\). </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:poincare">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">8.2</span>
+    <span class="lemma_thmtitle">Poincaré inequalities by segments</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-boundary.html#lem:poincare">#</a>
+    
+    <a class="icon proof" href="chap-boundary.html#a0000000030"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.poincare_star" class="lean_decl">VP.poincare_star</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.PoincareSet" class="lean_decl">VP.PoincareSet</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.PoincareSet.of_star" class="lean_decl">VP.PoincareSet.of_star</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.PoincareSet.union" class="lean_decl">VP.PoincareSet.union</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Let \(S\subset \mathbb {R}^3\) be star shaped with respect to a set \(Z\) of positive finite measure, with \(\lvert w-x\rvert \le d\) for \(x\in S\), \(w\in Z\). Then every smooth \(\varphi \) admits \(c\in \mathbb {R}\) with </p>
+<div class="displaymath" id="a0000000031">
+  \[  \int _S\lvert \varphi -c\rvert ^2\le \frac{8d^2(\lvert S\rvert +\lvert Z\rvert )}{\lvert Z\rvert }\int _S\lvert \nabla \varphi \rvert ^2.  \]
+</div>
+<p> Sets carrying such an inequality glue along overlaps of positive measure. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000030">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>The fundamental theorem of calculus along the segments from \(x\in S\) to \(w\in Z\), Cauchy–Schwarz, and the affine changes of variables \(x\mapsto (1-t)x+tw\) and \(w\mapsto (1-t)x+tw\). </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:charts">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">8.3</span>
+    <span class="lemma_thmtitle">Boundary charts and Lipschitz calculus</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-boundary.html#lem:charts">#</a>
+    
+    <a class="icon proof" href="chap-boundary.html#a0000000032"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:geometry">Definition 2.3</a></li>
+          
+          <li><a href="chap-boundary.html#lem:poincare">Lemma 8.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.Chart" class="lean_decl">VP.Chart</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.exists_chart" class="lean_decl">VP.exists_chart</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.weakGrad_of_lipschitz" class="lean_decl">VP.weakGrad_of_lipschitz</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.lipschitz_cut" class="lean_decl">VP.lipschitz_cut</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   Every boundary point has arbitrarily small charts: a box \(V\) in frame coordinates in which \(\Omega \) lies strictly above a globally Lipschitz graph and the exterior strictly below it. The exterior part \(S=V\setminus \overline\Omega \) is star shaped with respect to its bottom slab, and the reflection across the graph is a Lipschitz, measure-preserving involution exchanging the two sides. A Lipschitz function on \(\mathbb {R}^3\) has its almost-everywhere gradient as weak gradient, and a Lipschitz function vanishing on the zero set of a continuous function \(\Phi \) stays Lipschitz after being cut off to \(\{ \Phi {\gt}0\} \). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000032">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>The charts shrink the patches of the Lipschitz boundary. The weak gradient follows from Rademacher’s theorem and integration by parts along lines; the cut-off statement from the intermediate value theorem. </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:chart-estimate">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">8.4</span>
+    <span class="lemma_thmtitle">The reflection estimate</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-boundary.html#lem:chart-estimate">#</a>
+    
+    <a class="icon proof" href="chap-boundary.html#a0000000033"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-boundary.html#lem:charts">Lemma 8.3</a></li>
+          
+          <li><a href="chap-analysis.html#lem:translate">Lemma 6.4</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.chart_estimate" class="lean_decl">VP.chart_estimate</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   Let \(u\) be divergence free on \(\Omega \), \(C\) a chart with exterior part \(S\) and Lipschitz constant \(K\), \(\zeta \) a smooth cutoff equal to \(1\) on the half box and supported in the box with \(\lvert \nabla \zeta \rvert \le C_\zeta \), and \(F\) smooth with support in the half box. Then </p>
+<div class="displaymath" id="a0000000034">
+  \[  \Bigl\lvert \int _\Omega u\cdot \nabla F\Bigr\rvert \le \lVert u\rVert _{L^2(\Omega )^3}\bigl(C_\zeta \lVert F\rVert _{L^2(S)}+(3+2K)\lVert \nabla F\rVert _{L^2(S)}\bigr).  \]
+</div>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000033">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>With \(R\) the reflection, \(D=F-\zeta \, F\circ R\) is Lipschitz and vanishes on the graph. Cut off to the side of \(\Omega \) and translated upward it becomes compactly supported in \(\Omega \), hence orthogonal to \(u\) through its gradient; continuity of translation gives \(\int _\Omega u\cdot \nabla F=\int _\Omega u\cdot \nabla (\zeta \, F\circ R)\), which is bounded by the norms of \(F\) and \(\nabla F\) on \(S\) because \(R\) exchanges the two sides and preserves measure. </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:key-estimate">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">8.5</span>
+    <span class="theorem_thmtitle">The key estimate</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-boundary.html#thm:key-estimate">#</a>
+    
+    <a class="icon proof" href="chap-boundary.html#a0000000035"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-boundary.html#lem:chart-estimate">Lemma 8.4</a></li>
+          
+          <li><a href="chap-boundary.html#lem:poincare">Lemma 8.2</a></li>
+          
+          <li><a href="chap-setting.html#def:fluxes">Definition 2.4</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.ell" class="lean_decl">VP.ell</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.key_estimate" class="lean_decl">VP.key_estimate</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   Let \(u\in L^2(\Omega )^3\) be divergence free with \(F_i(u)=0\) for all \(i\). There are a bounded open set \(\Theta \) disjoint from \(\Omega \) and \(K{\lt}\infty \) with \(\lvert \int _\Omega u\cdot \nabla \varphi \rvert \le K\lVert \nabla \varphi \rVert _{L^2(\Theta )}\) for all smooth compactly supported \(\varphi \) on \(\mathbb {R}^3\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000035">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Choose charts small enough to meet a single boundary component, and a partition of unity subordinate to \(\Omega \) and finitely many charts. The interior piece of \(\int _\Omega u\cdot \nabla \varphi \) vanishes; each chart piece is controlled by Lemma&#160;<a href="chap-boundary.html#lem:chart-estimate">8.4</a>; on each boundary component a constant can be subtracted from \(\varphi \) because the fluxes vanish. The Poincaré inequalities of the exterior chart pieces chain along the connected boundary components (Lemma&#160;<a href="chap-boundary.html#lem:poincare">8.2</a>). </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:extension">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">8.6</span>
+    <span class="theorem_thmtitle">Solenoidal extension</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-boundary.html#thm:extension">#</a>
+    
+    <a class="icon proof" href="chap-boundary.html#a0000000036"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-boundary.html#thm:key-estimate">Theorem 8.5</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.exists_extension" class="lean_decl">VP.exists_extension</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   A divergence-free \(u\in L^2(\Omega )^3\) with \(F_i(u)=0\) for all \(i\) is the restriction to \(\Omega \) of a compactly supported \(U\in L^2(\mathbb {R}^3)^3\) that is weakly divergence free on \(\mathbb {R}^3\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000036">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>By Theorem&#160;<a href="chap-boundary.html#thm:key-estimate">8.5</a>, \(\nabla \varphi |_\Theta \mapsto \int _\Omega u\cdot \nabla \varphi \) is a bounded functional on gradients in \(L^2(\Theta )^3\). Extend it by Hahn–Banach and let \(w\) be its Riesz representative; then \(U=u\) on \(\Omega \), \(U=-w\) on \(\Theta \) and \(U=0\) elsewhere is divergence free on \(\mathbb {R}^3\). </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="lem:potential">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">8.7</span>
+    <span class="lemma_thmtitle">An explicit curl potential</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-boundary.html#lem:potential">#</a>
+    
+    <a class="icon proof" href="chap-boundary.html#a0000000037"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.potOp" class="lean_decl">VP.potOp</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.weakCurl_potOp" class="lean_decl">VP.weakCurl_potOp</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Let \(v\in L^2(\mathbb {R}^3)^3\) vanish outside the ball of radius \(\rho \) and be weakly divergence free on \(\mathbb {R}^3\). If \(\rho +\rho '\le R\), then </p>
+<div class="displaymath" id="a0000000038">
+  \[  (Av)(x)=\Bigl(0,\  \int _0^Rv_3(x-te_1)\, \mathrm{d}t,\  -\int _0^Rv_2(x-te_1)\, \mathrm{d}t\Bigr)  \]
+</div>
+<p> belongs to \(L^2(\mathbb {R}^3)^3\) and has weak curl \(v\) on the ball of radius \(\rho '\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000037">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Transpose the line integrals (Fubini and translation invariance), so that the test field meets the adjoint line integrals; differentiate these under the integral sign. The fundamental theorem of calculus along \(e_1\) produces \(v\), because \(v(x-Re_1)=0\) for \(\lvert x\rvert {\lt}\rho '\), and the remaining gradient term vanishes because \(\operatorname {div}v=0\). </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:range">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">8.8</span>
+    <span class="theorem_thmtitle">Divergence-free fields with zero fluxes are curls</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-boundary.html#thm:range">#</a>
+    
+    <a class="icon proof" href="chap-boundary.html#a0000000039"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-boundary.html#thm:extension">Theorem 8.6</a></li>
+          
+          <li><a href="chap-boundary.html#lem:potential">Lemma 8.7</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.range_input" class="lean_decl">VP.range_input</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   Every divergence-free \(u\in L^2(\Omega )^3\) with \(F_i(u)=0\) for all \(i\) is a weak curl on \(\Omega \). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000039">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Extend \(u\) by Theorem&#160;<a href="chap-boundary.html#thm:extension">8.6</a> and apply Lemma&#160;<a href="chap-boundary.html#lem:potential">8.7</a> on a ball containing \(\Omega \). </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:normal-unique">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">8.9</span>
+    <span class="theorem_thmtitle">Uniqueness of the normal potential</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-boundary.html#thm:normal-unique">#</a>
+    
+    <a class="icon proof" href="chap-boundary.html#a0000000040"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-boundary.html#thm:extension">Theorem 8.6</a></li>
+          
+          <li><a href="chap-boundary.html#lem:potential">Lemma 8.7</a></li>
+          
+          <li><a href="chap-analysis.html#lem:mollify">Lemma 6.1</a></li>
+          
+          <li><a href="chap-analysis.html#lem:moll-deriv">Lemma 6.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.weakCurl_ext0_of_tangential" class="lean_decl">VP.weakCurl_ext0_of_tangential</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/VP.normalUnique_input" class="lean_decl">VP.normalUnique_input</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   If \(\psi \in L^2(\Omega )^3\) is divergence free, \(\psi \times n=0\) for \(\operatorname {curl}\psi =0\), and \(F_i(\psi )=0\) for all \(i\), then \(\psi =0\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000040">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Let \(U\) be the solenoidal extension of \(\psi \) (Theorem&#160;<a href="chap-boundary.html#thm:extension">8.6</a>) and \(A=AU\) its potential (Lemma&#160;<a href="chap-boundary.html#lem:potential">8.7</a>). The extension \(\bar\psi \) of \(\psi \) by zero is curl free on \(\mathbb {R}^3\) because \(\psi \times n=0\). Hence \(\lVert \psi \rVert ^2=\int U\cdot \bar\psi =\lim _{t\to 0}\int U\cdot (\rho _t*\bar\psi ) =\lim _{t\to 0}\int A\cdot \operatorname {curl}(\rho _t*\bar\psi )=0\). </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="chap-topology.html" title="Topology of the cut domain"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Vector potentials in three-dimensionalnon-smooth domains:a Lean blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="chap-correspondence.html" title="Correspondence with the paper"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

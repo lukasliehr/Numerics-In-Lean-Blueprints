@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The main theorems</title>
+<link rel="next" href="chap-geometry.html" title="Geometry of simplicial meshes" />
+<link rel="prev" href="chap-setting.html" title="Setting and definitions" />
+<link rel="up" href="index.html" title="Analysis of a multiscale discontinuous Galerkin methodfor convection-diffusion problems:a Lean blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Analysis of a multiscale discontinuous Galerkin method<br />for convection-diffusion problems:<br />a Lean blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Overview</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0001.html#a0000000005"><span class="toc_ref"></span> <span class="toc_entry">The Lean files.</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000006"><span class="toc_ref"></span> <span class="toc_entry">Scope.</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="chap-setting.html"><span class="toc_ref">2</span> <span class="toc_entry">Setting and definitions</span></a>
+ </li>
+<li class=" active current">
+  <a href="chap-main.html"><span class="toc_ref">3</span> <span class="toc_entry">The main theorems</span></a>
+ </li>
+<li class="">
+  <a href="chap-geometry.html"><span class="toc_ref">4</span> <span class="toc_entry">Geometry of simplicial meshes</span></a>
+ </li>
+<li class="">
+  <a href="chap-analysis.html"><span class="toc_ref">5</span> <span class="toc_entry">Analysis on simplices</span></a>
+ </li>
+<li class="">
+  <a href="chap-interpolation.html"><span class="toc_ref">6</span> <span class="toc_entry">Interpolation</span></a>
+ </li>
+<li class="">
+  <a href="chap-stability.html"><span class="toc_ref">7</span> <span class="toc_entry">Stability of the discrete methods</span></a>
+ </li>
+<li class="">
+  <a href="chap-errors.html"><span class="toc_ref">8</span> <span class="toc_entry">Error estimates</span></a>
+ </li>
+<li class="">
+  <a href="chap-correspondence.html"><span class="toc_ref">9</span> <span class="toc_entry">Correspondence with the paper</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="chap:main">3 The main theorems</h1>
+
+<p>Section&#160;8 of <span class="ttfamily">Showcase.lean</span> states each numbered result of the paper as a definition named after it (<span class="ttfamily">Proposition_3_2</span>, …), with the paper’s quantifiers in the paper’s order and in the paper’s notation; Section&#160;9 asserts them for \(d\in \{ 2,3\} \), \(k\ge 1\) and \(\rho \ge 1\). Constants are chosen before the mesh and the coefficients, which expresses that they are independent of \(h\), \(\kappa \) and \(a\). </p>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:main3">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">3.1</span>
+    <span class="theorem_thmtitle">Section 3 of the paper</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-main.html#thm:main3">#</a>
+    
+    <a class="icon proof" href="chap-main.html#a0000000010"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:exact">Definition 2.5</a></li>
+          
+          <li><a href="chap-stability.html#thm:dgcoercivity">Proposition 7.1</a></li>
+          
+          <li><a href="chap-main.html#thm:skew">Theorem 3.4</a></li>
+          
+          <li><a href="chap-stability.html#thm:sdgcoercivity">Proposition 7.2</a></li>
+          
+          <li><a href="chap-stability.html#thm:continuity">Proposition 7.3</a></li>
+          
+          <li><a href="chap-stability.html#thm:dginfsup">Theorem 7.4</a></li>
+          
+          <li><a href="chap-errors.html#thm:errorestimates">Theorem 8.2</a></li>
+          
+          <li><a href="chap-interpolation.html#thm:interpolation">Theorem 6.4</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.proposition_3_2" class="lean_decl">BHS.proposition_3_2</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.proposition_3_2_skew" class="lean_decl">BHS.proposition_3_2_skew</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.proposition_3_3" class="lean_decl">BHS.proposition_3_3</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.proposition_3_4" class="lean_decl">BHS.proposition_3_4</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.theorem_3_5" class="lean_decl">BHS.theorem_3_5</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.corollary_3_7" class="lean_decl">BHS.corollary_3_7</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   Propositions 3.2 (including its clause for \(s=1\)), 3.3 and 3.4, Theorem&#160;3.5 and Corollary&#160;3.7, as stated in the paper. Theorem&#160;3.5 and Corollary&#160;3.7 hold for every streamline parameter \(\tau {\gt}0\); the inf-sup condition (3.24) is written as: for every \(\nu \ne 0\) in \(V_h\) there is \(\mu \ne 0\) in \(V_h\) with \(B^{\mathrm{DG}}(\nu ,\mu )/(\lVert \nu \rVert _{\mathrm{SDG}}\lVert \mu \rVert _{\mathrm{SDG}})\ge \beta _{\mathrm{DG}}\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000010">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Each result is the corresponding stability or error estimate of the later chapters, translated from piecewise polynomials to the broken fields of \(V_h\). The inf-sup quotient follows from the normalized witness \(\lVert \mu \rVert _{\mathrm{SDG}}\le \lVert \nu \rVert _{\mathrm{SDG}}\), \(B^{\mathrm{DG}}(\nu ,\mu )\ge \beta \lVert \nu \rVert ^2_{\mathrm{SDG}}\), since the norm is definite on \(V_h\). The DG error estimate needs only DG continuity and the DG inf-sup condition, so it holds for every \(\tau {\gt}0\). </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:main4">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">3.2</span>
+    <span class="theorem_thmtitle">Section 4 of the paper</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-main.html#thm:main4">#</a>
+    
+    <a class="icon proof" href="chap-main.html#a0000000011"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:local">Definition 2.4</a></li>
+          
+          <li><a href="chap-stability.html#thm:localinfsup">Lemma 7.5</a></li>
+          
+          <li><a href="chap-stability.html#thm:localpoincare">Lemma 7.6</a></li>
+          
+          <li><a href="chap-errors.html#thm:errorestimates">Theorem 8.2</a></li>
+          
+          <li><a href="chap-interpolation.html#thm:interpolation">Theorem 6.4</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.theorem_4_3" class="lean_decl">BHS.theorem_4_3</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.lemma_4_4" class="lean_decl">BHS.lemma_4_4</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.lemma_4_5" class="lean_decl">BHS.lemma_4_5</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.theorem_4_6" class="lean_decl">BHS.theorem_4_6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   Theorem&#160;4.3, Lemmas 4.4 and 4.5, and Theorem&#160;4.6, as stated in the paper. Theorem&#160;4.3 holds for every \(\tau {\gt}0\); Lemma&#160;4.5 is stated on \(H^1(T)\) without the \(H^2\) term of \(\lVert \cdot \rVert _{\mathrm{SDG}(T)}\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000011">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>As for Section&#160;3. Theorem&#160;4.3 uses only the local inf-sup condition, the local Poincaré inequality and the interpolation estimate, so no smallness of \(\tau \) is needed. </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:mainaux">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">3.3</span>
+    <span class="theorem_thmtitle">Consistency, well-posedness and traces</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-main.html#thm:mainaux">#</a>
+    
+    <a class="icon proof" href="chap-main.html#a0000000012"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-stability.html#thm:consistency">Theorem 7.7</a></li>
+          
+          <li><a href="chap-stability.html#thm:solvability">Theorem 7.8</a></li>
+          
+          <li><a href="chap-analysis.html#thm:traces">Theorem 5.6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.consistency_DG_SDG" class="lean_decl">BHS.consistency_DG_SDG</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.wellPosed_DG" class="lean_decl">BHS.wellPosed_DG</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.wellPosed_SDG" class="lean_decl">BHS.wellPosed_SDG</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.wellPosed_local" class="lean_decl">BHS.wellPosed_local</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.wellPosed_SMDG" class="lean_decl">BHS.wellPosed_SMDG</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.traceTheorem" class="lean_decl">BHS.traceTheorem</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   The exact solution satisfies the DG and SDG equations; the problems (3.2), (3.13), (4.1) and (4.4) have unique solutions; every weak \(H^m\) jet on a cell has unique traces, and every weak \(H^{k+1}(\Omega )\) jet is realized by a broken \(H^2\) field. The last fact shows that the error estimates apply to every solution \(\varphi \in H^{k+1}(\Omega )\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000012">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>The local problems do not involve \(\tau \); their unique solvability is taken at \(\tau =1\), where the local inf-sup condition is available. </p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:skew">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">3.4</span>
+    <span class="theorem_thmtitle">Skew-symmetric penalty, Prop.&#160;3.2</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-main.html#thm:skew">#</a>
+    
+    <a class="icon proof" href="chap-main.html#a0000000013"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:forms">Definition 2.3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.skewPenaltyCoercivity" class="lean_decl">BHS.skewPenaltyCoercivity</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   For \(s=1\) and every \(\varepsilon {\gt}0\) there is \(c{\gt}0\) with \(B^{\mathrm{DG}}(\mu ,\mu )\ge c\lVert \mu \rVert ^2_{\mathrm{DG}}\) on \(V_h\), uniformly in the admissible mesh, \(\kappa {\gt}0\) and \(a\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000013">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>For \(s=1\) the consistency and adjoint terms cancel in \(B^{\mathrm{DG}}_D(\mu ,\mu )\). The convective part gives \(\tfrac 12\) of the jump energy by integration by parts on each cell. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="chap-setting.html" title="Setting and definitions"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Analysis of a multiscale discontinuous Galerkin methodfor convection-diffusion problems:a Lean blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="chap-geometry.html" title="Geometry of simplicial meshes"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

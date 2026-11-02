@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Stability of the discrete methods</title>
+<link rel="next" href="chap-errors.html" title="Error estimates" />
+<link rel="prev" href="chap-interpolation.html" title="Interpolation" />
+<link rel="up" href="index.html" title="Analysis of a multiscale discontinuous Galerkin methodfor convection-diffusion problems:a Lean blueprint" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/blueprint.css" />
+<link rel="stylesheet" href="styles/extra_styles.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Analysis of a multiscale discontinuous Galerkin method<br />for convection-diffusion problems:<br />a Lean blueprint</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">1</span> <span class="toc_entry">Overview</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="sect0001.html#a0000000005"><span class="toc_ref"></span> <span class="toc_entry">The Lean files.</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html#a0000000006"><span class="toc_ref"></span> <span class="toc_entry">Scope.</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="chap-setting.html"><span class="toc_ref">2</span> <span class="toc_entry">Setting and definitions</span></a>
+ </li>
+<li class="">
+  <a href="chap-main.html"><span class="toc_ref">3</span> <span class="toc_entry">The main theorems</span></a>
+ </li>
+<li class="">
+  <a href="chap-geometry.html"><span class="toc_ref">4</span> <span class="toc_entry">Geometry of simplicial meshes</span></a>
+ </li>
+<li class="">
+  <a href="chap-analysis.html"><span class="toc_ref">5</span> <span class="toc_entry">Analysis on simplices</span></a>
+ </li>
+<li class="">
+  <a href="chap-interpolation.html"><span class="toc_ref">6</span> <span class="toc_entry">Interpolation</span></a>
+ </li>
+<li class=" active current">
+  <a href="chap-stability.html"><span class="toc_ref">7</span> <span class="toc_entry">Stability of the discrete methods</span></a>
+ </li>
+<li class="">
+  <a href="chap-errors.html"><span class="toc_ref">8</span> <span class="toc_entry">Error estimates</span></a>
+ </li>
+<li class="">
+  <a href="chap-correspondence.html"><span class="toc_ref">9</span> <span class="toc_entry">Correspondence with the paper</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="chap:stability">7 Stability of the discrete methods</h1>
+
+<div class="proposition_thmwrapper theorem-style-plain" id="thm:dgcoercivity">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">7.1</span>
+    <span class="proposition_thmtitle">DG coercivity, Prop.&#160;3.2</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-stability.html#thm:dgcoercivity">#</a>
+    
+    <a class="icon proof" href="chap-stability.html#a0000000033"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:forms">Definition 2.3</a></li>
+          
+          <li><a href="chap-analysis.html#lem:inverse">Lemma 5.3</a></li>
+          
+          <li><a href="chap-geometry.html#lem:combinatorics">Lemma 4.2</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.exists_dgCoercivity" class="lean_decl">BHS.exists_dgCoercivity</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   There is \(\varepsilon _0\) such that for \(\varepsilon \ge \varepsilon _0\), \(B^{\mathrm{DG}}(\mu ,\mu )\ge c\lVert \mu \rVert ^2_{\mathrm{DG}}\) on \(V_h\), with \(c\) independent of the mesh, \(\kappa \), \(a\) and \(\varepsilon \). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000033">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>For polynomial fields, \(B^{\mathrm{DG}}(p,p)=\kappa \lvert p\rvert ^2_{H^1}+\frac12\lVert p\rVert ^2_C+\varepsilon J_0(p)-(1-s)\kappa \sum _e\int _e \nabla p^-\cdot [\! [p]\! ]\), with \(J_0(p)=\sum _e\frac{\kappa }{h_{\perp }}\lVert [\! [p]\! ]\rVert ^2_{L^2(e)}\). Young’s inequality, the gradient trace inequality and \(h_{\perp }\lesssim h_T\) bound the last term by \(\frac12\kappa \lvert p\rvert ^2_{H^1}+CJ_0(p)\), which is absorbed for \(\varepsilon \ge \varepsilon _0\). The constant \(1/(2(1+K))\) is uniform in \(\varepsilon \ge \varepsilon _0\).</p>
+
+  </div>
+</div>
+<div class="proposition_thmwrapper theorem-style-plain" id="thm:sdgcoercivity">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">7.2</span>
+    <span class="proposition_thmtitle">SDG coercivity, Prop.&#160;3.3</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-stability.html#thm:sdgcoercivity">#</a>
+    
+    <a class="icon proof" href="chap-stability.html#a0000000034"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-stability.html#thm:dgcoercivity">Proposition 7.1</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.exists_sdgCoercivity" class="lean_decl">BHS.exists_sdgCoercivity</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   There are \(\varepsilon _0,\tau _{\max }{\gt}0\) such that for \(\varepsilon \ge \varepsilon _0\) and \(0\le \tau \le \tau _{\max }\), \(B^{\mathrm{SDG}}(\mu ,\mu )\ge c\lVert \mu \rVert ^2_{\mathrm{SDG}}\) on \(V_h\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000034">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>\(\tau _T\lVert \kappa \Delta \mu \rVert ^2\lesssim \tau \lVert \mu \rVert _D^2\) by the \(H^2\) inverse inequality; absorb the SUPG cross term for small \(\tau \).</p>
+
+  </div>
+</div>
+<div class="proposition_thmwrapper theorem-style-plain" id="thm:continuity">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">7.3</span>
+    <span class="proposition_thmtitle">Continuity, Prop.&#160;3.3</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-stability.html#thm:continuity">#</a>
+    
+    <a class="icon proof" href="chap-stability.html#a0000000035"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-setting.html#def:forms">Definition 2.3</a></li>
+          
+          <li><a href="chap-analysis.html#lem:traceineq">Lemma 5.4</a></li>
+          
+          <li><a href="chap-analysis.html#lem:inverse">Lemma 5.3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.exists_continuity" class="lean_decl">BHS.exists_continuity</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>   For all broken \(H^2\) fields \(U\) and \(V\), \(\lvert B^{\mathrm{DG}}(U,V)\rvert \le C|\! |\! |U|\! |\! |_{\mathrm{SDG}}\lVert V\rVert _{\mathrm{SDG}}\) and \(\lvert B^{\mathrm{SDG}}(U,V)\rvert \le C|\! |\! |U|\! |\! |_{\mathrm{SDG}}\lVert V\rVert _{\mathrm{SDG}}\), with \(C\) independent of the mesh, \(\kappa \) and \(a\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000035">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Bound the diffusive, convective and SUPG parts separately (paper (3.19)–(3.21)), using the trace inequality for the face gradients.</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:dginfsup">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">7.4</span>
+    <span class="theorem_thmtitle">DG inf-sup in the SDG norm, Thm.&#160;3.5</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-stability.html#thm:dginfsup">#</a>
+    
+    <a class="icon proof" href="chap-stability.html#a0000000036"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-stability.html#thm:dgcoercivity">Proposition 7.1</a></li>
+          
+          <li><a href="chap-analysis.html#lem:inverse">Lemma 5.3</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.exists_dgInfSup" class="lean_decl">BHS.exists_dgInfSup</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   There is \(\varepsilon _0\) such that for all \(\varepsilon \ge \varepsilon _0\) and \(\tau {\gt}0\) there is \(\beta {\gt}0\) with: for every \(\nu \in V_h\) some \(\mu \in V_h\) satisfies \(\lVert \mu \rVert _{\mathrm{SDG}}\le \lVert \nu \rVert _{\mathrm{SDG}}\) and \(B^{\mathrm{DG}}(\nu ,\mu )\ge \beta \lVert \nu \rVert ^2_{\mathrm{SDG}}\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000036">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Take \(\mu =\nu +\gamma \sum _T\tau _T(a\cdot \nabla \nu )|_T\) as in the paper. Bound the extra terms by inverse and trace inequalities, then normalize.</p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="thm:localinfsup">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">7.5</span>
+    <span class="lemma_thmtitle">Local inf-sup, Lemma&#160;4.4</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-stability.html#thm:localinfsup">#</a>
+    
+    <a class="icon proof" href="chap-stability.html#a0000000037"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-stability.html#thm:dginfsup">Theorem 7.4</a></li>
+          
+          <li><a href="chap-setting.html#def:local">Definition 2.4</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.exists_localInfSup" class="lean_decl">BHS.exists_localInfSup</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   There is \(\varepsilon _0\) such that for \(\varepsilon \ge \varepsilon _0\), \(\tau {\gt}0\) and every bound \(\delta _{\max }\ge 0\) there is \(\beta _L{\gt}0\) such that the local forms \(b_T\) satisfy the normalized inf-sup condition in \(\lVert \cdot \rVert _{\mathrm{SDG}(T)}\) for all \(\delta \in [0,\delta _{\max }]\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000037">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>As in Theorem&#160;3.5, the witness is \(\nu +\gamma \tau _T(a\cdot \nabla \nu )\), normalized. It uses local coercivity of \(b_T\) for \(\varepsilon \ge \varepsilon _0\), a lower bound in the streamline direction, and the inherited face thickness, which is comparable to \(h_T\) by shape regularity.</p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="thm:localpoincare">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">7.6</span>
+    <span class="lemma_thmtitle">Local Poincaré inequality, Lemma&#160;4.5</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-stability.html#thm:localpoincare">#</a>
+    
+    <a class="icon proof" href="chap-stability.html#a0000000038"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-analysis.html#lem:green">Lemma 5.7</a></li>
+          
+          <li><a href="chap-analysis.html#lem:traceineq">Lemma 5.4</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.exists_localPoincare" class="lean_decl">BHS.exists_localPoincare</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   \(\tau _T^{-1}\lVert \nu \rVert ^2_{L^2(T)}\le C\lVert \nu \rVert ^2_{\mathrm{SDG}(T)}\) (without the Hessian term) for every \(H^1\) jet \(\nu \) with traces. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000038">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Instead of the paper’s Lipschitz function \(\eta \), apply the divergence theorem to \((a\cdot (x-v_0))\, w^2\), where \(v_0\) is a vertex; this gives \(\lvert a\rvert ^2\lVert w\rVert ^2_T\le 2\lvert a\rvert h\sum _j\lVert \lvert a\cdot n_j\rvert ^{1/2}w\rVert ^2_{F_j}+4h^2\lVert a\cdot \nabla w\rVert ^2_T\). The radial identity gives the diffusive bound \(d^2\lVert w\rVert ^2_T\le 2dh\lVert w\rVert ^2_{F_j}+4h^2\lvert w\rvert ^2_{H^1}\). Both hold for \(C^1\) functions and pass to Sobolev jets through their smooth approximants.</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:consistency">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">7.7</span>
+    <span class="theorem_thmtitle">Consistency</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-stability.html#thm:consistency">#</a>
+    
+    <a class="icon proof" href="chap-stability.html#a0000000039"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-analysis.html#lem:green">Lemma 5.7</a></li>
+          
+          <li><a href="chap-analysis.html#thm:traces">Theorem 5.6</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.consistency_of" class="lean_decl">BHS.consistency_of</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   For every exact solution \(\varphi \) (with \(k\ge 1\)), \(B^{\mathrm{DG}}(\varphi ,\mu )=L^{\mathrm{DG}}(\mu )\) and \(B^{\mathrm{SDG}}(\varphi ,\mu )=L^{\mathrm{SDG}}(\mu )\) for all \(\mu \in V_h\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000039">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>Green’s formula on each cell. The interior face terms cancel by trace agreement; the boundary terms use the boundary condition.</p>
+
+  </div>
+</div>
+<div class="theorem_thmwrapper theorem-style-plain" id="thm:solvability">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">7.8</span>
+    <span class="theorem_thmtitle">Unique solvability</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="chap-stability.html#thm:solvability">#</a>
+    
+    <a class="icon proof" href="chap-stability.html#a0000000040"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="chap-stability.html#thm:dgcoercivity">Proposition 7.1</a></li>
+          
+          <li><a href="chap-stability.html#thm:sdgcoercivity">Proposition 7.2</a></li>
+          
+          <li><a href="chap-stability.html#thm:localinfsup">Lemma 7.5</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.existsUnique_dgSolution" class="lean_decl">BHS.existsUnique_dgSolution</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.existsUnique_sdgSolution" class="lean_decl">BHS.existsUnique_sdgSolution</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.existsUnique_smdgSolution" class="lean_decl">BHS.existsUnique_smdgSolution</a></li>
+          
+          <li><a href="https://leanprover-community.github.io/mathlib4_docs/find/#doc/BHS.existsUnique_transfer" class="lean_decl">BHS.existsUnique_transfer</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>   DG, SDG, SMDG and the local transfer problems have unique solutions. </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000040">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>The discrete norms are definite on \(V_h\). A field with vanishing energy is piecewise constant with vanishing jumps (including the boundary). The divergence theorem for \(x\mapsto \langle e_0,x\rangle \) on every cell then gives \(\sum _Tc_T^2\lvert T\rvert =0\). Coercivity and the inf-sup conditions give injectivity, and finite dimension gives surjectivity. SMDG is posed on the linear space \(\mathfrak {T}_h(\overline{V}_h,0)\), shifted by a particular transfer.</p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="chap-interpolation.html" title="Interpolation"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="Analysis of a multiscale discontinuous Galerkin methodfor convection-diffusion problems:a Lean blueprint"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="chap-errors.html" title="Error estimates"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>
