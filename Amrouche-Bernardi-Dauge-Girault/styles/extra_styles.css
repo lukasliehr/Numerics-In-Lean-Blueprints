@@ -1,1 +1,57 @@
 /* Extra styles for the web blueprint. */
+
+/* Dependency graph: the legend is always visible, as a strip above the graph. */
+#Legend span.title {
+  font-size: 115%;
+  margin: 0 1.5rem 0.25rem;
+}
+
+#Legend dl.legend {
+  position: static;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 0.35rem;
+  max-width: none;
+  margin: 0 1.5rem 0.6rem;
+  font-size: 95%;
+  background: none;
+}
+
+#Legend dt {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  margin: 0 0.4rem 0 0;
+}
+
+#Legend dt::after {
+  content: none;
+}
+
+#Legend dd {
+  display: inline;
+  margin: 0 1.4rem 0 0;
+}
+
+#Legend .swatch {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 1.8em;
+  height: 1.1em;
+  border: 2px solid;
+}
+
+#Legend .swatch.ellipse {
+  border-radius: 50%;
+}
+
+#Legend .arrow {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+div#graph {
+  height: calc(100vh - 9rem);
+  min-height: 24rem;
+}
