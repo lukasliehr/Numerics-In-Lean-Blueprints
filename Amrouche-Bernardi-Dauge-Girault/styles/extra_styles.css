@@ -1,6 +1,7 @@
 /* Extra styles for the web blueprint. */
 
-/* Dependency graph: the legend is always visible, as a strip above the graph. */
+/* Dependency graph: the legend is always visible, as a strip above the graph. Each entry is one
+   `dd` (graphcolors.py leaves the `dt`s empty), so that it is never split between two lines. */
 #Legend span.title {
   font-size: 115%;
   margin: 0 1.5rem 0.25rem;
@@ -11,7 +12,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  row-gap: 0.35rem;
+  gap: 0.35rem 1.4rem;
   max-width: none;
   margin: 0 1.5rem 0.6rem;
   font-size: 95%;
@@ -19,19 +20,11 @@
 }
 
 #Legend dt {
-  font-weight: normal;
-  display: flex;
-  align-items: center;
-  margin: 0 0.4rem 0 0;
-}
-
-#Legend dt::after {
-  content: none;
+  display: none;
 }
 
 #Legend dd {
-  display: inline;
-  margin: 0 1.4rem 0 0;
+  margin: 0;
 }
 
 #Legend .swatch {
@@ -39,6 +32,8 @@
   box-sizing: border-box;
   width: 1.8em;
   height: 1.1em;
+  margin-right: 0.4em;
+  vertical-align: -0.2em;
   border: 2px solid;
 }
 
@@ -47,8 +42,14 @@
 }
 
 #Legend .arrow {
+  margin-right: 0.4em;
   font-weight: bold;
   white-space: nowrap;
+}
+
+#Legend .hint {
+  color: #555;
+  font-style: italic;
 }
 
 div#graph {
